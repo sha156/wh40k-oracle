@@ -194,3 +194,125 @@ none was rewritten. No manual staging, commit, push, fictional commit explanatio
 or harness promotion was performed. Before copies, appended-note hashes and
 verification are retained in the evidence directory's
 `knowledge-handoff/verification.json`. Root retains knowledge publication.
+
+## Iteration 2: supported native launcher
+
+The next individually verifiable increment changes only `run_streamlit.ps1`
+and this report. The iteration began clean at `c681b75fb` after reading the
+orchestrator notes. CI requirements, constraints, collection configuration,
+application/test source, environments and runtime assets remain unchanged.
+README setup/acquisition corrections and final root integration remain pending.
+
+### Launcher behavior
+
+The launcher requires a file at its existing project-relative
+`.venv/Scripts/python.exe` path. Before importing Streamlit, it runs that
+interpreter to check `sys.implementation.name` and the major/minor version.
+Only working CPython 3.11 proceeds; missing executables, directory impostors,
+failed probes and unsupported runtimes fail visibly with exit 1. It does not
+fall back to another interpreter or use the preserved historical environment.
+
+The application entry remains `-m streamlit run app.py`, with the project root
+as its working directory and caller arguments following `app.py`. Explicit
+Windows argument encoding preserves empty strings, whitespace, embedded quotes
+and backslashes on both PowerShell generations. The child inherits its standard
+streams, is awaited and disposed, and its actual exit code is returned. No
+caller argument or environment value is included in the launcher's diagnostics.
+
+### Real PowerShell controls and limits
+
+All temporary fixtures, C# source/executable, scripts, argument records, logs,
+JSON and pytest XML/cache/basetemp files are under:
+
+```text
+D:/Project/py/RAG/db_sources/supported-setup-owned/20261004/iteration-02/
+```
+
+`verify_launcher.py` uses installed Windows PowerShell **5.1** and PowerShell
+**7.6.5**, with copied launcher scripts in directories containing spaces and
+Chinese characters. Its small fake executable occupies only the fixture's
+expected interpreter entry point. For the version probe it executes the exact
+launcher-supplied Python code through the existing supported CPython **3.11.9**
+interpreter listed above. Negative cases replace the version/implementation
+attributes only within that subprocess, or return a probe error. The application
+entry records received arguments/working directory and returns a chosen code;
+it does not import Streamlit, start a server, load a model or contact a provider.
+These are real launcher/process controls with synthetic application execution,
+not full Streamlit or actual-asset startup acceptance.
+
+The final harness exercises each case through an array-splat caller that
+explicitly returns `$LASTEXITCODE`, and independently through direct
+`powershell/pwsh -File run_streamlit.ps1`. The direct invocation is necessary:
+a surrounding script can otherwise hide the nested script's exit code. Final
+results are **40 passed / zero failed / zero skipped**:
+
+| Control per shell and invocation | Result |
+| --- | --- |
+| Missing executable or a directory at that path | Exit 1; application never reached |
+| CPython 3.9, 3.10 or 3.12; PyPy 3.11 | Exit 1; application never reached |
+| Interpreter probe exits 19 | Launcher exits 1; application never reached |
+| Supported interpreter, application exits 0 | Exact entry arguments and working directory; exit 0 |
+| Supported interpreter, application exits 37 | Exact entry arguments and working directory; exit 37 |
+| Supported interpreter, application exits 7 | Exit 7; caller's literal argument array preserved |
+
+The literal array includes an empty string, `--`, a path with spaces, Chinese
+text, embedded quotes, trailing backslashes, backslashes before quotes, a CRLF,
+and literal `$`, semicolon and ampersand characters. Each is compared against
+the argument received by the executable, without shell evaluation. Direct-file
+controls use no additional arguments and independently verify exit propagation.
+
+The unchanged HEAD launcher is copied from the preserved pre-edit fixture,
+verified against its Git blob, and run through the same final controls. It has
+**15 passed / 25 failed / zero skipped**. It starts the application for every
+unsupported-runtime/probe-error case; direct-file execution incorrectly exits
+0 when the application exits 7 or 37. Windows PowerShell 5.1 also loses the
+empty argument/embedded quotes and merges later arguments in the literal test.
+PowerShell 7's native forwarding passes that array, but still fails direct-file
+exit propagation. Missing-interpreter controls already failed correctly before
+the change; they are retained as positive guards.
+
+The earlier harness attempts and their logs are retained separately. They used
+an array expression as one script argument, then omitted the caller's explicit
+exit, so their aggregate outcomes are not acceptance evidence. Correcting the
+harness and adding direct-file controls produced the paired results above;
+no launcher or application assertion was weakened to hide an actual failure.
+
+### Focused checks, preservation and handoff
+
+The existing supported interpreter ran unchanged SQLite build lifecycle,
+framework/provider-chain tests and the standalone negative keyword-parser
+fixture: **16 passed / zero failures / zero errors / zero skips**, with two
+upstream LangChain deprecation warnings, in 26.56 seconds. The retained command
+is `-m pytest -q -rs tests/test_db_compile_build_lifecycle.py
+tests/test_dependency_framework.py
+tests/test_wiki_keyword_index.py::test_parse_quickref_too_few_entries_raises`,
+with owned cache/basetemp and `--junitxml` paths. The earlier 15 Origin fixture
+failures remain recorded and unresolved; this launcher increment does not
+reclassify the broader focused suite as passing.
+
+PowerShell AST parsing and actual diff/whitespace review pass. No permanent test
+skip, ignore, deselection or assertion change is introduced. The existing 4,574
+node equality evidence remains the iteration-1 collection result; no fresh
+full collection or full native suite is claimed here. All 35 previously bound
+requirement/constraint/dependency-report/retained-evidence files remain exact.
+All fixture processes completed; the final owned-process check found none.
+
+The deduplicated handoff extends the project checkpoint/roadmap, the existing
+platform acceptance learning decision, and the existing PowerShell quoting and
+process-exit error records. Original note bodies and shared Git indexes are
+preserved. No new placeholder note, manual staging/commit/push, harness change
+or orchestrator-note edit is made. Verification and before copies are retained
+in `iteration-02/knowledge-handoff/`; root owns knowledge publication.
+The final recheck detected another owner's insertion into earlier rebuild
+sections of both shared project notes and updates to its roadmap task statuses.
+Those changes remain untouched; this iteration's appended sections remain
+byte-exact. Shared indexes and all 35 read-only inputs are
+still unchanged. The handoff manifest distinguishes this concurrent insertion
+from the original byte-exact prefix verification at the time of writing.
+
+Remaining setup work is the README's supported CPython 3.11 bootstrap,
+acquisition/full-build prerequisites and accurate finite local-release limits.
+Root still owns Origin fixture/API reconciliation, independent generic/Python
+review, fresh hosted CI and integrated actual-asset/native/Docker/browser/
+115-question benchmark acceptance. GNHF owns the automatic scoped commit.
+The supported-setup stop condition and whole-project acceptance are not met.
