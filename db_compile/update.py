@@ -53,6 +53,7 @@ class UpdateConfig:
     # A staged legacy manifest or ordered revision envelope; None preserves the
     # reviewed built-in manifest. This selects inputs, never publishes assets.
     source_reconcile_manifest: Optional[Path] = None
+    historical_mfm_snapshot: Optional[Path] = None
 
 
 @dataclass
@@ -166,12 +167,16 @@ def stage_mfm_fetch(cfg: UpdateConfig) -> StageResult:
 def stage_build(cfg: UpdateConfig) -> StageResult:
     """从 Wahapedia CSV 重建整库（清空覆盖）。失败 → 中止整条管线。"""
     from db_compile.build import build_database
-    rep = build_database(cfg.csv_dir, cfg.db, cfg.terms)
+    history = ({"historical_mfm_snapshot": cfg.historical_mfm_snapshot}
+               if cfg.historical_mfm_snapshot is not None else {})
+    rep = build_database(cfg.csv_dir, cfg.db, cfg.terms, **history)
     if not rep.row_counts:
         return StageResult("build", False,
                            f"重建 0 行——检查 {cfg.csv_dir} 是否有 CSV",
                            detail={"missing_csv": rep.missing_csv})
     warnings = []
+    if rep.historical_prices.get("status") == "unavailable":
+        warnings.append("Reviewed historical MFM raw evidence unavailable; historical prices not restored")
     if rep.missing_csv:
         warnings.append(f"缺 CSV：{', '.join(rep.missing_csv)}")
     if rep.skipped:
@@ -190,7 +195,8 @@ def stage_build(cfg: UpdateConfig) -> StageResult:
         "build", True,
         "重建 " + "，".join(f"{k} {v}" for k, v in rep.row_counts.items()),
         detail={"row_counts": rep.row_counts, "missing_csv": rep.missing_csv,
-                "skipped": rep.skipped, "csv_unreconciled": bad},
+                "skipped": rep.skipped, "csv_unreconciled": bad,
+                "historical_prices": rep.historical_prices},
         warning="；".join(warnings) if warnings else None)
 
 

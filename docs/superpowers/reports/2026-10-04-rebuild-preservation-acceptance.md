@@ -1,5 +1,168 @@
 # Rebuild preservation companion acceptance
 
+## Iteration 3: reviewed historical official price preservation
+
+Armour of Antilochus **155** and Pedro Kantor **80** now survive the actual
+full copied CSV rebuild and normal offline authority restoration, independently
+of current price membership. Both remain `current:false`, with their exact
+September 14 capture provenance and retained official source rows. This is a
+bounded companion implementation result, not final project or production acceptance.
+
+Actual clean parent: `db494903696fe301da34d309010de92ba0562939`. Its Git diff
+confirms that GNHF committed iteration 2's document-attribution implementation,
+tests and report, despite the generic knowledge-handoff subject. This iteration
+owns only the narrow build/update seam, new `mfm_history.py` and reviewed binding
+data, `test_mfm_rebuild_history.py`, and this report. No manual Git staging,
+commit, push or publication occurred. The candidate remains uncommitted for GNHF;
+independent host review is pending.
+
+### Verified source and restoration boundary
+
+The binding data were extracted from the verified old `3fd7d812...` database's
+two exact canonical rows/official ledger entries and the AFB database's exact
+mirror price fields. Only these fields were read from the old database; the
+old database was never restored wholesale. `binding-extraction.json` records
+the complete database paths/hashes and output binding hash.
+
+| Canonical ID | Exact canonical name | Mirror from-price | Retained historical price | Source ordinal |
+|---|---|---:|---:|---:|
+| `000002713` | Pedro Kantor | 90 | 80 | 244 |
+| `000004183` | Marneus Calgar in Armour of Antilochus | 140 | 155 | 255 |
+
+Both bind SM plus their exact canonical keyword JSON and datasheet
+name/faction/source-ID/link. Actual retained source:
+`db_sources/mfm/snapshots/2026-09-14/space-marines.html`, SHA-256
+`99f45a5032c4862df89529f02a66122897429ccea7280b0fb318335cf23ad884`;
+the exact manifest SHA-256 is
+`29062f70c0b6848c0ea321b9be816df25cedec4242e81a4331ea09634c06939b`.
+Source URL is `https://mfm.warhammer-community.com/en/space-marines`;
+capture timestamp is `2026-09-14T05:51:23.572407+00:00`.
+This timestamp remains a capture date. No effective date or Legends status is
+inferred from the capture or later absence of headings.
+
+The builder validates retained raw bytes/manifest, parses the complete page
+through the existing lossless parser, and checks both exact official ledger rows
+and prior price tiers. It checks the new skeleton's exact identity and CSV
+price from-fields, then the previous target identity, price/provenance and
+any retained ledger rows. Only the verified narrow batch is written in the
+existing builder transaction before atomic replacement. The original
+price/items/tiers/capture fields are retained; `source_sha256` and
+`historical_source_rows` add the exact historical raw/row provenance. No table,
+Chinese name, alias, numerical body, source-coverage declaration or current ledger
+is copied from the older database.
+
+The exact AFB mirror/check-only blocks and a genuinely clean missing prior row
+can recover from these reviewed source bindings; changed prior price/history
+fails closed. Available evidence drift aborts replacement and preserves the old
+database. Missing raw evidence grants no historical authority and is reported
+by the build result/update warning. The retained snapshot can be supplied through
+the new optional `historical_mfm_snapshot` builder/config field; the default is
+the existing relative September 14 snapshot directory. A later current block
+requires matching independently retained current ledger tiers/date/source before
+the helper defers restoration to the normal current MFM stage. An advanced
+timestamp alone cannot evade the historical source guard. New current publication
+wins; the existing MFM application/reconciliation policy was not changed.
+
+Consumer inspection included the builder CLI/update callers, MFM application,
+current membership, datasheet historical notes, agent source projection, roster
+prices, catalogue/card readers, wiki price readers and source-coverage price
+checks. Existing `current:false` handling keeps these two histories out of
+current picker/roster pricing. No public grammar, consumer, numeric/simulator,
+source reconciliation, alias/retirement, dependency, CI or generator was edited.
+
+### Paired actual-source proof and preserved assets
+
+Evidence root:
+`D:/Project/py/RAG/db_sources/rebuild-preservation-owned/20261004/iteration-03/`.
+`source-freeze.json` binds actual committed parent build/update bytes and
+separately frozen candidate bytes. The newly added helper/data are absent from
+the parent implementation; the parent test fixture can read their binding data
+but its real builder/update does not invoke the helper. `paired_history.py`
+executes separate processes and independent AFB copies with real full CSV,
+no term pairs, an empty private inventory, the retained details and normal offline
+authority restoration. The candidate uses a private copy of the exact retained
+historical raw page/manifest. Both repeat the full build/restoration/rendering
+twice and are internally identical. Successful Windows renames confirm handle
+release after each full run.
+
+Parent ends with mirror Pedro90/Armour140 and only the October membership check;
+candidate ends with Pedro80/Armour155 plus exact September capture/raw/ledger
+provenance and the same October check. The full SQL comparison finds **exactly
+two changed `units.points_json` cells** among all **20 baseline tables**.
+Every other value is exact by key, including all numerical/English body fields,
+names, aliases, the source archive and the 87-row glossary. Process-local glossary
+row order is accounted for separately. All **1,127 documents** have identical
+text and metadata between this iteration's parent/candidate; this count is the
+fresh paired baseline, not a reuse of iteration 2's 1,125 count.
+
+All five source-bound Chinese mappings still emit once. GK2863 retains GK397
+attribution and no AdM847 document exists. The four quarantined canonical targets
+remain absent. The checkout's strict inventory replay remains **32 accepted /
+62 reopened** out of 94, with no fingerprint relaxation or restoration of the
+47 unsupported historical names.
+
+All **3,635 complete current official ledger rows** remain exact, including
+conditional/equipment/occurrence rows. Ordinary Calgar180 and Kaius100 are
+ledger-only identities in this baseline, not new canonical datasheets. Armour155
+remains separate from both ordinary Calgar180 and deleted-source ordinary Calgar200.
+Guilliman415 and Helbrute CSM125/DG105/TS110/WE120 remain exact. No body coverage
+or effective date is inferred from any price heading.
+
+All **117 starting input hashes** remain unchanged, including active pickle/FAISS,
+recorded raw/cache/recovery inputs and the two additionally read September source
+files. One external input already differed from the forensic manifest at the
+start: production's `blacklibrary_listing_policy.json` had SHA-256
+`37b52cf122278a243951e9229f2a16365ff2e0e450a5b611dddf571f1dc2e864`,
+versus forensic `4308772b82c623bf084629311526ec3be858913ddc90c5cea8ed550f879b6376`.
+Both hashes and the initial freeze rejection are retained. That external policy
+was left untouched and is not certified by the checkout's 32/62 result. The
+other 114 original forensic inputs remain exact. This is recorded-input
+preservation, not a fresh full recovery/production inventory acceptance audit.
+
+### Validation and open gates
+
+| Final XML-confirmed selection | Collected | Passed | Failed | Errors | Skipped |
+|---|---:|---:|---:|---:|---:|
+| Frozen parent, new history regressions/controls | 30 | 3 | 27 | 0 | 0 |
+| Final candidate, same new cases | 30 | 30 | 0 | 0 | 0 |
+| Frozen parent, existing identity/history/price/coverage/retirement selection | 772 | 722 | 0 | 0 | 50 |
+| Final candidate, same existing selection | 772 | 722 | 0 | 0 | 50 |
+| Frozen parent, native recovery selection | 105 | 99 | 0 | 0 | 6 |
+| Final candidate, same native selection | 105 | 99 | 0 | 0 | 6 |
+
+Every shared XML node status/skip reason is identical. The native row overlaps
+the broader selection and is not additive. Its six unchanged skips require
+actual official keyword assets; the broader 50 are the preceding 46 missing
+retirement-preparation assets/inventory and four unavailable real-cache Chinese
+coverage checks. There are **zero new skips**. This is the relevant native
+recovery/CLI/handle/PDF selection, not a claim to rerun an entire historical
+native583 or full release suite.
+
+New source fixtures are explicitly synthetic small HTML/CSV inputs; they prove
+the real builder/update/MFM seams and guards, while the separate full copied
+trials establish actual retained-source behavior. Cases cover clean/AFB/prior
+official history, source/manifest/row/price/canonical drift, unsupported advanced
+capture dates, missing history, later current publication, repeated builds,
+whole-build rollback, empty behavior and actual Windows rename controls. Initial
+XML/logs remain retained. The first verification incorrectly expected ordinary
+Calgar180 to exist in canonical units; its failure remains in `verification.log`.
+The corrected assertion checks its actual ledger-only identity and invents no row.
+
+Python 3.11 compilation, Python 3.9 grammar parsing and `git diff --check` pass.
+Ruff/Black remain unavailable and were not installed. All finite children exited;
+no persistent process, model, network call, package installation, service or
+production asset write occurred. Local duplicate-checked checkpoint/roadmap,
+learning and underlying-error records are maintained without changing shared
+indexes. The real db494 document-attribution commit explanation is recorded;
+the current candidate has no invented commit ID.
+
+Remaining gates: GNHF's scoped historical-price commit and clean-checkout closure,
+independent exact-candidate host review, and any final combined acceptance the
+root requires. Existing active duplicate Servitor UUID attribution remains
+unresolved; no vector was assigned, removed or retagged. Scheduled stage-only
+implementation/publication remains a separate owner/run. No deployment or whole
+project completion is claimed.
+
 ## Iteration 2: attributed Black Library retrieval documents
 
 Newly rendered Black Library documents now expose the exact accepted source ID,
