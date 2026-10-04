@@ -292,25 +292,42 @@ def _decode_sources(raw):
     return sources
 
 
+def _read_source_history(conn, uid):
+    """Validate only preexisting provenance, without writes or date adoption.
+
+    Missing tables are empty history, not authority to guess a checkpoint.
+    An undated current list remains separate from the dated history. Callers
+    must not use incoming declarations to manufacture preexisting authority.
+    """
+    tables = {row[0] for row in conn.execute(
+        "SELECT name FROM sqlite_master WHERE type='table' AND name IN "
+        "('official_unit_sources','official_unit_source_revisions')")}
+    row = (_single_metadata_row(conn, "official_unit_sources", "sources_json", uid)
+           if "official_unit_sources" in tables else None)
+    current = _decode_sources(row[0]) if row else None
+    history = {}
+    if "official_unit_source_revisions" in tables:
+        for day, raw in conn.execute(
+                "SELECT source_date,sources_json FROM official_unit_source_revisions WHERE unit_id=?", (uid,)):
+            _iso_date(day)
+            if day in history:
+                raise ValueError(f"Ambiguous official source chronology: {uid}/{day}")
+            history[day] = _decode_sources(raw)
+    if history:
+        if current != history[sorted(history)[-1]]:
+            raise ValueError(f"Official source provenance drift: {uid}")
+        _validate_source_chronology([(day, history[day]) for day in sorted(history)])
+    return current, history
+
+
 def _restore_sources(conn, uid, incoming):
     """Merge exact dated snapshots; an unrecognized current list is drift.
 
     Legacy lists can be anchored only to an exactly matching declaration.
     Never infer their date from a unit's rule date or from PDF URL spelling.
     """
-    row = _single_metadata_row(conn, "official_unit_sources", "sources_json", uid)
-    current = _decode_sources(row[0]) if row else None
-    history = {}
-    for day, raw in conn.execute(
-            "SELECT source_date,sources_json FROM official_unit_source_revisions WHERE unit_id=?", (uid,)):
-        _iso_date(day)
-        if day in history:
-            raise ValueError(f"Ambiguous official source chronology: {uid}/{day}")
-        history[day] = _decode_sources(raw)
-    if history:
-        if current != history[sorted(history)[-1]]:
-            raise ValueError(f"Official source provenance drift: {uid}")
-    elif current is not None and not any(current == value for _, value in incoming):
+    current, history = _read_source_history(conn, uid)
+    if not history and current is not None and not any(current == value for _, value in incoming):
         raise ValueError(f"Unrecognized legacy official source provenance: {uid}")
     combined = dict(history)
     for day, sources in incoming:

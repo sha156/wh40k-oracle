@@ -443,3 +443,87 @@ def test_conflicting_document_declarations_across_a_revision_fail_before_sql(tmp
     monkeypatch.setattr(reconcile.sqlite3, "connect", no_connection)
     with pytest.raises(ValueError, match="Conflicting source declarations"):
         reconcile.apply_patches(tmp_path / "uncreated.sqlite", declared)
+
+
+@pytest.mark.parametrize("tables", [(), ("current",), ("history",), ("current", "history")])
+def test_preexisting_source_history_read_does_not_create_or_anchor_metadata(tmp_path, tables):
+    db = database(tmp_path)
+    with closing(sqlite3.connect(db)) as conn, conn:
+        if "current" in tables:
+            conn.execute("CREATE TABLE official_unit_sources(unit_id TEXT,sources_json TEXT)")
+            conn.execute("INSERT INTO official_unit_sources VALUES ('one',?)", (json.dumps([source()]),))
+        if "history" in tables:
+            conn.execute("CREATE TABLE official_unit_source_revisions "
+                         "(unit_id TEXT,source_date TEXT,sources_json TEXT)")
+    before = db.read_bytes()
+    statements = []
+    with closing(sqlite3.connect(f"{db.as_uri()}?mode=ro", uri=True)) as conn:
+        conn.set_trace_callback(statements.append)
+        current_sources, history = reconcile._read_source_history(conn, "one")
+        assert current_sources == ([source()] if "current" in tables else None)
+        # An undated legacy current list is not a dated checkpoint.
+        assert history == {}
+        assert conn.total_changes == 0
+    assert statements and all(sql.lstrip().upper().startswith("SELECT") for sql in statements)
+    assert db.read_bytes() == before
+
+
+def test_preexisting_source_history_reads_exact_sorted_checkpoint_without_writes(tmp_path):
+    db = database(tmp_path)
+    declared = [manifest(), manifest("2026-02-01", "b")]
+    declared[1]["patches"] = []
+    reconcile.apply_patches(db, manifests=declared)
+    before = db.read_bytes()
+    with closing(sqlite3.connect(f"{db.as_uri()}?mode=ro", uri=True)) as conn:
+        assert reconcile._read_source_history(conn, "one") == (
+            [source("b")], {"2026-01-01": [source()], "2026-02-01": [source("b")]})
+        assert reconcile._read_source_history(conn, "unknown") == (None, {})
+        assert conn.total_changes == 0
+    assert db.read_bytes() == before
+
+
+@pytest.mark.parametrize("bad", ["bad_date", "bad_json", "empty_sources", "duplicate_date",
+                                  "missing_current", "wrong_current", "duplicate_current",
+                                  "revisited_snapshot", "immutable_version", "date_downgrade"])
+def test_preexisting_source_history_rejects_drift_without_incoming_authority(tmp_path, bad):
+    db = database(tmp_path)
+    reconcile.apply_patches(db, manifest())
+    with closing(sqlite3.connect(db)) as conn, conn:
+        if bad == "bad_date":
+            conn.execute("UPDATE official_unit_source_revisions SET source_date='2026-02-30'")
+        elif bad in ("bad_json", "empty_sources"):
+            conn.execute("UPDATE official_unit_source_revisions SET sources_json=?",
+                         ("{broken" if bad == "bad_json" else "[]",))
+        elif bad == "duplicate_date":
+            conn.execute("ALTER TABLE official_unit_source_revisions RENAME TO saved_history")
+            conn.execute("CREATE TABLE official_unit_source_revisions "
+                         "(unit_id TEXT,source_date TEXT,sources_json TEXT)")
+            conn.execute("INSERT INTO official_unit_source_revisions SELECT * FROM saved_history")
+            conn.execute("INSERT INTO official_unit_source_revisions SELECT * FROM saved_history")
+        elif bad == "missing_current":
+            conn.execute("DROP TABLE official_unit_sources")
+        elif bad == "wrong_current":
+            conn.execute("UPDATE official_unit_sources SET sources_json=?", (json.dumps([source("c")]),))
+        elif bad == "duplicate_current":
+            conn.execute("ALTER TABLE official_unit_sources RENAME TO saved_sources")
+            conn.execute("CREATE TABLE official_unit_sources(unit_id TEXT,sources_json TEXT)")
+            conn.execute("INSERT INTO official_unit_sources SELECT * FROM saved_sources")
+            conn.execute("INSERT INTO official_unit_sources SELECT * FROM saved_sources")
+        else:
+            snapshots = {
+                "revisited_snapshot": [[source()], [source("b")], [source()]],
+                "immutable_version": [[source(version="v2")], [source(version="v1")]],
+                "date_downgrade": [[source(published="2025-12-01")],
+                    [{**source(), "sha256": "b" * 64, "published": "2025-11-01"}]],
+            }[bad]
+            conn.execute("DELETE FROM official_unit_source_revisions")
+            conn.executemany("INSERT INTO official_unit_source_revisions VALUES ('one',?,?)",
+                             [(f"2026-0{index}-01", json.dumps(value))
+                              for index, value in enumerate(snapshots, 1)])
+            conn.execute("UPDATE official_unit_sources SET sources_json=?", (json.dumps(snapshots[-1]),))
+    before = db.read_bytes()
+    with closing(sqlite3.connect(f"{db.as_uri()}?mode=ro", uri=True)) as conn:
+        with pytest.raises(ValueError, match="source|provenance|date|Ambiguous"):
+            reconcile._read_source_history(conn, "one")
+        assert conn.total_changes == 0
+    assert db.read_bytes() == before
