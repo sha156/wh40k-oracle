@@ -47,9 +47,12 @@ def test_foreign_origin_without_content_type_never_executes_chat(chat_client, pa
 @pytest.mark.parametrize("path", ["/chat/sync", "/chat"])
 def test_authorized_chat_preserves_payload_stream_and_headers(chat_client, origin, path):
     client, calls = chat_client
-    headers = {} if origin is None else {"Origin": origin}
+    headers = {"Content-Type": "application/json"}
+    if origin is not None:
+        headers["Origin"] = origin
     payload = {"question": "Harmless fixture", "context": "fixture", "session_id": "sid"}
     response = client.post(path, content=json.dumps(payload).encode(), headers=headers)
+    assert response.request.headers["content-type"] == "application/json"
     assert response.status_code == 200
     assert calls == [payload]
     assert response.headers.get("access-control-allow-origin") == origin
@@ -60,6 +63,33 @@ def test_authorized_chat_preserves_payload_stream_and_headers(chat_client, origi
         assert "event: done" in response.text
     else:
         assert response.json()["degraded"] is True
+
+
+@pytest.mark.parametrize("content_type", [None, "text/plain", "application/json"],
+                         ids=["untyped", "wrong-type", "json"])
+@pytest.mark.parametrize("origin", [None, *ALLOWED])
+@pytest.mark.parametrize("path", ["/chat/sync", "/chat"])
+def test_chat_content_type_contract_is_separate_from_origin(
+        chat_client, content_type, origin, path):
+    client, calls = chat_client
+    headers = {} if origin is None else {"Origin": origin}
+    if content_type is not None:
+        headers["Content-Type"] = content_type
+    payload = {"question": "Harmless fixture", "context": "fixture", "session_id": "sid"}
+    response = client.post(path, content=json.dumps(payload).encode(), headers=headers)
+    assert response.request.headers.get("content-type") == content_type
+    assert response.headers.get("access-control-allow-origin") == origin
+    if content_type == "application/json":
+        assert response.status_code == 200
+        assert calls == [payload]
+        if path == "/chat":
+            assert "event: done" in response.text
+        else:
+            assert response.json()["degraded"] is True
+    else:
+        assert response.status_code == 422
+        assert calls == []
+        assert any(error["loc"] == ["body"] for error in response.json()["detail"])
 
 
 @pytest.mark.parametrize("headers", [
@@ -124,16 +154,63 @@ def test_real_compute_routes_reject_before_handlers_but_keep_authorized_errors(
 
     monkeypatch.setattr(importlib.import_module(module_name), function_name, handler)
     headers = {} if origin is None else {"Origin": origin}
+    if origin != "https://untrusted.invalid":
+        headers["Content-Type"] = "application/json"
     with TestClient(main.app, client=(f"origin-fixture-{next(_clients)}", 50000)) as client:
         response = client.post(path, content=json.dumps(payload).encode(), headers=headers)
     if origin == "https://untrusted.invalid":
+        assert response.request.headers.get("content-type") is None
         assert calls == []
         assert response.status_code == 403
     else:
+        assert response.request.headers["content-type"] == "application/json"
         assert calls == [True]
         assert response.status_code == 409
         assert response.json() == {"detail": "Harmless handler fixture"}
         assert response.headers.get("access-control-allow-origin") == origin
+
+
+@pytest.mark.parametrize("path,payload,module_name,function_name,result", [
+    ("/simulate", {"attackerId": "a", "defenderId": "d"},
+     "web_api.simulate", "run_simulation", {"ok": True}),
+    ("/roster/critique", {"factionId": "SM", "units": []},
+     "web_api.roster", "critique_roster", {"totalPoints": 0, "summary": ["Harmless fixture"]}),
+    ("/roster/validate", {"factionId": "SM", "units": []},
+     "web_api.roster", "validate_roster", {"totalPoints": 0, "limit": 2000, "legal": True}),
+])
+@pytest.mark.parametrize("origin", [None, *ALLOWED])
+@pytest.mark.parametrize("content_type", [None, "text/plain", "application/json"],
+                         ids=["untyped", "wrong-type", "json"])
+def test_compute_content_type_contract_is_separate_from_origin(
+        monkeypatch, tmp_path, path, payload, module_name, function_name, result,
+        origin, content_type):
+    import importlib
+
+    calls = []
+    fixture_db = tmp_path / "unused.sqlite"
+    fixture_db.touch()
+    monkeypatch.setattr(main, "DB_PATH", fixture_db)
+
+    def handler(*args):
+        calls.append(True)
+        return result
+
+    monkeypatch.setattr(importlib.import_module(module_name), function_name, handler)
+    headers = {} if origin is None else {"Origin": origin}
+    if content_type is not None:
+        headers["Content-Type"] = content_type
+    with TestClient(main.app, client=(f"origin-fixture-{next(_clients)}", 50000)) as client:
+        response = client.post(path, content=json.dumps(payload).encode(), headers=headers)
+    assert response.request.headers.get("content-type") == content_type
+    assert response.headers.get("access-control-allow-origin") == origin
+    if content_type == "application/json":
+        assert response.status_code == 200
+        assert calls == [True]
+        assert {key: response.json()[key] for key in result} == result
+    else:
+        assert response.status_code == 422
+        assert calls == []
+        assert any(error["loc"] == ["body"] for error in response.json()["detail"])
 
 
 @pytest.mark.parametrize("host", ["localhost", "localhost/healthz?", "localhost/ordinary?", "[invalid"])
