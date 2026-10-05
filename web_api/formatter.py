@@ -11,7 +11,7 @@ import json
 import re
 from typing import Any, Callable, Dict, List, Optional, Protocol
 
-from agent.loop import AgentLoop, AgentResult
+from agent.loop import AgentLoop, AgentResult, _evidence_qualifiers, _evidence_unit_rows
 from web_api.contract import (
     Answer, CalcStep, Cite, Cta, Sensitivity, TraceStep, Verdict,
 )
@@ -38,7 +38,7 @@ def _historical_records(recorder: TraceRecorder) -> List[Dict[str, Any]]:
         for result in recorder.get_results(tool):
             if not isinstance(result, dict):
                 continue
-            for item in [result] + (result.get("units") or []):
+            for item in [result] + _evidence_unit_rows(result):
                 record = item.get("historical_record") if isinstance(item, dict) else None
                 if isinstance(record, dict) and record.get("archive_id"):
                     records[record["archive_id"]] = record
@@ -85,7 +85,8 @@ def _derive_cites(result: AgentResult, recorder: TraceRecorder) -> List[Cite]:
                      term=str(fm.name_en or fm.name_zh or fm.id), section="合并兵牌")
 
     # 检索来源（真有 book/page 出处）
-    for evidence in recorder.get_results("calc_points") + recorder.get_results("get_datasheet"):
+    for evidence in (recorder.get_results("calc_points") + recorder.get_results("get_datasheet")
+                     + recorder.get_results("get_entity")):
         if isinstance(evidence, dict):
             for source in evidence.get("official_sources", []):
                 _add("Munitorum Field Manual", section="官方当前点数",
@@ -369,6 +370,10 @@ def format_answer(
                 [c.model_dump() for c in cites],
             ) or {}
             _validate_layout(structured)
+            body = _structured_body(structured)
+            if any(note not in body for name in recorder.last_result
+                   for result in recorder.get_results(name) for note in _evidence_qualifiers(result)):
+                raise ValueError("Answer formatting omitted source qualification")
             if _missing_table_labels(agent_result.answer, structured):
                 raise ValueError("Answer formatting omitted named table rows")
             if _unsupported_grounding_claims(
@@ -445,12 +450,25 @@ def _evidence_digest(recorder: TraceRecorder, limit: int = 2000) -> str:
                 continue
             ds = result.get("datasheet")
             containers = [result] + ([ds] if isinstance(ds, dict) else [])
-            for container in containers:
-                note = container.get("source_note")
-                if (isinstance(note, str) and "Source coverage:" in note
-                        and note not in seen):
-                    qualifiers.append("[source coverage] " + note)
-                    seen.add(note)
+            # Retain the established optional legacy-root digest. Each qualified
+            # calculation subject (including its archive) is now mandatory,
+            # using the same extraction as synthesis and the visible-body gate.
+            mandatory = any(
+                container.get("historical_record") or container.get("points_only")
+                or container.get("historical_points")
+                or "Source coverage:" in str(container.get("source_note") or "")
+                for container in containers) or any(
+                    _evidence_qualifiers(unit) for unit in _evidence_unit_rows(result))
+            if mandatory:
+                identity = ds if isinstance(ds, dict) else result
+                fm = getattr(result.get("page"), "fm", None)
+                subject = " / ".join(str(identity[key]) for key in ("name_en", "faction_slug")
+                                     if identity.get(key)) or str(getattr(fm, "name_en", ""))
+                for note in _evidence_qualifiers(result):
+                    qualified = "[source coverage] " + (subject + ": " if subject else "") + note
+                    if qualified not in seen:
+                        qualifiers.append(qualified)
+                        seen.add(qualified)
     lines: List[str] = []
     for record in _historical_records(recorder):
         summary = {key: record.get(key) for key in (

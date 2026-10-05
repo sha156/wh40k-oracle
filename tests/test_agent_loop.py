@@ -82,18 +82,23 @@ class TestQueryFlowHappyPath:
     def test_end_to_end_against_real_wiki_get_entity_tool(self):
         """用真实 agent.tools.get_entity（读真实 wiki/）验证查询流程闭环。"""
         from agent.tools import TOOLS as REAL_TOOLS
+        from web_api.trace import TraceRecorder
 
         llm = ScriptedLLM("查", steps=[
             {"type": "tool_call", "tool": "get_entity", "args": {"name_or_id": "影阳指挥官"}},
             {"type": "final", "content": "已找到影阳指挥官实体页。"},
         ])
-        loop = AgentLoop(llm=llm, tools=REAL_TOOLS)
+        recorder = TraceRecorder(REAL_TOOLS)
+        loop = AgentLoop(llm=llm, tools=recorder.wrapped_tools())
+        session = SessionContext()
 
-        result = loop.run("影阳指挥官是什么单位？")
+        result = loop.run("影阳指挥官是什么单位？", session=session)
 
         assert result.degraded is False
         assert result.tool_calls == ["get_entity"]
-        assert result.answer == "已找到影阳指挥官实体页。"
+        assert result.answer.startswith("已找到影阳指挥官实体页。")
+        scope = recorder.get_result("get_entity")["source_scope"]
+        assert scope in result.answer and scope in session.history[-1]["content"]
 
     def test_session_context_records_conversation_turns(self):
         # 用「闲聊」意图：它豁免零工具门控，单步 final 即可被接受，

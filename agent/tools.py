@@ -142,6 +142,66 @@ def _historical_result(record: Dict[str, Any]) -> Dict[str, Any]:
             "source_scope": record["source_scope"], "note": record["source_scope"]}
 
 
+def _source_price_result(name: str, db_path: Optional[Path],
+                         resolver: Optional[EntityResolver]) -> Optional[Dict[str, Any]]:
+    """Exact ledger evidence without borrowing a canonical or archived body."""
+    from contextlib import closing
+    import sqlite3
+    from db_compile.coverage_notes import coverage_note
+    from web_api.official_points import (
+        PriceSelectorError, _canonical_identity_matches, exact_unit,
+    )
+
+    if db_path is None or not Path(db_path).exists():
+        return None
+    reserved = name.strip().startswith(("@mfm:", "@literal:"))
+    archived = None
+    try:
+        price = exact_unit(db_path, name)
+        if price is None and not reserved:
+            archived = _archived_record(name, resolver=resolver, db_path=db_path)
+            if archived and archived.get("name_en"):
+                # Only the verified archived alias may supply a different name.
+                price = exact_unit(db_path, archived["name_en"])
+    except PriceSelectorError as exc:
+        return {"found": False, "page": None, "datasheet": None,
+                "reason": "price_selector", "note": str(exc)}
+    except ValueError:  # Older databases can lack the complete ledger.
+        if reserved:
+            return {"found": False, "page": None, "datasheet": None,
+                    "reason": "price_selector",
+                    "note": "Exact price selector requires matching local source evidence"}
+        return None
+    if price is None:
+        return None
+    if price["ambiguous"]:
+        return {**price, "found": False, "page": None, "datasheet": None,
+                "reason": "ambiguous", "resolved_via": {"confidence": "ambiguous"}}
+    # Explicit source selectors intentionally select price evidence only. Plain
+    # canonical names/IDs keep the existing body path when full identity agrees.
+    if not reserved:
+        local = resolver or EntityResolver(db_path=Path(db_path))
+        resolved = local.resolve(name)
+        if (resolved.canonical_id and resolved.confidence == "exact"
+                and _canonical_identity_matches(db_path, resolved.canonical_id, price)):
+            return None
+        archived = archived or _archived_record(name, resolver=local, db_path=db_path)
+    with closing(sqlite3.connect(
+            f"file:{Path(db_path).resolve().as_posix()}?mode=ro", uri=True)) as conn:
+        qualifier = coverage_note(conn, name_en=price["name_en"],
+                                  faction_slug=price["faction_slug"])
+    # The strict declaration is validated outside the legacy-ledger catch.
+    # Invalid explicit coverage must stay visible as CoverageError.
+    note = price["note"] + (" " + qualifier if qualifier else "")
+    result = {**price, "found": True, "page": None, "datasheet": None,
+              "source_note": note, "note": note,
+              "source_scope": price["source_scope"] + (" " + qualifier if qualifier else ""),
+              "official_sources": price["price_sources"]}
+    if archived:
+        result["historical_record"] = archived
+    return result
+
+
 def entity_resolver(name: str, resolver: Optional[EntityResolver] = None) -> Dict[str, Any]:
     """中文名/英文名/社区俗名 → canonical id（db_compile.entity_resolver）。
 
@@ -173,7 +233,8 @@ def entity_resolver(name: str, resolver: Optional[EntityResolver] = None) -> Dic
     return out
 
 
-def _entity_page_result(page: WikiPage, resolved_via: Any) -> Dict[str, Any]:
+def _entity_page_result(page: WikiPage, resolved_via: Any,
+                        db_path: Optional[Path] = None) -> Dict[str, Any]:
     out = {"found": True, "page": page, "resolved_via": resolved_via}
     if (page.fm.version or {}).get("source") == "official-db":
         # A merged card can cite a patch that only changes one keyword. Its
@@ -183,6 +244,16 @@ def _entity_page_result(page: WikiPage, resolved_via: Any) -> Dict[str, Any]:
             "其中的补丁页可能只改一个关键词，不能给整张兵牌的技能/属性背书。"
             "引用具体技能时，优先用 rag_search 实际取回的规则正文及页码；"
             "未定位原文的字段标注「结构库兵牌」，不要套用关联补丁的页码。")
+    if page.fm.type == "unit" and db_path is not None and Path(db_path).exists():
+        from contextlib import closing
+        import sqlite3
+        from db_compile.coverage_notes import coverage_note
+
+        with closing(sqlite3.connect(str(db_path))) as conn:
+            note = coverage_note(conn, unit_id=page.fm.id)
+        if note:
+            out["source_note"] = note
+            out["note"] = note
     return out
 
 
@@ -200,25 +271,29 @@ def get_entity(
     """
     wiki_root = wiki_root or WIKI_ROOT
     app_path = app_path or APP_PATH
+    path = getattr(resolver, "db_path", None) if resolver is not None else DB_PATH
+    price = _source_price_result(name_or_id, path, resolver)
+    if price is not None:
+        return price
     archived = _archived_record(name_or_id, resolver=resolver)
     if archived:
         return {**_historical_result(archived), "page": None, "resolved_via": None}
     index = load_index(wiki_root)
     page = find_entity(name_or_id, index, wiki_root)
     if page is not None:
-        return _entity_page_result(page, None)
+        return _entity_page_result(page, None, path)
 
     if name_or_id.strip().isdigit():
         page = find_entity_by_id(name_or_id.strip(), index, wiki_root)
         if page is not None:
             return _entity_page_result(
-                page, {"canonical_id": name_or_id.strip(), "confidence": "exact"})
+                page, {"canonical_id": name_or_id.strip(), "confidence": "exact"}, path)
 
     alias_target = load_unit_aliases(app_path).get(name_or_id)
     if alias_target:
         page = find_entity(alias_target, index, wiki_root)
         if page is not None:
-            return _entity_page_result(page, {"alias_target": alias_target})
+            return _entity_page_result(page, {"alias_target": alias_target}, path)
 
     resolved = entity_resolver(name_or_id, resolver=resolver)
     if resolved["name_en"]:
@@ -234,10 +309,10 @@ def get_entity(
                     and (legacy.fm.name_en or "").casefold() == resolved["name_en"].casefold()):
                 page = legacy
         if page is not None:
-            out = _entity_page_result(page, resolved)
+            out = _entity_page_result(page, resolved, path)
             if same_name["confidence"] == "ambiguous":
                 out["same_name_candidates"] = same_name["candidates"]
-                out["note"] = ("本页阵营：" + page.fm.faction + "。同名单位还存在于其他阵营："
+                out["note"] = out.get("note", "") + ("本页阵营：" + page.fm.faction + "。同名单位还存在于其他阵营："
                                + "、".join(same_name["candidates"])
                                + "。按问题语境用含阵营的候选串重查，不要把本页当作所有阵营的规则。")
             # 模糊命中拿回来的实体页看上去与精确命中**完全一样**（found=True + 完整页），
@@ -632,6 +707,11 @@ def get_datasheet(
         return {"found": False, "datasheet": None,
                 "note": "wh40k.sqlite 不存在，需先跑 db_compile build"}
 
+    price = _source_price_result(name_or_id, db_path, resolver)
+    if price is not None:
+        return price
+    if resolver is None and Path(db_path) != Path(DB_PATH):
+        resolver = EntityResolver(db_path=Path(db_path))
     try:
         ds = find_datasheet(db_path, name_or_id,
                             resolver=resolver or _get_default_resolver())

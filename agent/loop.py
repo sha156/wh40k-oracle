@@ -11,7 +11,7 @@ LLMClient 是本模块与具体 LLM 供应商之间的边界：真实实现（de
 from __future__ import annotations
 
 from collections.abc import Collection, Mapping
-from dataclasses import dataclass, field
+from dataclasses import dataclass, field, replace
 from types import MappingProxyType
 from typing import Any, Callable, Dict, List, Optional, Protocol
 
@@ -53,6 +53,7 @@ _EMPTY_CHECKS: Dict[str, Callable[[Dict[str, Any]], bool]] = {
     # 注意这个键**只**出现在「一个候选都没解析到」的那条路径上：真拼错/简称仍照旧走
     # fuzzy/ambiguous，`_EMPTY_CHECKS` 对它们的判定逐字节不变。
     "get_entity": lambda r: (not r.get("found")
+                             and r.get("reason") != "price_selector"
                              and not r.get("suggestions")
                              and (r.get("resolved_via") or {}).get("confidence")
                              != "ambiguous"),
@@ -77,7 +78,7 @@ _EMPTY_CHECKS: Dict[str, Callable[[Dict[str, Any]], bool]] = {
     # 而 entity_resolver 是纯「名字 → id」映射工具，「这个名字解析不到 + 只有几个像的」
     # 本身就是它被问到的那个问题的实质答案，两者不可混为一谈。
     "get_datasheet": lambda r: (not r.get("found")
-                                and r.get("reason") != "ambiguous"),
+                                and r.get("reason") not in ("ambiguous", "price_selector")),
     # 一个名字都没解析到时降级兜底，别把「工具空手」留给模型自由发挥（基准 #109 硬错：
     # 四个中文名全查空后模型编出「泰坦军团不是 40K 阵营、无官方点数」的否定性断言）。
     # 只要有一个单位查到就不算空——「查到了但库里没点数」是诚实答案，不该被兜底吞掉。
@@ -87,7 +88,7 @@ _EMPTY_CHECKS: Dict[str, Callable[[Dict[str, Any]], bool]] = {
     "calc_points": lambda r: (not r.get("param_error")
                               and (not r.get("found")
                                    or bool(r.get("units"))
-                                   and all(u.get("unresolved") for u in r["units"]))),
+                                   and all(u.get("unresolved") for u in _evidence_unit_rows(r)))),
 }
 
 
@@ -151,6 +152,12 @@ def _is_empty_result(tool_name: str, result: Any) -> bool:
     return bool(check and check(result))
 
 
+def _evidence_unit_rows(result: Dict[str, Any]) -> List[Dict[str, Any]]:
+    """Only the public units list is a collection of calculation subjects."""
+    units = result.get("units")
+    return [unit for unit in units if isinstance(unit, dict)] if isinstance(units, list) else []
+
+
 def _has_usable_evidence(tool_name: str, result: Any) -> bool:
     """Whether a tool returned facts that can support at least part of an answer.
 
@@ -160,6 +167,9 @@ def _has_usable_evidence(tool_name: str, result: Any) -> bool:
     """
     if not isinstance(result, dict):
         return False
+    if (tool_name in ("get_entity", "get_datasheet") and result.get("points_only")
+            and result.get("found") and not result.get("ambiguous")):
+        return bool(result.get("official_prices"))
     if tool_name == "calc_points":
         if not result.get("found"):
             return False
@@ -169,7 +179,7 @@ def _has_usable_evidence(tool_name: str, result: Any) -> bool:
             and (unit.get("points") is not None
                  or unit.get("historical_points") is not None
                  or bool(unit.get("official_prices")))
-            for unit in (result.get("units") or [])
+            for unit in _evidence_unit_rows(result)
         )
     if tool_name == "get_datasheet":
         return bool(result.get("found")
@@ -250,7 +260,7 @@ def _evidence_facts(tool_name: str, result: Any) -> List[str]:
         return rendered
 
     if tool_name == "calc_points":
-        for unit in result.get("units") or []:
+        for unit in _evidence_unit_rows(result):
             if not isinstance(unit, dict) or unit.get("unresolved"):
                 continue
             start = len(facts)
@@ -283,6 +293,21 @@ def _evidence_facts(tool_name: str, result: Any) -> List[str]:
                     facts[i] += f"（由查询“{query}”模糊匹配，需核对身份）"
             qualify(start, unit)
             qualify(start, unit.get("historical_record"))
+    elif tool_name in ("get_entity", "get_datasheet") and result.get("points_only"):
+        label = " / ".join(str(result[key]) for key in ("name_en", "faction_slug")
+                           if result.get(key))
+        for price in result.get("official_prices") or []:
+            if isinstance(price, dict) and price.get("cost") is not None:
+                tier = " / ".join(str(price[key]) for key in ("tier", "models")
+                                  if price.get(key))
+                facts.append(f"{label} / {tier}："
+                             f"官方点数 {price['cost']}（仅点数证据）")
+        historical = result.get("historical_record") or {}
+        if isinstance(historical, dict) and historical.get("historical_points") is not None:
+            start = len(facts)
+            facts.append(f"{historical.get('name_en') or label}：历史缓存点数 "
+                         f"{historical['historical_points']}（非现行）")
+            qualify(start, historical)
     elif tool_name == "get_datasheet":
         historical = result.get("historical_record") or {}
         if isinstance(historical, dict) and historical.get("historical_points") is not None:
@@ -340,6 +365,49 @@ def _evidence_facts(tool_name: str, result: Any) -> List[str]:
     return facts[:12]
 
 
+def _evidence_qualifiers(result: Any) -> List[str]:
+    """Whole, subject-associated qualifications on supported public evidence paths.
+
+    This deliberately does not recurse: debug, raw bodies, errors, traces and
+    arguments are not qualification containers. Identical text for two subjects
+    remains two qualifications, and archives retain their separate identity.
+    """
+    if not isinstance(result, dict) or result.get("found") is False:
+        return []
+
+    def subject(container: Dict[str, Any], fallback: str = "") -> str:
+        name = container.get("name_en") or container.get("name_zh") or container.get("unit_id")
+        faction = (container.get("faction_slug") or container.get("faction")
+                   or container.get("faction_zh"))
+        return " / ".join(str(value) for value in (name, faction) if value) or fallback
+
+    ds = result.get("datasheet")
+    # Preserve the established root/datasheet representation. Calculation rows
+    # need their own labels because one result contains multiple subjects.
+    containers = [("", result)]
+    if isinstance(ds, dict):
+        containers.append(("", ds))
+    for _label, container in list(containers):
+        historical = container.get("historical_record")
+        if isinstance(historical, dict):
+            containers.append(("", historical))
+    for index, unit in enumerate(_evidence_unit_rows(result), 1):
+        label = subject(unit, f"单位 {index}")
+        containers.append((label, unit))
+        historical = unit.get("historical_record")
+        if isinstance(historical, dict):
+            containers.append((label + "（历史记录）", historical))
+    notes = []
+    for label, container in containers:
+        for key in ("source_note", "source_scope", "note", "identity_scope"):
+            value = container.get(key)
+            if value:
+                note = (label + "：" if label else "") + str(value)
+                if note not in notes:
+                    notes.append(note)
+    return notes
+
+
 def _evidence_sources(result: Dict[str, Any]) -> List[Dict[str, Any]]:
     """Retain provided references, without inventing per-field provenance."""
     sources: List[Dict[str, Any]] = []
@@ -356,8 +424,7 @@ def _evidence_sources(result: Dict[str, Any]) -> List[Dict[str, Any]]:
     fm = page.get("fm") if isinstance(page, dict) else getattr(page, "fm", None)
     add(fm.get("sources") if isinstance(fm, dict) else getattr(fm, "sources", None))
     records = [result.get("historical_record")]
-    records.extend(unit.get("historical_record") for unit in result.get("units") or []
-                   if isinstance(unit, dict))
+    records.extend(unit.get("historical_record") for unit in _evidence_unit_rows(result))
     for record in records:
         if isinstance(record, dict) and record.get("source_url"):
             source = {"url": record["source_url"]}
@@ -430,7 +497,10 @@ class AgentLoop:
                                     reason=f"处理异常: {public_failure(exc).describe()}")
 
         session.append_turn("user", user_input)
-        session.append_turn("assistant", result.answer)
+        # A character cut can remove the last subject's date/coverage warning.
+        # Keep complete answers while preserving the existing turn-count bound.
+        session.history.append({"role": "assistant", "content": result.answer})
+        del session.history[:-12]
         return result
 
     def _classify(self, user_input: str) -> str:
@@ -452,11 +522,29 @@ class AgentLoop:
         has_usable_evidence = False
         evidence_facts: List[str] = []
         evidence_sources: List[Dict[str, Any]] = []
+        evidence_qualifiers: List[str] = []
+
+        def qualify_answer(answer: str) -> str:
+            missing = [note for note in evidence_qualifiers if note not in answer]
+            if missing:
+                answer += "\n\n" + "\n\n".join(missing)
+            return answer
+
+        def complete(answer: str, step: Dict[str, Any]) -> AgentResult:
+            answer = qualify_answer(answer)
+            sources = list(evidence_sources)
+            for source in step.get("sources", []):
+                if source not in sources:
+                    sources.append(source)
+            return AgentResult(answer=answer, intent=intent, tool_calls=tool_calls,
+                               degraded=False, sources=sources)
 
         def recover(reason: str, calls: Optional[List[str]] = None) -> AgentResult:
             trace = tool_calls if calls is None else calls
             if has_usable_evidence:
-                return self._emergency_answer(intent, trace, evidence_facts, evidence_sources, reason)
+                result = self._emergency_answer(intent, trace, evidence_facts, evidence_sources, reason)
+                # Facts have a readability bound; mandatory qualifications do not.
+                return replace(result, answer=qualify_answer(result.answer))
             return self._fallback(user_input, intent, trace, reason)
 
         for _ in range(self.max_steps):
@@ -494,14 +582,7 @@ class AgentLoop:
                         })
                         continue
                     return recover("final 步骤 content 连续为空")
-                return AgentResult(
-                    answer=answer,
-                    intent=intent,
-                    tool_calls=tool_calls,
-                    degraded=False,
-                    sources=([source for source in step["sources"] if isinstance(source, dict)]
-                             if isinstance(step.get("sources"), list) else []),
-                )
+                return complete(answer, step)
 
             tool_name = step.get("tool")
             args = step.get("args", {})
@@ -543,6 +624,9 @@ class AgentLoop:
 
             if _has_usable_evidence(tool_name, result):
                 has_usable_evidence = True
+                for note in _evidence_qualifiers(result):
+                    if note not in evidence_qualifiers:
+                        evidence_qualifiers.append(note)
                 for fact in _evidence_facts(tool_name, result):
                     if fact not in evidence_facts:
                         evidence_facts.append(fact)
@@ -564,15 +648,7 @@ class AgentLoop:
                 return recover(f"工具步数用尽后答案整理异常: {public_failure(exc).describe()}")
             answer = step.get("content", "")
             if step.get("type") == "final" and answer.strip():
-                return AgentResult(
-                    answer=answer,
-                    intent=intent,
-                    tool_calls=tool_calls,
-                    degraded=False,
-                    sources=([source for source in step["sources"]
-                              if isinstance(source, dict)]
-                             if isinstance(step.get("sources"), list) else []),
-                )
+                return complete(answer, step)
             return recover("模型在工具步数用尽后仍未完成整理")
         return self._fallback(user_input, intent, tool_calls, reason="超过 max_steps 仍未得出结论")
 
