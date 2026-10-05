@@ -72,7 +72,7 @@ def test_actual_write_boundaries_partial_merge_rejection_and_resume(tmp_path, mo
                 "class": "PermissionError", "errno": 13, "winerror": 5}
     # Only the shared-root details mkdir injection is one-shot, so the partial
     # manifest can still be saved there. Other operation counts are independent.
-    assert len(calls) == 1
+    assert len(calls) == (3 if operation == "replace" else 1)
     assert all(meta.get("attempts", 1) == 1 for meta in result["requests"].values())
     assert result["status"] == "partial" and result["error"] == "PermissionError"
     assert result["filesystem_error"] == expected

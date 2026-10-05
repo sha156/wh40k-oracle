@@ -120,3 +120,133 @@ Two existing complete-fixture setups also spontaneously returned partial during 
 `before.json` and `verification.json` bind the clean parent, intended source/test/report changes, unchanged merge/policy/identity files, active SQLite and canonical Black Library JSON bytes, original failure log/manifest, and earlier XML. No large asset/model/archive copy was made. Earlier logs/XML/partial snapshots remain preserved. Local knowledge handoff appends this verified continuation to the existing boundary checkpoint/roadmap, learning decision and error record, preserving their old bodies and other owners' staged indexes. No duplicate error/learning record, invented implementation commit or manual Git staging/commit/publication is created.
 
 The finite diagnostic implementation and narrow control acceptance are complete locally. GNHF still owns the intended commit and clean checkout; root owns independent host review/publication. The clean-commit stop condition cannot be claimed before that orchestrator step. No overall project, deployment or source-coverage completion is claimed, and no background process started by this continuation remains running.
+
+## October 5 bounded Windows replacement resilience
+
+This GNHF iteration starts at clean actual parent
+`fff4d974ceabb2d8b45126e42f346ec1f975a417`, branch
+`codex/release-snapshot-resilience`, in
+`C:/Users/Administrator/.codex/worktrees/release-web-security/RAG`.
+The authorized change is confined to the snapshot writer's replacement seam,
+32 narrow resilience controls, one necessary diagnostic assertion and this
+appended report. GNHF owns the implementation commit. No manual staging,
+commit, push, publication, service operation, active-cache write, model load,
+dependency installation or network transport occurred.
+
+Evidence root:
+`D:/Project/py/RAG/db_sources/blacklibrary-snapshot-boundary-owned/20261005/atomic-resilience-implementation/`.
+`before.json` binds the actual Git parent and accepted probe/review proofs;
+the parent fetch, diagnostic and merge inputs are byte-identical to the frozen
+405 review inputs. `run-identity.json` and read-only copies of the initial
+GNHF metadata identify `objective-implement-ad7620`, iteration 1. Orchestrator
+notes were not edited.
+
+### Finite replacement and ownership contract
+
+The payload is encoded and written once through the unchanged preparation
+operations. Only replacement is retried, for three total attempts, with named
+50ms then 150ms waits. Retry requires Windows and an actual `PermissionError`
+with exact integer errno 13 and winerror 5. Other exception types, codes,
+platforms and cancellation propagate immediately. No mkdir, encoding,
+temporary-writing, HTTP retry, source-validation or merge behavior is broadened.
+
+The loop is inside the existing replacement observer boundary. Successful
+recovery leaves no false filesystem diagnostic; exhaustion re-raises the actual
+final exception with its original traceback and context. Existing allowlisted
+phase/operation/relative path/class/integer-code diagnostics, partial result,
+checkpoint, CLI exit and observer-failure precedence remain valid. A completed,
+closed temporary write establishes this serial call's ownership before cleanup.
+Terminal replacement failure or cancellation attempts to unlink only that temp,
+without masking the primary exception. Earlier preparation failure does not
+delete a pre-existing temp. The fixed temp policy remains serial; no arbitrary
+multiwriter assumption or concurrency refactor was introduced.
+
+### Actual Win32 acceptance and meaningful parent contrasts
+
+Four disposable controls use real `CreateFileW` readers with read/write sharing
+and without `FILE_SHARE_DELETE`. The actual OS failures are `PermissionError`,
+errno 13/winerror 5. Injected sleep releases the handle after either the first or
+second denial, verifying exact old bytes before success, exact new UTF-8 bytes
+after success, one encoding/write, no false diagnostic, closed handles and a
+consumed temp. Persistent readers remain held through all three attempts, both
+with the real Snapshot observer and with an observer that raises. They verify
+the same final actual exception object, original traceback, unchanged safe
+context, exact preserved destination, terminal diagnostic and cleaned owned temp.
+
+Additional explicit controls cover every preparation boundary, non-Windows,
+nonmatching exception types/codes including booleans, encoding failure,
+replacement/sleep cancellation, cleanup-failure precedence and immediate stopping
+when attempt two raises a nonmatching error or cancellation. Existing actual
+producer/merge/CLI diagnostic nodes retain partial-result and recovery checks;
+only their replacement-attempt assertion changes from one to three. Request
+attempt assertions remain one. Selected complete/partial merge controls are the
+exact independent host-review selection, without weakened expectations.
+
+| Final evidence | Tests | Passed | Failed | Errors | Skips |
+| --- | ---: | ---: | ---: | ---: | ---: |
+| `candidate-accepted.log` / XML | 86 | 86 | 0 | 0 | 0 |
+| `parent-positive-accepted.log` / XML | 2 | 0 | 2 | 0 | 0 |
+| `parent-controls-accepted.log` / XML | 38 | 38 | 0 | 0 | 0 |
+
+The 86 candidate nodes comprise the exact latest 20 diagnostics, the exact 34
+host-selected merge nodes and 32 resilience nodes. Both recovery positives fail
+at the actual OS replacement call against the frozen real parent. The same-node
+parent persistent-denial/cancellation controls and all selected merge controls
+remain valid (38 passes). No parent implementation was emulated or restored into
+the candidate. `verification.json` independently reconciles unique XML nodes,
+four real Win32 observations, unchanged preparation/function ASTs, accepted
+proof hashes and source bindings. Original 125/145 proofs remain preserved and
+were not rerun; no broad suite or 100-repeat fixture run was performed.
+
+All runs use the explicitly designated full-stack Windows CPython 3.11.9
+interpreter, UTF-8, disabled bytecode and pytest plugin auto-loading,
+`-p no:cacheprovider`, and owned TEMP/TMP/basetemp/log/XML paths. Exact commands
+are saved in the corresponding `*-command.json` files. The private source
+copies and CLI child interpreters forbid socket connections; transport is the
+existing explicit offline fixture. Tests never write active assets or real
+production caches.
+
+### Independent reviews, retained attempts and remaining closure
+
+Independent internal generic and Python reviewers both **APPROVE** the exact
+final source/test hashes, with no outstanding findings. Their explicit verdicts
+are `reviews/generic-review.{md,json}` and `reviews/python-review.{md,json}`.
+Python 3.9 grammar parsing, in-memory Python 3.11 compilation, exact diff
+inspection and `git diff --check` pass. Ruff, mypy, pylint, Black and Bandit are
+unavailable as selected-interpreter modules and shell commands; none was installed.
+
+| Reviewed file | SHA-256 (checkout and LF bytes identical) |
+| --- | --- |
+| `scripts/fetch_blacklibrary_snapshot.py` | `df27415478fcfd8d146b58cbd4cdecfaca2290d663cfdbfb3b569eba6b135912` |
+| `tests/test_blacklibrary_snapshot_resilience.py` | `84750eaeea0deab575ea83c42aadbd5912b49fd5bfef56509e2c93a157d14a40` |
+| `tests/test_blacklibrary_snapshot_diagnostics.py` | `d9c08def2d02af1bafb3986913205193d7eef11844a68c90ed2aca74781277f6` |
+
+The initial candidate run retained 79 passes/four fixture failures: immutable
+`object()` sessions cannot accept Snapshot's `trust_env` assignment. Those
+failures and their initial parent counterparts establish no resilience contrast.
+The corrected fixture passed 86 nodes before review. Generic review then found
+that CPython automatically constructs `PermissionError` from `OSError(13, ...)`;
+the errno-1 trial also constructs that subclass and its collection error is
+retained. Final explicit base-type controls start with errno 22, verify exact
+`OSError` type, then assign 13/5. The final 86-pass run and meaningful parent
+contrasts above supersede those fixture attempts. All earlier logs/XML and
+versioned test copies are preserved; no OS defect is inferred from fixture errors.
+
+Duplicate-checked handoff appends to the existing project checkpoint/roadmap,
+learning decision and snapshot error record. Their previous bodies and all
+three shared repository indexes remain exact; no new duplicate note or harness
+promotion is created. `knowledge-handoff/verification.json` records that proof.
+The underlying consumer KeyError remains resolved by the earlier boundary fix.
+The spontaneous production Windows `PermissionError` cause remains **UNKNOWN**:
+these explicit handles establish a compatible signature, without attributing
+production failures to an antivirus, scanner, race or handle. The finite budget
+does not guarantee universal recovery or flake-free behavior. The read-only wiki
+reference still has one replacement attempt; its 100 attempts concern temp creation.
+
+The bounded implementation and verification are ready for GNHF. The entire-loop
+stop condition is still unmet: GNHF must create the intended source/tests/report
+commit, after which a bounded continuation must verify its real SHA, exact
+committed hashes and clean checkout, then append the deduplicated real-SHA hook
+handoff. No implementation commit is invented here. No overall project, current
+rule authority, deployment or publication acceptance is claimed. No background
+process was started or remains running from this iteration.
