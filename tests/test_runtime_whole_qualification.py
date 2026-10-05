@@ -7,7 +7,7 @@ import pytest
 
 from agent import tools
 from agent.context import SessionContext
-from agent.loop import AgentLoop
+from agent.loop import AgentLoop, _evidence_qualifiers
 from db_compile.coverage_notes import CoverageError, describe_coverage
 from db_compile.entity_resolver import EntityResolver
 from db_compile.source_coverage import apply_coverage
@@ -117,6 +117,155 @@ def test_two_canonical_dates_survive_actual_dispatch_history_and_formatter(
     assert formatted.degraded
     rendered = "".join(getattr(inline, "s", "") for inline in formatted.verdict.lede)
     assert all(note in rendered for note in notes)
+
+
+def nested_calculation(db):
+    return tools.calc_points(
+        unit_list=["普通卡尔加", "Kaius"], db_path=db, resolver=EntityResolver(db_path=db))
+
+
+def nested_qualifications(payload):
+    """Independent expectation from the actual public payload, including subjects."""
+    notes = []
+    for unit in payload["units"]:
+        subject = f"{unit['name_en']} / {unit['faction_slug']}"
+        for container, label in ((unit, subject),
+                                 (unit.get("historical_record") or {}, subject + "（历史记录）")):
+            for key in ("source_note", "source_scope", "note", "identity_scope"):
+                if container.get(key):
+                    notes.append(f"{label}：{container[key]}")
+    return notes
+
+
+@pytest.mark.parametrize("ending", ["success", "max_success", "malformed", "late_failure", "history"])
+@pytest.mark.parametrize("layout", ["omitting", "followups_only", "complete"])
+def test_nested_actual_calculation_qualifications_survive_all_boundaries(price_db, ending, layout):
+    before = price_db.read_bytes()
+    payload = nested_calculation(price_db)
+    notes = nested_qualifications(payload)
+    assert len(notes) == 6  # Five distinct values; the shared scope belongs to both subjects.
+    assert [unit["points"] for unit in payload["units"]] == [180, 100]
+    assert payload["units"][0]["historical_record"]["historical_points"] == 200
+    calls = []
+
+    def actual(unit_list):
+        calls.append(unit_list)
+        return tools.calc_points(unit_list=unit_list, db_path=price_db,
+                                 resolver=EntityResolver(db_path=price_db))
+
+    def late_failure(name_or_id):
+        raise RuntimeError("unrelated private failure sentinel")
+
+    recorder = TraceRecorder({"calc_points": actual, "get_datasheet": late_failure})
+    steps = [{"type": "tool_call", "tool": "calc_points",
+              "args": {"unit_list": ["普通卡尔加", "Kaius"]}}]
+    if ending == "late_failure":
+        steps += [{"type": "tool_call", "tool": "get_datasheet",
+                   "args": {"name_or_id": "unrelated private argument sentinel"}}] * 2
+    else:
+        steps.append({"type": "final", "content": [] if ending == "malformed" else
+                      "Calgar 180; old cache 200; Kaius 100."})
+    session = SessionContext(history=[{"role": "user", "content": "Earlier turn"}] * 12)
+    loop = AgentLoop(llm=ScriptedLLM("算", steps), tools=recorder.wrapped_tools(),
+                     max_steps=1 if ending == "max_success" else 6)
+    result = loop.run("Compare Calgar and Kaius", session=session)
+    assert result.degraded == (ending in ("malformed", "late_failure"))
+    assert calls == [["普通卡尔加", "Kaius"]] and result.tool_calls[0] == "calc_points"
+    assert "rag_search" not in result.tool_calls
+    assert len(session.history) == 12 and session.history[-1]["content"] == result.answer
+    assert all(note in result.answer for note in notes)
+    assert "unrelated private" not in result.answer
+    assert recorder.get_results("calc_points") == [payload]
+    for limit in (1, 2000):
+        assert all(note in _evidence_digest(recorder, limit=limit) for note in notes)
+    if ending == "history":
+        llm = ScriptedLLM("闲聊", [{"type": "final", "content": "Previous answer retained."}])
+        AgentLoop(llm=llm, tools={}).run("What did you just say", session=session)
+        assert result.answer in [message["content"] for message in llm.next_step_calls[0]]
+        assert len(session.history) == 12
+
+    class Formatter:
+        def structure(self, question, prose, evidence, cites):
+            assert all(note in evidence for note in notes)
+            structured = {"verdict": {"label": "PRICE", "labelEn": "PRICE",
+                                      "lede": prose if layout == "complete" else
+                                      "Calgar 180; old cache 200; Kaius 100."}}
+            if layout == "followups_only":
+                structured["followups"] = notes
+            return structured
+
+    formatted = format_answer("Compare Calgar and Kaius", result, recorder, structurer=Formatter())
+    assert formatted.degraded == (result.degraded or layout != "complete")
+    rendered = "".join(getattr(inline, "s", "") for inline in formatted.verdict.lede)
+    assert all(note in rendered for note in notes)
+    assert rendered == result.answer
+    assert formatted.entity_card is None
+    assert any(c.url == "https://example.invalid/space-marines" for c in formatted.cites)
+    assert any("历史" in c.book and "黑图书馆" in c.book for c in formatted.cites)
+    assert price_db.read_bytes() == before
+
+
+@pytest.mark.parametrize("units", [None, 42, "bad units", {"source_scope": "debug sentinel"},
+                                  [None, 42, "bad row", {"historical_record": "bad archive"}]])
+def test_malformed_nested_qualification_containers_are_safe(units):
+    payload = {"found": True, "units": units, "debug": {"source_scope": "debug sentinel"}}
+    recorder = TraceRecorder({})
+    recorder.last_result["calc_points"] = payload
+    assert _evidence_qualifiers(payload) == []
+    assert _evidence_digest(recorder, limit=1) == "["
+    formatted = format_answer("Malformed fixture", AgentLoop._emergency_answer(
+        "算", ["calc_points"], [], [], "Synthetic failure"), recorder)
+    assert formatted.degraded
+
+
+def test_only_supported_nested_paths_become_mandatory(price_db):
+    payload = nested_calculation(price_db)
+    payload["debug"] = {"source_scope": "debug sentinel"}
+    payload["units"][0]["raw_body"] = {"source_note": "raw sentinel"}
+    payload["units"][1]["error"] = {"note": "error sentinel"}
+    payload["units"][1]["args"] = {"identity_scope": "argument sentinel"}
+    payload["units"][0]["historical_record"]["trace"] = {"note": "trace sentinel"}
+    notes = _evidence_qualifiers(payload)
+    assert notes == nested_qualifications(payload)
+    assert not any("sentinel" in note for note in notes)
+    recorder = TraceRecorder({})
+    recorder.last_result["calc_points"] = payload
+    assert "sentinel" not in _evidence_digest(recorder, limit=1)
+
+    class CompleteFormatter:
+        def structure(self, question, prose, evidence, cites):
+            return {"verdict": {"label": "PRICE", "labelEn": "PRICE", "lede": prose}}
+
+    recorder = TraceRecorder({"calc_points": lambda unit_list: copy.deepcopy(payload)})
+    llm = ScriptedLLM("算", [{"type": "tool_call", "tool": "calc_points", "args": {"unit_list": []}},
+                             {"type": "final", "content": "Synthetic price control."}])
+    result = AgentLoop(llm=llm, tools=recorder.wrapped_tools()).run("Synthetic debug control")
+    assert not result.degraded and "sentinel" not in result.answer
+    assert not format_answer("Synthetic debug control", result, recorder,
+                             structurer=CompleteFormatter()).degraded
+
+
+def test_malformed_rows_cannot_discard_valid_nested_evidence(price_db):
+    payload = nested_calculation(price_db)
+    notes = nested_qualifications(payload)
+    payload["units"] += [None, 42, "bad row", {"historical_record": "bad archive"}]
+    recorder = TraceRecorder({"calc_points": lambda unit_list: copy.deepcopy(payload)})
+    llm = ScriptedLLM("算", [{"type": "tool_call", "tool": "calc_points", "args": {"unit_list": []}},
+                             {"type": "final", "content": []}])
+    result = AgentLoop(llm=llm, tools=recorder.wrapped_tools()).run("Malformed row control")
+    assert result.degraded and all(note in result.answer for note in notes)
+    assert all(note in _evidence_digest(recorder, limit=1) for note in notes)
+
+
+def test_emergency_fact_bound_cannot_cut_last_subject_qualification(price_db):
+    payload = nested_calculation(price_db)
+    payload["units"] = [dict(payload["units"][1], name_en=f"Subject {i}") for i in range(14)]
+    recorder = TraceRecorder({"calc_points": lambda unit_list: copy.deepcopy(payload)})
+    llm = ScriptedLLM("算", [{"type": "tool_call", "tool": "calc_points", "args": {"unit_list": []}},
+                             {"type": "final", "content": []}])
+    result = AgentLoop(llm=llm, tools=recorder.wrapped_tools()).run("Synthetic bulk control")
+    assert result.degraded
+    assert all(note in result.answer for note in nested_qualifications(payload))
 
 
 @pytest.mark.parametrize("subject", ["archive_entity", "archive_datasheet", "retained_armour"])

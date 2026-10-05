@@ -11,7 +11,7 @@ LLMClient 是本模块与具体 LLM 供应商之间的边界：真实实现（de
 from __future__ import annotations
 
 from collections.abc import Collection, Mapping
-from dataclasses import dataclass, field
+from dataclasses import dataclass, field, replace
 from types import MappingProxyType
 from typing import Any, Callable, Dict, List, Optional, Protocol
 
@@ -88,7 +88,7 @@ _EMPTY_CHECKS: Dict[str, Callable[[Dict[str, Any]], bool]] = {
     "calc_points": lambda r: (not r.get("param_error")
                               and (not r.get("found")
                                    or bool(r.get("units"))
-                                   and all(u.get("unresolved") for u in r["units"]))),
+                                   and all(u.get("unresolved") for u in _evidence_unit_rows(r)))),
 }
 
 
@@ -152,6 +152,12 @@ def _is_empty_result(tool_name: str, result: Any) -> bool:
     return bool(check and check(result))
 
 
+def _evidence_unit_rows(result: Dict[str, Any]) -> List[Dict[str, Any]]:
+    """Only the public units list is a collection of calculation subjects."""
+    units = result.get("units")
+    return [unit for unit in units if isinstance(unit, dict)] if isinstance(units, list) else []
+
+
 def _has_usable_evidence(tool_name: str, result: Any) -> bool:
     """Whether a tool returned facts that can support at least part of an answer.
 
@@ -173,7 +179,7 @@ def _has_usable_evidence(tool_name: str, result: Any) -> bool:
             and (unit.get("points") is not None
                  or unit.get("historical_points") is not None
                  or bool(unit.get("official_prices")))
-            for unit in (result.get("units") or [])
+            for unit in _evidence_unit_rows(result)
         )
     if tool_name == "get_datasheet":
         return bool(result.get("found")
@@ -254,7 +260,7 @@ def _evidence_facts(tool_name: str, result: Any) -> List[str]:
         return rendered
 
     if tool_name == "calc_points":
-        for unit in result.get("units") or []:
+        for unit in _evidence_unit_rows(result):
             if not isinstance(unit, dict) or unit.get("unresolved"):
                 continue
             start = len(facts)
@@ -360,20 +366,43 @@ def _evidence_facts(tool_name: str, result: Any) -> List[str]:
 
 
 def _evidence_qualifiers(result: Any) -> List[str]:
-    """Atomic source qualifications shared by synthesis and response formatting."""
+    """Whole, subject-associated qualifications on supported public evidence paths.
+
+    This deliberately does not recurse: debug, raw bodies, errors, traces and
+    arguments are not qualification containers. Identical text for two subjects
+    remains two qualifications, and archives retain their separate identity.
+    """
     if not isinstance(result, dict) or result.get("found") is False:
         return []
+
+    def subject(container: Dict[str, Any], fallback: str = "") -> str:
+        name = container.get("name_en") or container.get("name_zh") or container.get("unit_id")
+        faction = (container.get("faction_slug") or container.get("faction")
+                   or container.get("faction_zh"))
+        return " / ".join(str(value) for value in (name, faction) if value) or fallback
+
     ds = result.get("datasheet")
-    containers = [result] + ([ds] if isinstance(ds, dict) else [])
-    historical = result.get("historical_record")
-    if isinstance(historical, dict):
-        containers.append(historical)
+    # Preserve the established root/datasheet representation. Calculation rows
+    # need their own labels because one result contains multiple subjects.
+    containers = [("", result)]
+    if isinstance(ds, dict):
+        containers.append(("", ds))
+    for _label, container in list(containers):
+        historical = container.get("historical_record")
+        if isinstance(historical, dict):
+            containers.append(("", historical))
+    for index, unit in enumerate(_evidence_unit_rows(result), 1):
+        label = subject(unit, f"单位 {index}")
+        containers.append((label, unit))
+        historical = unit.get("historical_record")
+        if isinstance(historical, dict):
+            containers.append((label + "（历史记录）", historical))
     notes = []
-    for container in containers:
+    for label, container in containers:
         for key in ("source_note", "source_scope", "note", "identity_scope"):
             value = container.get(key)
             if value:
-                note = str(value)
+                note = (label + "：" if label else "") + str(value)
                 if note not in notes:
                     notes.append(note)
     return notes
@@ -395,8 +424,7 @@ def _evidence_sources(result: Dict[str, Any]) -> List[Dict[str, Any]]:
     fm = page.get("fm") if isinstance(page, dict) else getattr(page, "fm", None)
     add(fm.get("sources") if isinstance(fm, dict) else getattr(fm, "sources", None))
     records = [result.get("historical_record")]
-    records.extend(unit.get("historical_record") for unit in result.get("units") or []
-                   if isinstance(unit, dict))
+    records.extend(unit.get("historical_record") for unit in _evidence_unit_rows(result))
     for record in records:
         if isinstance(record, dict) and record.get("source_url"):
             source = {"url": record["source_url"]}
@@ -496,10 +524,14 @@ class AgentLoop:
         evidence_sources: List[Dict[str, Any]] = []
         evidence_qualifiers: List[str] = []
 
-        def complete(answer: str, step: Dict[str, Any]) -> AgentResult:
+        def qualify_answer(answer: str) -> str:
             missing = [note for note in evidence_qualifiers if note not in answer]
             if missing:
                 answer += "\n\n" + "\n\n".join(missing)
+            return answer
+
+        def complete(answer: str, step: Dict[str, Any]) -> AgentResult:
+            answer = qualify_answer(answer)
             sources = list(evidence_sources)
             for source in step.get("sources", []):
                 if source not in sources:
@@ -510,7 +542,9 @@ class AgentLoop:
         def recover(reason: str, calls: Optional[List[str]] = None) -> AgentResult:
             trace = tool_calls if calls is None else calls
             if has_usable_evidence:
-                return self._emergency_answer(intent, trace, evidence_facts, evidence_sources, reason)
+                result = self._emergency_answer(intent, trace, evidence_facts, evidence_sources, reason)
+                # Facts have a readability bound; mandatory qualifications do not.
+                return replace(result, answer=qualify_answer(result.answer))
             return self._fallback(user_input, intent, trace, reason)
 
         for _ in range(self.max_steps):

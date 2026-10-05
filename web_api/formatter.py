@@ -11,7 +11,7 @@ import json
 import re
 from typing import Any, Callable, Dict, List, Optional, Protocol
 
-from agent.loop import AgentLoop, AgentResult, _evidence_qualifiers
+from agent.loop import AgentLoop, AgentResult, _evidence_qualifiers, _evidence_unit_rows
 from web_api.contract import (
     Answer, CalcStep, Cite, Cta, Sensitivity, TraceStep, Verdict,
 )
@@ -38,7 +38,7 @@ def _historical_records(recorder: TraceRecorder) -> List[Dict[str, Any]]:
         for result in recorder.get_results(tool):
             if not isinstance(result, dict):
                 continue
-            for item in [result] + (result.get("units") or []):
+            for item in [result] + _evidence_unit_rows(result):
                 record = item.get("historical_record") if isinstance(item, dict) else None
                 if isinstance(record, dict) and record.get("archive_id"):
                     records[record["archive_id"]] = record
@@ -450,10 +450,15 @@ def _evidence_digest(recorder: TraceRecorder, limit: int = 2000) -> str:
                 continue
             ds = result.get("datasheet")
             containers = [result] + ([ds] if isinstance(ds, dict) else [])
-            mandatory = result.get("historical_record") or any(
-                container.get("points_only") or container.get("historical_points")
+            # Retain the established optional legacy-root digest. Each qualified
+            # calculation subject (including its archive) is now mandatory,
+            # using the same extraction as synthesis and the visible-body gate.
+            mandatory = any(
+                container.get("historical_record") or container.get("points_only")
+                or container.get("historical_points")
                 or "Source coverage:" in str(container.get("source_note") or "")
-                for container in containers)
+                for container in containers) or any(
+                    _evidence_qualifiers(unit) for unit in _evidence_unit_rows(result))
             if mandatory:
                 identity = ds if isinstance(ds, dict) else result
                 fm = getattr(result.get("page"), "fm", None)
