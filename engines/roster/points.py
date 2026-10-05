@@ -111,10 +111,67 @@ def _chapter_slug(conn, roster):
         return None
     if not conn.execute("SELECT 1 FROM sqlite_master WHERE name='official_mfm_detachments'").fetchone():
         return None
-    names = conn.execute("SELECT DISTINCT detachment_name FROM enhancements WHERE detachment_id=?", (roster.detachment_id,)).fetchall()
+    names = conn.execute("SELECT DISTINCT detachment_name FROM enhancements WHERE detachment_id=? AND faction_id='SM'", (roster.detachment_id,)).fetchall()
     slugs = {s for (name,) in names for (s,) in conn.execute(
         "SELECT faction_slug FROM official_mfm_detachments WHERE lower(name)=lower(?)", (name,))}
     return next(iter(slugs)) if len(slugs) == 1 else None
+
+
+def _roster_price_slug(conn, roster, identities, has_keywords):
+    """Exact canonical ties may establish a chapter; conflicting ties cannot.
+
+    Shared detachment names alone remain ambiguous. A generic canonical entry
+    in a proven chapter roster uses that chapter's exact complete source head.
+    This selects prices only, without certifying equipment or army legality.
+    """
+    from db_compile.mfm_context import CHAPTER_SLUGS, canonical_price_identity
+
+    routes = set()
+    chapters = set()
+    for _name, faction, _points, keywords in identities.values():
+        if faction != "SM":
+            continue
+        identity = canonical_price_identity(faction, keywords) if has_keywords else ("space-marines", None)
+        if identity is None:
+            return None
+        route, chapter = identity
+        if chapter:
+            chapters.add(chapter)
+        if route != "space-marines":
+            routes.add(route)
+    if roster.detachment_id:
+        owners = {r[0] for r in conn.execute(
+            "SELECT DISTINCT faction_id FROM enhancements WHERE detachment_id=?",
+            (roster.detachment_id,))}
+        if "SM" not in owners:
+            return None
+    detachment = _chapter_slug(conn, roster)
+    if detachment and detachment != "space-marines":
+        if detachment not in CHAPTER_SLUGS.values():
+            return None
+        routes.add(detachment)
+        chapters.add(detachment.replace("-", " "))
+    if len(chapters) > 1:
+        return None
+    return next(iter(routes)) if len(routes) == 1 else ("space-marines" if not routes else None)
+
+
+def _chapter_price_rows(conn, slug, name, receipts):
+    """Read one exact retained source head in ordinal order, with its receipt."""
+    from db_compile.mfm import _chapter_receipt
+
+    if not conn.execute("SELECT 1 FROM sqlite_master WHERE name='official_mfm_points'").fetchone():
+        return None
+    candidates = conn.execute(
+        "SELECT tier,models,cost,section FROM official_mfm_points "
+        "WHERE faction_slug=? AND kind='unit' AND lower(unit_name)=lower(?) ORDER BY ordinal",
+        (slug, name)).fetchall()
+    primary = [r for r in candidates if r[3] in ("UNITS", "FORTIFICATIONS")]
+    selected = primary or candidates
+    rows = list(dict.fromkeys((r[0], r[1], r[2]) for r in selected))
+    if not rows or _chapter_receipt(conn, slug, name, rows, None, receipts) is None:
+        return None
+    return [{"tier": tier, "models": models, "cost": cost} for tier, models, cost in rows]
 
 
 def _load_points_json(conn, canonical_id: str) -> Optional[str]:
@@ -129,11 +186,25 @@ def recompute(db_path, roster: Roster) -> Roster:
     try:
         new_units: List[RosterUnit] = []
         counts = Counter()
-        chapter = _chapter_slug(conn, roster)
+        columns = {r[1] for r in conn.execute("PRAGMA table_info(units)")}
+        has_keywords = "keywords_json" in columns
+        ids = sorted({u.canonical_id for u in roster.units})
+        identities = {}
+        if ids:
+            keyword_column = "keywords_json" if has_keywords else "NULL"
+            identities = {r[0]: r[1:] for r in conn.execute(
+                "SELECT id,name_en,faction_id,points_json," + keyword_column
+                + " FROM units WHERE id IN (" + ",".join("?" for _ in ids) + ")", ids)}
+        chapter = _roster_price_slug(conn, roster, identities, has_keywords) if roster.faction_id == "SM" else None
+        chapter_rows = {}
+        receipts = {}
         for u in roster.units:
-            pj = _load_points_json(conn, u.canonical_id)
-            name_row = conn.execute("SELECT name_en,faction_id FROM units WHERE id=?", (u.canonical_id,)).fetchone()
-            identity = (name_row[0].casefold(), name_row[1]) if name_row else u.canonical_id
+            name_row = identities.get(u.canonical_id)
+            if not name_row or not isinstance(name_row[0], str):
+                new_units.append(replace(u, points=None))
+                continue
+            pj = name_row[2]
+            identity = (name_row[0].casefold(), name_row[1])
             counts[identity] += 1
             try:
                 data = json.loads(pj or "{}")
@@ -142,12 +213,17 @@ def recompute(db_path, roster: Roster) -> Roster:
                 new_units.append(replace(u, points=None))
                 continue
             rows = source.get("tiers") or []
-            if chapter and name_row:
-                from db_compile.mfm import _norm_unit
-                candidates = [r for r in conn.execute("SELECT unit_name,tier,models,cost,section FROM official_mfm_points WHERE faction_slug=? AND kind='unit'", (chapter,))
-                              if _norm_unit(r[0]) == _norm_unit(name_row[0])]
-                primary = [r for r in candidates if r[4] in ("UNITS", "FORTIFICATIONS")]
-                rows = [{"tier": r[1], "models": r[2], "cost": r[3]} for r in (primary or candidates)] or rows
+            if name_row[1] == "SM":
+                if roster.faction_id != "SM" or chapter is None:
+                    new_units.append(replace(u, points=None))
+                    continue
+                if chapter != "space-marines":
+                    if identity not in chapter_rows:
+                        chapter_rows[identity] = _chapter_price_rows(conn, chapter, name_row[0], receipts)
+                    rows = chapter_rows[identity]
+                    if rows is None:
+                        new_units.append(replace(u, points=None))
+                        continue
             weapon_names = ()
             if u.loadout and any(r["models"].casefold().startswith("per ") for r in rows):
                 if conn.execute("SELECT 1 FROM sqlite_master WHERE name='weapons'").fetchone():

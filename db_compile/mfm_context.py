@@ -2,7 +2,7 @@
 from __future__ import annotations
 
 import json
-from typing import Optional
+from typing import Optional, Tuple
 
 CHAPTER_SLUGS = {
     "black templars": "black-templars", "blood angels": "blood-angels",
@@ -15,8 +15,10 @@ _GENERIC_CHAPTERS = {
 }
 
 
-def canonical_price_slug(faction_id: str, keywords_json: Optional[str]) -> Optional[str]:
-    """Return a recognized SM route, or None for uncertain/mixed identity.
+def canonical_price_identity(
+    faction_id: str, keywords_json: Optional[str],
+) -> Optional[Tuple[str, Optional[str]]]:
+    """Return (source route, named chapter), or None for uncertain identity.
 
     Missing metadata is unresolved. An explicit array must identify
     Adeptus Astartes and at most one chapter.
@@ -39,9 +41,16 @@ def canonical_price_slug(faction_id: str, keywords_json: Optional[str]) -> Optio
         return None
     chapters = [value for value in identities if value != "adeptus astartes"]
     if not chapters:
-        return "space-marines"
+        return "space-marines", None
     if len(chapters) != 1:
         return None
     chapter = chapters[0]
-    return CHAPTER_SLUGS.get(chapter) or (
+    route = CHAPTER_SLUGS.get(chapter) or (
         "space-marines" if chapter in _GENERIC_CHAPTERS else None)
+    return (route, chapter) if route else None
+
+
+def canonical_price_slug(faction_id: str, keywords_json: Optional[str]) -> Optional[str]:
+    """Named generic-source chapters remain distinct identities in rosters."""
+    identity = canonical_price_identity(faction_id, keywords_json)
+    return identity[0] if identity else None

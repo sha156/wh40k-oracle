@@ -31,7 +31,8 @@ def faction_db(tmp_path):
             conn.execute("INSERT INTO units VALUES(?,?,?,?,?)", (
                 uid, faction, name,
                 json.dumps({"items": [{"desc": "1 model", "cost": 100}]}),
-                json.dumps({"keywords": keywords}),
+                json.dumps({"keywords": keywords, "faction_keywords":
+                            ["Adeptus Astartes"] if faction == "SM" else []}),
             ))
     return db
 
