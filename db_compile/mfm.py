@@ -341,8 +341,8 @@ def fetch_all(out_path: Path, sleep_s: float = 1.0,
 
 # MFM 阵营页 slug → 库内 factions.id。
 # 战锤各战团（BT/BA/DA/DW/SW）在 MFM 有独立页面独立定价，但库内折叠在 SM 下：
-# 同名单位以通用 space-marines 页优先，战团页只补通用页没有的单位（如 Sword Brethren）。
-# 战团差异价完整保留在 mfm json，等 schema 支持战团维度后再用。
+# Generic rows keep generic-page priority; exact canonical chapter identities
+# are routed separately by _canonical_rows, shared by apply and check.
 MFM_SLUG_TO_FACTION: Dict[str, str] = {
     "adepta-sororitas": "AS", "adeptus-custodes": "AC", "adeptus-mechanicus": "AdM",
     "aeldari": "AE", "astra-militarum": "AM", "chaos-daemons": "CD",
@@ -460,71 +460,154 @@ def _resolve_db_hits(db_map: Dict[Tuple[str, str], List],
     return None
 
 
-def check_points(db_path, factions: FactionRows, *, connection=None) -> Dict:
+def _chapter_receipt(conn, slug, name, rows, source_snapshot, receipt_pages):
+    """Bind ordered operational tiers to their exact primary source head."""
+    if slug not in receipt_pages:
+        by_name = {}
+        if source_snapshot is not None:
+            page = source_snapshot["pages"].get(slug)
+            if page is None:
+                return None
+            for row in page["rows"]:
+                if row["kind"] == "unit":
+                    by_name.setdefault(row["unit"].casefold(), []).append(dict(
+                        row, url=page["url"], sha256=page["sha256"],
+                        captured=source_snapshot["fetched_at"]))
+        else:
+            if not conn.execute("SELECT 1 FROM sqlite_master WHERE name='official_mfm_points'").fetchone():
+                return None
+            for row in conn.execute(
+                    "SELECT unit_name,tier,models,cost,section,source_url,source_sha256,fetched_at "
+                    "FROM official_mfm_points WHERE faction_slug=? AND kind='unit' ORDER BY ordinal", (slug,)):
+                by_name.setdefault(row[0].casefold(), []).append(dict(zip(
+                    ("tier", "models", "cost", "section", "url", "sha256", "captured"), row[1:])))
+        receipt_pages[slug] = by_name
+    candidates = receipt_pages[slug].get(name.casefold(), [])
+    primary = [r for r in candidates if r["section"] in _PRIMARY_SECTIONS]
+    selected = primary or candidates
+    receipts = {(r["url"], r["sha256"], r["captured"]) for r in selected}
+    if list(dict.fromkeys((r["tier"], r["models"], r["cost"]) for r in selected)) != rows:
+        return None
+    sections = {r["section"] for r in selected}
+    if len(receipts) != 1 or len(sections) != 1:
+        return None
+    url, sha256, captured = next(iter(receipts))
+    return {"source_slug": slug, "source_url": url, "source_sha256": sha256,
+            "fetched_at": captured, "source_section": next(iter(sections))}
+
+
+def _canonical_rows(conn, factions, source_snapshot=None):
+    """Select once per canonical row, retaining the legacy non-SM name matching."""
+    from db_compile.mfm_context import canonical_price_slug
+
+    db_units = _load_db_units(conn)
+    norm_index = _norm_index(db_units)
+    columns = {r[1] for r in conn.execute("PRAGMA table_info(units)")}
+    keywords = dict(conn.execute("SELECT id,keywords_json FROM units")) if "keywords_json" in columns else {}
+    pages = {}
+    for slug, source_rows in factions.items():
+        page = pages.setdefault(slug, {})
+        for name, tier, models, cost in source_rows:
+            page.setdefault(name.strip().lower(), []).append((tier, models, cost))
+        for name, rows in page.items():
+            _base_prices(rows, f"{slug}/{name}")
+    selected, unmatched, source_only = [], [], []
+    receipt_pages = {}
+    for (fid, unit_l), default_rows in _rows_by_faction(factions).items():
+        hits = _resolve_db_hits(db_units, norm_index, fid, unit_l)
+        if not hits:
+            source_only.append(unit_l.upper())
+            continue
+        for uid, name, raw in hits:
+            rows, receipt = default_rows, None
+            if fid == "SM":
+                route = canonical_price_slug(fid, keywords.get(uid)) if "keywords_json" in columns else _SM_GENERIC_SLUG
+                # Legacy schemas lacking the column retain their old route;
+                # NULL in an existing column is an unresolved actual identity.
+                if "keywords_json" in columns:
+                    rows = pages.get(route, {}).get(name.strip().lower())
+                if route is None or not rows:
+                    unmatched.append({"id": uid, "unit": name, "reason": "Unresolved exact chapter/source identity"})
+                    continue
+                if route != _SM_GENERIC_SLUG:
+                    receipt = _chapter_receipt(conn, route, name, rows, source_snapshot, receipt_pages)
+                    if receipt is None:
+                        unmatched.append({"id": uid, "unit": name, "reason": "Chapter tiers lack an exact source receipt"})
+                        continue
+            selected.append((fid, unit_l, uid, name, raw, rows, receipt))
+    return selected, unmatched, source_only
+
+
+def check_points(db_path, factions: FactionRows, *, connection=None,
+                 source_snapshot=None) -> Dict:
     """MFM 分数 vs units.points_json 按（阵营+单位+模型数）比对。
 
-    只比**基准梯度**（is_base_tier）——库内是单值，与重复单位加价档不可比。
-    返回 {compared, agree, diffs[{unit,models,db,mfm}], mfm_only[], tiered_units}。
+    Numeric counts compare base tiers. Exact chapter rows additionally reconcile
+    their complete ordered tiers and source receipt in db_context_diffs; missing
+    or mixed identities remain explicit in context_unmatched.
     """
-    by_faction = _rows_by_faction(factions)
     conn = connection if connection is not None else sqlite3.connect(str(db_path))
     try:
-        db_units = _load_db_units(conn)
+        selected, unmatched, source_only = _canonical_rows(conn, factions, source_snapshot)
     finally:
         if connection is None:
             conn.close()
-    norm_index = _norm_index(db_units)
 
     compared = agree = 0
     diffs: List[Dict] = []
-    mfm_only: List[str] = []
+    mfm_only: List[str] = source_only
     unparsed: List[str] = []
     missing_tiers: List[Dict] = []
     extra_tiers: List[Dict] = []
+    context_diffs: List[Dict] = []
     tiered_units = set()
-    for (fid, unit_l), rows in by_faction.items():
+    for fid, unit_l, _uid, name, pj_raw, rows, receipt in selected:
         for tier, _m, _p in rows:
             if not is_base_tier(tier):
                 tiered_units.add(unit_l.upper())
                 break
-        hits = _resolve_db_hits(db_units, norm_index, fid, unit_l)
-        if hits is None:
-            mfm_only.append(unit_l.upper())
+        # Each duplicate canonical row has its own chapter/source selection.
+        try:
+            data = json.loads(pj_raw) or {}
+            items = data.get("items") or []
+        except (json.JSONDecodeError, TypeError):
+            # MFM 有价、库行存在但 points_json NULL/损坏——单列 db_unparsed 桶。
+            # 裸 continue 曾让这类行从对账口径里无声蒸发（不进 compared/diffs/
+            # mfm_only），fp_errata 新插单位重建后归 NULL 就靠它藏了三道防线。
+            unparsed.append(name)
             continue
-        # 遍历同 (阵营, 名字) 的全部重复行逐一比对——任何一行残留旧值都要报
-        for _uid, name, pj_raw in hits:
-            try:
-                items = (json.loads(pj_raw) or {}).get("items") or []
-            except (json.JSONDecodeError, TypeError):
-                # MFM 有价、库行存在但 points_json NULL/损坏——单列 db_unparsed 桶。
-                # 裸 continue 曾让这类行从对账口径里无声蒸发（不进 compared/diffs/
-                # mfm_only），fp_errata 新插单位重建后归 NULL 就靠它藏了三道防线。
-                unparsed.append(name)
+        if receipt:
+            expected = [{"tier": t, "models": m, "cost": p} for t, m, p in rows]
+            provenance = data.get("mfm") or {}
+            if (provenance.get("tiers") != expected or any(
+                    provenance.get(k) != v for k, v in receipt.items())):
+                context_diffs.append({"id": _uid, "unit": name,
+                                      "source_slug": receipt["source_slug"]})
+        costs = {(it.get("desc") or "").strip().lower(): it.get("cost")
+                 for it in items if isinstance(it.get("cost"), int)}
+        base = _base_prices(rows, f"{fid}/{unit_l}")
+        for desc in sorted(set(costs) - set(base)):
+            extra_tiers.append({"id": _uid, "unit": name, "models": desc,
+                                "db": costs[desc]})
+        for tier, models, pts in rows:
+            if not is_base_tier(tier):
                 continue
-            costs = {(it.get("desc") or "").strip().lower(): it.get("cost")
-                     for it in items if isinstance(it.get("cost"), int)}
-            base = _base_prices(rows, f"{fid}/{unit_l}")
-            for desc in sorted(set(costs) - set(base)):
-                extra_tiers.append({"id": _uid, "unit": name, "models": desc,
-                                    "db": costs[desc]})
-            for tier, models, pts in rows:
-                if not is_base_tier(tier):
-                    continue
-                db_cost = costs.get(models.strip().lower())
-                if db_cost is None:
-                    missing_tiers.append({"id": _uid, "unit": name,
-                                          "models": models, "mfm": pts})
-                    continue
-                compared += 1
-                if db_cost == pts:
-                    agree += 1
-                else:
-                    diffs.append({"unit": name, "models": models,
-                                  "db": db_cost, "mfm": pts})
+            db_cost = costs.get(models.strip().lower())
+            if db_cost is None:
+                missing_tiers.append({"id": _uid, "unit": name,
+                                      "models": models, "mfm": pts})
+                continue
+            compared += 1
+            if db_cost == pts:
+                agree += 1
+            else:
+                diffs.append({"unit": name, "models": models,
+                              "db": db_cost, "mfm": pts})
     return {"compared": compared, "agree": agree, "diffs": diffs,
             "mfm_only": sorted(set(mfm_only)), "tiered_units": sorted(tiered_units),
             "db_unparsed": sorted(set(unparsed)),
-            "db_missing_tiers": missing_tiers, "db_extra_tiers": extra_tiers}
+            "db_missing_tiers": missing_tiers, "db_extra_tiers": extra_tiers,
+            "db_context_diffs": context_diffs, "context_unmatched": unmatched}
 
 
 def _base_prices(rows, label: str) -> Dict[str, int]:
@@ -541,7 +624,8 @@ def _base_prices(rows, label: str) -> Dict[str, int]:
 
 
 def apply_points(db_path, factions: FactionRows,
-                 fetched_at: Optional[str] = None, *, connection=None) -> Dict:
+                 fetched_at: Optional[str] = None, *, connection=None,
+                 source_snapshot=None) -> Dict:
     """把官方 MFM 分数应用进 units.points_json（官方为最高真源），按阵营匹配。
 
     - 基准梯度：更新 items[].cost（按模型数描述匹配），库里没有的档位补进 items
@@ -550,7 +634,8 @@ def apply_points(db_path, factions: FactionRows,
     - 只动 MFM 里有的单位；注意 `db_compile build` 重建会覆盖，重建后需重跑本命令
     """
     by_faction = _rows_by_faction(factions)
-    # Validate the whole batch before opening the writable connection.
+    # Validate collapsed base conflicts here and all page-specific bases during
+    # canonical selection, before the first write.
     bases = {key: _base_prices(rows, "/".join(key))
              for key, rows in by_faction.items()}
     for alias, canonical in _TITAN_DATASHEET_ALIASES.items():
@@ -564,56 +649,52 @@ def apply_points(db_path, factions: FactionRows,
         # 必须与 check 同用 Python .lower()；list 值保留同阵营同名重复行
         # （Wahapedia 跨战团重复收录，如 SM Impulsor×2）——全部更新，漏一行
         # 就会在 check 里读到旧值。
-        units_map: Dict[Tuple[str, str], List[Tuple[str, Optional[str]]]] = {}
-        for uid, ufid, name, pj_raw in conn.execute(
-                "SELECT id, faction_id, name_en, points_json FROM units "
-                "WHERE name_en IS NOT NULL"):
-            units_map.setdefault(
-                (ufid or "", name.strip().lower()), []).append((uid, pj_raw))
-        norm_index = _norm_index(units_map)
-        for (fid, unit_l), rows in by_faction.items():
-            hits = _resolve_db_hits(units_map, norm_index, fid, unit_l)
-            if not hits:
-                continue
-            matched += 1
-            base = bases[(fid, unit_l)]
+        selected, unmatched, _ = _canonical_rows(conn, factions, source_snapshot)
+        matched_keys, updated_keys = set(), set()
+        for fid, unit_l, uid, name, pj_raw, rows, receipt in selected:
+            matched_keys.add((fid, unit_l))
+            base = _base_prices(rows, f"{fid}/{name}")
             if not base:
                 continue
-            any_changed = False
-            for uid, pj_raw in hits:
-                try:
-                    pj = json.loads(pj_raw) if pj_raw else {}
-                except (json.JSONDecodeError, TypeError):
-                    pj = {}
-                old_items = pj.get("items") or []
-                old_by_desc = {(it.get("desc") or "").strip().lower(): it
-                               for it in old_items if isinstance(it, dict)}
-                # Exact replacement removes retired model sizes; retaining them would
-                # leave stale cheaper prices available to calc_points and roster code.
-                items = [dict(old_by_desc.get(d, {"line": None, "desc": d}), cost=pts)
-                         for d, pts in base.items()]
-                changed = old_items != items
-                from db_compile.point_tiers import minimum_unit_cost
-                new_points = minimum_unit_cost(items)
-                if new_points != pj.get("points"):
-                    changed = True
-                pj["items"] = items
-                pj["points"] = new_points
-                pj["mfm"] = {
-                    "fetched_at": fetched_at,
-                    "current": True,
-                    "source_url": MFM_BASE,
-                    "tiers": [{"tier": t, "models": m, "cost": p}
-                              for t, m, p in rows],
-                }
-                conn.execute("UPDATE units SET points_json = ? WHERE id = ?",
-                             (json.dumps(pj, ensure_ascii=False), uid))
-                any_changed = any_changed or changed
-            if any_changed:
-                updated += 1
+            try:
+                pj = json.loads(pj_raw) if pj_raw else {}
+            except (json.JSONDecodeError, TypeError):
+                pj = {}
+            old_items = pj.get("items") or []
+            old_by_desc = {(it.get("desc") or "").strip().lower(): it
+                           for it in old_items if isinstance(it, dict)}
+            # Exact replacement removes retired model sizes; retaining them would
+            # leave stale cheaper prices available to calc_points and roster code.
+            items = [dict(old_by_desc.get(d, {"line": None, "desc": d}), cost=pts)
+                     for d, pts in base.items()]
+            from db_compile.point_tiers import minimum_unit_cost
+            new_points = minimum_unit_cost(items)
+            tiers = [{"tier": t, "models": m, "cost": p} for t, m, p in rows]
+            old_source = pj.get("mfm") or {}
+            material_changed = old_items != items or new_points != pj.get("points")
+            if receipt:
+                material_changed = material_changed or old_source.get("tiers") != tiers or any(
+                    old_source.get(k) != v for k, v in receipt.items())
+            pj["items"] = items
+            pj["points"] = new_points
+            pj["mfm"] = {
+                "fetched_at": fetched_at,
+                "current": True,
+                "source_url": MFM_BASE,
+                "tiers": tiers,
+            }
+            if receipt:
+                pj["mfm"].update(receipt)
+            encoded = json.dumps(pj, ensure_ascii=False)
+            if encoded != pj_raw:
+                conn.execute("UPDATE units SET points_json = ? WHERE id = ?", (encoded, uid))
+            if material_changed:
+                updated_keys.add((fid, unit_l))
+        matched, updated = len(matched_keys), len(updated_keys)
         if connection is None:
             conn.commit()
     finally:
         if connection is None:
             conn.close()
-    return {"units_matched": matched, "units_updated": updated}
+    return {"units_matched": matched, "units_updated": updated,
+            "context_unmatched": unmatched}

@@ -137,7 +137,7 @@ def _enhancements(conn, snapshot, apply=False):
 
 def apply_snapshot(db_path, snapshot):
     factions = operational_factions(snapshot)
-    before = mfm.check_points(db_path, factions)
+    before = mfm.check_points(db_path, factions, source_snapshot=snapshot)
     with closing(sqlite3.connect(str(db_path))) as conn, conn:
         conn.execute("BEGIN IMMEDIATE")
         enhancement_report = _enhancements(conn, snapshot, apply=True)
@@ -156,7 +156,8 @@ def apply_snapshot(db_path, snapshot):
                 data["mfm"]["checked_at"] = snapshot["fetched_at"]
                 conn.execute("UPDATE units SET points_json=? WHERE id=?",
                              (json.dumps(data, ensure_ascii=False), uid))
-        applied = mfm.apply_points(db_path, factions, fetched_at=snapshot["fetched_at"], connection=conn)
+        applied = mfm.apply_points(db_path, factions, fetched_at=snapshot["fetched_at"],
+                                   connection=conn, source_snapshot=snapshot)
         count = write_ledger(conn, snapshot)
         conn.execute("""CREATE TABLE IF NOT EXISTS official_mfm_detachments (
             faction_slug TEXT, name TEXT, dp INTEGER, disposition_json TEXT,
@@ -167,11 +168,12 @@ def apply_snapshot(db_path, snapshot):
                 conn.execute("INSERT INTO official_mfm_detachments VALUES (?,?,?,?,?,?)",
                              (slug, card["name"], card["dp"], json.dumps(card["disposition"]),
                               page["url"], snapshot["fetched_at"]))
-        after = mfm.check_points(db_path, factions, connection=conn)
+        after = mfm.check_points(db_path, factions, connection=conn, source_snapshot=snapshot)
         enhancements_after = _enhancements(conn, snapshot)
         ledger = verify_ledger(db_path, snapshot, connection=conn)
         if (after["diffs"] or after["db_missing_tiers"] or after["db_extra_tiers"]
-                or after["db_unparsed"] or enhancements_after["changes"] or not ledger["equal"]):
+                or after["db_unparsed"] or after["db_context_diffs"]
+                or enhancements_after["changes"] or not ledger["equal"]):
             raise RuntimeError("Official sync did not converge; transaction rolled back")
     return {"fetched_at": snapshot["fetched_at"], "official_pages": len(snapshot["pages"]),
             "ledger": ledger, "unit_prices_before": before, "unit_prices_after": after,
