@@ -157,42 +157,50 @@ class TestRealCorpus:
             conn.close()
 
     def test_zh_name_bridge_survives_a_db_rebuild(self, tmp_path):
-        """中文名桥的产物必须能从**已提交的代码 + 本地缓存**重跑出来。
+        """Restore the five reviewed source bindings on a real database copy.
 
-        `db/wh40k.sqlite` 是 gitignored 的：库里有、代码里没有的东西，下次
-        `db_compile build` 就会静默消失。这里在库的**副本**上重跑一次
-        `populate_zh_details`（`build` 经 `update.restore_authority_layers` →
-        `stage_zh_details` 走的就是这条），断言这六个只能靠中文名桥接上的单位
-        重跑后仍在。真库一个字节都不动。
-
-        名单来自 2026-07-27 的逐行核实（见 tests/test_web_api_ability_keywords.py
-        顶部的 EXPECTED_ZH_ITEMS 注释）：它们的英文名与库内只差单复数或头衔前缀，
-        `_en_to_ids` 一个都对不上，全靠 `_zh_to_ids` 一对一接。
+        These formerly depended on Chinese name bridges; they now have exact
+        source/canonical bindings proven by test_blacklibrary_rebuild_bindings.
+        Grey Knights source 2863 must never restore the sixth, AdM Servitor row.
+        The actual database and source cache remain unchanged.
         """
-        expect = {
-            "000003836": "Death Company Marines with Boltguns",
-            "000000562": "Sentry Pylon",
-            "000000121": "Uriel Ventris",
-            "000000847": "Servitors",
-            "000000397": "Servitors",
-            "000003916": "Ynnari Kabalite Warriors",
-        }
+        bindings = json.loads((REPO / "tests/fixtures/blacklibrary_rebuild_bindings.json")
+                              .read_text(encoding="utf-8"))
+        assert len(bindings) == 5
         import shutil
         copy = tmp_path / "repro.sqlite"
         shutil.copyfile(str(DB), str(copy))
         details = json.loads(DETAILS_CACHE.read_text(encoding="utf-8"))
+        for case in bindings:
+            source = [r for r in details if r.get("id") == case["record"]["id"]]
+            assert source == [case["record"]], case["canonical"]["id"]
         populate_zh_details(copy, details)
         conn = sqlite3.connect(str(copy))
         try:
-            for cid, name_en in expect.items():
+            for case in bindings:
+                canonical, record = case["canonical"], case["record"]
+                cid, name_en = canonical["id"], canonical["name_en"]
                 row = conn.execute(
                     "SELECT name_zh FROM unit_zh_detail WHERE canonical_id=?",
                     (cid,)).fetchone()
-                assert row and row[0], "重建后丢了中文层：{} {}".format(cid, name_en)
-                # 英文名确实对不上 ⇒ 这一行只可能来自中文名桥，桥断了这里就红
+                assert row == (record["name_zh"],), (cid, row)
                 en = conn.execute("SELECT name_en FROM units WHERE id=?",
                                   (cid,)).fetchone()
                 assert en and en[0] == name_en, (cid, en)
+                identity = conn.execute(
+                    "SELECT source_id,source_name_en,source_faction_zh,"
+                    "canonical_name_en,faction_id FROM blacklibrary_detail_identity "
+                    "WHERE canonical_id=?", (cid,)).fetchone()
+                assert identity == (str(record["id"]), record["name_en"], record["faction_zh"],
+                                    name_en, canonical["faction_id"]), (cid, identity)
+            assert conn.execute(
+                "SELECT name_en,faction_id FROM units WHERE id='000000847'").fetchone() == (
+                    "Servitors", "AdM")
+            assert conn.execute(
+                "SELECT 1 FROM blacklibrary_detail_identity "
+                "WHERE canonical_id='000000847' AND source_id='2863'").fetchone() is None
+            assert conn.execute(
+                "SELECT 1 FROM unit_zh_detail WHERE canonical_id='000000847'").fetchone() is None
         finally:
             conn.close()
 

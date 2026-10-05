@@ -143,8 +143,8 @@ def test_validate_legal_and_camelcase():
         ]})
     b = r.json()
     assert r.status_code == 200 and b["legal"] is True
-    # 70 + 80 + 强化 10——强化点数计入总分（模块 3 审查 F1）
-    assert b["totalPoints"] == 160 and b["issues"] == []
+    # October 3 official capture: 60 + 85 + Eye 10, including enhancement.
+    assert b["totalPoints"] == 155 and b["issues"] == []
 
 
 @needs_db
@@ -177,7 +177,8 @@ def test_critique_assessed_and_surfaced():
              "models": 1, "isWarlord": True},          # 无 loadout
         ]})
     b = r.json()
-    assert r.status_code == 200 and b["totalPoints"] == 150
+    # October 3 official capture: Intercessor 85 + Apothecary 60.
+    assert r.status_code == 200 and b["totalPoints"] == 145
     by_name = {a["nameEn"]: a for a in b["assessments"]}
     assert by_name["Intercessor Squad"]["assessed"] is True
     assert len(by_name["Intercessor Squad"]["scores"]) == 4

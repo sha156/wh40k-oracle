@@ -755,7 +755,8 @@ class TestSameNameCrossFactionRealDb:
         assert result["found"] is True
         got = {s["faction"]: s["points"]
                for s in result["same_name_other_factions"]}
-        assert got == {"CSM": 130, "DG": 110, "TS": 110, "WE": 120}
+        # Pinned official capture 2026-10-03T19:00:56.192123+00:00; gold v3.7.
+        assert got == {"CSM": 125, "DG": 105, "TS": 110, "WE": 120}
 
 
 class TestDefaultResolverSingletonThreadSafety:
