@@ -232,8 +232,12 @@ def _check_identity(conn, record):
             raise ValueError("Current canonical price projection conflicts with unavailable points")
     else:
         # Do not attach a ledger-only name to a fuzzy sibling or invent a body.
-        if conn.execute("SELECT 1 FROM units WHERE faction_id=? AND lower(name_en)=lower(?)",
-                        (identity["faction_id"], identity["name_en"])).fetchone():
+        # SQLite lower() folds ASCII only. Compare whole names within the exact
+        # faction using the same Unicode casefold as the source-only key. Any
+        # matching canonical row excludes source-only coverage, even duplicates.
+        names = conn.execute("SELECT name_en FROM units WHERE faction_id=?",
+                             (identity["faction_id"],))
+        if any(row[0].casefold() == identity["name_en"].casefold() for row in names):
             raise ValueError("Source-only identity already has a canonical body")
     if not conn.execute("SELECT 1 FROM factions WHERE id=?", (identity["faction_id"],)).fetchone():
         raise ValueError("Unknown canonical faction")
@@ -248,10 +252,12 @@ def _check_identity(conn, record):
         if not _exists(conn, "official_mfm_points"):
             raise ValueError("Published price identity requires the exact staged ledger")
         rows = conn.execute(
-            "SELECT source_url,source_sha256,fetched_at FROM official_mfm_points "
-            "WHERE kind='unit' AND faction_slug=? AND lower(unit_name)=lower(?)",
-            (identity["faction_slug"], identity["name_en"])).fetchall()
-        actual = {(r[0], r[1], r[2]) for r in rows}
+            "SELECT unit_name,source_url,source_sha256,fetched_at FROM official_mfm_points "
+            "WHERE kind='unit' AND faction_slug=?", (identity["faction_slug"],))
+        # Retain every matching tier/receipt, including fold-equivalent names;
+        # choosing one row could conceal conflicting publication provenance.
+        actual = {(r[1], r[2], r[3]) for r in rows
+                  if r[0].casefold() == identity["name_en"].casefold()}
         expected = {(s["url"], s["sha256"], s["captured_at"]) for s in record["points"]["sources"]}
         if not actual or actual != expected:
             raise ValueError("Exact published price provenance mismatch")
