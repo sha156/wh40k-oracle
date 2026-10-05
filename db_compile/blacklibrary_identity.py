@@ -1,4 +1,4 @@
-"""Scope the four reviewed same-name families to their verified source identities.
+"""Scope reviewed same-name families and rebuild bridges to source identities.
 
 The source's detail endpoint can return a different faction's same-name unit.
 Four retained cache records have this confirmed failure, so their old bodies are
@@ -7,8 +7,12 @@ does not infer faction equivalence for other shared datasheets.
 """
 from __future__ import annotations
 
+import hashlib
+import json
 import re
-from typing import Iterable, Mapping
+import sqlite3
+from pathlib import Path
+from typing import Iterable, Mapping, Optional
 
 
 # source ID: (normalized English family, source faction, canonical ID, faction,
@@ -24,6 +28,65 @@ _REVIEWED = {
     "1094": ("lordofchange", "闪耀军团", "000004124", "TS", True),
 }
 _FAMILIES = frozenset(signature[0] for signature in _REVIEWED.values())
+
+# Frozen, independently verified raw/cached lineage. These exceptions authorize
+# community Chinese text only; they never import source stats into official cells.
+_BINDINGS = {
+    row["source_id"]: row for row in json.loads(
+        Path(__file__).with_name("blacklibrary_identity_bindings.json").read_text("utf-8")
+    )["bindings"]
+}
+_BOUND_IDS = frozenset(row["canonical_id"] for row in _BINDINGS.values()) | {"000000847"}
+_BOUND_FAMILIES = frozenset(
+    re.sub(r"[^a-z0-9]", "", row[field].lower())
+    for row in _BINDINGS.values()
+    for field in ("source_name_en", "canonical_name_en")
+)
+
+
+def _bound_signature(record: Mapping):
+    key, family, _ = _signature(record)
+    return _BINDINGS.get(key), key in _BINDINGS or family in _BOUND_FAMILIES
+
+
+def _verified_binding(record: Mapping, binding: Mapping) -> bool:
+    if (record.get("name_en") != binding["source_name_en"]
+            or record.get("faction_zh") != binding["source_faction_zh"]
+            or record.get("provenance") != binding["provenance"]):
+        return False
+    encoded = json.dumps(record, ensure_ascii=False, sort_keys=True,
+                         separators=(",", ":")).encode("utf-8")
+    return hashlib.sha256(encoded).hexdigest() == binding["record_sha256"]
+
+
+def source_bound_detail_ids(conn: sqlite3.Connection, record: Mapping) -> Optional[list[str]]:
+    """Resolve a reviewed spelling bridge without list names or old Chinese names.
+
+    None delegates unrelated records to the existing matcher. An empty list is
+    a final denial, so neither Chinese-name fallback nor an English lookalike can
+    evade drift checks. The full cached fingerprint pins the verified raw fields
+    and capture provenance to the audited manifest; new captures need review.
+    """
+    binding, governed = _bound_signature(record)
+    if not governed:
+        return None
+    if binding is None or not _verified_binding(record, binding):
+        return []
+    columns = {r[1] for r in conn.execute("PRAGMA table_info(units)")}
+    if not {"id", "name_en", "faction_id", "keywords_json"} <= columns:
+        return []
+    cid = binding["canonical_id"]
+    row = conn.execute("SELECT name_en, faction_id, keywords_json FROM units WHERE id = ?",
+                       (cid,)).fetchone()
+    if not row or row[:2] != (binding["canonical_name_en"], binding["canonical_faction_id"]):
+        return []
+    try:
+        keywords = json.loads(row[2])
+    except (TypeError, ValueError):
+        return []
+    if keywords != binding["canonical_keywords"]:
+        return []
+    return [cid]
 
 
 def _family(record: Mapping) -> str:
@@ -45,6 +108,9 @@ def quarantined_detail(record: Mapping) -> bool:
     accepted without provenance; the four confirmed wrong retained bodies are
     accepted only after top-level ``verified_capture`` provenance replaces them.
     """
+    binding, governed = _bound_signature(record)
+    if governed:
+        return binding is None or not _verified_binding(record, binding)
     _, family, signature = _signature(record)
     if signature is None:
         return family in _FAMILIES
@@ -64,7 +130,9 @@ def scoped_detail_ids(record: Mapping, candidate_ids: Iterable[str],
     behavior. A reviewed identity needs both its exact canonical ID and faction;
     a changed canonical build therefore fails closed rather than reassigning it.
     """
-    candidates = list(candidate_ids)
+    # Source-bound targets (including the explicitly denied AdM Servitors reuse)
+    # are available only through source_bound_detail_ids with canonical guards.
+    candidates = [cid for cid in candidate_ids if cid not in _BOUND_IDS]
     if quarantined_detail(record):
         return []
     _, _, signature = _signature(record)

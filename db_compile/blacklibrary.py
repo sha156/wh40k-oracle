@@ -169,6 +169,10 @@ def _en_to_ids(conn: sqlite3.Connection) -> Dict[str, List[str]]:
 def populate_zh_details(db_path, details: List[dict]) -> Dict[str, int]:
     """把黑图书馆中文 datasheet 灌进 `unit_zh_detail` 表（canonical_id 经 name_en 匹配）。
 
+    Five reviewed raw-source bindings resolve before name matching, independently
+    of old Chinese names or inventory spellings, with exact canonical guards.
+    Other records retain the existing name-matching behavior below.
+
     英文名对不上时退到**中文名桥**：黑图与库里的英文名在单复数/头衔前缀上会差
     （`Hellflayer` vs `Hellflayers`、`Warsmith Kravek Morne` vs `Kravek Morne`），
     这类只差写法的单位靠中文名能一对一接上。中文名桥**只认一对一**——归一化后
@@ -180,6 +184,7 @@ def populate_zh_details(db_path, details: List[dict]) -> Dict[str, int]:
     """
     conn = sqlite3.connect(str(db_path))
     try:
+        conn.execute("BEGIN")
         conn.execute("""
             CREATE TABLE IF NOT EXISTS unit_zh_detail (
                 canonical_id TEXT PRIMARY KEY,
@@ -192,15 +197,31 @@ def populate_zh_details(db_path, details: List[dict]) -> Dict[str, int]:
                 intro_json   TEXT,
                 source       TEXT DEFAULT 'blackforum'
             )""")
+        # Keep source attribution beside the existing detail schema so legacy
+        # readers and their explicit column contracts remain unchanged. This is
+        # captured from the accepted record, never inferred from Chinese names.
+        conn.execute("""
+            CREATE TABLE IF NOT EXISTS blacklibrary_detail_identity (
+                canonical_id TEXT PRIMARY KEY,
+                source_id TEXT,
+                source_name_en TEXT,
+                source_faction_zh TEXT,
+                canonical_name_en TEXT,
+                faction_id TEXT
+            )""")
         conn.execute("DELETE FROM unit_zh_detail WHERE source = 'blackforum'")
+        conn.execute("DELETE FROM blacklibrary_detail_identity")
         en2ids = _en_to_ids(conn)
         zh2ids = _zh_to_ids(conn)
-        from db_compile.blacklibrary_identity import scoped_detail_ids
+        from db_compile.blacklibrary_identity import scoped_detail_ids, source_bound_detail_ids
         columns = {r[1] for r in conn.execute("PRAGMA table_info(units)")}
         factions = (dict(conn.execute("SELECT id, faction_id FROM units"))
                     if "faction_id" in columns else {})
 
         def eligible(record, candidates):
+            bound = source_bound_detail_ids(conn, record)
+            if bound is not None:
+                return bound
             return scoped_detail_ids(record, candidates or [], factions)
         # 黑图侧同一中文名出现多次 → 这个中文名不具备唯一指向，退出中文名桥
         zh_dupes = set()
@@ -239,6 +260,12 @@ def populate_zh_details(db_path, details: List[dict]) -> Dict[str, int]:
             # 同名多行＝同一张兵牌的多阵营副本，每行都灌；武器名后续由
             # zh_weapons 按数值指纹逐行配对，配不上就留英文，不会因此错配
             for cid in cids:
+                # Only a fully guarded binding can restore a discarded name.
+                # Leave any separately supplied higher-authority name intact.
+                if source_bound_detail_ids(conn, r):
+                    conn.execute(
+                        "UPDATE units SET name_zh = ? WHERE id = ? "
+                        "AND (name_zh IS NULL OR name_zh = '')", (r.get("name_zh"), cid))
                 conn.execute(
                     "INSERT OR REPLACE INTO unit_zh_detail "
                     "(canonical_id, name_zh, faction_zh, score, stats_json, "
@@ -249,6 +276,18 @@ def populate_zh_details(db_path, details: List[dict]) -> Dict[str, int]:
                      json.dumps(det.get("能力"), ensure_ascii=False),
                      json.dumps(weapons, ensure_ascii=False),
                      json.dumps(det.get("简介"), ensure_ascii=False)))
+                source_id = r.get("id")
+                source_id = (str(source_id) if isinstance(source_id, (str, int))
+                             and not isinstance(source_id, bool) else None)
+                canonical_name = conn.execute(
+                    "SELECT name_en FROM units WHERE id=?", (cid,)).fetchone()[0]
+                conn.execute(
+                    "INSERT OR REPLACE INTO blacklibrary_detail_identity "
+                    "(canonical_id,source_id,source_name_en,source_faction_zh,"
+                    "canonical_name_en,faction_id) "
+                    "VALUES (?,?,?,?,?,?)",
+                    (cid, source_id, r.get("name_en"), r.get("faction_zh"),
+                     canonical_name, factions.get(cid)))
             matched += 1
             matched_by_zh += 1 if via_zh else 0
         conn.commit()
@@ -340,6 +379,10 @@ def build_blacklibrary_docs(db_path):
 
     供 ingest.py 注入 L1 索引：黑图书馆中文原生内容进检索层，规则/能力题可召回干净中文，
     补汉化 PDF 的不全。返回 List[Document]（book='黑图书馆'）。表不存在返回 []。
+
+    Every emitted document carries the accepted source and canonical identities.
+    Legacy unattributed projections must be repopulated; existing vector UUIDs
+    cannot be assigned to a canonical identity from their Chinese names alone.
     """
     from langchain_core.documents import Document
 
@@ -354,6 +397,28 @@ def build_blacklibrary_docs(db_path):
             return []
         from db_compile.source_reconcile import requires_current_english
         rows = [row for row in rows if not requires_current_english(conn, row[0])]
+        identities = {}
+        if rows:
+            if not conn.execute(
+                    "SELECT 1 FROM sqlite_master WHERE type='table' "
+                    "AND name='blacklibrary_detail_identity'").fetchone():
+                raise ValueError("Black Library document identity unavailable; "
+                                 "repopulate Chinese details before rendering")
+            for row in rows:
+                cid = row[0]
+                identity = conn.execute(
+                    "SELECT i.source_id,i.source_name_en,i.source_faction_zh,"
+                    "i.canonical_name_en,i.faction_id,u.name_en,u.faction_id "
+                    "FROM blacklibrary_detail_identity i JOIN units u "
+                    "ON u.id=i.canonical_id WHERE i.canonical_id=?", (cid,)).fetchone()
+                if (not identity or not all(identity[:5])
+                        or identity[2] != row[2] or identity[3:5] != identity[5:7]):
+                    raise ValueError(f"Black Library document identity invalid for {cid}; "
+                                     "repopulate Chinese details before rendering")
+                identities[cid] = {
+                    "canonical_id": cid, "source_id": identity[0],
+                    "source_name_en": identity[1], "source_faction_zh": identity[2],
+                    "canonical_name_en": identity[3], "faction_id": identity[4]}
         projected = {}
         for row in rows:
             value = reviewed_abilities(conn, row[0], json.loads(row[4]) if row[4] else [])
@@ -396,7 +461,7 @@ def build_blacklibrary_docs(db_path):
         docs.append(Document(
             page_content="\n".join(lines).strip(),
             metadata={"source": "blacklibrary", "book": "黑图书馆",
-                      "unit": name_zh, "page": 0}))
+                      "unit": name_zh, "page": 0, **identities[cid]}))
     return docs
 
 

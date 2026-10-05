@@ -25,6 +25,7 @@ from wiki_compile.canonical import audit_wahapedia_csv, parse_wahapedia_csv
 
 from db_compile.schema import ALL_DDL, ensure_columns
 from db_compile.source_archive import preserve_archived_units
+from db_compile.mfm_history import preserve_historical_prices
 
 # Wahapedia 官方导出全集（spec 第四节「~20张关系表」的核心子集）。
 # Wargear.csv 永 404——但 Datasheets_wargear.csv 已内联 name+stats，不影响武器导入。
@@ -56,6 +57,7 @@ class BuildReport:
     # 让解析行数与文件真实条目数对不上时，reconciled=False 必须吼出来——曾经
     # Stratagems.csv 一条裸换行就静默换来「多一条垃圾行、少一条真战略」。
     csv_audit: Dict[str, dict] = field(default_factory=dict)
+    historical_prices: Dict = field(default_factory=dict)
 
     def unreconciled(self) -> Dict[str, dict]:
         return {k: v for k, v in self.csv_audit.items() if not v["reconciled"]}
@@ -325,7 +327,8 @@ def _insert_keywords(cur, rows: List[dict]) -> int:
 
 
 def build_database(csv_dir: Path, db_path: Path,
-                    terms_path: Optional[Path] = None) -> BuildReport:
+                    terms_path: Optional[Path] = None, *,
+                    historical_mfm_snapshot: Optional[Path] = None) -> BuildReport:
     """建表并导入当前已有的 CSV。
 
     缺失的 CSV（Wargear.csv 除外）计入 missing_csv；已有数据的表如实导入行数；
@@ -430,6 +433,8 @@ def build_database(csv_dir: Path, db_path: Path,
                 report.row_counts["keywords_updated"] = _insert_keywords(
                     cur, _read_csv(path, report))
 
+            report.historical_prices = preserve_historical_prices(
+                db_path, conn, historical_mfm_snapshot)
             # Deleted source cards may disappear from newer caches. Preserve their
             # verified archive without carrying old canonical tables into the rebuild.
             archived = preserve_archived_units(db_path, conn)
