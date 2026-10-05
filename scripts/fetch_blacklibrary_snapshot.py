@@ -11,6 +11,7 @@ import argparse
 import hashlib
 import json
 import math
+import os
 import re
 import sys
 import time
@@ -37,6 +38,7 @@ CATALOGS = {
     "aos-factions-observed-only": "https://fanjiang.czmakj.com/community-mp-imgs/yellow/阵营.json",
 }
 PAGE_SIZE = 50
+REPLACE_RETRY_DELAYS = (0.05, 0.15)
 PRIVATE_KEYS = {
     "userid", "userhead", "users", "manageruserid", "nickname", "authorization",
     "accesstoken", "refreshtoken", "token", "password", "cookie", "setcookie",
@@ -99,8 +101,26 @@ def write_json(path, value, *, on_filesystem_error=None):
     temp = path.with_suffix(path.suffix + ".tmp")
     with filesystem_operation("write_bytes", on_filesystem_error):
         temp.write_bytes(data)
-    with filesystem_operation("replace", on_filesystem_error):
-        temp.replace(path)
+    # A successful, closed write establishes ownership of this serial call's
+    # fixed temp. Earlier failures must not delete a pre-existing temp.
+    try:
+        with filesystem_operation("replace", on_filesystem_error):
+            for attempt in range(len(REPLACE_RETRY_DELAYS) + 1):
+                try:
+                    temp.replace(path)
+                    break
+                except PermissionError as exc:
+                    if (os.name != "nt" or type(exc.errno) is not int or exc.errno != 13
+                            or type(getattr(exc, "winerror", None)) is not int
+                            or exc.winerror != 5 or attempt == len(REPLACE_RETRY_DELAYS)):
+                        raise
+                    time.sleep(REPLACE_RETRY_DELAYS[attempt])
+    except BaseException:
+        try:
+            temp.unlink()
+        except BaseException:
+            pass  # Cleanup cannot replace the primary error or cancellation.
+        raise
     return digest(data)
 
 
