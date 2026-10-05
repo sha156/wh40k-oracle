@@ -1,0 +1,42 @@
+{
+  "native": {
+    "passed": 2814,
+    "warnings": 19,
+    "seconds": 264.66
+  },
+  "focused_review": {
+    "passed": 50,
+    "warnings": 6
+  },
+  "live_cards": 11,
+  "wiki_lint": {
+    "errors": 0,
+    "warnings": 1,
+    "info": 691
+  },
+  "browser": {
+    "language": "zh",
+    "chinese_abilities": 5,
+    "official_english_abilities": 2,
+    "header_points": 355,
+    "composition_points": 355,
+    "screenshots": [
+      "guilliman-card-header.jpg",
+      "guilliman-abilities-composition.jpg"
+    ]
+  },
+  "fresh_chats": {
+    "guilliman": {
+      "seconds": 38.971,
+      "citations": 2,
+      "degraded": false
+    },
+    "imperial_agents_priest": {
+      "seconds": 63.169,
+      "citations": 3,
+      "degraded": false
+    }
+  },
+  "frontend_full_suite_rerun": false,
+  "full_qa_benchmark_rerun": false
+}

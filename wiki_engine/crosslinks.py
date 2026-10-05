@@ -438,6 +438,11 @@ def inject_wikilinks(
     for name, path in candidates:
         if name in linked or len(name) < 2:
             continue
+        # This Ork stratagem translation is also ordinary temporal prose.
+        # Matching "until the next turn" must not imply use of that stratagem.
+        # Explicit authored links remain intact; only automatic insertion is skipped.
+        if name == "下一个":
+            continue
         # _name_pattern is an exact, case-sensitive escaped match. A missing
         # literal cannot match it; avoid compiling thousands of absent names
         # and rescanning existing link spans for every generated page.
@@ -489,6 +494,7 @@ def escape_table_pipes(body: str) -> str:
 def inject_all(
     pages_dir: Path,
     terms_path: Optional[Path] = None,
+    units_only: bool = False,
 ) -> List[str]:
     """遍历 wiki/ 所有实体页，注入交叉链接后写回。
 
@@ -513,6 +519,8 @@ def inject_all(
 
     modified: List[str] = []
     for md_file in sorted(pages_dir.rglob("*.md")):
+        if units_only and "/units/" not in md_file.relative_to(pages_dir).as_posix():
+            continue
         try:
             text = md_file.read_text(encoding="utf-8")
         except (OSError, UnicodeDecodeError):

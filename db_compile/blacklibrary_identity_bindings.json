@@ -1,0 +1,157 @@
+{
+  "reviewed_at": "2026-10-04",
+  "authority": "community Chinese identity only; no numerical authority",
+  "evidence_sha256": "f57f8c7f9bbba189cd1d82f69ec89d34c81145781a96266e492ae86bad109b87",
+  "bindings": [
+    {
+      "source_id": "1085",
+      "source_name_en": "Death Company Marine With Boltguns",
+      "source_faction_zh": "圣血天使",
+      "record_sha256": "7338ffccfaa5b48bb5e3c4ae0a7214af04b142c32755f36c75a35b78f438b410",
+      "raw_capture_sha256": "669ccaa3d982b707492eb28b79ffd3f7aa2d501b28ec95eb8836eb724c606011",
+      "provenance": {
+        "snapshot": "20260926-resume",
+        "manifest_sha256": "69bd7facd5740b3b111b7912223884f918dc48caf53e9f55856c811a99084ce8",
+        "capture": "unit-details/0c0ad5934ba82dd2",
+        "status": "verified_capture",
+        "fetched_at": "2026-09-22T09:33:17.965566+00:00",
+        "authority": "third_party_community_source"
+      },
+      "canonical_id": "000003836",
+      "canonical_name_en": "Death Company Marines with Boltguns",
+      "canonical_faction_id": "SM",
+      "canonical_keywords": {
+        "keywords": [
+          "Imperium",
+          "Grenades",
+          "Infantry",
+          "Death Company Marines with Boltguns",
+          "Death Company"
+        ],
+        "faction_keywords": [
+          "Blood Angels",
+          "Adeptus Astartes"
+        ]
+      }
+    },
+    {
+      "source_id": "363",
+      "source_name_en": "Sentry Pylons",
+      "source_faction_zh": "太空死灵",
+      "record_sha256": "8a63e21c8fa5fe42d1482e4f4dbe742177f078c6e299b15f27e1dff1aab3acfc",
+      "raw_capture_sha256": "d6bde71a2117644ca36050c5801ee205a78864cf6002efa85003244a58280e3b",
+      "provenance": {
+        "snapshot": "20260926-resume",
+        "manifest_sha256": "69bd7facd5740b3b111b7912223884f918dc48caf53e9f55856c811a99084ce8",
+        "capture": "unit-details/a43231c2216f23db",
+        "status": "verified_capture",
+        "fetched_at": "2026-09-22T09:33:55.477711+00:00",
+        "authority": "third_party_community_source"
+      },
+      "canonical_id": "000000562",
+      "canonical_name_en": "Sentry Pylon",
+      "canonical_faction_id": "NEC",
+      "canonical_keywords": {
+        "keywords": [
+          "Vehicle",
+          "Fortification",
+          "Sentry Pylon",
+          "FRAME"
+        ],
+        "faction_keywords": [
+          "Necrons"
+        ]
+      }
+    },
+    {
+      "source_id": "9",
+      "source_name_en": "Captain Uriel Ventris",
+      "source_faction_zh": "极限战士",
+      "record_sha256": "881e438cf9f53bcdd6daa8f283eecaa76f4e5984c978e5356861b3734e60c285",
+      "raw_capture_sha256": "98e8b11f6b5b8095d86437d71f9b6c078ddcf3da2071f53dca5d5841065446f9",
+      "provenance": {
+        "snapshot": "20260926-resume",
+        "manifest_sha256": "69bd7facd5740b3b111b7912223884f918dc48caf53e9f55856c811a99084ce8",
+        "capture": "unit-details/19581e27de7ced00",
+        "status": "verified_capture",
+        "fetched_at": "2026-09-22T09:36:25.386216+00:00",
+        "authority": "third_party_community_source"
+      },
+      "canonical_id": "000000121",
+      "canonical_name_en": "Uriel Ventris",
+      "canonical_faction_id": "SM",
+      "canonical_keywords": {
+        "keywords": [
+          "Uriel Ventris",
+          "Character",
+          "Epic Hero",
+          "Imperium",
+          "Tacticus",
+          "Infantry",
+          "Captain"
+        ],
+        "faction_keywords": [
+          "Adeptus Astartes",
+          "Ultramarines"
+        ]
+      }
+    },
+    {
+      "source_id": "2863",
+      "source_name_en": "Servitor",
+      "source_faction_zh": "灰骑士",
+      "record_sha256": "aa3626e21161d9aafd73482cf8baf5adebf34169d06ac4c942a9eb4db72d417a",
+      "raw_capture_sha256": "87faca8690617e45a21bfb9d5de266256043c98b82305764ce89168faf588cee",
+      "provenance": {
+        "snapshot": "20260926-resume",
+        "manifest_sha256": "69bd7facd5740b3b111b7912223884f918dc48caf53e9f55856c811a99084ce8",
+        "capture": "unit-details/1d10cfa4a998611c",
+        "status": "verified_capture",
+        "fetched_at": "2026-09-22T09:39:04.928955+00:00",
+        "authority": "third_party_community_source"
+      },
+      "canonical_id": "000000397",
+      "canonical_name_en": "Servitors",
+      "canonical_faction_id": "GK",
+      "canonical_keywords": {
+        "keywords": [
+          "Servitors",
+          "Imperium",
+          "Infantry"
+        ],
+        "faction_keywords": [
+          "Grey Knights"
+        ]
+      }
+    },
+    {
+      "source_id": "678",
+      "source_name_en": "YNNARI KABALITE WARRIOR",
+      "source_faction_zh": "艾达灵族",
+      "record_sha256": "a9cfee32fb6f4f5a477f1c5ed65c5c9a21b00333e7836a5481a5be8845f9eb35",
+      "raw_capture_sha256": "471014e67d6fd3227f00dbb1476a2297b444743dcbdc3e5a5a31c2b26369e919",
+      "provenance": {
+        "snapshot": "20260926-resume",
+        "manifest_sha256": "69bd7facd5740b3b111b7912223884f918dc48caf53e9f55856c811a99084ce8",
+        "capture": "unit-details/cebe3d9d614ba5c1",
+        "status": "verified_capture",
+        "fetched_at": "2026-09-22T09:39:20.750242+00:00",
+        "authority": "third_party_community_source"
+      },
+      "canonical_id": "000003916",
+      "canonical_name_en": "Ynnari Kabalite Warriors",
+      "canonical_faction_id": "AE",
+      "canonical_keywords": {
+        "keywords": [
+          "Infantry",
+          "Battleline",
+          "Kabalite Warriors",
+          "Aeldari"
+        ],
+        "faction_keywords": [
+          "Ynnari"
+        ]
+      }
+    }
+  ]
+}

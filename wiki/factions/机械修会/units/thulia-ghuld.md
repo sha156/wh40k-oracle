@@ -39,12 +39,14 @@ updated: '2026-09-14'
 | 战争熔炉权杖 - 横扫 | 近战 | 12 | 2+ | 6 | -1 | 1 | — |
 
 ## 技能
-- **【阵营技能】：机神律令**
-- **战争熔炉权杖**：在您的指挥阶段中，从以下战争偶像技能中选择一个技能。在您的[[factions/兽人/stratagems/on-to-da-next.md|下一个]]指挥阶段开始前，该模型拥有那个技能。•狂热奉献：您可以选择一个位于该模型 6" 内的己方护教军或图莉娅·古尔德单位；在您的下一个指挥阶段开始前，那个单位可以在进行突进的回合进行射击和宣布冲锋。• 火星烈焰：您可以选择一个位于该模型 6" 内的己方护教军或图莉娅·古尔德单位；在您的下一个指挥阶段开始前，征服者条令和[[factions/帝皇卫队/enhancements/praesidius.md|守护者]]条令同时对那个单位生效。
-- **机械保镖**：本模型位于其他友军机械修会单位 3 寸内时，获得【独行特工】技能
-- **至高指挥官**：本模型必须作为你的军队主将
-- **智械增强**：本模型可以如同步兵模型一样正常穿过地形，登上更高楼层等等
-- **奥林匹斯的斗士**：在您的射击阶段开始时，选择一个位于该模型 12" 内的敌方载具单位，并掷一枚 D6；如果掷骰结果为 2+，则那个敌方单位受到   D3+1 处致命伤。
+- **Rod of the War Forge**：In your Command phase, select one of the abilities in the [[factions/吞世者/enhancements/icon-of-war.md|Icon of War]] section (see next page). Until the start of your next Command phase, this model has that ability.
+- **Mechanicus Bodyguard**：While this model is within 3" of one or more other friendly <span class="kwb">ADEPTUS</span> <span class="kwb">MECHANICUS</span> units, this model has the Lone Operative ability.
+- **Cybernetic Augmentation**：This model can move through terrain features, but cannot end a move within a wall, a floor, etc. This model can be set up or end a move on any floor level of <span class="kwb">RUINS</span>, but if that level is not the ground floor, it can only do so if its base does not overhang the floor at that level.
+- **Secutor of Olympus**：At the start of your Shooting phase, select one enemy <span class="kwb">VEHICLE</span> unit within 12" of this model and roll one D6: on a 2+, that enemy unit suffers D3+1 mortal wounds.
+- **SUPREME COMMANDER**：If this model is in your army, it must be your Warlord.
+- **Fanatical Devotion**：You can select one friendly Skitarii or <span class="kwb">THULIA</span> <span class="kwb">GHULD</span> unit within 6" of this model; until the start of your next Command phase, that unit is eligible to shoot and declare a charge in a turn in which it Advanced.
+- **Adaptive Tactics**：You can select one friendly Skitarii or <span class="kwb">THULIA</span> <span class="kwb">GHULD</span> unit within 6" of this model; until the start of your next Command phase, that unit is eligible to shoot and declare a charge in a turn in which it Fell Back.
+- **The Fires of Mars**：You can select one friendly Skitarii or <span class="kwb">THULIA</span> <span class="kwb">GHULD</span> unit within 6" of this model; until the start of your next Command phase, the Conqueror Imperative and Protector Imperative are both active for that unit.
 
 ## 单位构成
 - **1个模型** — 180 分

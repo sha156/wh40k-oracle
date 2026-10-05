@@ -16,18 +16,15 @@
 from __future__ import annotations
 
 import json
-import re
 from dataclasses import dataclass, field, replace
 from typing import Dict, List, Optional, Tuple
 
+from db_compile.point_tiers import model_count
 from engines.simulator.contracts import AttackerProfile, WeaponProfile
 from engines.simulator.profile import load_unit_header, load_weapon_pool
 
-_MODELS_RE = re.compile(r"(\d+)\s*models?", re.IGNORECASE)
-
-
 def parse_model_tiers(points_json: Optional[str]) -> List[Dict]:
-    """points_json.items[].desc（"10 models" / "1 model"）→ [{"models":int,"cost":int}]。
+    """Official plain or named-model compositions → [{"models":int,"cost":int}].
 
     按模型数升序；无法解析模型数的档跳过（不编造）。
     """
@@ -37,13 +34,17 @@ def parse_model_tiers(points_json: Optional[str]) -> List[Dict]:
         data = json.loads(points_json)
     except (json.JSONDecodeError, TypeError):
         return []
+    if not isinstance(data, dict) or not isinstance(data.get("items", []), list):
+        return []
     tiers: List[Dict] = []
     for it in data.get("items") or []:
-        m = _MODELS_RE.search(str(it.get("desc") or ""))
-        if not m:
+        if not isinstance(it, dict):
+            continue
+        count = model_count(str(it.get("desc") or ""))
+        if count is None or count <= 0:
             continue
         cost = it.get("cost")
-        tiers.append({"models": int(m.group(1)),
+        tiers.append({"models": count,
                       "cost": cost if isinstance(cost, int) else None})
     tiers.sort(key=lambda x: x["models"])
     return tiers

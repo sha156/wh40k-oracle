@@ -1,0 +1,74 @@
+{
+  "question": "基里曼当前多少分？",
+  "status": 200,
+  "elapsed_seconds": 3.254,
+  "answer": {
+    "summary": "检索 1 步 · 引用 2 条",
+    "trace": [
+      {
+        "fn": "calc_points",
+        "args": "(['基里曼'])",
+        "result": "已命中",
+        "status": "ok",
+        "note": null
+      }
+    ],
+    "traceWarn": null,
+    "verdict": {
+      "label": "355分",
+      "labelEn": "355 pts",
+      "lede": [
+        {
+          "t": "text",
+          "s": "基里曼（Roboute Guilliman）当前点数为 "
+        },
+        {
+          "t": "strong",
+          "s": "355 分"
+        },
+        {
+          "t": "text",
+          "s": " "
+        },
+        {
+          "t": "cite",
+          "n": 1
+        },
+        {
+          "t": "cite",
+          "n": 2
+        },
+        {
+          "t": "text",
+          "s": "。"
+        }
+      ]
+    },
+    "calc": [],
+    "entityCard": null,
+    "cites": [
+      {
+        "n": 1,
+        "book": "Munitorum Field Manual",
+        "page": null,
+        "section": "官方当前点数",
+        "term": null,
+        "wiki": "",
+        "url": "https://mfm.warhammer-community.com"
+      },
+      {
+        "n": 2,
+        "book": "Munitorum Field Manual (官方 MFM 点数库)",
+        "page": null,
+        "section": null,
+        "term": null,
+        "wiki": "",
+        "url": null
+      }
+    ],
+    "sensitivity": null,
+    "cta": null,
+    "followups": [],
+    "degraded": false
+  }
+}

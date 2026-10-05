@@ -40,9 +40,12 @@ updated: '2026-09-14'
 | 动力剑 | 近战 | 6 | 2+ | 4 | -2 | 1 | — |
 
 ## 技能
-- **钢铁意志**：当该模型第一次被摧毁时，在该阶段结束时掷一枚D6。如果掷骰结果为2+.将该模型重新部署在战场上，尽可能靠近其被摧毁的地点，并且位于所有敌方单位的交战范围外，该模型剩余3点耐伤。
-- **哈迪斯巢都的英雄**：在你的指挥阶段，你可以选择“哈迪斯巢都英雄”章节中的一项能力。直到你的[[factions/兽人/stratagems/on-to-da-next.md|下一个]]指挥阶段开始前，该模型获得该能力。■反制战略家：在你的对手的移动阶段结束时，你可以选择一个在该模型所属单位8"内部署或结束移动的敌方单位，以及一个在该模型6"内、且能被其看见的己方兵团单位。该兵团单位可以执行以下行动之一：进行一次最多D6"的普通移动；​对那个敌方单位进行射击，但其必须为可选目标。在该阶段结束前，每当那个单位中的模型进行远程射击时，未修正命中掷骰结果必须为6才能命中，无视任何攻击武器的射击技能或其他修正；​进行一次迸发移动。这样做时，掷一枚D6:那个单位中的模型移动的最大距离相当于掷骰结果的英寸数，但结束移动时必须尽可能接近最近的敌方单位（飞行器除外）。这样做时，那些模型可以移动进入那个敌方单位的交战范围。那个单位不能在处于战斗震慑状态时或位于一个或更多敌方单位交战范围内时进行迸发移动，且每个阶段最多只能进行一次迸发移动。■果决命令：该模型发布的下一个命令可以被发布给一个位于该模型12" 范围内的己方可选单位；如果该命令是己方单位在该指挥阶段发布的第一个命令，则这个命令不止影响那个可选单位，还会影响那个可选单位6"范围内的每一个其他可选己方单位。■鼓舞英雄（光环）：当一个友方星界军单位位于该模型 6"内时，你可以重投该单位的战斗震撼测试和领导力测试。
-- **指挥之声**：该军官可以对以下类型的单位发布最多2个命令。兵团单位、编队单位 、巨型单位
+- **Will of Iron**：The first time this model is destroyed, remove it from play, then, at the end of the phase, roll one D6: on a 2+, set this model back up on the battlefield as close as possible to where it was destroyed and not within Engagement Range of one or more enemy units, with 3 wounds remaining.
+- **Hero of Hades Hive**：In your Command phase, you can select one of the abilities in the Hero of Hades Hive section (see below). Until the start of your next Command phase, this model has that ability.
+- **ORDERS**：This <span class="kwb">OFFICER</span> can issue up to 2 Orders to Regiment, Squadron or Titanic units.
+- **Counterstrategist**：At the end of your opponent’s Movement phase, you can select one enemy unit that was set up or ended a move within 9" of this model, and one friendly Regiment unit within 6" of and visible to this model that has not made a Normal move or been targeted with the Fire Overwatch Stratagem this phase. That <span class="kwb">REGIMENT</span> unit can then either:<br><ul><li>Make a Normal move of up to D6".</li><li>Shoot at that enemy unit, but only if it is an eligible target. Until the end of the phase, each time a model in that unit makes a ranged attack, an unmodified Hit roll of 6 is required to score a hit, irrespective of the attacking weapon’s Ballistic Skill or any modifiers.</li><li>Make a Surge move. To do so, roll one D6: models in that unit move a number of inches up to the result, but that unit must end that move as close as possible to the closest enemy unit (excluding <span class="kwb">AIRCRAFT</span>). When doing so, those models can be moved within %000015002Engageme
+- **Decisive Command**：The next Order issued by this model can be issued to one eligible friendly unit within 12" of this model; if this is the first Order issued by a unit from your army this Command phase, that Order affects not only that eligible unit, but every other eligible friendly unit within 6" of that eligible unit.
+- **Inspiring Hero (Aura)**：While a friendly <span class="kwb">ASTRA</span> <span class="kwb">MILITARUM</span> unit is within 6" of this model, you can re-roll Battle-shock and Leadership tests taken for that unit.
 
 ## 单位构成
 - **1个模型** — 120 分

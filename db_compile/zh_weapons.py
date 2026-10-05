@@ -38,6 +38,37 @@ _GLOBAL_MIN_OBS = 3
 
 # 人工译名真源（黑图没有的词，人工按黑图风格补译）——git 跟踪，DB 里只是投影
 OVERRIDES_PATH = Path(__file__).resolve().parent / "zh_weapon_overrides.json"
+HISTORY_PATH = Path(__file__).resolve().parents[1] / "db_sources/blacklibrary/weapon_names_history.json"
+HISTORY_FIELDS = ("id", "unit_id", "name_en", "range", "a", "bs_ws", "s", "ap", "d", "keywords_json")
+
+
+def _historical_names(conn, path):
+    """Name-only fallback for an unchanged canonical weapon, never old numbers.
+
+    The cached guard includes identity and the complete combat profile. A changed
+    official weapon cannot inherit an old pairing merely because its id survived.
+    """
+    if not Path(path).exists():
+        return []
+    history = json.loads(Path(path).read_text(encoding="utf-8"))["records"]
+    if not isinstance(history, list):
+        raise ValueError("Malformed Black Library weapon-name history")
+    current = {row[1]: (row[0], list(row[1:])) for row in conn.execute(
+        "SELECT rowid," + ",".join(HISTORY_FIELDS) + " FROM weapons")}
+    result = []
+    seen = set()
+    for record in history:
+        guard, name = record["guard"], record["name_zh"]
+        if (not isinstance(guard, list) or len(guard) != len(HISTORY_FIELDS)
+                or not isinstance(name, str) or not name.strip()):
+            raise ValueError("Malformed Black Library weapon-name record")
+        if guard[0] in seen:
+            raise ValueError("Duplicate Black Library historical weapon identity")
+        seen.add(guard[0])
+        match = current.get(guard[0])
+        if match and match[1] == guard:
+            result.append((match[0], name))
+    return result
 KEYWORD_OVERRIDES_PATH = Path(__file__).resolve().parent / "zh_keyword_overrides.json"
 
 # 参数化 USR：同一族的写法必须整齐。
@@ -233,7 +264,7 @@ def _dedupe_within_unit(
     return [(rid, zh) for rid, zh in assign if zh not in bad]
 
 
-def build_zh_weapon_names(db_path, apply: bool = True) -> Dict[str, Any]:
+def build_zh_weapon_names(db_path, apply: bool = True, history_path=None) -> Dict[str, Any]:
     """三遍配对 + 人工译名叠加，重建 weapons.name_zh。apply=False 只统计不写库。
 
     **整列是投影**：每次先清空再重建（人工译名存 zh_weapon_overrides.json，git 真源），
@@ -242,6 +273,7 @@ def build_zh_weapon_names(db_path, apply: bool = True) -> Dict[str, Any]:
     conn = sqlite3.connect(str(db_path))
     try:
         _ensure_column(conn)
+        history = _historical_names(conn, history_path or HISTORY_PATH)
         if apply:
             conn.execute("UPDATE weapons SET name_zh = NULL")
         conn.row_factory = None
@@ -330,6 +362,9 @@ def build_zh_weapon_names(db_path, apply: bool = True) -> Dict[str, Any]:
                     final.append((rid, clean_zh_name(zh)))
                     ov_applied += 1
 
+        assigned = {rid for rid, _ in final}
+        retained = [(rid, name) for rid, name in history if rid not in assigned]
+        final.extend(retained)
         if apply:
             conn.executemany(
                 "UPDATE weapons SET name_zh = ? WHERE rowid = ?",
@@ -346,6 +381,7 @@ def build_zh_weapon_names(db_path, apply: bool = True) -> Dict[str, Any]:
             "paired_glossary": len(by_gloss),
             "dropped_by_dedupe": dropped,
             "overrides_applied": ov_applied,
+            "retained_history": len(retained),
             "glossary_terms": len(fac_pick) + len(all_pick),
             "filled_now": filled if apply else None,
         }

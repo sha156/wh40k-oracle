@@ -1,5 +1,6 @@
 ---
 id: '000002234'
+name_zh: 原铸连队冠军【传奇】
 name_en: Primaris Company Champion
 faction: 星际战士
 type: unit
@@ -31,8 +32,9 @@ updated: '2026-09-14'
 | 精工动力武器 | 近战 | 5 | 2+ | 5 | -2 | 2 | [[core-rules/precision.md\|精准]] |
 
 ## 技能
-- **Honour or Death**：While this model is leading a unit, add 1 to Advance and Charge rolls made for that unit and you can target that unit with the Heroic Intervention Stratagem for 0CP, even if you have already used that Stratagem on a different unit this phase.
-- **Martial Superiority**：Each time this model makes a melee attack that targets a <span class="kwb">CHARACTER</span> unit, you can re-roll the Hit roll and you can re-roll the Wound roll.
+- **【阵营技能】破敌重誓**
+- **荣誉或死亡**：当本模型领导一个单位时，本单位的加速骰和冲锋骰结果+1，你可以对本单位0CP使用英勇介入战略能力，即使该战略能力本阶段已经向其他目标使用过
+- **武艺绝伦**：本模型近战攻击人物单位时可重投命中骰与造伤骰
 
 ## 单位构成
 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。

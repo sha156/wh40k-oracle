@@ -21,7 +21,7 @@ updated: '2026-09-14'
 ## 属性表
 | 模型 | M | T | SV | W | LD | OC |
 |---|---|---|---|---|---|---|
-| 变化魔君 | 12" | 10 | 6+ | 18 | 6+ | 5 |
+| Lord of Change | 12" | 10 | 6+ | 18 | 6+ | 5 |
 
 ### 特殊保护
 - 4+
@@ -40,9 +40,8 @@ updated: '2026-09-14'
 | 奸奇法杖 | 近战 | 5 | 3+ | 6 | -1 | 3 | [[core-rules/psychic-attacks.md\|灵能]] |
 
 ## 技能
-- **奸奇魔王(光环)**：当该模型 6" 内的己方奸奇逆理魔军单位中的模型进行远程攻击时，攻击的力量属性增加 1 点。
-- **魔法之主（灵能）**：在己方射击阶段中，选择以[[factions/兽人/stratagems/on-to-da-next.md|下一个]]技能：[无视掩体]；[致命一击]；[连击 D3]。直到阶段结束前，该模型装备的篡变之矢获得选择的技能。
-- **高阶奸奇恶魔（光环)**：当一个己方奸奇逆理魔军单位位于该模型的 6" 内时，那个单位位于己方混沌之影中。
+- **Daemon Lord of Tzeentch (Aura)**：While a friendly Scintillating Legions unit is within 6" of this model, each time a model in that unit makes a ranged attack, add 1 to the Strength characteristic of that attack.
+- **Master of Magicks (Psychic)**：In your Shooting phase, select one of the following abilities: [IGNORES COVER]; [LETHAL HITS]; [SUSTAINED HITS D3]. Until the end of the phase, this model’s Bolt of Change has that ability.
 
 ## 单位构成
 - **1个模型** — 320 分

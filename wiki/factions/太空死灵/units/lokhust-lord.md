@@ -38,9 +38,10 @@ updated: '2026-09-14'
 | 光之杖 | 近战 | 4 | 2+ | 5 | -2 | 1 | — |
 
 ## 技能
-- **[阵营]：重生协议**
-- **驱逐者教派**：当该模型领导一个联合单位时，当该单位中的模型进行远程攻击时，结果为未修 正的 5+的成功的命中即为暴击命中。
-- **恨意驱使**：当该模型对低于半数兵力的敌方单位进行攻击时，您可以重掷命中掷骰，并且您可 以重掷致伤掷骰。
+- **Nanoscarab Amulet**：The bearer has the Feel No Pain 5+ ability.
+- **Resurrection Orb**：Once per battle, while the bearer is leading a unit, at the end of any phase, it can resurrect that unit if it is on the battlefield. When you do, that unit’s Reanimation Protocols are activated, reanimating D6 wounds rather than D3 when doing so. You cannot resurrect more than one unit per turn.
+- **Destroyer Cult**：While this model is leading a unit, each time a model in that unit makes a ranged attack, a successful unmodifed Hit roll of 5+ scores a Critical Hit.
+- **Driven by Hatred**：Each time this model makes an attack that targets an enemy unit that is Below Half-strength, you can re-roll the Hit roll and you can re-roll the Wound roll.
 
 ## 单位构成
 - **1个模型** — 80 分

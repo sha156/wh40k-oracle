@@ -1,0 +1,64 @@
+{
+  "units": {
+    "before": 1721,
+    "after": 1721
+  },
+  "unit_zh_detail": {
+    "before": 1135,
+    "after": 1150
+  },
+  "weapons": {
+    "before": 9337,
+    "after": 9337
+  },
+  "aliases": {
+    "before": 1649,
+    "after": 1685
+  },
+  "source_archived_units": {
+    "before": 2,
+    "after": 2
+  },
+  "official_mfm_points": {
+    "before": 3893,
+    "after": 3893
+  },
+  "before": {
+    "zh_weapons": 8333,
+    "empty_abilities": 16,
+    "blackforum_aliases": 925
+  },
+  "after": {
+    "zh_weapons": 8356,
+    "empty_abilities": 17,
+    "blackforum_aliases": 961
+  },
+  "authoritative_tables_unchanged": [
+    "factions",
+    "datasheets",
+    "units",
+    "models",
+    "weapons",
+    "abilities",
+    "stratagems",
+    "detachments",
+    "enhancements",
+    "zh_keyword_glossary",
+    "detachment_names_zh",
+    "official_mfm_points",
+    "official_mfm_detachments",
+    "official_rule_revisions",
+    "official_unit_sources"
+  ],
+  "previous_aliases_preserved": 1649,
+  "aliases_added": 36,
+  "assets_sha256": {
+    "db\\wh40k.sqlite": "03377725fce92a48c376788818ba41eaa189760fd6b6d99a169cf67754b8f2a0",
+    "db_sources\\blacklibrary\\details.json": "665c54c74f13b9ba29b7eb7d93df98c0b5982a9d5afd9907fede439bcf0bedbc",
+    "db_sources\\blacklibrary\\units.json": "ecdb0dc2e226a94349fcea682cb83ad72130724883fa35e325670c3235e91a45",
+    "db_sources\\blacklibrary\\aliases_history.json": "d8eecf753eb004f9bcba806a2356439060b695858ec797b8c84464085d632219",
+    "db_sources\\blacklibrary\\weapon_names_history.json": "d62eb339627ad99a650c1f60052c64b652bdebbb36a90b72f08298a9503f1fb3",
+    "local_vector_store\\index.faiss": "89f9786821c289871cad04b1de085ff467f4114ac2258c9c530cf262c2ef955c",
+    "local_vector_store\\index.pkl": "6e45e92e4549241a773e72111e23bf59d75b735294215088dae61c6103ed3342"
+  }
+}

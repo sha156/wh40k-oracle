@@ -151,7 +151,7 @@ for _zh in TERM_ALIASES:
 from db_compile.aliases import load_alias_expansions
 
 # 语料层级（11版迁移S2）：chunk 元数据缺 edition/layer 时（旧索引）按书名回退分类
-from corpus_manifest import classify_book, edition_layer_tag, load_manifest
+from corpus_manifest import edition_layer_tag, load_manifest, resolve_book_metadata
 
 _CORPUS_MANIFEST = load_manifest(Path(__file__).parent / "corpus_manifest.json")
 
@@ -301,8 +301,16 @@ def load_resources():
 # ══════════════════════════════════════════════
 #  BM25 索引构建（从 FAISS docstore 提取 docs）
 # ══════════════════════════════════════════════
+def _eligible_source(metadata, manifest, filter_books=None):
+    tags = resolve_book_metadata(metadata, manifest)
+    if filter_books:
+        # Existing explicit book selection is the historical opt-in boundary.
+        return metadata.get("book") in filter_books
+    return tags.get("status") != "historical"
+
+
 @st.cache_resource(show_spinner="📚 构建关键词索引...")
-def build_bm25(_vectorstore):
+def _build_bm25(_vectorstore, manifest_json):
     """
     从 FAISS docstore 提取所有 Document，构建 BM25 索引。
     注意：_vectorstore 前加下划线告诉 Streamlit 不要对其做哈希。
@@ -311,7 +319,9 @@ def build_bm25(_vectorstore):
         return None
     try:
         # 从 FAISS docstore 提取所有文档
-        all_docs = list(_vectorstore.docstore._dict.values())
+        manifest = json.loads(manifest_json)
+        all_docs = [doc for doc in _vectorstore.docstore._dict.values()
+                    if _eligible_source(doc.metadata, manifest)]
         if not all_docs:
             return None
         retriever = BM25Retriever.from_documents(
@@ -321,6 +331,53 @@ def build_bm25(_vectorstore):
     except Exception as e:
         st.warning(f"BM25 索引构建失败（将只使用向量检索）: {e}")
         return None
+
+
+def build_bm25(_vectorstore):
+    # The reviewed manifest participates in the cache key. An exact exclusion
+    # must not reuse a retriever built before that declaration.
+    return _build_bm25(_vectorstore, json.dumps(_CORPUS_MANIFEST, sort_keys=True))
+
+
+def _scoped_bm25(vectorstore, retriever, filter_books):
+    """Select documents BEFORE BM25 statistics/scoring/top-K, including opt-in.
+
+    Rebuild explicit selections from the complete docstore, since the default
+    retriever deliberately contains no historical documents.
+    """
+    if filter_books:
+        docs = list(vectorstore.docstore._dict.values())
+    else:
+        docs = getattr(retriever, "docs", None)
+        if docs is None:
+            stored = getattr(getattr(vectorstore, "docstore", None), "_dict", None)
+            declared_history = any(entry.get("status") == "historical"
+                                   for entry in _CORPUS_MANIFEST.get("books", {}).values())
+            if stored is None:
+                if declared_history:
+                    raise ValueError("Historical BM25 scope requires an inspectable candidate corpus")
+                return retriever  # preserve absent-declaration legacy adapters
+            docs = list(stored.values())
+    eligible = [doc for doc in docs
+                if _eligible_source(doc.metadata, _CORPUS_MANIFEST, filter_books)]
+    if not filter_books and getattr(retriever, "docs", None) is not None and len(eligible) == len(docs):
+        return retriever
+    if not eligible:
+        return None
+    return BM25Retriever.from_documents(
+        eligible, k=BM25_TOP_K, preprocess_func=chinese_tokenize,
+    )
+
+
+def _complete_fetch_k(vectorstore, minimum):
+    """FAISS filters after vector search: fetch the full stored candidate pool.
+
+    This is exhaustive on the existing flat index, not a pre-ANN filter or a
+    promise about approximate indexes. No vectors are copied or re-embedded.
+    """
+    count = getattr(getattr(vectorstore, "index", None), "ntotal", 0)
+    docs = getattr(getattr(vectorstore, "docstore", None), "_dict", {})
+    return max(minimum, count, len(docs))
 
 
 # ══════════════════════════════════════════════
@@ -362,35 +419,42 @@ def hybrid_retrieve(
     """
     # ── 查询扩展（社区译名 → 库内译名）──
     query = expand_query(query)
+    # A registry declaration also scopes indexes whose stored tags predate it.
+    historical_declared = any(entry.get("status") == "historical"
+                              for entry in _CORPUS_MANIFEST.get("books", {}).values())
+    stored_docs = getattr(getattr(vectorstore, "docstore", None), "_dict", {})
+    historical_stored = any(doc.metadata.get("status") == "historical"
+                            for doc in stored_docs.values())
+    exact_layer_override = any(
+        _CORPUS_MANIFEST.get("books", {}).get(doc.metadata.get("book"), {}).get(
+            "layer", doc.metadata.get("layer")) != doc.metadata.get("layer")
+        for doc in stored_docs.values()
+    )
+    scoped = bool(filter_books or historical_declared or historical_stored or exact_layer_override)
+
+    def eligible(metadata):
+        return _eligible_source(metadata, _CORPUS_MANIFEST, filter_books)
 
     # ── FAISS 检索（支持按 book 过滤）──
     faiss_docs: list[Document] = []
     try:
         search_kwargs: dict = {"k": FAISS_TOP_K}
-        if filter_books:
-            # langchain FAISS 的 filter 语义（H2）：先在**全库**取 fetch_k（默认 20）
-            # 个候选，再按元数据过滤——fetch_k 若小于 k，冷门书过滤后可能只剩 0~2 条。
-            # 放大候选池，保证过滤后仍能凑满 FAISS_TOP_K。
-            search_kwargs["fetch_k"] = max(FAISS_TOP_K * 5, 200)
-            search_kwargs["filter"] = {
-                "book": {"$in": filter_books}
-            }
+        if scoped:
+            search_kwargs["fetch_k"] = _complete_fetch_k(vectorstore, max(FAISS_TOP_K * 5, 200))
+            search_kwargs["filter"] = eligible
         retriever = vectorstore.as_retriever(search_kwargs=search_kwargs)
         faiss_docs = retriever.invoke(query)
+        faiss_docs = [doc for doc in faiss_docs if eligible(doc.metadata)]
     except Exception as e:
         _record_retrieval_failure(errors, "FAISS 检索", e)
 
     # ── BM25 检索 ──
     bm25_docs: list[Document] = []
-    if bm25_retriever:
+    if bm25_retriever is not None or filter_books:
         try:
-            bm25_docs = bm25_retriever.invoke(query)
-            # 若开启了过滤，手动过滤 BM25 结果
-            if filter_books:
-                bm25_docs = [
-                    d for d in bm25_docs
-                    if d.metadata.get("book") in filter_books
-                ]
+            selected = _scoped_bm25(vectorstore, bm25_retriever, filter_books)
+            if selected is not None:
+                bm25_docs = [doc for doc in selected.invoke(query) if eligible(doc.metadata)]
         except Exception as e:
             _record_retrieval_failure(errors, "BM25 检索", e)
 
@@ -402,10 +466,15 @@ def hybrid_retrieve(
     rules_docs: list[Document] = []
     if not filter_books:
         try:
+            rules_filter = {"layer": "rules"}
+            if scoped:
+                rules_filter = lambda meta: eligible(meta) and resolve_book_metadata(
+                    meta, _CORPUS_MANIFEST)["layer"] == "rules"
             rules_docs = vectorstore.similarity_search(
                 query, k=RULES_FLOOR_K,
-                fetch_k=RULES_FLOOR_FETCH_K,
-                filter={"layer": "rules"})
+                fetch_k=_complete_fetch_k(vectorstore, RULES_FLOOR_FETCH_K),
+                filter=rules_filter)
+            rules_docs = [doc for doc in rules_docs if eligible(doc.metadata)]
         except Exception as e:
             _record_retrieval_failure(errors, "规则层保底检索", e)
 
@@ -447,7 +516,7 @@ def hybrid_retrieve(
 
     # ── 规则层保底注入：最终结果若无任何 layer=rules 段落，用保底结果替换队尾 ──
     if rules_docs:
-        have_rules = any((p.get("meta") or {}).get("layer") == "rules"
+        have_rules = any(resolve_book_metadata(p.get("meta") or {}, _CORPUS_MANIFEST)["layer"] == "rules"
                          for p in top_passages)
         if not have_rules:
             seen_keys = {(str((p.get("meta") or {}).get("source", "")),
@@ -469,20 +538,23 @@ def hybrid_retrieve(
         meta = p.get("meta", {})
         book = meta.get("book", "未知")
         # 11版迁移S2：edition/layer 优先取 chunk 元数据（新索引），旧索引按书名回退
-        edition = meta.get("edition")
-        layer = meta.get("layer")
-        if not edition or not layer:
-            fallback = classify_book(book, _CORPUS_MANIFEST)
-            edition = edition or fallback["edition"]
-            layer = layer or fallback["layer"]
+        tags = resolve_book_metadata(meta, _CORPUS_MANIFEST)
         results.append({
             "text":    p["text"],
             "book":    book,
             "source":  meta.get("source", ""),
             "page":    meta.get("page", "?"),
-            "edition": edition,
-            "layer":   layer,
+            **tags,
         })
+        if tags.get("status") == "historical":
+            # Put the limitation in text as well as metadata so bounded tool
+            # excerpts cannot silently present archived rules as current.
+            note = "Historical source; effective {}{}; not current rules.".format(
+                tags["effective_date"],
+                "; scope " + tags["scope"] if tags.get("scope") else "",
+            )
+            results[-1]["source_note"] = note
+            results[-1]["text"] = note + "\n" + results[-1]["text"]
     return results
 
 
@@ -493,9 +565,10 @@ def get_llm(provider: str, api_key: str, temperature: float):
     """根据选择的 provider 返回对应 LLM 实例。"""
     if provider == "DeepSeek":
         return ChatOpenAI(
-            model="deepseek-chat",
+            model="deepseek-flash",
             api_key=api_key,
             base_url="https://api.deepseek.com",
+            extra_body={"thinking": {"type": "disabled"}},
             temperature=temperature,
             streaming=True,
         )
@@ -533,6 +606,14 @@ SYSTEM_PROMPT = """\
 ⑤ **不得编造**：若档案中无相关信息，直接回复"档案缺失，建议查阅原始规则书"。
 ⑥ **语言风格**：中文回答，冷静专业，允许偶尔使用40K术语（如"黄金宝座"、"机械教义"）。
 ⑦ **格式规范**：使用 Markdown，关键词加粗，列表整齐。
+⑧ **版本比较**：用户问「以前/更新/变化」时，先交代档案能证明的比较基准。
+   只有同时取回新旧文本，才说某条件新增、删除或不变；“Change to”不证明整段都是新内容。
+   缺少旧原文时可以完整解释已查证的现行规则，但必须明确无法确认具体改动，不能凭记忆补旧版。
+   排除名单缺少某阵营，不等于该阵营拥有本能力；规则替换、适用模型与分队前提仍须单独核对。
+⑨ **回答深度**：简单数值题简洁作答；开放解释和版本比较在本次回答中讲清规则、条件、
+   已证实的变化与不变、对使用者的影响和必要限制。不能只给一句摘要，或让用户追问才补正文。
+   写给玩家，不写成审计报告：先一句话直答，再按相关主题合并解释；同一事实或警告只说一次。
+   不反复用「版本比较/逐项拆解/重要限制」重复相同内容；缩写首次解释，日期和书名简短放在比较说明里。
 
 ━━ 规则档案 ━━
 {context}
@@ -556,6 +637,12 @@ def format_context(passages: list[dict]) -> str:
         tag = ""
         if p.get("edition") and p.get("layer"):
             tag = f"·{edition_layer_tag(p['edition'], p['layer'])}"
+        if p.get("status"):
+            tag += "·{}".format(p["status"])
+        if p.get("effective_date"):
+            tag += "·effective {}".format(p["effective_date"])
+        if p.get("scope"):
+            tag += "·scope {}".format(p["scope"])
         header = f"【档案 {i}{tag}】《{p['book']}》{page_info}"
         parts.append(f"{header}\n{p['text']}")
     return ("\n\n" + "─" * 40 + "\n\n").join(parts)
@@ -912,7 +999,7 @@ def main():
                 "role": "assistant",
                 "content": (
                     "指挥官，战术参谋部已就绪。\n\n"
-                    "您可以询问任何战锤40K第十版规则问题，例如：\n"
+                    "您可以询问任何战锤40K第十一版规则问题，例如：\n"
                     "- 「黑暗天使的信仰天使数据卡是什么？」\n"
                     "- 「混沌星际战士的混乱符文规则是什么？」\n"
                     "- 「黄金宝座护卫队的拯救掷骰如何计算？」"

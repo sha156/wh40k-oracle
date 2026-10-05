@@ -1,0 +1,140 @@
+{
+  "question": "普通卡尔加多少分？",
+  "status": 200,
+  "elapsed_seconds": 5.922,
+  "answer": {
+    "summary": "检索 2 步 · 引用 2 条",
+    "trace": [
+      {
+        "fn": "get_datasheet",
+        "args": "('卡尔加')",
+        "result": "已命中",
+        "status": "ok",
+        "note": "黑图书馆本地缓存的历史记录，原始名称明确标注“已删除”。这是第三方历史资料，不是官方现行兵牌；historical_points 仅为缓存中的旧点数，不得作为当前点数或军表合法性依据，也不得与其他同名/不同装备版本混用。缓存时间仅指本地文件修改时间，不是规则发布日期或当前有效性验证。"
+      },
+      {
+        "fn": "calc_points",
+        "args": "(['马涅乌斯·卡尔加', 'Marneus Calgar'])",
+        "result": "已命中",
+        "status": "ok",
+        "note": null
+      }
+    ],
+    "traceWarn": null,
+    "verdict": {
+      "label": "暂无法判定",
+      "labelEn": "Unverified",
+      "lede": [
+        {
+          "t": "text",
+          "s": "档案里查不到卡尔加的"
+        },
+        {
+          "t": "strong",
+          "s": "当前"
+        },
+        {
+          "t": "text",
+          "s": "点数，只有一条第三方历史缓存记录：马涅乌斯·卡尔加（含 "
+        },
+        {
+          "t": "num",
+          "s": "2"
+        },
+        {
+          "t": "text",
+          "s": " 名常胜护卫的整队）旧点数 "
+        },
+        {
+          "t": "num",
+          "s": "200"
+        },
+        {
+          "t": "text",
+          "s": " 分 "
+        },
+        {
+          "t": "cite",
+          "n": 1
+        },
+        {
+          "t": "cite",
+          "n": 2
+        },
+        {
+          "t": "text",
+          "s": "。"
+        }
+      ]
+    },
+    "calc": [
+      {
+        "n": 1,
+        "text": [
+          {
+            "t": "text",
+            "s": "这条记录原始名称明确标注「已删除」，属于第三方历史资料，"
+          },
+          {
+            "t": "strong",
+            "s": "不能当作现行点数或军表合法性依据"
+          },
+          {
+            "t": "text",
+            "s": "，也不能与其他同名或不同装备版本混用 "
+          },
+          {
+            "t": "cite",
+            "n": 1
+          },
+          {
+            "t": "cite",
+            "n": 2
+          },
+          {
+            "t": "text",
+            "s": "。"
+          }
+        ]
+      },
+      {
+        "n": 2,
+        "text": [
+          {
+            "t": "text",
+            "s": "现行点数请以官方 MFM / Faction Pack 为准；本次检索未命中现行条目，建议查阅原始规则书。"
+          }
+        ]
+      }
+    ],
+    "entityCard": null,
+    "cites": [
+      {
+        "n": 1,
+        "book": "黑图书馆 · 历史缓存（第三方，已删除）",
+        "page": null,
+        "section": "历史资料，非当前点数",
+        "term": "Marneus Calgar · 源记录 6",
+        "wiki": "",
+        "url": null
+      },
+      {
+        "n": 2,
+        "book": "黑图书馆本地缓存历史记录（第三方，已删除，非官方现行）",
+        "page": null,
+        "section": null,
+        "term": null,
+        "wiki": "",
+        "url": null
+      }
+    ],
+    "sensitivity": null,
+    "cta": null,
+    "followups": [
+      "卡尔加现在带什么装备？",
+      "常胜护卫单独多少分？",
+      "极限战士现行 MFM 在哪查？"
+    ],
+    "degraded": false
+  }
+}

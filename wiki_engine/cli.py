@@ -37,6 +37,7 @@ def main() -> None:
 
     # ── crosslinks ──
     sp = sub.add_parser("crosslinks", help="注入 [[wikilinks]]（流水线④）")
+    sp.add_argument("--units-only", action="store_true", help="Only refresh unit pages")
     sp.add_argument("--wiki", default="wiki", help="wiki 目录")
     sp.add_argument("--terms", default="wiki/terms.json",
                     help="术语表路径（用于扩充别名匹配）")
@@ -59,6 +60,11 @@ def main() -> None:
                     default="data_refined/Core Rules - New 40K Core Rules",
                     help="官方英文核心规则的 refine 产物目录")
 
+    # Narrow retained-snapshot reconciliation, outside chapter generation.
+    sp = sub.add_parser("curated-rules",
+                        help="Reconcile Cleave, Dark Pacts and Oath against reviewed retained sources")
+    sp.add_argument("--wiki", default="wiki", help="wiki 输出目录")
+
     # ── changelog ──
     sp = sub.add_parser("changelog",
                         help="从官方阵营包的「规则更新」章节生成规则变更清单")
@@ -67,11 +73,15 @@ def main() -> None:
                     help="GW 官方简体中文 PDF 目录")
 
     # ── keywords ──
+    from wiki_engine.keyword_index import DEFAULT_PDF, DEFAULT_ZH_PDF
+
     sp = sub.add_parser("keywords", help="生成武器词条（USR）索引 indexes/keywords.md")
     sp.add_argument("--wiki", default="wiki", help="wiki 目录")
     sp.add_argument("--db", default="db/wh40k.sqlite", help="官方结构库")
-    sp.add_argument("--pdf", default="data/11版40K通用技能速查表.pdf",
-                    help="11 版通用技能速查表（判定通用 USR 的真源）")
+    sp.add_argument("--pdf", default=str(DEFAULT_PDF),
+                    help="Official English Core Rules PDF")
+    sp.add_argument("--zh-pdf", default=str(DEFAULT_ZH_PDF),
+                    help="Official Chinese Core Rules companion PDF")
 
     # ── lint ──
     sp = sub.add_parser("lint", help="一致性检查（流水线⑥）")
@@ -124,7 +134,7 @@ def main() -> None:
 
     elif args.cmd == "crosslinks":
         terms_path = Path(args.terms) if Path(args.terms).exists() else None
-        modified = inject_all(Path(args.wiki), terms_path)
+        modified = inject_all(Path(args.wiki), terms_path, units_only=args.units_only)
         print("交叉链接完成: {} 页已更新".format(len(modified)))
 
     elif args.cmd == "build":
@@ -169,6 +179,11 @@ def main() -> None:
         if rep["conflicts"]:
             print("⚠️ {} 页检测到人工编辑，已跳过覆盖".format(len(rep["conflicts"])))
 
+    elif args.cmd == "curated-rules":
+        from wiki_engine.curated_rules import generate_all as generate_curated_rules
+        rep = generate_curated_rules(Path(args.wiki))
+        print("Curated rules: {} reviewed / {} written".format(rep["reviewed"], rep["written"]))
+
     elif args.cmd == "changelog":
         from wiki_engine.changelog import generate_all as generate_changelog
         rep = generate_changelog(Path(args.zh_dir), Path(args.wiki))
@@ -190,7 +205,8 @@ def main() -> None:
 
     elif args.cmd == "keywords":
         from wiki_engine.keyword_index import generate as generate_keyword_index
-        rep = generate_keyword_index(Path(args.db), Path(args.wiki), Path(args.pdf))
+        rep = generate_keyword_index(Path(args.db), Path(args.wiki), Path(args.pdf),
+                                     zh_pdf_path=Path(args.zh_pdf))
         print("词条索引: {} 条（通用 {} / 过渡期 {} / 单位特有 {}），"
               "反查 {} 条现役 (词条, 武器) 对 → {}".format(
                   rep["keywords"], rep["groups"].get("universal", 0),

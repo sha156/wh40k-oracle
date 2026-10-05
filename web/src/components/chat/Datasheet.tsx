@@ -108,19 +108,20 @@ function AbilityRow({ ability }: { ability: Ability }) {
 
 interface DatasheetProps {
   card: EntityCard;
+  showBadge?: boolean;
   /** EN 模式：头部主名显英文、副名显中文（数据本身由后端按 lang 装配） */
   primaryEn?: boolean;
 }
 
 /** E6 官方版式兵牌（Wahapedia datasheet 复刻：属性/武器/能力/装备/关键词全档） */
-export function Datasheet({ card, primaryEn = false }: DatasheetProps) {
+export function Datasheet({ card, primaryEn = false, showBadge = true }: DatasheetProps) {
   const bigName = primaryEn ? card.nameEn : card.nameZh;
   const smallName = primaryEn ? card.nameZh : card.nameEn;
   return (
     // @container：内部双栏/单栏按「容器」宽度切换（图鉴详情栏 ~740px 单栏免横滑，
     // 聊天页 ~1060px 双栏），不看视口
     <div className="@container relative mb-[18px] border border-black bg-bone text-ink shadow-[0_8px_30px_rgba(0,0,0,.55)]">
-      <SlotBadge id="E6" />
+      {showBadge ? <SlotBadge id="E6" /> : null}
       {/* 头部横幅：阵营渐变 + 噪纹 */}
       <div className="relative overflow-hidden bg-[linear-gradient(100deg,var(--color-tau-ban)_0%,#10424d_55%,var(--color-dark)_100%)] px-[18px] pt-3 pb-2.5 text-[#fefefe] after:pointer-events-none after:absolute after:inset-0 after:bg-[repeating-linear-gradient(115deg,rgba(255,255,255,.03)_0_2px,transparent_2px_6px)] after:content-[''] max-tablet:px-3 max-tablet:pt-2.5 max-tablet:pb-2">
         <div className="flex flex-wrap items-baseline gap-3">

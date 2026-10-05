@@ -12,6 +12,8 @@ import json
 import re
 from typing import Any, Dict, List, Optional
 
+from agent.openai_policy import create_openai_client, rejects_response_format
+
 _SYSTEM = """你是战锤40K规则参谋回答的「排版器」。上游参谋已用工具查证并写好散文答案，
 你的唯一任务是把它**重排**成前端槽位，不新增任何未在散文/证据中出现的数字或引用。
 
@@ -20,7 +22,7 @@ _SYSTEM = """你是战锤40K规则参谋回答的「排版器」。上游参谋�
   "verdict": {
     "label": "2-4字结论（如 值得带 / 不建议 / 需注意 / 规则如下）",
     "labelEn": "结论英文（如 Sanctioned / Censured / Caution / Ruling）",
-    "lede": "结论段落（1-3句概述），用轻标记"
+    "lede": "直接回答问题的开篇段落，用轻标记；后续完整解释放在 calc"
   },
   "calc": ["规则效果/解释/计算步骤1", "步骤2", ...],   // 承载完整正文，不限于计算
   "sensitivity": {"title": "◭ 敏感性 · ...", "text": "边界条件说明"} 或 null,
@@ -35,8 +37,21 @@ _SYSTEM = """你是战锤40K规则参谋回答的「排版器」。上游参谋�
 
 约束：
 - lede/calc/sensitivity 的内容必须能在散文答案里找到依据，不得杜撰新数字。
-- 这是无损排版，不是摘要：原文回答问题的规则列表、表格必须逐项放入 calc，保留每项名称、效果、数值与限制。
+- 缺少字段不是否定性证据。散文/工具证据没有明确证明时，不得写「无历史缓存点数」「不存在历史记录」
+  等断言。不得引入用户问题、散文和工具证据中都没有出现的单位、装备版本或变体名称；followups 也受此限制。
+- 保留全部独立信息，不必保留重复措辞：原文回答问题的规则列表、表格必须逐项保留，包含每项名称、效果、数值与限制。
   不能用「规则如下」「见命令表」替代实际内容；没有数学计算也必须保留规则效果。可拆成多条，不限制条数。
+- 前端会把 lede、calc、sensitivity 连成同一条聊天回复。calc 是正文段落，不要强写成算式或重复结论。
+  lede 一两句直答，calc 按相关主题合并成自然段。不要把每一个条件都拆成单独一条，导致一屏全是碎片。
+  版本比较通常三组：**改了什么**、**没变什么**、**对使用的影响**；只用原文实际需要的组，不套固定清单。
+  不先再抄一遍「现行规则全文」；相关效果合并到变化/不变/影响里。只把重复文字合并，不能删独立条件。
+  同一个事实或警告只出现一次；合并「版本比较」「逐项拆解」「重要限制」中重复的内容。
+  保留比较基准和真正影响结论的限制，但把密集日期/书名放在末尾一小段，不要抢在直接答案前。
+  sensitivity 仅用于正文尚未讲过的重要补充；已经解释的限制不能再复制一遍，优先 null。
+  简单点数题把数值、模型数和引用合并在 lede，calc 可空，不附无关属性或机械追问。
+  轻标记应克制：只强调主题或关键结论，不把普通名词、每个条件都包成关键词。
+  用玩家能懂的说法：例如「官方点数表中的阵营分类」，不要重复「MFM 分节排除口径」之类术语。
+  原文没有核实旧版本时，保留该限制，不能把现行规定排版成已证实的新旧差异。
 - 引用必须按事实来源分开：标为「结构库兵牌」的次数、距离、属性等用「L3 结构库」角标；
   规则正文效果才用实际取回的书页。兵牌关联的补丁页、通用规则页不能替兵牌特有字段背书。
   散文写明的来源边界必须保留；没有对应引用时保留文字来源说明，不得硬配另一条页码。
@@ -57,18 +72,8 @@ def _extract_json(text: str) -> Dict[str, Any]:
         start = stripped.find("{")
         if start == -1:
             raise ValueError("未找到 JSON 对象")
-        depth, end = 0, -1
-        for i in range(start, len(stripped)):
-            if stripped[i] == "{":
-                depth += 1
-            elif stripped[i] == "}":
-                depth -= 1
-                if depth == 0:
-                    end = i + 1
-                    break
-        if end == -1:
-            raise ValueError("JSON 不完整")
-        obj = json.loads(stripped[start:end])
+        # raw_decode observes string escaping and returns before trailing noise.
+        obj, _ = json.JSONDecoder().raw_decode(stripped, start)
     if not isinstance(obj, dict):
         raise ValueError("结构化输出非对象")
     return obj
@@ -81,7 +86,7 @@ class OpenAIStructuringLLM:
         self,
         api_key: str = "",
         base_url: str = "https://api.deepseek.com",
-        model: str = "deepseek-chat",
+        model: str = "deepseek-flash",
         temperature: float = 0.2,
         client: Optional[Any] = None,
     ):
@@ -90,8 +95,7 @@ class OpenAIStructuringLLM:
         if client is not None:
             self.client = client
         else:
-            from openai import OpenAI
-            self.client = OpenAI(api_key=api_key, base_url=base_url)
+            self.client = create_openai_client(api_key, base_url)
 
     def structure(
         self, question: str, prose: str, evidence: str, cites: List[Dict[str, Any]],
@@ -117,12 +121,16 @@ class OpenAIStructuringLLM:
             messages=[{"role": "system", "content": _SYSTEM},
                       {"role": "user", "content": user}],
             temperature=self.temperature,
-            max_tokens=1600,
+            max_tokens=3200,
             stream=False,
         )
+        if self.model == "deepseek-flash":
+            kwargs["extra_body"] = {"thinking": {"type": "disabled"}}
         try:
             resp = self.client.chat.completions.create(
                 response_format={"type": "json_object"}, **kwargs)
-        except Exception:
+        except Exception as error:
+            if not rejects_response_format(error):
+                raise
             resp = self.client.chat.completions.create(**kwargs)
         return _extract_json(resp.choices[0].message.content)

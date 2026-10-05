@@ -33,7 +33,7 @@ def _to_loadout(raw: List[List[Any]]) -> Tuple[Tuple[str, int], ...]:
         name, cnt = item
         try:
             c = int(cnt)
-        except (TypeError, ValueError):
+        except (TypeError, ValueError, OverflowError):
             return ()
         if not isinstance(name, str) or not name.strip() or c <= 0 or c > WEAPON_COUNT_MAX:
             return ()

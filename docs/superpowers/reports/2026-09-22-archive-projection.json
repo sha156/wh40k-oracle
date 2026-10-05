@@ -1,0 +1,94 @@
+{
+  "trial": {
+    "source": "blacklibrary",
+    "status": "projected",
+    "records": 1072,
+    "archived": 2,
+    "ignored": 1070,
+    "total_archived": 2,
+    "cached_at": "2026-07-26T18:12:13.411799+00:00",
+    "cache_timestamp_kind": "file_mtime"
+  },
+  "runtime": {
+    "source": "blacklibrary",
+    "status": "projected",
+    "records": 1072,
+    "archived": 2,
+    "ignored": 1070,
+    "total_archived": 2,
+    "cached_at": "2026-07-26T18:12:13.411799+00:00",
+    "cache_timestamp_kind": "file_mtime"
+  },
+  "backup": "D:\\Project\\py\\RAG\\archive\\runtime-backups\\wh40k-before-source-archive-20260922-182506.sqlite",
+  "existing_tables_unchanged": {
+    "factions": {
+      "rows": 26,
+      "sha256": "1e234a855a8ca8465f440adacf8d2667338980e3485223feaf7c6f0b0b925823"
+    },
+    "datasheets": {
+      "rows": 1721,
+      "sha256": "64764cfeaf0b919ba0c2bdf1d652d9c20dd4612eb4d78c60036b3f83355d17e8"
+    },
+    "units": {
+      "rows": 1721,
+      "sha256": "fd748bbb1e7acc2eafe19d202fd5386ef181b123c54cb68347f964d55be6cfe1"
+    },
+    "models": {
+      "rows": 1826,
+      "sha256": "92aea70d64f67b4360c65da8ce57316f630a222d5afa70f2cec0a5853264d2d7"
+    },
+    "weapons": {
+      "rows": 9337,
+      "sha256": "cbdd57843b16492eddaa02bbae277452366ad16e696cb3906be75f554b2f8e55"
+    },
+    "abilities": {
+      "rows": 4041,
+      "sha256": "199df17ccf7e0925037840d45defc158eaddbd47144a144aca6afc1c41e12065"
+    },
+    "stratagems": {
+      "rows": 1684,
+      "sha256": "44495d0169b03ff0ecd6fff939da412016f344f224acfb3709450d61222d4f93"
+    },
+    "detachments": {
+      "rows": 349,
+      "sha256": "c6f246f4754787981611470daba5ce10491e6212caa605bc018ea55d46f88304"
+    },
+    "enhancements": {
+      "rows": 1066,
+      "sha256": "ee9b7b559a666d625e7e5e16fe09e931ec732aa0721f11b172448a9197830320"
+    },
+    "aliases": {
+      "rows": 1649,
+      "sha256": "bbec82ad019db8d320ff43996deda0b2f2c740d0d10bd3558b9ad6789da6ae70"
+    },
+    "unit_zh_detail": {
+      "rows": 1135,
+      "sha256": "ef9245f1be6c7873cae930a13d1a9933a2663be1654ca622ee90240c82109346"
+    },
+    "zh_keyword_glossary": {
+      "rows": 87,
+      "sha256": "220dddcaf85d9cc4165cfdd735a57f1f4d260ae1d1915edbb082be36ebc2bcbe"
+    },
+    "detachment_names_zh": {
+      "rows": 123,
+      "sha256": "6858c70f7b0e3a9026ce5edd6690d997f75f971c6a48d36aa77215fcdeec5cfa"
+    },
+    "official_mfm_points": {
+      "rows": 3893,
+      "sha256": "6bdede74036e6bcdb2772420d30074840c30a3e757a18f1d54553d9ef9775209"
+    },
+    "official_mfm_detachments": {
+      "rows": 348,
+      "sha256": "24b6da436f76181da603767791241beea954e23cc7b696c31b5944e0e1f3243a"
+    },
+    "official_rule_revisions": {
+      "rows": 18,
+      "sha256": "922521fcf279e0d5b086aa0651a871b6ac2f1e1cf29934e2208819c44942dc47"
+    },
+    "official_unit_sources": {
+      "rows": 272,
+      "sha256": "1ed13184a50f00c689d31e7ad956b2a312f8d12c9e1df872e25fb0308f45db63"
+    }
+  },
+  "integrity_check": "ok"
+}

@@ -30,7 +30,7 @@ updated: '2026-09-14'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 铁罐突突枪 | 36" | 3 | 4+ | 5 | 0 | 1 | [[core-rules/devastating-wounds.md\|毁灭伤害]]，[[core-rules/rapid-fire.md\|速射2]] |
+| 铁罐突突枪-近距离 | 36" | 3 | 4+ | 5 | 0 | 1 | [[core-rules/devastating-wounds.md\|毁灭伤害]]，[[core-rules/rapid-fire.md\|速射2]] |
 | 屁精喷子 | 18" | D3+3 | 4+ | 6 | -1 | 1 | [[core-rules/blast.md\|爆炸]]，[[core-rules/ignores-cover.md\|无视掩体]] |
 | 火箭筒 | 24" | D3 | 4+ | 9 | -2 | 3 | [[core-rules/blast.md\|爆炸]] |
 | 大烧枪 | 12" | D6 | N/A | 5 | -1 | 1 | [[core-rules/ignores-cover.md\|无视掩体]]，[[core-rules/torrent.md\|洪流]] |
@@ -42,7 +42,7 @@ updated: '2026-09-14'
 
 ## 技能
 - **【阵营技能】:WAAAGH!**
-- **屁精炫耀**：每当本单位被选择进行射击时，可以投一颗D6，按如下结算■ 1-2,本单位遭受D3点致命伤害■ 3-4,本阶段中本单位射击武器S+1■ 5-6,本阶段中本单位射击武器A+1
+- **屁精炫耀**：该单位对没有T为7+ 的模型的单位进行攻击时，命中掷骰＋1。
 
 ## 单位构成
 - **3个模型** — 130 分

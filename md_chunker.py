@@ -157,6 +157,8 @@ def load_refined_book(pdf_path: Path, refined_root: Path,
     目录不存在、无页文件、或分块结果为空（页文件全空）都返回 None，
     让 ingest.py 回退到 PDF 抽取（H4）——否则空 refined 目录会被误判
     "已完成"，该书 0 chunk 入库且被 processed_log 永久跳过。"""
+    from corpus_policy import require_active_source
+    require_active_source(pdf_path)
     book_dir = refined_root / pdf_path.stem
     source_file = book_dir / "source.json"
     if source_file.exists():

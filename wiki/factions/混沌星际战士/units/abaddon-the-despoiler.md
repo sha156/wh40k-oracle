@@ -38,9 +38,12 @@ updated: '2026-09-14'
 | 荷鲁斯之爪 | 近战 | 14 | 2+ | 7 | -3 | 1 | [[core-rules/devastating-wounds.md\|毁灭伤害]] |
 
 ## 技能
-- **【阵营技能】：黑暗契约**
-- **混沌战帅**：在你的指挥阶段中，选择以下效果之一对本模 型生效，持续到下个你的指挥阶段开始时：憎恨榜样【光环】：本模型 6 寸内的友军阿斯塔特叛军单位（被诅咒者除外），攻击时可以重投命中结果混沌至尊印记【光环】：本模型 6 寸内的友军阿斯塔特叛军【步兵及骑乘】单位（被诅咒者除外），其中 的模型获得 4+特殊保护叛变军团之主【光环】：本模型 6 寸内的友军阿斯塔特叛军单位（被诅咒者除外），可以重投领导力以及震撼测试
-- **黑暗天命**：当该模型所属的单位订立黑暗契约且成功通过本次领导力测试，若测试结果为 7+，您便获得 1 CP。
+- **The Warmaster**：In your Command phase, select one Warmaster ability (see left). Until the start of your next Command phase, this model has that ability.
+- **Dark Destiny**：Each time this model's unit makes a Dark Pact and does not fail the resulting Leadership test, if the result of that test was 7+, you gain 1CP.
+- **SUPREME COMMANDER**：If this model is in your army, it must be your Warlord.
+- **Paragon of Hatred (Aura)**：While a friendly <span class="kwb">HERETIC</span> <span class="kwb">ASTARTES</span> unit is within 6" (excluding DAMNED units) of this model, each time a model in that unit makes an attack, you can re-roll the Hit roll.
+- **Mark of Chaos Ascendant (Aura)**：While a friendly Heretic Astartes Infantry or Heretic Astartes Mounted unit (excluding DAMNED units) is within 6" of this model, models in that unit have a 4+ invulnerable save.
+- **Lord of the Traitor Legions (Aura)**：While a friendly <span class="kwb">HERETIC</span> <span class="kwb">ASTARTES</span> unit (excluding DAMNED units) is within 6" of this model, you can re-roll Leadership and Battle-shock tests taken for that unit.
 
 ## 单位构成
 - **1个模型** — 295 分

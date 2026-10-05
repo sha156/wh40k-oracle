@@ -39,11 +39,13 @@ updated: '2026-09-14'
 | 机械蜂巢 | 近战 | 2D6 | 3+ | 4 | 0 | 1 | [[core-rules/extra-attacks.md\|额外攻击]] |
 
 ## 技能
-- **欧姆尼赛亚颂歌**：在己方指挥阶段开始时，选择欧姆尼赛亚颂歌部分中的一个技能。在[[factions/兽人/stratagems/on-to-da-next.md|下一个]]己方指挥阶段开始前，该模型拥有该技能 。[[factions/星际战士/stratagems/machine-vengeance.md|机械复仇]]祈：在己方指挥阶段开始时，选择一个对手军队中的单位。在下一个己方指挥阶段开始前，那个敌方单位是您的机械复仇目标。每当一个己方机械修会单位中的模型对机械复仇目标进行攻击时，您可以重掷命中掷骰。纪律真言：本模型拥有战线关键词并且拥有以下技能： 二相鼓舞（光环)：当己方机械修会单位位于该模型 6" 内时，那个单位中的模型的目标控制属性提升 1 点，且当那个单位进行战斗震慑测试或领导力测试时，测试结果加 1。隐匿赞美诗（光环）：位于该模型 6" 内的己方机械修会单位拥有隐秘技能。
-- **至高指挥官**：如果该单位在你的军表中，那么他必须作为主将
-- **体型适中**：模型可以像地形模型不存在一样移动穿过此地形模型。模型可以在此地形模型的任何一层进行部署或结束移动，但是模型的底座不能悬垂在地形模型的任何一层上。
-- **机械保镖**：本模型位于其他友军机械修会单位 3 寸内时，获得【独行特工】技能
-- **自我维修**：每个指挥阶段开始时，这个模型恢复D3生命值
+- **Canticles of the Omnissiah**：At the start of your Command phase, select one of the abilities in the Canticles of the Omnissiah section. Until the start of your next Command phase, this model has that ability.
+- **Mechanicus Bodyguard**：While this model is within 3" of one or more other friendly <span class="kwb">ADEPTUS</span> <span class="kwb">MECHANICUS</span> units, this model has the Lone Operative ability.
+- **Self-repair Mechanisms**：At the start of your Command phase, this model regains up to D3 lost wounds.
+- **SUPREME COMMANDER**：If this model is in your army, it must be your Warlord.
+- **Invocation of Machine Vengeance**：At the start of your Command phase, select one unit from your opponent’s army. Until the start of your next Command phase, that enemy unit is your Machine Vengeance target. Each time a model in a friendly Adeptus Mechanicus unit makes an attack that targets your Machine Vengeance target, you can re-roll the Hit roll.
+- **Mantra of Discipline**：This model has the <span class="kwb">BATTLELINE</span> keyword and has the following ability: <br><ul><li><b>Binharic Courage (Aura):</b> While a friendly <span class="kwb">ADEPTUS</span> <span class="kwb">MECHANICUS</span> unit is within 6" of this model, add 1 to the Objective Control characteristic of models in that unit and each time you take a Battle-shock or Leadership test for that unit, add 1 to that test.</li></ul>
+- **Shroudpsalm (Aura)**：While a friendly <span class="kwb">ADEPTUS</span> <span class="kwb">MECHANICUS</span> unit is within 6" of this model, that unit has the Stealth ability.
 
 ## 单位构成
 - **1个模型** — 220 分

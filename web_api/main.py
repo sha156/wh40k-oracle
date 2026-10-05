@@ -20,7 +20,7 @@ import threading
 from pathlib import Path
 from typing import Any, Dict, List, Optional
 
-from fastapi import FastAPI, HTTPException
+from fastapi import FastAPI, HTTPException, Request
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import StreamingResponse
 from pydantic import BaseModel, ConfigDict, Field
@@ -32,6 +32,7 @@ from web_api.contract import (Answer, ChangelogFactionPage, ChangelogIndex,
                               KeywordIndexResponse, RosterIn, SimResponse,
                               ValidationReportOut)
 from web_api.formatter import format_answer
+from web_api.origin_boundary import OriginBoundaryMiddleware
 from web_api.preflight import (retrieval_enabled, run_preflight,
                                summary as preflight_summary)
 from web_api.ratelimit import install as install_rate_limit
@@ -87,6 +88,10 @@ app.add_middleware(
     allow_methods=["GET", "POST"],
     allow_headers=["*"],
 )
+# Reject supplied foreign/duplicate Origins before CORS, rate limits and handlers.
+# Both middleware layers share the exact configured UI origins; no-Origin CLI
+# requests keep their existing behavior. The ASGI gate never reads the body.
+app.add_middleware(OriginBoundaryMiddleware, allowed_origins=_ALLOWED_ORIGINS)
 
 # 会话内存 session：sid → 历史轮（蓝图既定，不引数据库）
 from web_api.sessions import SessionStore
@@ -146,7 +151,9 @@ def _run_answer(req: ChatRequest) -> Answer:
     if llm is None:
         return _degraded_answer(req.question)
     from agent.tools import TOOLS
-    recorder = TraceRecorder(TOOLS)
+    from agent.public_errors import public_tool_wrapper
+    recorder = TraceRecorder({name: public_tool_wrapper(name, fn) if name == "rag_search" else fn
+                              for name, fn in TOOLS.items()})
     from agent.loop import AgentLoop
     loop = AgentLoop(llm=llm, tools=recorder.wrapped_tools())
     with _SESSIONS.session(req.session_id) as session:
@@ -514,9 +521,15 @@ def codex_changelog_faction(slug: str) -> ChangelogFactionPage:
 
 
 @app.get("/wiki/{path:path}")
-def wiki(path: str) -> Dict[str, Any]:
+def wiki(path: str, request: Request = None) -> Dict[str, Any]:
     """只读返回 wiki 页 markdown（图鉴页 Stage 4 用）。"""
     from pathlib import Path
+    # Use the complete decoded scope path: the router's regex can omit a trailing
+    # newline from its captured slug. Direct Python callers retain the same gate.
+    # Reject before filesystem resolution (NUL raises ValueError).
+    decoded_path = request.scope["path"] if request is not None else path
+    if any(ord(char) < 32 or ord(char) == 127 for char in decoded_path):
+        raise HTTPException(status_code=404, detail="wiki 页不存在")
     wiki_root = (Path(__file__).resolve().parent.parent / "wiki").resolve()
     # 防目录穿越：解析后必须仍在 wiki_root **内**。
     # 旧实现用 str.startswith 比前缀——`../wiki_engine/from_db` 解析成

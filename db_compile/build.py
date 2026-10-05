@@ -24,6 +24,8 @@ from typing import Dict, List, Optional, Tuple
 from wiki_compile.canonical import audit_wahapedia_csv, parse_wahapedia_csv
 
 from db_compile.schema import ALL_DDL, ensure_columns
+from db_compile.source_archive import preserve_archived_units
+from db_compile.mfm_history import preserve_historical_prices
 
 # Wahapedia 官方导出全集（spec 第四节「~20张关系表」的核心子集）。
 # Wargear.csv 永 404——但 Datasheets_wargear.csv 已内联 name+stats，不影响武器导入。
@@ -55,6 +57,7 @@ class BuildReport:
     # 让解析行数与文件真实条目数对不上时，reconciled=False 必须吼出来——曾经
     # Stratagems.csv 一条裸换行就静默换来「多一条垃圾行、少一条真战略」。
     csv_audit: Dict[str, dict] = field(default_factory=dict)
+    historical_prices: Dict = field(default_factory=dict)
 
     def unreconciled(self) -> Dict[str, dict]:
         return {k: v for k, v in self.csv_audit.items() if not v["reconciled"]}
@@ -77,8 +80,10 @@ def _load_name_zh_by_id(terms_path: Optional[Path]) -> Dict[str, str]:
         return {}
     if not isinstance(data, dict):
         return {}
+    from corpus_policy import is_excluded_book
     return {p["canonical_id"]: p["zh"] for p in data.get("pairs", [])
-            if isinstance(p, dict) and p.get("zh") and p.get("canonical_id")}
+            if isinstance(p, dict) and p.get("zh") and p.get("canonical_id")
+            and not is_excluded_book(p.get("book", ""))}
 
 
 def _insert_factions(cur, rows: List[dict]) -> Tuple[int, int]:
@@ -322,7 +327,8 @@ def _insert_keywords(cur, rows: List[dict]) -> int:
 
 
 def build_database(csv_dir: Path, db_path: Path,
-                    terms_path: Optional[Path] = None) -> BuildReport:
+                    terms_path: Optional[Path] = None, *,
+                    historical_mfm_snapshot: Optional[Path] = None) -> BuildReport:
     """建表并导入当前已有的 CSV。
 
     缺失的 CSV（Wargear.csv 除外）计入 missing_csv；已有数据的表如实导入行数；
@@ -346,6 +352,8 @@ def build_database(csv_dir: Path, db_path: Path,
 
     try:
         conn = sqlite3.connect(str(tmp_path))
+        cur = None
+        failed = True
         try:
             cur = conn.cursor()
             for ddl in ALL_DDL:
@@ -425,9 +433,30 @@ def build_database(csv_dir: Path, db_path: Path,
                 report.row_counts["keywords_updated"] = _insert_keywords(
                     cur, _read_csv(path, report))
 
+            report.historical_prices = preserve_historical_prices(
+                db_path, conn, historical_mfm_snapshot)
+            # Deleted source cards may disappear from newer caches. Preserve their
+            # verified archive without carrying old canonical tables into the rebuild.
+            archived = preserve_archived_units(db_path, conn)
+            if archived:
+                report.row_counts["source_archived_units"] = archived
             conn.commit()
+            failed = False
         finally:
-            conn.close()
+            # A live cursor can retain SQLite's file handle on Windows even after
+            # connection.close(). Release both before replace/unlink, including
+            # cursor creation failures, without masking the build's exception.
+            close_error = None
+            for resource in (cur, conn):
+                if resource is None:
+                    continue
+                try:
+                    resource.close()
+                except BaseException as exc:
+                    if close_error is None:
+                        close_error = exc
+            if close_error is not None and not failed:
+                raise close_error
         # 全部成功才替换正式库（Windows 上 os.replace 同卷原子）
         os.replace(str(tmp_path), str(db_path))
     except BaseException:

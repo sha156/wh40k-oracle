@@ -1,0 +1,212 @@
+{
+  "before_items": 3296,
+  "after_items": 3349,
+  "before_keyword_spans": 188,
+  "after_keyword_spans": 184,
+  "added_rows_items": 39,
+  "existing_rows_net_items": 14,
+  "rows_item_count_changes": {
+    "000000001": {
+      "before": 4,
+      "after": 5
+    },
+    "000000004": {
+      "before": 3,
+      "after": 5
+    },
+    "000000006": {
+      "before": 6,
+      "after": 5
+    },
+    "000000012": {
+      "before": 4,
+      "after": 0
+    },
+    "000000013": {
+      "before": 5,
+      "after": 4
+    },
+    "000000016": {
+      "before": 3,
+      "after": 4
+    },
+    "000000020": {
+      "before": 3,
+      "after": 4
+    },
+    "000000021": {
+      "before": 3,
+      "after": 4
+    },
+    "000000024": {
+      "before": 2,
+      "after": 3
+    },
+    "000000026": {
+      "before": 2,
+      "after": 3
+    },
+    "000000028": {
+      "before": 2,
+      "after": 3
+    },
+    "000000039": {
+      "before": 4,
+      "after": 3
+    },
+    "000000042": {
+      "before": 4,
+      "after": 5
+    },
+    "000000045": {
+      "before": 3,
+      "after": 2
+    },
+    "000000046": {
+      "before": 4,
+      "after": 5
+    },
+    "000000068": {
+      "before": 2,
+      "after": 0
+    },
+    "000000167": {
+      "before": 4,
+      "after": 1
+    },
+    "000000846": {
+      "before": 2,
+      "after": 3
+    },
+    "000001058": {
+      "before": 3,
+      "after": 2
+    },
+    "000001098": {
+      "before": 0,
+      "after": 5
+    },
+    "000001193": {
+      "before": 2,
+      "after": 0
+    },
+    "000001367": {
+      "before": 0,
+      "after": 3
+    },
+    "000001372": {
+      "before": 2,
+      "after": 1
+    },
+    "000001536": {
+      "before": 5,
+      "after": 4
+    },
+    "000002497": {
+      "before": 4,
+      "after": 5
+    },
+    "000002499": {
+      "before": 0,
+      "after": 4
+    },
+    "000002532": {
+      "before": 1,
+      "after": 2
+    },
+    "000002709": {
+      "before": 3,
+      "after": 4
+    },
+    "000003701": {
+      "before": 0,
+      "after": 3
+    },
+    "000003835": {
+      "before": 5,
+      "after": 3
+    },
+    "000003836": {
+      "before": 3,
+      "after": 2
+    },
+    "000003861": {
+      "before": 2,
+      "after": 3
+    },
+    "000004169": {
+      "before": 1,
+      "after": 2
+    },
+    "fpe_bannernob": {
+      "before": 2,
+      "after": 3
+    },
+    "fpe_big_mek_dakkarig": {
+      "before": 1,
+      "after": 3
+    }
+  },
+  "keyword_span_changes": {
+    "000000008": [
+      1,
+      0
+    ],
+    "000000021": [
+      1,
+      0
+    ],
+    "000000030": [
+      1,
+      0
+    ],
+    "000000045": [
+      1,
+      0
+    ],
+    "000001098": [
+      0,
+      1
+    ],
+    "000001589": [
+      0,
+      1
+    ],
+    "000002489": [
+      1,
+      0
+    ],
+    "000002497": [
+      1,
+      0
+    ],
+    "000002532": [
+      2,
+      0
+    ],
+    "000002709": [
+      0,
+      1
+    ],
+    "000003836": [
+      0,
+      2
+    ],
+    "000004169": [
+      2,
+      0
+    ],
+    "fp11e-ae-clanblade": [
+      0,
+      1
+    ],
+    "fp11e-sm-eradicators-heavy-bolters": [
+      0,
+      1
+    ],
+    "fpe_bigboss": [
+      1,
+      0
+    ]
+  }
+}

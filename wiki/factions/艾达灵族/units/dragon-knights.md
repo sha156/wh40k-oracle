@@ -1,5 +1,6 @@
 ---
 id: fp11e-ae-dragon-knights
+name_zh: 龙骑士
 name_en: Dragon Knights
 faction: 艾达灵族
 type: unit
@@ -24,25 +25,25 @@ updated: '2026-09-14'
 ## 属性表
 | 模型 | M | T | SV | W | LD | OC |
 |---|---|---|---|---|---|---|
-| Dragon Knights | 10 | 5 | 4 | 4 | 7 | 2 |
+| 龙骑士 | 10 | 5 | 4 | 4 | 7 | 2 |
 
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Laser Lance | 6"" | 1 | 3+ | 6 | -2 | 3 | [[core-rules/assault.md\|突击]] |
-| Solar Carbine | 18"" | 2 | 3+ | 4 | 0 | 1 | [[core-rules/rapid-fire.md\|速射2]] |
+| 激光骑枪 | 6"" | 1 | 3+ | 6 | -2 | 3 | [[core-rules/assault.md\|突击]] |
+| 曜光卡宾枪 | 18"" | 2 | 3+ | 4 | 0 | 1 | [[core-rules/rapid-fire.md\|速射2]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Drakesteed Fangs and Talons | 近战 | 3 | 3+ | 5 | -1 | 1 | [[core-rules/extra-attacks.md\|额外攻击]] |
-| Laser Lance | 近战 | 3 | 3+ | 6 | -2 | 3 | [[core-rules/lance.md\|骑枪]] |
+| 龙骥的獠牙与利爪 | 近战 | 3 | 3+ | 5 | -1 | 1 | [[core-rules/extra-attacks.md\|额外攻击]] |
+| 激光骑枪 | 近战 | 3 | 3+ | 6 | -2 | 3 | [[core-rules/lance.md\|骑枪]] |
 
 ## 技能
-- **On the Hunt**：When this unit is selected to make a fall-back move, that fall-back move does not prevent this unit from being eligible to shoot and eligible to declare a charge.
-- **Agile Reach**：When this unit is selected to fight, melee weapons equipped by unengaged models in this unit that are within 3" of an enemy unit that is engaged with this unit can target that enemy unit.
-- **Drakolithe (Once per battle, per token)**：When an enemy unit ends a move within 8" of this unit, if this unit is unengaged or if that enemy unit ended that move engaged with this unit, you can use this ability. If you do, roll one D6: ▪On a 3+, that enemy unit suffers 1 mortal wound. Place one Drakolithe token next to the unit for each Drakolithe the unit is equipped with, removing one each time this ability is used.
-- **Battle Focus**
+- **战斗专注**
+- **捕猎中**：当该单位被选择进行一次后撤移动时，那次后撤移动不会阻止该单位进行射击和宣布冲锋。
+- **矫捷远击**：当该单位被选择进行近战时，该单位中处于非交战状态，且位于一个与该单位处于交战状态的敌方单位3"	范围内的模型，其装备的近战武器可以将那个敌方单位为目标进行攻击。
+- **矫龙（每场战斗，每个标识限一次）**：当一个敌方单位在该单位	8"	范围内结束一次移动时，如果该单位处于非交战状态，或如果那个敌方单位在结束那次移动时与该单位进入交战状态，您可以使用该技能。若您如此做，掷一枚	D6：▪	如结果为	3+，那个敌方单位受到	1	处致命伤。
 
 ## 单位构成
 - **3个模型** — 90 分

@@ -11,15 +11,16 @@ const API = process.env.NEXT_PUBLIC_API_BASE?.replace(/\/$/, "") ?? "http://loca
 export function OfficialPoints() {
   const [query, setQuery] = useState("");
   const [offset, setOffset] = useState(0);
-  const [data, setData] = useState<Prices | null>(null);
+  const [snapshot, setSnapshot] = useState<{ query: string; offset: number; data: Prices } | null>(null);
+  const data = snapshot?.query === query && snapshot.offset === offset ? snapshot.data : null;
   const [error, setError] = useState("");
   useEffect(() => {
     const ctrl = new AbortController();
     const timer = setTimeout(() => {
       fetch(`${API}/codex/points?query=${encodeURIComponent(query)}&offset=${offset}`, { signal: ctrl.signal })
         .then(async r => { if (!r.ok) throw new Error(`点数查询失败 (${r.status})`); return await r.json() as Prices; })
-        .then(result => { setData(result); setError(""); })
-        .catch(e => { if (e.name !== "AbortError") setError(e.message); });
+        .then(result => { if (!ctrl.signal.aborted) { setSnapshot({ query, offset, data: result }); setError(""); } })
+        .catch(e => { if (!ctrl.signal.aborted && e.name !== "AbortError") setError(e.message); });
     }, 200);
     return () => { clearTimeout(timer); ctrl.abort(); };
   }, [query, offset]);
@@ -27,8 +28,9 @@ export function OfficialPoints() {
     <h2 className="mb-3 text-xl">官方点数 · Munitorum Field Manual</h2>
     <p className="mb-4 text-sm text-[#a9bcb6]">保留官方的单位、重复编制、装备与强化价格。存在点数记录不代表结构库已收录完整兵牌。</p>
     <input aria-label="搜索官方点数" placeholder="英文单位、强化、武器或阵营名" value={query}
-      onChange={e => { setQuery(e.target.value); setOffset(0); }} className="mb-3 w-full border border-panel-line bg-dark p-3" />
+      onChange={e => { setQuery(e.target.value); setOffset(0); setError(""); }} className="mb-3 w-full border border-panel-line bg-dark p-3" />
     {error && <p role="alert" className="text-[#d99]">{error}</p>}
+    {!data && !error && <p role="status" className="my-3 text-sm text-[#a9bcb6]">正在查询官方点数…</p>}
     {data && <>
       <p className="mb-3 text-sm">完整快照 {data.sourceRows} 条 · 匹配 {data.total} 条 · 抓取 {new Date(data.fetchedAt).toLocaleDateString()}</p>
       <div className="overflow-x-auto"><table className="w-full text-left text-sm">

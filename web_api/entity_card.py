@@ -133,6 +133,8 @@ def _zh_abilities(zh: Optional[Dict[str, Any]]) -> List[Ability]:
             if not nm:
                 continue
             tag, nm2 = _split_tag(nm)
+            if item.get("source") == "official-db":
+                tag = tag or "官方英文"
             out.append(_ability(tag, nm2, item.get("contentHtml"),
                                 _flatten_content(item.get("content"))))
     return out
@@ -249,7 +251,7 @@ def build_entity_card(
         leads=leads,
         composition=(
             [to_richtext(line) for line in tool_result["zh_composition"]]
-            if tool_result.get("zh_composition")
+            if tool_result.get("zh_composition") and not ds.get("historical_points")
             else _composition(ds, lang)
         ),
         keywords=keywords,

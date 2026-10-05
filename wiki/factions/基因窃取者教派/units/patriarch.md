@@ -32,9 +32,10 @@ updated: '2026-09-14'
 | 族长利爪 | 近战 | 5 | 2+ | 6 | -2 | 2 | [[core-rules/devastating-wounds.md\|毁灭伤害]]，[[core-rules/twin-linked.md\|双联]] |
 
 ## 技能
-- **彼端强令**：当该模型领导单位时，那个单位中所有模型的近战武器获得【毁灭伤害】。
-- **天外恐怖【灵能】**：近战阶段开始时，所有位于本模型 6 英寸内的敌方单位必须进行震慑测试。
-- **灵能魔宠**：一局游戏仅一次，近战阶段开始时，你可以使用灵能魔宠，如果你这样做，该模型的天外恐怖技能影响范围增加 6 英寸。
+- **Might From Beyond**：While this model is leading a unit, melee weapons equipped by models in that unit have the [DEVASTATING WOUNDS] ability.
+- **Cosmic Horror (Psychic)**：At the start of the Fight phase, each enemy unit within 6" of this model must take a Battle-shock test.
+- **Psychic Familiar**：Once per battle, at the start of the Fight phase, this model can use its psychic familiar. If it does, until the end of the phase, add 6" to the range of its Cosmic Horror ability.<br><br><b>Designer’s Note:</b> <i>Place a Psychic Familiar token next to the model, removing it once this ability has been used.</i>
+- **SUPREME COMMANDER**：<ul><li>You cannot include more than one <span class="kwb">PATRIARCH</span> model in your army.</li><li>If this model is in your army, it must be your Warlord.</li></ul>
 
 ## 单位构成
 - **1个模型** — 80 分

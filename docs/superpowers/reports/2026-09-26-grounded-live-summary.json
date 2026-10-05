@@ -1,0 +1,140 @@
+{
+  "health": {
+    "ok": true,
+    "llm_configured": true,
+    "retrieval": true,
+    "ready": true,
+    "assets": [
+      {
+        "name": "embed_model",
+        "path": "/app/opt/models--BAAI--bge-m3/snapshots/5617a9f61b028005a4858fdac845db406aefb181",
+        "ok": true,
+        "required": true,
+        "detail": "",
+        "hint": "挂载宿主机 ./opt 到 /app/opt（compose 卷 opt:ro）"
+      },
+      {
+        "name": "vector_store",
+        "path": "/app/local_vector_store/index.faiss",
+        "ok": true,
+        "required": true,
+        "detail": "",
+        "hint": "宿主机跑 .\\.venv\\Scripts\\python.exe ingest.py 后挂载 ./local_vector_store"
+      },
+      {
+        "name": "structured_db",
+        "path": "/app/db/wh40k.sqlite",
+        "ok": true,
+        "required": true,
+        "detail": "",
+        "hint": "宿主机跑 python -m db_compile build 后挂载 ./db"
+      },
+      {
+        "name": "wiki",
+        "path": "/app/wiki/index.md",
+        "ok": true,
+        "required": false,
+        "detail": "",
+        "hint": "挂载 ./wiki（仓库内已跟踪，未挂载时用镜像内自带副本）"
+      },
+      {
+        "name": "keyword_index",
+        "path": "/app/wiki/indexes/keywords.json",
+        "ok": true,
+        "required": false,
+        "detail": "",
+        "hint": "宿主机跑 python -m wiki_engine.keyword_index 后随 ./wiki 一并挂载"
+      }
+    ],
+    "warmup": {
+      "requested": true,
+      "done": true,
+      "error": null
+    }
+  },
+  "cases": [
+    {
+      "name": "comparison-1",
+      "elapsed_seconds": 7.062,
+      "checks": {
+        "http_200": true,
+        "not_degraded": true,
+        "expected_values": true,
+        "has_citations": true,
+        "historical_scope": true
+      },
+      "manual_review": "Reviewed: expected values and source scope retained; no recurrence of the saved invented variant or unsupported Guilliman-history absence."
+    },
+    {
+      "name": "ordinary-calgar-1",
+      "elapsed_seconds": 5.922,
+      "checks": {
+        "http_200": true,
+        "not_degraded": true,
+        "expected_values": true,
+        "has_citations": true,
+        "historical_scope": true
+      },
+      "manual_review": "Reviewed: expected values and source scope retained; no recurrence of the saved invented variant or unsupported Guilliman-history absence."
+    },
+    {
+      "name": "armour-calgar",
+      "elapsed_seconds": 3.438,
+      "checks": {
+        "http_200": true,
+        "not_degraded": true,
+        "expected_values": true,
+        "has_citations": true
+      },
+      "manual_review": "Reviewed: expected values and source scope retained; no recurrence of the saved invented variant or unsupported Guilliman-history absence."
+    },
+    {
+      "name": "guilliman",
+      "elapsed_seconds": 3.093,
+      "checks": {
+        "http_200": true,
+        "not_degraded": true,
+        "expected_values": true,
+        "has_citations": true
+      },
+      "manual_review": "Reviewed: expected values and source scope retained; no recurrence of the saved invented variant or unsupported Guilliman-history absence."
+    },
+    {
+      "name": "comparison-2",
+      "elapsed_seconds": 6.297,
+      "checks": {
+        "http_200": true,
+        "not_degraded": false,
+        "expected_values": true,
+        "has_citations": true,
+        "historical_scope": true
+      },
+      "manual_review": "Rejected: upstream prose incorrectly claims the historical cache does not distinguish ordinary and armour versions; formatting also degraded."
+    },
+    {
+      "name": "ordinary-calgar-2",
+      "elapsed_seconds": 5.812,
+      "checks": {
+        "http_200": true,
+        "not_degraded": true,
+        "expected_values": true,
+        "has_citations": true,
+        "historical_scope": true
+      },
+      "manual_review": "Reviewed: expected values and source scope retained; no recurrence of the saved invented variant or unsupported Guilliman-history absence."
+    },
+    {
+      "name": "comparison-3",
+      "elapsed_seconds": 6.313,
+      "checks": {
+        "http_200": true,
+        "not_degraded": true,
+        "expected_values": true,
+        "has_citations": true,
+        "historical_scope": true
+      },
+      "manual_review": "Reviewed: expected values and source scope retained; no recurrence of the saved invented variant or unsupported Guilliman-history absence."
+    }
+  ],
+  "overall": "Mixed: 6/7 scalar checks and scoped prose review passed; comparison-2 retained for diagnosis."
+}

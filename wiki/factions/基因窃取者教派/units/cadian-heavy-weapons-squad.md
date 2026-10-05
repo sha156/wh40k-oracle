@@ -38,7 +38,8 @@ updated: '2026-09-14'
 | 武器组格斗武器 | 近战 | 2 | 4+ | 3 | 0 | 1 | — |
 
 ## 技能
-- **掩护火力**：每当你对本单位使用坚守射击战略技能时，未修正的 5+即可命中，如果本单位 6 寸内至少有一个友军排单位则改为 4+
+- **Covering Fire**：Each time you target this unit with the Fire Overwatch Stratagem, while resolving that Stratagem, hits are scored on unmodified Hit rolls of 5+, or on unmodified Hit rolls of 4+ instead if this unit is within 6" of one or more friendly Platoon units.
+- **EMBARKING**：While embarked within a Transport, each model takes up the space of 2 models, and each weapon equipped by these models is considered to be 2 models’ weapons for the purposes of the Firing Deck ability.
 
 ## 单位构成
 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。

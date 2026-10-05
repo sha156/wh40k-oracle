@@ -37,8 +37,9 @@ updated: '2026-09-14'
 | 格斗武器 | 近战 | 2 | 3+ | 3 | 0 | 1 | — |
 
 ## 技能
-- **支援武器**：当本单位所在单位受到攻击时，如果本单位中还包含至少一个其他模型，在所有攻击结算前，本模型的 T 值属性为 3
-- **绞杀陷阱**：在你的射击阶段中，本模型射击后，选择一个被本模型的织影炮命中至少一次的敌方单位，直到你的下个回合开始前，该单位陷入绞杀陷阱：当该敌方单位进行一次常规移动、加速移动或撤退时，为该敌方单位中的每个模型投1D6，每有一个为1的结果，该敌方单位受到1点致命伤
+- **Support Weapon**：Each time an attack targets this model’s unit, if that unit contains one or more other models, until that attack is resolved, this model has a Toughness characteristic of 3.
+- **Monofilament Snare**：In your Shooting phase, after this model has shot, select one enemy unit hit by one or more of those attacks made with its shadow weaver. Until the start of your next turn, that enemy unit is snared. While a unit is snared, each time that unit makes a Normal, Advance or Fall Back move, roll one D6 for each model in that unit: for each 1, that unit suffers 1 mortal wound.
+- **SUPPORT ARTILLERY**：At the start of the Declare Battle Formations step, this model can join one [[factions/艾达灵族/units/guardian-defenders.md|Guardian Defenders]] unit from your army (a unit cannot have more than one Support Weapon model joined to it). This model then counts as part of that <span class="kwb">GUARDIANS</span> unit for the rest of the battle, and that unit’s Starting Strength is increased accordingly.<br><br>This model, and any unit it is joined to, cannot embark within a Transport.
 
 ## 单位构成
 - **1个模型** — 60 分

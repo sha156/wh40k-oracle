@@ -42,8 +42,9 @@ updated: '2026-09-14'
 | 动力长刀 | 近战 | 3 | 3+ | 5 | -3 | 1 | — |
 
 ## 技能
-- **【阵营技能】：战斗专注**
-- **剑刃风暴**：本单位中的模型在攻击半射程内的敌方单位时，其装备的远程武器拥有【连击 1】能力
+- **Bladestorm**：Ranged weapons equipped by models in this unit have the [SUSTAINED HITS 1] ability while targeting an enemy unit within half range.
+- **Shimmershield**：The bearer has a 4+ invulnerable save.
+- **Aspect Shrine Token**：Once per battle for each Aspect Shrine token this unit has, you can change the result of one Hit roll or one Wound roll made for a model in this unit (excluding <span class="kwb">CHARACTER</span> models) to an unmodified 6.<br><br><b>Designer’s Note:</b> <i>Place an Aspect Shrine token next to the unit for each Aspect Shrine token it has, removing one each time this ability is used.</i>
 
 ## 单位构成
 - **5个模型** — 70 分

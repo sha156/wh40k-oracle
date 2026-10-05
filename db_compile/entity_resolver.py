@@ -15,6 +15,8 @@ from dataclasses import dataclass, field
 from pathlib import Path
 from typing import Dict, List, Optional, Tuple
 
+from corpus_policy import is_excluded_book, retired_alias_spellings
+
 FUZZY_CUTOFF = 0.6
 
 # ⚠️ 模糊匹配的第二道判据：**绝对字符编辑距离**，与 FUZZY_CUTOFF 的相似度比例正交。
@@ -118,7 +120,11 @@ def _load_term_pairs(terms_path: Path) -> List[dict]:
         data = json.loads(terms_path.read_text(encoding="utf-8"))
     except (OSError, ValueError):
         return []
-    return data.get("pairs", []) if isinstance(data, dict) else []
+    pairs = data.get("pairs", []) if isinstance(data, dict) else []
+    if not isinstance(pairs, list):
+        return []
+    return [p for p in pairs if isinstance(p, dict)
+            and not is_excluded_book(p.get("book", ""))]
 
 
 def _load_datasheet_rows(db_path: Path) -> List[Tuple[str, str, Optional[str]]]:
@@ -135,6 +141,7 @@ class EntityResolver:
     def __init__(self, terms_path: Optional[Path] = None,
                  app_path: Optional[Path] = None,
                  db_path: Optional[Path] = None):
+        self.db_path = Path(db_path) if db_path is not None else None
         self._zh_to_id: Dict[str, str] = {}
         self._id_to_en: Dict[str, str] = {}
         self._en_to_id: Dict[str, str] = {}
@@ -185,6 +192,11 @@ class EntityResolver:
                 self._zh_norm_to_id[norm] = None
 
         self._unit_aliases = load_unit_aliases(app_path) if app_path else {}
+        # A removed exact alias is not a typo of a nearby surviving unit.
+        # This audited negative identity list contains no rule prose or target
+        # mappings; surviving exact/normalized/community mappings take priority.
+        self._retired_alias_norms = frozenset(
+            _sep_normalized(alias) for alias in retired_alias_spellings())
 
     def _qualified_candidates(self, key: str) -> List[str]:
         """碰撞桶 → `Name (FACTION)` 候选串（可原样回填 resolve 精确重查）。"""
@@ -204,35 +216,45 @@ class EntityResolver:
         return ResolveResult(cid, self._id_to_en.get(cid), confidence)
 
     def resolve(self, name: str) -> ResolveResult:
-        name = name.strip()
+        # Community indirection supplies another query, not stronger identity
+        # evidence. Resolve only its terminal target; preserve fuzzy/ambiguous/
+        # none results instead of promoting a guess or retrying the nickname.
+        # Iterative traversal handles cycles and long chains without recursion.
+        seen = set()
+        while True:
+            name = name.strip()
 
-        cid = self._zh_to_id.get(name)
-        if cid:
-            return ResolveResult(cid, self._id_to_en.get(cid), "exact")
+            cid = self._zh_to_id.get(name)
+            if cid:
+                return ResolveResult(cid, self._id_to_en.get(cid), "exact")
 
-        # 分隔号写法差异（罗伯特·基里曼 ↔ 罗伯特.基里曼）算**同名**，判 exact：
-        # 只有这样 `datasheet.find_datasheet`（只信 exact）才够得着数值权威路径。
-        norm_cid = self._zh_norm_to_id.get(_sep_normalized(name))
-        if norm_cid:
-            return ResolveResult(norm_cid, self._id_to_en.get(norm_cid), "exact")
+            # 分隔号写法差异（罗伯特·基里曼 ↔ 罗伯特.基里曼）算**同名**，判 exact：
+            # 只有这样 `datasheet.find_datasheet`（只信 exact）才够得着数值权威路径。
+            norm_cid = self._zh_norm_to_id.get(_sep_normalized(name))
+            if norm_cid:
+                return ResolveResult(norm_cid, self._id_to_en.get(norm_cid), "exact")
 
-        # 消歧语法 `Name (FACTION)`：ambiguous 候选串原样回填即可命中唯一阵营
-        m = _FACTION_QUALIFIED.match(name)
-        if m:
-            key = m.group("base").strip().upper()
-            fac = m.group("faction").strip().upper()
-            for c in self._en_buckets.get(key, []):
-                if (self._id_to_faction.get(c) or "").upper() == fac:
-                    return ResolveResult(c, self._id_to_en.get(c), "exact")
+            # 消歧语法 `Name (FACTION)`：ambiguous 候选串原样回填即可命中唯一阵营
+            m = _FACTION_QUALIFIED.match(name)
+            if m:
+                key = m.group("base").strip().upper()
+                fac = m.group("faction").strip().upper()
+                for c in self._en_buckets.get(key, []):
+                    if (self._id_to_faction.get(c) or "").upper() == fac:
+                        return ResolveResult(c, self._id_to_en.get(c), "exact")
 
-        if name.upper() in self._en_to_id:
-            return self._resolve_en_key(name.upper(), "exact")
+            if name.upper() in self._en_to_id:
+                return self._resolve_en_key(name.upper(), "exact")
 
-        alias_target = self._unit_aliases.get(name)
-        if alias_target:
-            resolved = self.resolve(alias_target)
-            if resolved.canonical_id:
-                return ResolveResult(resolved.canonical_id, resolved.name_en, "exact")
+            if name not in self._unit_aliases:
+                break
+            if name in seen:
+                return ResolveResult(None, None, "none")
+            seen.add(name)
+            name = self._unit_aliases[name]
+
+        if _sep_normalized(name) in self._retired_alias_norms:
+            return ResolveResult(None, None, "none")
 
         # 中英文分开模糊匹配：en_to_id 的 key 恒为大写，name 需同样大写化才能比对
         zh_hits = difflib.get_close_matches(
