@@ -1,6 +1,7 @@
 """Bounded replacement controls; real Win32 locks do not diagnose production."""
 import ctypes
 from ctypes import wintypes
+import hashlib
 import json
 import os
 from pathlib import Path
@@ -14,6 +15,14 @@ from scripts import fetch_blacklibrary_snapshot as module
 DELAYS = [0.05, 0.15]
 OLD = b'{"old": "preserved"}\n'
 VALUE = {"new": "verified", "text": "规则"}
+WINDOWS_HANDLE_ONLY = pytest.mark.skipif(
+    os.name != "nt", reason="Real CreateFileW/no-delete-sharing reader requires Windows")
+
+
+@pytest.fixture
+def windows_producer(monkeypatch):
+    """Declare the synthetic producer platform without changing global os.name."""
+    monkeypatch.setattr(module, "os", SimpleNamespace(name="nt"))
 
 
 class HeldReader:
@@ -119,6 +128,7 @@ def has_traceback(exc, original):
     return False
 
 
+@WINDOWS_HANDLE_ONLY
 @pytest.mark.parametrize("release_after", [1, 2])
 def test_real_windows_reader_release_recovers_without_diagnostic(tmp_path, monkeypatch, release_after):
     snap = module.Snapshot(tmp_path, session=SimpleNamespace())
@@ -156,6 +166,7 @@ def test_real_windows_reader_release_recovers_without_diagnostic(tmp_path, monke
     }, indent=2), encoding="utf-8")
 
 
+@WINDOWS_HANDLE_ONLY
 @pytest.mark.parametrize("observer_fails", [False, True])
 def test_real_windows_persistent_reader_preserves_terminal_exception(tmp_path, monkeypatch, observer_fails):
     snap = module.Snapshot(tmp_path, session=SimpleNamespace())
@@ -213,6 +224,7 @@ def test_real_windows_persistent_reader_preserves_terminal_exception(tmp_path, m
         "string_errno", "string_winerror", "missing_winerror", "oserror", "missing", "cancel"])
 def test_nonmatching_replace_and_cancellation_never_sleep(tmp_path, monkeypatch, platform, error):
     target, temp = destination(tmp_path)
+    counts = count_preparation(monkeypatch)
     calls, sleeps, observed = [], [], []
 
     def fail(path, destination):
@@ -226,7 +238,29 @@ def test_nonmatching_replace_and_cancellation_never_sleep(tmp_path, monkeypatch,
         module.write_json(target, VALUE, on_filesystem_error=lambda exc, op: observed.append((exc, op)))
     assert caught.value is error and len(calls) == 1 and sleeps == []
     assert observed == ([(error, "replace")] if isinstance(error, OSError) else [])
+    assert counts == {"encode": 1, "write_bytes": 1}
     assert target.read_bytes() == OLD and not temp.exists()
+
+
+def test_non_windows_success_replaces_once_without_diagnostic(tmp_path, monkeypatch):
+    """Declared non-Windows behavior; the filesystem is still the native host."""
+    snap = module.Snapshot(tmp_path, session=SimpleNamespace())
+    target, temp = destination(tmp_path)
+    expected = module.encode(VALUE)
+    counts = count_preparation(monkeypatch)
+    attempts, errors, _ = actual_replacements(monkeypatch, target)
+    sleeps = []
+    monkeypatch.setattr(module, "os", SimpleNamespace(name="posix"))
+    monkeypatch.setattr(module.time, "sleep", sleeps.append)
+
+    result = snap._write_json("manifest.json", VALUE)
+
+    assert counts == {"encode": 1, "write_bytes": 1}
+    assert attempts == [temp] and errors == sleeps == []
+    assert target.read_bytes() == expected and json.loads(expected) == VALUE
+    assert result == hashlib.sha256(expected).hexdigest()
+    assert not temp.exists()
+    assert snap._filesystem_failure is None and "filesystem_error" not in snap.manifest
 
 
 @pytest.mark.parametrize("operation", ["mkdir", "write_bytes"])
@@ -264,7 +298,8 @@ def test_encoding_failure_preserves_preexisting_temp(tmp_path, monkeypatch):
 
 @pytest.mark.parametrize("cancel_at", ["replace", "sleep"])
 @pytest.mark.parametrize("cleanup_error", [OSError(13, "cleanup failed"), KeyboardInterrupt()])
-def test_cleanup_failure_cannot_mask_primary_or_cancellation(tmp_path, monkeypatch, cancel_at, cleanup_error):
+def test_cleanup_failure_cannot_mask_primary_or_cancellation(
+        tmp_path, monkeypatch, cancel_at, cleanup_error, windows_producer):
     target, temp = destination(tmp_path)
     primary = KeyboardInterrupt()
     calls, sleeps, cleanups, observed = [], [], [], []
@@ -292,7 +327,7 @@ def test_cleanup_failure_cannot_mask_primary_or_cancellation(tmp_path, monkeypat
     assert target.read_bytes() == OLD and temp.read_bytes() == module.encode(VALUE)
 
 
-def test_exhausted_error_survives_observer_and_cleanup_failures(tmp_path, monkeypatch):
+def test_exhausted_error_survives_observer_and_cleanup_failures(tmp_path, monkeypatch, windows_producer):
     target, temp = destination(tmp_path)
     errors = [permission() for _ in range(3)]
     calls, sleeps, observed = [], [], []
@@ -319,6 +354,7 @@ def test_exhausted_error_survives_observer_and_cleanup_failures(tmp_path, monkey
     assert target.read_bytes() == OLD and temp.read_bytes() == module.encode(VALUE)
 
 
+@WINDOWS_HANDLE_ONLY
 def test_persistent_denial_semantics_survive(tmp_path, monkeypatch):
     """Same-node parent/candidate control for the unchanged terminal boundary."""
     target, _ = destination(tmp_path)
@@ -368,7 +404,8 @@ def test_cancellation_semantics_survive_at_each_operation(tmp_path, monkeypatch,
 
 @pytest.mark.parametrize("terminal", [permission(13, 32), other_oserror(), KeyboardInterrupt()],
                          ids=["nonmatching", "oserror", "cancel"])
-def test_second_attempt_nonmatching_error_or_cancellation_stops_immediately(tmp_path, monkeypatch, terminal):
+def test_second_attempt_nonmatching_error_or_cancellation_stops_immediately(
+        tmp_path, monkeypatch, terminal, windows_producer):
     target, temp = destination(tmp_path)
     counts = count_preparation(monkeypatch)
     calls, sleeps, observed = [], [], []

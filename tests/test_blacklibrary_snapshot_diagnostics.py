@@ -5,6 +5,7 @@ import os
 import subprocess
 import sys
 from pathlib import Path
+from types import SimpleNamespace
 
 import pytest
 
@@ -61,6 +62,9 @@ def test_actual_write_boundaries_partial_merge_rejection_and_resume(tmp_path, mo
     error = PermissionError(13, SECRET, "C:/private/account/file.json")
     error.winerror = 5
     with monkeypatch.context() as patch:
+        # This synthetic denial explicitly exercises the three-attempt Windows
+        # producer contract on every host; pathlib keeps the actual host OS.
+        patch.setattr(module, "os", SimpleNamespace(name="nt"))
         calls = inject_write_failure(patch, snap.out, name, operation, error,
                                      when=lambda: snap._phase == phase and (
                                          operation != "mkdir" or name != "details.json" or not calls))

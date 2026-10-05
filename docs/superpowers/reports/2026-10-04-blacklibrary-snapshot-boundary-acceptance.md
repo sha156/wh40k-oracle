@@ -250,3 +250,126 @@ committed hashes and clean checkout, then append the deduplicated real-SHA hook
 handoff. No implementation commit is invented here. No overall project, current
 rule authority, deployment or publication acceptance is claimed. No background
 process was started or remains running from this iteration.
+
+## October 5 test portability correction after host REQUEST_CHANGES
+
+This one-iteration GNHF follow-up starts from clean exact parent
+`72069b48dd0e6a1365744f7a6707d497f1c6cfcb` on
+`codex/release-snapshot-resilience`. It corrects only the host's blocking test
+platform assumptions in the resilience tests and minimal diagnostic setup,
+and appends this section. The runtime remains byte-identical:
+`scripts/fetch_blacklibrary_snapshot.py` SHA-256
+`df27415478fcfd8d146b58cbd4cdecfaca2290d663cfdbfb3b569eba6b135912`.
+Merge, policy, fingerprint, date, identity, body and source-field guards are
+unchanged. No manual staging/commit, publication, networking, installation,
+models, Docker, production writes or service changes occur in this follow-up.
+
+Evidence is under
+`D:/Project/py/RAG/db_sources/blacklibrary-snapshot-boundary-owned/20261005/atomic-resilience-implementation/portability-followup/`.
+`before.json` freezes 15 exact committed source/test/report blobs, the designated
+interpreter and 12 used dependency distributions, 4,599 preceding evidence files,
+and shared-file observations. `parent/` retains the originals; `candidate/`
+contains the test candidate. `parent-control/` uses the actual current committed
+parent runtime/dependencies with the identical new positive test, rather than
+an emulated implementation or moving main. `frozen-inputs.json` binds all three
+trees. Copied subprocesses use network-denying `sitecustomize.py`, including the
+CLI children. UTF-8, no bytecode, no pytest cache and no plugin autoload remain
+explicit; all temporary outputs are inside this evidence directory.
+
+### Gates and declared producer platforms
+
+Only the following five genuine handle nodes have a Windows-only `skipif` gate:
+
+- `test_real_windows_reader_release_recovers_without_diagnostic[1]`
+- `test_real_windows_reader_release_recovers_without_diagnostic[2]`
+- `test_real_windows_persistent_reader_preserves_terminal_exception[False]`
+- `test_real_windows_persistent_reader_preserves_terminal_exception[True]`
+- `test_persistent_denial_semantics_survive`
+
+Those controls open actual `CreateFileW` readers without delete sharing; they
+cannot run on a non-Windows host and would legitimately skip there. Their native
+Windows OS operations and assertions remain intact. There is no module-wide
+gate. All general diagnostic, merge, cancellation, preparation, cleanup and
+nonmatching-error nodes remain enabled on all platforms.
+
+Synthetic retry controls now use a scoped `windows_producer` fixture replacing
+only the producer module's `os` binding with `SimpleNamespace(name="nt")`.
+The nine diagnostic write-boundary controls declare the same local Windows
+platform in their existing patch context. The three-attempt Windows assertion
+is retained. Neither setup changes process-global `os.name`, so pathlib and
+pytest continue to use the actual host platform. Exhaustion, observer/cleanup
+precedence, sleep cancellation and later-attempt nonmatching error/cancellation
+checks keep their accepted assertions.
+
+The explicit non-Windows matching `PermissionError` errno 13/winerror 5 control
+still requires one replacement attempt, no sleep, the original exception and
+observer notification, preserved destination bytes and cleaned owned temp. Its
+preparation count is now also checked. The new declared non-Windows positive
+performs an actual successful replacement and verifies one encoding/write,
+one replacement, no sleep, exact UTF-8 bytes and independent SHA-256, consumed
+owned temp and no false failure diagnostic. The true base-`OSError` control is
+retained: it asserts `type(error) is OSError` before assigning errno 13/winerror 5.
+`OSError(13, ...)` and `OSError(1, ...)` construct `PermissionError` on CPython
+and would not independently exercise that exception-type guard.
+
+### Finite exact XML acceptance and preserved contrasts
+
+| Fresh evidence | Tests | Passed | Failed | Errors | Skips |
+| --- | ---: | ---: | ---: | ---: | ---: |
+| `candidate-native.log` / XML | 87 | 87 | 0 | 0 | 0 |
+| `candidate-declared-posix.log` / XML | 87 | 82 | 0 | 0 | 5 |
+| `parent-non-windows-positive.log` / XML | 1 | 1 | 0 | 0 | 0 |
+
+The native candidate comprises the latest 20 diagnostics, the unchanged exact
+34 strict complete/partial merge nodes and 33 corrected/new resilience nodes.
+`verification.json` reconciles unique XML identities and suite counters, confirms
+that all preceding 86 accepted candidate nodes remain present, and identifies
+the single added positive. The 24 saved merge selectors expand to exactly 34
+nodes; no selectors or assertions were broadened or excluded.
+
+The additional declared-platform run is deliberately executed on **Windows**.
+Its evidence-only plugin evaluates the actual gate expression with a local
+`posix` namespace, defaults only the producer's binding to `posix`, forbids
+Win32 calls and checks that global `os.name` stays unchanged. Explicit Windows
+fixtures override that local default where required. The five XML skips match
+exactly the five nodes above; the other 82 nodes pass. This verifies declared
+producer assumptions and gate accounting; it is **not actual Linux collection
+or execution**. Root owns actual Linux/CI execution after the combined merge.
+
+The identical new non-Windows positive passes against both the frozen current
+parent and candidate. It establishes preserved successful replacement behavior,
+not a newly failing runtime regression. The earlier actual pre-retry parent
+`fff4d974ceabb2d8b45126e42f346ec1f975a417` proof remains unchanged: two real Windows
+recovery failures and 38 passing parent controls. The preceding native Windows
+86-pass proof, original 125/145 proofs, real handle observations, all failed
+fixture/collection logs and original files remain hash-exact. No broad suite or
+100 repeated fixture run is performed.
+
+Two evidence-harness checks stopped before acceptance and are preserved:
+`attempt-01-harness.log` records the erroneous selector-count assertion before
+pytest; `attempt-02-preservation-check.log` records a shared-checkpoint hash
+change during concurrent work. Neither is a candidate test failure. The corrected
+verification separates concurrent checkpoint/roadmap/README updates and the live
+orchestrator log from frozen owned evidence. All four earlier handoff bodies
+remain exact prefixes of their current records; later shared suffixes are
+classified separately. Shared Git indexes and static orchestrator instructions,
+including `notes.md`, remain unchanged. This worker makes no shared-note edit.
+Root owns the pending real-commit note explanation and publication after GNHF;
+no invented future commit or new note-only GNHF run is required.
+
+Both changed Python files pass Python 3.9 grammar parsing and in-memory compile
+under the sole designated Python 3.11.9 interpreter. `git diff --check` passes.
+Ruff, mypy, pylint and Black are unavailable in that environment; no tool is
+installed. Independent internal `code-reviewer` and `python-reviewer` inspect
+the exact final test/report diff, runtime hash, non-Windows collection/execution
+assumptions, precise gate scope, producer-local injection and positive/negative
+controls. Their exact-hash verdicts and proof bindings are retained in the
+owned follow-up `reviews/` directory.
+
+The spontaneous production Windows `PermissionError` cause remains **UNKNOWN**.
+No scanner, antivirus, race, resolved OS cause or universal flake-free behavior
+is claimed. No background process started by this worker remains running.
+The worker exits at this one-iteration bound. GNHF still owns the intended
+two-test/report commit; the supervisor must verify the actual committed hashes
+and clean status afterward. An iteration-limit exit is not acceptance and the
+commit-dependent entire-loop stop condition is not claimed here.
