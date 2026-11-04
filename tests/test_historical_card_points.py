@@ -9,6 +9,7 @@ import pytest
 
 from db_compile.calc_points import calc_points
 from db_compile.datasheet import _parse_points, lookup_datasheet
+from db_compile.mfm_source import write_ledger
 from db_compile.schema import ALL_DDL
 from engines.roster import Roster, RosterUnit, validate
 from engines.roster.points import recompute, unit_cost
@@ -35,7 +36,7 @@ def fixture_database(tmp_path, payload):
     with sqlite3.connect(str(path)) as conn:
         for ddl in ALL_DDL:
             conn.executescript(ddl)
-        conn.execute("CREATE TABLE official_mfm_points (faction_slug TEXT)")
+        write_ledger(conn, {"fetched_at": "2026-09-14T12:00:00Z", "pages": {}})
         conn.execute("INSERT INTO factions (id,name) VALUES ('SM','Space Marines')")
         conn.execute("INSERT INTO datasheets (id,name,faction_id) VALUES (?,?,'SM')",
                      (ARMOUR, NAME))

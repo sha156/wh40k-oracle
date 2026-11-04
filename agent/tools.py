@@ -174,6 +174,22 @@ def _source_price_result(name: str, db_path: Optional[Path],
         return None
     if price is None:
         return None
+    if price["ambiguous"] and not reserved:
+        # SM codex units are reprinted on every chapter MFM page. A plain name
+        # whose exact canonical identity matches exactly one candidate keeps the
+        # canonical body path, the same rule as for unambiguous prices below --
+        # but only when every other candidate is a reprint in the same canonical
+        # faction. A price in another faction is another identity, even if equal.
+        from db_compile.mfm import MFM_SLUG_TO_FACTION
+        local = resolver or EntityResolver(db_path=Path(db_path))
+        resolved = local.resolve(name)
+        if resolved.canonical_id and resolved.confidence == "exact":
+            matching = [c for c in price["candidates"] if _canonical_identity_matches(
+                db_path, resolved.canonical_id,
+                {**c, "ambiguous": False})]
+            factions = {MFM_SLUG_TO_FACTION.get(c["faction_slug"]) for c in price["candidates"]}
+            if len(matching) == 1 and len(factions) == 1 and None not in factions:
+                return None
     if price["ambiguous"]:
         return {**price, "found": False, "page": None, "datasheet": None,
                 "reason": "ambiguous", "resolved_via": {"confidence": "ambiguous"}}
