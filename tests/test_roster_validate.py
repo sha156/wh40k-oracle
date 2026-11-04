@@ -18,7 +18,7 @@ DB = Path("db/wh40k.sqlite")
 needs_db = pytest.mark.skipif(not DB.exists(), reason="wh40k.sqlite 不存在")
 
 # 稳定 canonical id（真库）
-INTERCESSOR = "000001157"       # SM BATTLELINE：5=80 / 10=150
+INTERCESSOR = "000001157"       # SM BATTLELINE: October 3 MFM 5=85 / 10=170
 APOTHECARY = "000000060"        # SM CHARACTER 非 EPIC HERO
 BROADSIDE = "000000433"         # Tau 非 battleline 非 character：1=75/2=150/3=240
 EPIC_HERO = "000000096"         # SM Carab Culln The Risen（EPIC HERO）
@@ -82,9 +82,9 @@ def test_legal_roster():
         RosterUnit(INTERCESSOR, "Intercessor Squad", 5),
     )))
     assert r.legal is True and r.errors == ()
-    # Apothecary 70 + Intercessor 5-model 80 + 强化 Eye of the Primarch 10
+    # October 3 official capture: Apothecary 60 + Intercessor 85 + Eye 10.
     # ——强化点数必须计入总分（模块 3 审查 F1：曾漏计且被旧期望值 150 钉成规格）
-    assert r.total_points == 160
+    assert r.total_points == 155
 
 
 @needs_db
@@ -124,7 +124,7 @@ def test_epic_hero_max_one():
 
 @needs_db
 def test_points_over_limit():
-    # incursion 1000：8× Intercessor 10 模型(150) = 1200 > 1000（battleline 免 RoT）
+    # Incursion 1000: 8 x Intercessor 10-model (170) = 1360 > 1000.
     r = validate(DB, Roster("SM", DET_BASTION, "incursion", tuple(
         [RosterUnit(INTERCESSOR, "Intercessor Squad", 10) for _ in range(8)] +
         [RosterUnit(APOTHECARY, "Apothecary Biologis", 1, is_warlord=True)])))
@@ -165,12 +165,15 @@ def test_enhancement_rules():
 
 @needs_db
 def test_enhancement_points_push_over_limit():
-    # 竞技压线场景（模块 3 审查 F1）：24×Intercessor(80)=1920 + Apothecary 70 = 1990，
-    # 挂 Hero of the Chapter(20) → 2010 > 2000 必须判超分；卸下强化则合法（成对负向）。
+    # October 3 official capture: 22 x 85 + 2 x 60 = 1990.
+    # Hero 20 alone crosses 2000; the old 24-unit bare roster already cost 2100.
+    # This checks pricing, with copy-count uncertainty explicitly surfaced below.
     units = tuple(
-        [RosterUnit(INTERCESSOR, "Intercessor Squad", 5) for _ in range(24)] +
+        [RosterUnit(INTERCESSOR, "Intercessor Squad", 5) for _ in range(22)] +
         [RosterUnit(APOTHECARY, "Apothecary Biologis", 1, is_warlord=True,
-                    enhancement="Hero of the Chapter")])
+                    enhancement="Hero of the Chapter"),
+         RosterUnit(APOTHECARY, "Apothecary Biologis", 1)])
+    assert sum(u.is_warlord for u in units) == 1
     r = validate(DB, Roster("SM", DET_BASTION, "strike_force", units))
     assert r.total_points == 2010
     assert "points_over" in _codes(r) and r.legal is False
@@ -181,6 +184,12 @@ def test_enhancement_points_push_over_limit():
                  for u in units)
     rb = validate(DB, Roster("SM", DET_BASTION, "strike_force", bare))
     assert rb.total_points == 1990 and rb.legal is True
+    assert "points_over" not in _codes(rb)
+    assert r.total_points - rb.total_points == 20
+    for report in (r, rb):
+        uncertainty = [i for i in report.issues if i.code == "rot_exempt_uncapped"]
+        assert uncertainty and all(i.surfaced_only and i.severity == WARN
+                                   for i in uncertainty)
 
 
 @needs_db
@@ -191,7 +200,7 @@ def test_enhancement_unpriced_surfaced_not_counted():
                    enhancement="NotARealEnhancement"),)))
     unp = [i for i in r.issues if i.code == "enh_unpriced"]
     assert unp and unp[0].surfaced_only and unp[0].severity == WARN
-    assert r.total_points == 70             # 只有 Apothecary，本体点数不受影响
+    assert r.total_points == 60             # October 3 Apothecary, without enhancement.
 
 
 @needs_db

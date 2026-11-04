@@ -249,19 +249,32 @@ def test_codex_card_lang_toggle():
 
 @pytest.mark.skipif(not DB_PATH.exists(), reason="wh40k.sqlite 不存在")
 def test_codex_card_zh_loadout_composition_legend():
-    """zh 模式：装备文本翻译（武器名映射）、构成用 intro 原生中文、背景文案隐藏。"""
+    """Localize loadout, reject stale community composition, retain English legend."""
+    import sqlite3
+    from contextlib import closing
+
     from web_api import codex
 
     zh = codex.unit_card(DB_PATH, "000000553", lang="zh")   # 毁灭炮艇
     en = codex.unit_card(DB_PATH, "000000553", lang="en")
     assert zh and en
+    assert zh.name_en == en.name_en == "Annihilation Barge"
+    assert zh.pts == en.pts == "100"
     # 装备：前缀 + 武器名已翻，分号中文化
     assert zh.loadout.startswith("本模型装备：")
     assert "高斯炮" in zh.loadout and "；" in zh.loadout
     assert "gauss" not in zh.loadout.lower()
-    # 构成：intro_json 原生中文（量词正确）
+    # Retained community intro still says one ship / 95; official tier is 100.
+    with closing(sqlite3.connect(str(DB_PATH))) as conn:
+        intro = conn.execute(
+            "SELECT intro_json FROM unit_zh_detail WHERE canonical_id='000000553'").fetchone()[0]
+        assert "艘" in intro and "95" in intro
+        assert codex._load_zh_composition(
+            conn, "000000553", [{"desc": "1 model", "cost": 100}]) == []
+    # The card must use the guarded canonical one-model / 100 fallback.
     comp0 = "".join(getattr(x, "s", "") for x in zh.composition[0])
-    assert "艘" in comp0 and "95" in comp0
+    assert comp0 == "1 个模型 — 100 分"
+    assert "95" not in comp0 and "艘" not in comp0
     # 背景：zh 隐藏、en 保留
     assert zh.legend is None
     assert en.legend and "Annihilation" in en.legend

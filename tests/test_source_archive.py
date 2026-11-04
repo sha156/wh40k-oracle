@@ -271,7 +271,12 @@ def test_atomic_rebuild_preserves_archive_even_when_later_cache_omits_it(tmp_pat
         conn.execute("CREATE TABLE unrelated_local_data(value TEXT)")
         conn.execute("INSERT INTO unrelated_local_data VALUES('do not copy')")
     source = _rebuild_csv(tmp_path)
-    report = build_database(source, db)
+    # Archive-only CSV lacks the reviewed historical MFM identity metadata.
+    # Isolate that independent input through the existing builder argument.
+    history = tmp_path / "unavailable-history"
+    assert not history.exists()
+    report = build_database(source, db, historical_mfm_snapshot=history)
+    assert report.historical_prices["status"] == "unavailable"
     assert report.unreconciled() == {}
     assert report.row_counts["source_archived_units"] == 1
     cache.write_text("[]", encoding="utf-8")
@@ -296,7 +301,9 @@ def test_invalid_archive_aborts_rebuild_without_replacing_original_database(tmp_
     with closing(sqlite3.connect(str(db))) as conn, conn:
         conn.execute("UPDATE source_archived_units SET " + column + "=?", (value,))
     before = db.read_bytes()
+    history = tmp_path / "unavailable-history"
+    assert not history.exists()
     with pytest.raises(ValueError, match="Archived source record"):
-        build_database(_rebuild_csv(tmp_path), db)
+        build_database(_rebuild_csv(tmp_path), db, historical_mfm_snapshot=history)
     assert db.read_bytes() == before
     assert not db.with_suffix(".tmp.sqlite").exists()
