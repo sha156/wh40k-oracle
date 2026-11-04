@@ -56,7 +56,11 @@ needs_assets = pytest.mark.skipif(
 # Their keyword spans are 0/0/1/0/3 = 4; parser and English rows are unchanged.
 # Evidence: docs/superpowers/reports/
 # 2026-09-30-blacklibrary-projection-evidence/ability-reconciliation.json.
-EXPECTED_ZH_ITEMS = 3332        # unit_zh_detail 里的技能条目总数
+# 2026-10-05: 3332 → 3330. The two abilities removed belonged to Grey Knights
+# source 2863, which no longer projects to AdM Servitors 000000847 (reviewed
+# wrong-faction denial). See 2026-10-05-chinese-name-recovery-acceptance.md.
+# This reads the active DB, so it passes only after R5 publishes the projection.
+EXPECTED_ZH_ITEMS = 3330        # unit_zh_detail 里的技能条目总数
 EXPECTED_ZH_KW_SPANS = 180      # 其中切出的词条段（中文【】写法）
 EXPECTED_EN_ROWS = 4041         # abilities 表行数
 EXPECTED_EN_KW_SPANS = 445      # 其中切出的词条段（英文 [] 写法；kwb 里全是阵营关键词，
