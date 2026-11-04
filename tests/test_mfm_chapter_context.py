@@ -1,6 +1,7 @@
 """Paired price-context acceptance; actual assets are read only and copies disposable."""
 import hashlib
 import json
+import os
 import shutil
 import sqlite3
 from contextlib import closing
@@ -11,7 +12,9 @@ import pytest
 from db_compile import mfm
 from db_compile.mfm_sync import operational_factions
 
-ASSETS = Path("D:/Project/py/RAG")
+# Runtime assets live in the main checkout (worktrees have none); override with
+# WH40K_ASSETS. Hosted CI has no DB, so the fixture skips when they are absent.
+ASSETS = Path(os.environ.get("WH40K_ASSETS", "D:/Project/py/RAG"))
 BT_IDS = ("000002786", "000002787", "000002788", "000002789", "000002790", "000002791")
 GENERIC_IDS = ("000002568", "000002705", "000001825", "000001667", "000002722", "000002721")
 NAMES = ("Impulsor", "Gladiator Lancer", "Gladiator Valiant", "Gladiator Reaper", "Repulsor Executioner", "Repulsor")
@@ -23,6 +26,11 @@ RAW_SHA = "f819675c38d99f84673696604eff78d54863cc0f4a7b5f4457291e89909bae7d"
 @pytest.fixture
 def actual_copy(tmp_path):
     source = ASSETS / "db/wh40k.sqlite"
+    required = (source, ASSETS / "db_sources/mfm/mfm_points.json",
+                ASSETS / "db_sources/mfm/snapshots/fetch-jtgkljt3/black-templars.html")
+    missing = [str(p) for p in required if not p.exists()]
+    if missing:
+        pytest.skip(f"actual assets absent (set WH40K_ASSETS): {missing[0]}")
     before = hashlib.sha256(source.read_bytes()).hexdigest()
     assert before == "f6f901656e4fe70b2b94f965a1ea0e2ad79e8dfad5bd9867971533ffaae4ffe1"
     cache = ASSETS / "db_sources/mfm/mfm_points.json"
