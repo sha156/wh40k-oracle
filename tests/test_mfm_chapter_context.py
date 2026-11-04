@@ -24,7 +24,7 @@ RAW_SHA = "f819675c38d99f84673696604eff78d54863cc0f4a7b5f4457291e89909bae7d"
 def actual_copy(tmp_path):
     source = ASSETS / "db/wh40k.sqlite"
     before = hashlib.sha256(source.read_bytes()).hexdigest()
-    assert before == "afb9b99da103b61d25b0db82b824c5caf8aaeed1e7237b739ef0bbf15102b855"
+    assert before == "f6f901656e4fe70b2b94f965a1ea0e2ad79e8dfad5bd9867971533ffaae4ffe1"
     cache = ASSETS / "db_sources/mfm/mfm_points.json"
     cache_sha = hashlib.sha256(cache.read_bytes()).hexdigest()
     snapshot = json.loads(cache.read_text(encoding="utf-8"))["source_snapshot"]
