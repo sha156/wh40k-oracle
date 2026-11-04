@@ -12,8 +12,8 @@ and will overwrite the database again.
 | ID | Step | Depends on | Parallel with | Model | Size | Status |
 | --- | --- | --- | --- | --- | --- | --- |
 | R0 | Stop the drift, archive drifted state | — | — | default | S | done 2026-11-03 |
-| R1 | Restore the frozen data baseline | R0 | R2 | default | S | todo |
-| R2 | Fix CI fixture + English-name lookup regression | R0 | R1 | strongest | M | todo |
+| R1 | Restore the frozen data baseline | R0 | R2 | default | S | done 2026-11-03 |
+| R2 | Fix CI fixture + English-name lookup regression | R0 | R1 | strongest | M | done 2026-11-03 |
 | R3 | Merge native-regressions + context-points | R1, R2 | — | default | M | todo |
 | R4 | Chinese-name recovery (Decision C) + ability-count expectation | R3 | — | default | M | todo |
 | R5 | Publish reviewed Chinese projection + regenerate wiki | R4 | — | default | M | todo |
@@ -100,7 +100,7 @@ Recovery copies of both dirty worktrees are in
 | `db/wh40k.sqlite` | `afb9b99da103b61d25b0db82b824c5caf8aaeed1e7237b739ef0bbf15102b855` | `db_sources/chinese-name-recovery-owned/20261005/frozen/db/wh40k.sqlite` |
 | `db_sources/blacklibrary/units.json` | `a497c85edbc0f6ada3f7492e7a743e2948d42877f7d168d3ef96d925b132fc76` | `…/20261005/frozen/db_sources/blacklibrary/units.json` |
 | `db_sources/blacklibrary/details.json` | `665c54c74f13b9ba29b7eb7d93df98c0b5982a9d5afd9907fede439bcf0bedbc` | unchanged on disk (also in `frozen/`) |
-| `db_sources/blacklibrary/weapon_names_history.json` | `d62eb339627ad99a60c1f60052c64b652bdebbb36a90b72f08298a9503f1fb3` | unchanged on disk (also in `frozen/`) |
+| `db_sources/blacklibrary/weapon_names_history.json` | `d62eb339627ad99a650c1f60052c64b652bdebbb36a90b72f08298a9503f1fb3` | unchanged on disk (also in `frozen/`) |
 | `db_sources/mfm/mfm_points.json` | `20f3c54d5435765d3b075cc608de81aa7371aa582ef38ebe16acf136f02f9040` | `db_sources/release-check-20260930/host/source-freshness-20261004/automatic-update-preserved/mfm_points.json` |
 
 The baseline's raw MFM snapshot is `db_sources/mfm/snapshots/fetch-jtgkljt3`, fetched
