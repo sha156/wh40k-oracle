@@ -1,6 +1,6 @@
 ---
 id: '000004169'
-name_zh: 虚空裂痕海盗
+name_zh: 虚空创痕海盗
 name_en: Corsair Voidscarred
 faction: 黑暗灵族
 type: unit
@@ -13,7 +13,7 @@ version:
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-09-14'
+updated: '2026-10-03'
 ---
 
 ## 属性表

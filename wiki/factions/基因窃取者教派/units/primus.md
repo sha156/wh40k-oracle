@@ -5,17 +5,17 @@ name_en: Primus
 faction: 基因窃取者教派
 type: unit
 points:
-  1 model: 70
+  1 model: 60
 tags:
 - unit
 - unit/基因窃取者教派
 - 基因窃取者教派
 version:
-  points: MFM 2026-09-14T05:51:23.572407+00:00
+  points: MFM 2026-10-03T19:00:56.192123+00:00
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-09-14'
+updated: '2026-10-03'
 ---
 
 ## 属性表
@@ -42,7 +42,7 @@ updated: '2026-09-14'
 - **诱敌误导**：如果你的军队中包含一个或多个本模型，你可以在双方完成部署后将至多三个基因窃取者教团单位重新部署，如果你这么做，你可以无视战略预备队中已有的单位分数将这些单位置入战略预备队。
 
 ## 单位构成
-- **1个模型** — 70 分
+- **1个模型** — 60 分
 
 ## 关键词
 - **阵营关键词**：Genestealer Cults

@@ -5,18 +5,18 @@ name_en: Kataphron Breachers
 faction: 机械修会
 type: unit
 points:
-  3 models: 150
-  6 models: 310
+  3 models: 140
+  6 models: 290
 tags:
 - unit
 - unit/机械修会
 - 机械修会
 version:
-  points: MFM 2026-09-14T05:51:23.572407+00:00
+  points: MFM 2026-10-03T19:00:56.192123+00:00
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-09-14'
+updated: '2026-10-03'
 ---
 
 ## 属性表
@@ -44,8 +44,8 @@ updated: '2026-09-14'
 - **突破命令**：本单位模型可以重投攻击命中结果中的 1， 如果本单位位于至少一个机械修会战线单位 6 寸内，则 改为可以重投命中结果
 
 ## 单位构成
-- **3个模型** — 150 分
-- **6个模型** — 310 分
+- **3个模型** — 140 分
+- **6个模型** — 290 分
 
 ## 关键词
 - **阵营关键词**：Adeptus Mechanicus

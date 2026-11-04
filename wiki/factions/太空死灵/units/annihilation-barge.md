@@ -5,19 +5,19 @@ name_en: Annihilation Barge
 faction: 太空死灵
 type: unit
 points:
-  1 model: 95
+  1 model: 100
 tags:
 - unit
 - unit/太空死灵
 - 太空死灵
 version:
-  points: MFM 2026-09-14T05:51:23.572407+00:00
+  points: MFM 2026-10-03T19:00:56.192123+00:00
   source: official-db
 sources:
 - book: https://assets.warhammer-community.com/eng_wh40k_faction_pack_necrons-eweoek106p-nqomxds3qr.pdf
   pages:
   - 29
-updated: '2026-09-14'
+updated: '2026-10-03'
 ---
 
 ## 属性表
@@ -45,7 +45,7 @@ updated: '2026-09-14'
 - **恶意电弧**：在您的射击阶段中，当您为模型的双联特斯拉毁灭者选择目标时，为目标单位掷一 枚 D6，并为每个位于该敌方单位 3 英寸内的其他敌方单位各掷一枚 D6。如果掷骰结果为 5+， 进行掷骰的敌方单位被恶意电弧击中；在结算该模型对目标进行的所有攻击后，每个被恶意 电弧击中的敌方单位受到 D3 处致命伤。
 
 ## 单位构成
-- **1个模型** — 95 分
+- **1个模型** — 100 分
 
 ## 关键词
 - **阵营关键词**：Necrons

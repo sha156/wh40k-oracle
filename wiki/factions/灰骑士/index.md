@@ -26,7 +26,7 @@
 - [[factions/灰骑士/units/brotherhood-terminator-squad|兄弟会终结者⼩队]]
 - [[factions/灰骑士/units/brother-captain|兄弟会连⻓]]
 - [[factions/灰骑士/units/castellan-crowe|克罗堡主]]
-- [[factions/灰骑士/units/land-raider|兰德掠袭者坦克]]
+- [[factions/灰骑士/units/land-raider|兰德掠袭者战车]]
 - [[factions/灰骑士/units/purifier-squad|净化者⼩队]]
 - [[factions/灰骑士/units/land-raider-crusader|十字军型兰德掠袭者坦克]]
 - [[factions/灰骑士/units/kaldor-draigo|卡尔多·德莱戈【传奇】]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
@@ -44,9 +44,9 @@
 - [[factions/灰骑士/units/grey-knights-thunderhawk-gunship|灰骑士雷鹰炮艇]]
 - [[factions/灰骑士/units/rhino|犀牛装甲车]]
 - [[factions/灰骑士/units/venerable-dreadnought|荣耀无畏机甲]]
-- [[factions/灰骑士/units/razorback|豪猪装甲车]]
-- [[factions/灰骑士/units/stormtalon-gunship|风暴爪炮艇]]
-- [[factions/灰骑士/units/stormhawk-interceptor|风暴隼拦截机]]
+- [[factions/灰骑士/units/razorback|豪猪装甲车（即将传奇）]]
+- [[factions/灰骑士/units/stormtalon-gunship|风暴爪炮艇（即将传奇）]]
+- [[factions/灰骑士/units/stormhawk-interceptor|风暴隼拦截机（即将传奇）]]
 
 ## 策略技能
 

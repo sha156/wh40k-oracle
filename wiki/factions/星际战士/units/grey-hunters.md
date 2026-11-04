@@ -5,17 +5,17 @@ name_en: Grey Hunters
 faction: 星际战士
 type: unit
 points:
-  10 models: 165
+  10 models: 180
 tags:
 - unit
 - unit/星际战士
 - 星际战士
 version:
-  points: MFM 2026-09-14T05:51:23.572407+00:00
+  points: MFM 2026-10-03T19:00:56.192123+00:00
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-09-14'
+updated: '2026-10-03'
 ---
 
 ## 属性表
@@ -43,7 +43,7 @@ updated: '2026-09-14'
 - **狡诈猎手**：本单位中的模型在攻击时，可以重投结果为 1 的造伤骰，如果你的攻击目标位于任务目标点范围内，则 改为重投任意的造伤骰。
 
 ## 单位构成
-- **10个模型** — 165 分
+- **10个模型** — 180 分
 
 ## 关键词
 - **阵营关键词**：Space Wolves，Adeptus Astartes

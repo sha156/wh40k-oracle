@@ -294,6 +294,18 @@ def test_current_units_fully_localized(normal_language_db):
 
 
 @needs_db
+def test_active_db_current_names_reconcile():
+    """The published active DB itself (not a staged copy) meets the same coverage.
+
+    Guards against the active DB drifting from the reviewed projection, e.g. a
+    scheduled online `db_compile update` replacing the release baseline
+    (R5 receipt: db_sources/release-check-20260930/host/finish/R5/RECEIPT.json).
+    """
+    with closing(sqlite3.connect(f"file:{DB.resolve().as_posix()}?mode=ro", uri=True)) as conn:
+        _assert_current_name_coverage(conn)
+
+
+@needs_db
 @pytest.mark.parametrize("guard", LANGUAGE_ACCEPTANCE["pending_name_recoveries"],
                          ids=lambda r: r["canonical_id"])
 def test_pending_name_recoveries_keep_accepted_sources_and_unchanged_names(normal_language_db, guard):

@@ -5,18 +5,18 @@ name_en: Termagants
 faction: 泰伦虫族
 type: unit
 points:
-  10 models: 60
+  10 models: 55
   20 models: 110
 tags:
 - unit
 - unit/泰伦虫族
 - 泰伦虫族
 version:
-  points: MFM 2026-09-14T05:51:23.572407+00:00
+  points: MFM 2026-10-03T19:00:56.192123+00:00
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-09-14'
+updated: '2026-10-03'
 ---
 
 ## 属性表
@@ -44,7 +44,7 @@ updated: '2026-09-14'
 - **鬼祟恐怖**：在对手的移动阶段中，当一个敌方单位在该单位的 8" 内结束一次移动时，如果该单位不位于敌方单位的交战范围内，那么该单位可以进行一次最多 D6" 的常规移动
 
 ## 单位构成
-- **10个模型** — 60 分
+- **10个模型** — 55 分
 - **20个模型** — 110 分
 
 ## 关键词

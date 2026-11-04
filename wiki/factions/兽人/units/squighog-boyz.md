@@ -1,22 +1,22 @@
 ---
 id: '000002496'
-name_zh: 跳跳猪小子
+name_zh: 跳跳骑兵
 name_en: Squighog Boyz
 faction: 兽人
 type: unit
 points:
-  4 models: 140
-  8 models: 280
+  4 models: 130
+  8 models: 260
 tags:
 - unit
 - unit/兽人
 - 兽人
 version:
-  points: MFM 2026-09-14T05:51:23.572407+00:00
+  points: MFM 2026-10-03T19:00:56.192123+00:00
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-09-14'
+updated: '2026-10-03'
 ---
 
 ## 属性表
@@ -45,8 +45,8 @@ updated: '2026-09-14'
 - **炸弹跳跳**：在您的移动阶段中，当该单位结束一次常规移动时，您可以选择一个位于该单位12' 内，且对其可见的敌方单位，随后为那个敌方单位換一枚D6：如果掷骰结果为3+，那个致方单位受到D3处致命伤。
 
 ## 单位构成
-- **4个模型** — 140 分
-- **8个模型** — 280 分
+- **4个模型** — 130 分
+- **8个模型** — 260 分
 
 ## 关键词
 - **阵营关键词**：Orks

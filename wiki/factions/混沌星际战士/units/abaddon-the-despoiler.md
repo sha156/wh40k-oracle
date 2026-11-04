@@ -5,17 +5,17 @@ name_en: Abaddon The Despoiler
 faction: 混沌星际战士
 type: unit
 points:
-  1 model: 295
+  1 model: 300
 tags:
 - unit
 - unit/混沌星际战士
 - 混沌星际战士
 version:
-  points: MFM 2026-09-14T05:51:23.572407+00:00
+  points: MFM 2026-10-03T19:00:56.192123+00:00
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-09-14'
+updated: '2026-10-03'
 ---
 
 ## 属性表
@@ -46,7 +46,7 @@ updated: '2026-09-14'
 - **Lord of the Traitor Legions (Aura)**：While a friendly <span class="kwb">HERETIC</span> <span class="kwb">ASTARTES</span> unit (excluding DAMNED units) is within 6" of this model, you can re-roll Leadership and Battle-shock tests taken for that unit.
 
 ## 单位构成
-- **1个模型** — 295 分
+- **1个模型** — 300 分
 
 ## 关键词
 - **阵营关键词**：Heretic Astartes

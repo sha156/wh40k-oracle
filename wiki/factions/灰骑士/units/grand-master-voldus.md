@@ -5,19 +5,19 @@ name_en: Grand Master Voldus
 faction: 灰骑士
 type: unit
 points:
-  1 model: 125
+  1 model: 130
 tags:
 - unit
 - unit/灰骑士
 - 灰骑士
 version:
-  points: MFM 2026-09-14T05:51:23.572407+00:00
+  points: MFM 2026-10-03T19:00:56.192123+00:00
   source: official-db
 sources:
 - book: https://assets.warhammer-community.com/eng_22-07_warhammer_40,000_faction_pack_grey_knights-dlzvusufhy-uialb3pko4.pdf
   pages:
   - 9
-updated: '2026-09-14'
+updated: '2026-10-03'
 ---
 
 ## 属性表
@@ -44,7 +44,7 @@ updated: '2026-09-14'
 - **Hammer Aflame (Psychic)**：Each time this model’s unit is selected to fight, you can select one enemy unit within Engagement Range of this model’s unit and roll one D6: on a 2-3, that enemy unit suffers 1 mortal wound; on a 4-5, that enemy unit suffers D3 mortal wounds; on a 6, that enemy unit suffers D3+3 mortal wounds.
 
 ## 单位构成
-- **1个模型** — 125 分
+- **1个模型** — 130 分
 
 ## 关键词
 - **阵营关键词**：Grey Knights

@@ -5,17 +5,17 @@ name_en: Breacher Team
 faction: 钛帝国
 type: unit
 points:
-  10 models: 90
+  10 models: 80
 tags:
 - unit
 - unit/钛帝国
 - 钛帝国
 version:
-  points: MFM 2026-09-14T05:51:23.572407+00:00
+  points: MFM 2026-10-03T19:00:56.192123+00:00
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-09-14'
+updated: '2026-10-03'
 ---
 
 ## 属性表
@@ -41,7 +41,7 @@ updated: '2026-09-14'
 - **DS8战术支援炮塔**：在你的移动阶段中，如果该单位保持静止，在你的下一个回合开始前，该单位中的火战士夏司'钨模型装备有导弹炮台支援系统武器。
 
 ## 单位构成
-- **10个模型** — 90 分
+- **10个模型** — 80 分
 
 ## 关键词
 - **阵营关键词**：T’au Empire

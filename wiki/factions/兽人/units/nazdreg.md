@@ -5,20 +5,20 @@ name_en: Nazdreg
 faction: 兽人
 type: unit
 points:
-  1 model: 175
+  1 model: 165
 tags:
 - unit
 - unit/兽人
 - 兽人
 version:
-  points: MFM 2026-09-14T05:51:23.572407+00:00
+  points: MFM 2026-10-03T19:00:56.192123+00:00
   source: official-db
   rules: 11e-official-preview-2026-07-20
 sources:
 - book: https://assets.warhammer-community.com/articles/0-2026/july/wc20-07/image4-yi4miggqx8.jpg
   pages:
   - 1
-updated: '2026-09-14'
+updated: '2026-10-03'
 ---
 
 Official preview datasheet: rules version 11e-official-preview-2026-07-20. Points use the current MFM; later codex wording has not been verified.
@@ -54,7 +54,7 @@ Official preview datasheet: rules version 11e-official-preview-2026-07-20. Point
 - **Waaagh!**
 
 ## 单位构成
-- **1个模型** — 175 分
+- **1个模型** — 165 分
 
 ## 关键词
 - **阵营关键词**：ORKS

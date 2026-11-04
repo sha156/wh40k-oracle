@@ -25,7 +25,7 @@ updated: '2026-07-26'
 When mustering your army, you cannot include any Daemon Prince, Daemon Prince with Wings or Epic Hero units (excluding [[factions/混沌恶魔/units/belakor.md|Be’lakor]]), but you can include the following HERETIC ASTARTES units:
 
 - [[factions/混沌恶魔/units/chaos-lord.md|Chaos Lord]]
-- Chaos Lord in Terminator Armour
+- [[factions/混沌恶魔/units/chaos-lord.md|Chaos Lord]] in Terminator Armour
 - [[factions/混沌恶魔/units/chaos-lord-with-jump-pack.md|Chaos Lord with Jump Pack]]
 - [[factions/混沌恶魔/units/chaos-terminator-squad.md|Chaos Terminator Squad]]
 - [[factions/混沌恶魔/units/chosen.md|Chosen]]
@@ -47,7 +47,7 @@ The combined points value of such units depends on your battle size, as shown be
 - **Onslaught:** Up to 1500 pts
 
 KEYWORDS
-Be’lakor and Heretic Astartes units from your army gain the SHADOW LEGION and UNDIVIDED keywords.
+[[factions/混沌恶魔/units/belakor.md|Be’lakor]] and Heretic Astartes units from your army gain the SHADOW LEGION and UNDIVIDED keywords.
 
 Legiones Daemonica units from your army gain the SHADOW LEGION keyword.
 

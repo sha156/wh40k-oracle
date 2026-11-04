@@ -5,17 +5,17 @@ name_en: Watch Captain Artemis
 faction: 星际战士
 type: unit
 points:
-  1 model: 65
+  1 model: 75
 tags:
 - unit
 - unit/星际战士
 - 星际战士
 version:
-  points: MFM 2026-09-14T05:51:23.572407+00:00
+  points: MFM 2026-10-03T19:00:56.192123+00:00
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-09-14'
+updated: '2026-10-03'
 ---
 
 ## 属性表
@@ -42,7 +42,7 @@ updated: '2026-09-14'
 - **【阵营技能】：破敌重誓，任务战术**
 
 ## 单位构成
-- **1个模型** — 65 分
+- **1个模型** — 75 分
 
 ## 关键词
 - **阵营关键词**：Deathwatch，Adeptus Astartes

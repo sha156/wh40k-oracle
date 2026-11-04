@@ -5,18 +5,18 @@ name_en: Deathwatch Kill Team
 faction: 帝国特勤
 type: unit
 points:
-  5 models: 100
-  10 models: 190
+  5 models: 115
+  10 models: 220
 tags:
 - unit
 - unit/帝国特勤
 - 帝国特勤
 version:
-  points: MFM 2026-09-14T05:51:23.572407+00:00
+  points: MFM 2026-10-03T19:00:56.192123+00:00
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-09-14'
+updated: '2026-10-03'
 ---
 
 ## 属性表
@@ -50,8 +50,8 @@ updated: '2026-09-14'
 - **武器技能-阿斯塔特护盾**：持有者拥有4+无敌豁免
 
 ## 单位构成
-- **5个模型** — 100 分
-- **10个模型** — 190 分
+- **5个模型** — 115 分
+- **10个模型** — 220 分
 
 ## 关键词
 - **阵营关键词**：Agents of the Imperium

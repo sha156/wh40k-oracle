@@ -1,6 +1,5 @@
 ---
 id: '000001392'
-name_zh: 卡纳罗克巨兽
 name_en: Great Knarloc
 faction: 钛帝国
 type: unit
@@ -18,7 +17,7 @@ sources:
 - book: 'Faction Pack: T''au Empire'
   pages:
   - 26
-updated: '2026-09-14'
+updated: '2026-10-03'
 ---
 
 ## 属性表

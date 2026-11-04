@@ -5,17 +5,17 @@ name_en: Watch Master
 faction: 帝国特勤
 type: unit
 points:
-  1 model: 95
+  1 model: 105
 tags:
 - unit
 - unit/帝国特勤
 - 帝国特勤
 version:
-  points: MFM 2026-09-14T05:51:23.572407+00:00
+  points: MFM 2026-10-03T19:00:56.192123+00:00
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-09-14'
+updated: '2026-10-03'
 ---
 
 ## 属性表
@@ -41,7 +41,7 @@ updated: '2026-09-14'
 - **Rites of Battle**：Once per battle round, one unit from your army with this ability can use it when its unit is targeted with a Stratagem. If it does, reduce the CP cost of that use of that Stratagem by 1CP.
 
 ## 单位构成
-- **1个模型** — 95 分
+- **1个模型** — 105 分
 
 ## 关键词
 - **阵营关键词**：Agents of the Imperium

@@ -5,19 +5,19 @@ name_en: Chaos Land Raider
 faction: 吞世者
 type: unit
 points:
-  1 model: 220
+  1 model: 200
 tags:
 - unit
 - unit/吞世者
 - 吞世者
 version:
-  points: MFM 2026-09-14T05:51:23.572407+00:00
+  points: MFM 2026-10-03T19:00:56.192123+00:00
   source: official-db
 sources:
 - book: https://assets.warhammer-community.com/eng_wh40k_faction_pack_world_eaters-5cgvc5tjcb-nipfvwkpo5.pdf
   pages:
   - 8
-updated: '2026-09-14'
+updated: '2026-10-03'
 ---
 
 ## 属性表
@@ -45,7 +45,7 @@ updated: '2026-09-14'
 - **严重损伤**：当本模型 W 值为 1-5 时，进行的攻击命 中结果-1
 
 ## 单位构成
-- **1个模型** — 220 分
+- **1个模型** — 200 分
 
 ## 关键词
 - **阵营关键词**：World Eaters

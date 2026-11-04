@@ -5,18 +5,18 @@ name_en: Death Company Marines
 faction: 星际战士
 type: unit
 points:
-  5 models: 85
-  10 models: 160
+  5 models: 90
+  10 models: 170
 tags:
 - unit
 - unit/星际战士
 - 星际战士
 version:
-  points: MFM 2026-09-14T05:51:23.572407+00:00
+  points: MFM 2026-10-03T19:00:56.192123+00:00
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-09-14'
+updated: '2026-10-03'
 ---
 
 ## 属性表
@@ -48,8 +48,8 @@ updated: '2026-09-14'
 - **黑色狂怒**：每当该单位中的模型进行近战攻击时，您可以重掷命中掷骰。如果该模型所在单位不位于一个或更多己方圣血天使角色模型 6" 范围内，或不位于一个或更多己方牧师模型 12" 内，则那个单位不能进行后撤，并且其中模型的目标控制属性变为 0。”
 
 ## 单位构成
-- **5个模型** — 85 分
-- **10个模型** — 160 分
+- **5个模型** — 90 分
+- **10个模型** — 170 分
 
 ## 关键词
 - **阵营关键词**：Adeptus Astartes，Blood Angels

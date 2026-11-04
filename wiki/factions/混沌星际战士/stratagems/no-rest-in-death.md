@@ -24,7 +24,7 @@ Your Movement phase.
 
 ## 使用对象
 
-One Heretic Astartes unit from your army within 9" of a Heretic Astartes Psyker, [[factions/混沌星际战士/units/heretic-astartes-daemon-prince.md|Heretic Astartes Daemon Prince]] or Heretic Astartes Daemon Prince with Wings unit from your army.
+One Heretic Astartes unit from your army within 9" of a Heretic Astartes Psyker, [[factions/混沌星际战士/units/heretic-astartes-daemon-prince.md|Heretic Astartes Daemon Prince]] or [[factions/混沌星际战士/units/heretic-astartes-daemon-prince.md|Heretic Astartes Daemon Prince]] with Wings unit from your army.
 
 ## 效果
 

@@ -5,13 +5,13 @@ name_en: Repulsor
 faction: 星际战士
 type: unit
 points:
-  1 model: 170
+  1 model: 190
 tags:
 - unit
 - unit/星际战士
 - 星际战士
 version:
-  points: MFM 2026-09-14T05:51:23.572407+00:00
+  points: MFM 2026-10-03T19:00:56.192123+00:00
   source: official-db
 sources:
 - book: https://assets.warhammer-community.com/eng_wh40k_faction_pack_space_marines-kxoxqpsahz-u0lzirv0zl.pdf
@@ -20,7 +20,7 @@ sources:
 - book: https://assets.warhammer-community.com/eng_22-07_warhammer_40,000_faction_pack_black_templars-inz7wljsdy-badlygdtjm.pdf
   pages:
   - 5
-updated: '2026-09-14'
+updated: '2026-10-03'
 ---
 
 ## 属性表
@@ -49,7 +49,7 @@ updated: '2026-09-14'
 - **【阵营技能】：破敌重誓**
 
 ## 单位构成
-- **1个模型** — 170 分
+- **1个模型** — 190 分
 
 ## 关键词
 - **阵营关键词**：Adeptus Astartes

@@ -74,7 +74,6 @@
 - [[factions/星际战士/units/caestus-assault-ram|Caestus Assault Ram]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - [[factions/星际战士/units/canis-wolfborn|Canis Wolfborn]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - [[factions/星际战士/units/captain-tycho|Captain Tycho]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
-- [[factions/星际战士/units/captain-on-bike|Captain on Bike]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - [[factions/星际战士/units/cerberus|Cerberus]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - [[factions/星际战士/units/chaplain-cassius|Chaplain Cassius]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - [[factions/星际战士/units/chaplain-kastiel|Chaplain Kastiel]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
@@ -84,12 +83,14 @@
 - [[factions/星际战士/units/company-veterans-on-bikes|Company Veterans On Bikes]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - [[factions/星际战士/units/crusader-squad-legendary|Crusader Squad (Legendary)]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - [[factions/星际战士/units/cyberwolf|Cyberwolf]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/星际战士/units/death-company-marines-with-bolt-rifles|Death Company Marines with Bolt Rifles]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - [[factions/星际战士/units/death-company-marines-with-boltguns-and-jump-packs|Death Company Marines with Boltguns and Jump Packs]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - [[factions/星际战士/units/deathstorm-drop-pod|Deathstorm Drop Pod]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - [[factions/星际战士/units/deathwing-strikemaster|Deathwing Strikemaster]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - [[factions/星际战士/units/deimos-predator|Deimos Predator]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - [[factions/星际战士/units/deredeo-dreadnought|Deredeo Dreadnought]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - [[factions/星际战士/units/dreadnought-drop-pod|Dreadnought Drop Pod]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/星际战士/units/eradicator-squad|Eradicator Squad]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - [[factions/星际战士/units/example-wargear|Example Wargear]]
 - [[factions/星际战士/units/falchion|Falchion]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - [[factions/星际战士/units/fellblade|Fellblade]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
@@ -186,12 +187,9 @@
 - [[factions/星际战士/units/aggressor-squad|侵略者小队]]
 - [[factions/星际战士/units/marshal|元帅]]
 - [[factions/星际战士/units/outrider-squad|先遣者摩托小队]]
-- [[factions/星际战士/units/lieutenant-in-phobos-armour|先锋军副官]]
-- [[factions/星际战士/units/librarian-in-phobos-armour|先锋军智库]]
-- [[factions/星际战士/units/captain-in-phobos-armour|先锋军连长]]
 - [[factions/星际战士/units/inceptor-squad|先驱者小队]]
 - [[factions/星际战士/units/incursor-squad|入侵者小队]]
-- [[factions/星际战士/units/land-raider|兰德掠袭者坦克]]
+- [[factions/星际战士/units/land-raider|兰德掠袭者战车]]
 - [[factions/星际战士/units/land-speeder|兰德速攻艇]]
 - [[factions/星际战士/units/inner-circle-companions|内环伙友]]
 - [[factions/星际战士/units/storm-speeder-hailstrike|冰雹型风暴速攻艇]]
@@ -203,14 +201,14 @@
 - [[factions/星际战士/units/bladeguard-ancient|剑卫旗手]]
 - [[factions/星际战士/units/bladeguard-veteran-squad|剑卫老兵小队]]
 - [[factions/星际战士/units/lieutenant|副官]]
-- [[factions/星际战士/units/lieutenant-in-reiver-armour|劫掠者副官]]
+- [[factions/星际战士/units/lieutenant-in-reiver-armour|劫掠者副官]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - [[factions/星际战士/units/reiver-squad|劫掠者小队]]
 - [[factions/星际战士/units/land-raider-crusader-2|十字军型兰德掠袭者坦克]]
 - [[factions/星际战士/units/land-raider-crusader|十字军型兰德掠袭者坦克]]
 - [[factions/星际战士/units/crusader-squad|十字军小队]]
 - [[factions/星际战士/units/cato-sicarius|卡托·西卡留斯]]
 - [[factions/星际战士/units/caanok-var|卡诺克·瓦尔]]
-- [[factions/星际战士/units/suppressor-squad|压制者小队]]
+- [[factions/星际战士/units/suppressor-squad|压制者小队（即将传奇）]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - [[factions/星际战士/units/primaris-company-champion|原铸连队冠军【传奇】]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - [[factions/星际战士/units/repulsor-2|反击者突击艇]]
 - [[factions/星际战士/units/repulsor|反击者突击艇]]
@@ -219,7 +217,7 @@
 - [[factions/星际战士/units/sanguinary-priest|圣血祭司]]
 - [[factions/星际战士/units/blood-angels-captain|圣血连长]]
 - [[factions/星际战士/units/hellblaster-squad|地狱轰击者小队]]
-- [[factions/星际战士/units/pedro-kantor|坎托战团长]]
+- [[factions/星际战士/units/pedro-kantor|坎托战团长]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - [[factions/星际战士/units/castellan|堡主]]
 - [[factions/星际战士/units/repulsor-executioner-2|处决者型反击者坦克]]
 - [[factions/星际战士/units/repulsor-executioner|处决者型反击者坦克]]
@@ -233,28 +231,31 @@
 - [[factions/星际战士/units/emperors-champion|帝皇勇士]]
 - [[factions/星际战士/units/victrix-honour-guard|常胜护卫]]
 - [[factions/星际战士/units/decimus-kill-team|德西姆斯猎杀小队]]
-- [[factions/星际战士/units/tactical-squad|战术小队]]
+- [[factions/星际战士/units/lieutenant-in-phobos-armour|恐惧型装甲副官]]
+- [[factions/星际战士/units/librarian-in-phobos-armour|恐惧型装甲智库员]]
+- [[factions/星际战士/units/captain-in-phobos-armour|恐惧型装甲连长]]
+- [[factions/星际战士/units/tactical-squad|战术小队（即将传奇）]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - [[factions/星际战士/units/tor-garadon|托尔连长]]
 - [[factions/星际战士/units/execrator|执裁者]]
 - [[factions/星际战士/units/techmarine|技术军士]]
 - [[factions/星际战士/units/lazarus|拉撒路导师]]
 - [[factions/星际战士/units/ragnar-blackmane|拉格纳·黑鬃]]
 - [[factions/星际战士/units/chaplain-on-bike|摩托牧师]]
+- [[factions/星际战士/units/captain-on-bike|摩托连长]]
 - [[factions/星际战士/units/land-raider-redeemer|救赎者型兰德掠袭者坦克]]
 - [[factions/星际战士/units/redemptor-dreadnought|救赎者型无畏机甲]]
-- [[factions/星际战士/units/uriel-ventris|文崔斯连长]]
+- [[factions/星际战士/units/uriel-ventris|文崔斯连长]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - [[factions/星际战士/units/bjorn-the-fell-handed|断手比约恩]]
-- [[factions/星际战士/units/whirlwind|旋风火箭炮]]
+- [[factions/星际战士/units/whirlwind|旋风火箭炮（即将传奇）]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - [[factions/星际战士/units/ancient|旗手]]
 - [[factions/星际战士/units/spectrus-kill-team|无形杀戮小队]]
-- [[factions/星际战士/units/dreadnought|无畏机甲]]
-- [[factions/星际战士/units/librarian|智库]]
-- [[factions/星际战士/units/stormraven-gunship|暴风渡鸦炮艇]]
+- [[factions/星际战士/units/dreadnought|无畏机甲]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/星际战士/units/librarian|智库员]]
+- [[factions/星际战士/units/stormraven-gunship|暴风渡鸦炮艇]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - [[factions/星际战士/units/murderfang|杀戮牙]]
 - [[factions/星际战士/units/ulrik-the-slayer|杀戮者乌尔里克]]
 - [[factions/星际战士/units/gladiator-lancer-2|枪骑兵型角斗者坦克]]
 - [[factions/星际战士/units/gladiator-lancer|枪骑兵型角斗者坦克]]
-- [[factions/星际战士/units/eradicator-squad|根除者小队]]
 - [[factions/星际战士/units/chaplain-grimaldus|格瑞马都斯牧师]]
 - [[factions/星际战士/units/deathwatch-terminator-squad|死亡守望终结者小队]]
 - [[factions/星际战士/units/deathwatch-veterans|死亡守望老兵]]
@@ -266,7 +267,7 @@
 - [[factions/星际战士/units/deathwing-command-squad|死翼指挥组【传奇】]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - [[factions/星际战士/units/deathwing-terminator-squad|死翼终结者小队]]
 - [[factions/星际战士/units/deathwing-knights|死翼骑士]]
-- [[factions/星际战士/units/predator-annihilator|歼灭者型猎食者坦克]]
+- [[factions/星际战士/units/predator-annihilator|歼灭者型猎食者坦克（即将传奇）]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - [[factions/星际战士/units/eliminator-squad|歼灭者小队]]
 - [[factions/星际战士/units/captain-titus|泰图斯连长]]
 - [[factions/星际战士/units/logan-grimnar|洛根.格里姆纳尔]]
@@ -284,20 +285,20 @@
 - [[factions/星际战士/units/wolf-guard-headtakers|狼卫猎头者]]
 - [[factions/星际战士/units/wolf-priest|狼牧师]]
 - [[factions/星际战士/units/apothecary-biologis|生物学药剂师]]
-- [[factions/星际战士/units/centurion-devastator-squad|百夫长破坏小队]]
-- [[factions/星际战士/units/centurion-assault-squad|百夫长突击小队]]
-- [[factions/星际战士/units/predator-destructor|破坏者型猎食者坦克]]
-- [[factions/星际战士/units/devastator-squad|破坏者小队]]
+- [[factions/星际战士/units/centurion-devastator-squad|百夫长破坏小队（即将传奇）]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/星际战士/units/centurion-assault-squad|百夫长突击小队（即将传奇）]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/星际战士/units/predator-destructor|破坏者型猎食者坦克（即将传奇）]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/星际战士/units/devastator-squad|破坏者小队（即将传奇）]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - [[factions/星际战士/units/drop-pod|空降仓]]
 - [[factions/星际战士/units/assault-intercessor-squad|突击仲裁者小队]]
 - [[factions/星际战士/units/terminator-assault-squad|突击终结者小队]]
 - [[factions/星际战士/units/terminator-squad-2|终结者小队]]
 - [[factions/星际战士/units/terminator-squad|终结者小队]]
-- [[factions/星际战士/units/ancient-in-terminator-armour|终结者旗手]]
-- [[factions/星际战士/units/librarian-in-terminator-armour|终结者智库]]
-- [[factions/星际战士/units/chaplain-in-terminator-armour|终结者牧师]]
-- [[factions/星际战士/units/captain-in-terminator-armour|终结者连长]]
-- [[factions/星际战士/units/vindicator|维护者突击炮]]
+- [[factions/星际战士/units/ancient-in-terminator-armour|终结者装甲旗手]]
+- [[factions/星际战士/units/librarian-in-terminator-armour|终结者装甲智库员]]
+- [[factions/星际战士/units/chaplain-in-terminator-armour|终结者装甲牧师]]
+- [[factions/星际战士/units/captain-in-terminator-armour|终结者装甲连长]]
+- [[factions/星际战士/units/vindicator|维护者突击炮（即将传奇）]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - [[factions/星际战士/units/roboute-guilliman|罗伯特.基里曼]]
 - [[factions/星际战士/units/sternguard-veteran-squad-2|肃卫老兵小队]]
 - [[factions/星际战士/units/sternguard-veteran-squad|肃卫老兵小队]]
@@ -312,31 +313,30 @@
 - [[factions/星际战士/units/lion-eljonson|莱昂艾尔庄森，黑暗天使基因原体]]
 - [[factions/星际战士/units/sammael|萨穆尔大导师]]
 - [[factions/星际战士/units/storm-speeder-hammerstrike|落锤型风暴速攻艇]]
-- [[factions/星际战士/units/hammerfall-bunker|落锤堡]]
+- [[factions/星际战士/units/hammerfall-bunker|落锤堡（即将传奇）]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - [[factions/星际战士/units/brutalis-dreadnought|蛮兽型无畏机甲]]
 - [[factions/星际战士/units/blood-claws|血爪]]
-- [[factions/星际战士/units/judiciar|裁决士]]
-- [[factions/星际战士/units/lieutenant-with-combi-weapon|装备复合武器的先锋军副官]]
-- [[factions/星际战士/units/death-company-marines-with-bolt-rifles|装备爆弹步枪的死亡连小队]]
+- [[factions/星际战士/units/judiciar|裁决者]]
+- [[factions/星际战士/units/lieutenant-with-combi-weapon|装备复合武器的副官]]
 - [[factions/星际战士/units/death-company-marines-with-jump-packs|装备跳跃背包的死亡连小队]]
 - [[factions/星际战士/units/death-company-captain-with-jump-pack|装备跳跃背包的死亡连连长]]
 - [[factions/星际战士/units/eradicator-squad-with-heavy-bolters|装备重型爆矢枪的根除者小队]]
 - [[factions/星际战士/units/wulfen-with-storm-shields|装备风暴盾的狼人]]
 - [[factions/星际战士/units/gladiator-valiant-2|豪侠型角斗者坦克]]
 - [[factions/星际战士/units/gladiator-valiant|豪侠型角斗者坦克]]
-- [[factions/星际战士/units/razorback|豪猪装甲车]]
+- [[factions/星际战士/units/razorback|豪猪装甲车（即将传奇）]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - [[factions/星际战士/units/belial|贝利亚大导师]]
 - [[factions/星际战士/units/vanguard-veteran-squad-with-jump-packs|跳跃背包先锋老兵小队]]
 - [[factions/星际战士/units/chaplain-with-jump-pack|跳跃背包牧师]]
 - [[factions/星际战士/units/assault-intercessors-with-jump-packs|跳跃背包突击仲裁者小队]]
 - [[factions/星际战士/units/captain-with-jump-pack|跳跃背包连长]]
-- [[factions/星际战士/units/marneus-calgar-in-armour-of-antilochus|身穿安提洛克斯战甲的马涅乌斯·卡尔加]]
+- [[factions/星际战士/units/marneus-calgar-in-armour-of-antilochus|身穿安提洛克斯战甲的马涅乌斯·卡尔加]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - [[factions/星际战士/units/crusade-ancient|远征旗手]]
 - [[factions/星际战士/units/captain|连长]]
 - [[factions/星际战士/units/company-heroes|连队英雄]]
 - [[factions/星际战士/units/carab-culln-the-risen|重生者卡拉布·库伦【传奇】]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - [[factions/星际战士/units/heavy-intercessor-squad|重装仲裁者小队]]
-- [[factions/星际战士/units/captain-in-gravis-armour|重装连长]]
+- [[factions/星际战士/units/captain-in-gravis-armour|重装型装甲连长]]
 - [[factions/星际战士/units/wolf-guard-terminators|野狼守卫终结者]]
 - [[factions/星际战士/units/iron-priest|钢铁牧师]]
 - [[factions/星际战士/units/iron-father-feirros|铁父费罗斯]]
@@ -352,8 +352,8 @@
 - [[factions/星际战士/units/lemartes|雷马特斯]]
 - [[factions/星际战士/units/thunderhawk-gunship|雷鹰炮艇]]
 - [[factions/星际战士/units/njal-stormcaller|风暴召唤者纳吉奥]]
-- [[factions/星际战士/units/stormtalon-gunship|风暴爪炮艇]]
-- [[factions/星际战士/units/stormhawk-interceptor|风暴隼拦截机]]
+- [[factions/星际战士/units/stormtalon-gunship|风暴爪炮艇（即将传奇）]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/星际战士/units/stormhawk-interceptor|风暴隼拦截机（即将传奇）]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - [[factions/星际战士/units/chief-librarian-mephiston|首席智库墨菲斯顿]]
 - [[factions/星际战士/units/chief-librarian-tigurius|首席智库底格里斯]]
 - [[factions/星际战士/units/ravenwing-command-squad|鸦翼指挥小队]]

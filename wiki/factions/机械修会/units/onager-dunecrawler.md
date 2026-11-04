@@ -5,17 +5,17 @@ name_en: Onager Dunecrawler
 faction: 机械修会
 type: unit
 points:
-  1 model: 155
+  1 model: 150
 tags:
 - unit
 - unit/机械修会
 - 机械修会
 version:
-  points: MFM 2026-09-14T05:51:23.572407+00:00
+  points: MFM 2026-10-03T19:00:56.192123+00:00
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-09-14'
+updated: '2026-10-03'
 ---
 
 ## 属性表
@@ -49,7 +49,7 @@ updated: '2026-09-14'
 - **四足爬行**：本模型进行标准，加速或撤退移动时，可以 穿越友军巨兽或载具模型，以及至多 4 寸高的地形
 
 ## 单位构成
-- **1个模型** — 155 分
+- **1个模型** — 150 分
 
 ## 关键词
 - **阵营关键词**：Adeptus Mechanicus

@@ -5,17 +5,17 @@ name_en: Suboden Khan
 faction: 星际战士
 type: unit
 points:
-  1 model: 90
+  1 model: 105
 tags:
 - unit
 - unit/星际战士
 - 星际战士
 version:
-  points: MFM 2026-09-14T05:51:23.572407+00:00
+  points: MFM 2026-10-03T19:00:56.192123+00:00
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-09-14'
+updated: '2026-10-03'
 ---
 
 ## 属性表
@@ -44,7 +44,7 @@ updated: '2026-09-14'
 - **大师骑手**：每当该模型所在单位中的模型进行常规、突进、后撤或冲锋移动时，该模型可以水平穿越地形模型。
 
 ## 单位构成
-- **1个模型** — 90 分
+- **1个模型** — 105 分
 
 ## 关键词
 - **阵营关键词**：White Scars，Adeptus Astartes

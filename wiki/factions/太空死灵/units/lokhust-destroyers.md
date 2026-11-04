@@ -8,17 +8,17 @@ points:
   1 model: 40
   2 models: 55
   3 models: 80
-  6 models: 175
+  6 models: 190
 tags:
 - unit
 - unit/太空死灵
 - 太空死灵
 version:
-  points: MFM 2026-09-14T05:51:23.572407+00:00
+  points: MFM 2026-10-03T19:00:56.192123+00:00
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-09-14'
+updated: '2026-10-03'
 ---
 
 ## 属性表
@@ -44,7 +44,7 @@ updated: '2026-09-14'
 - **1个模型** — 40 分
 - **2个模型** — 55 分
 - **3个模型** — 80 分
-- **6个模型** — 175 分
+- **6个模型** — 190 分
 
 ## 关键词
 - **阵营关键词**：Necrons

@@ -55,9 +55,9 @@
 - [[factions/黑暗灵族/units/starweaver|织星者飞艇]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - [[factions/黑暗灵族/units/skyweavers|织空者摩托]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - [[factions/黑暗灵族/units/lelith-hesperax|莉莉丝·海斯佩拉克斯]]
+- [[factions/黑暗灵族/units/corsair-voidscarred|虚空创痕海盗]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - [[factions/黑暗灵族/units/corsair-voidreavers|虚空劫掠者海盗]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - [[factions/黑暗灵族/units/voidweaver|虚空编织者飞艇]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
-- [[factions/黑暗灵族/units/corsair-voidscarred|虚空裂痕海盗]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - [[factions/黑暗灵族/units/voidraven-bomber|虚空鸦轰炸机]]
 - [[factions/黑暗灵族/units/haemonculus|血伶人]]
 - [[factions/黑暗灵族/units/succubus|血腥魔女]]

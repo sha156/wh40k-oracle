@@ -5,18 +5,18 @@ name_en: Corpuscarii Electro-priests
 faction: 机械修会
 type: unit
 points:
-  5 models: 65
-  10 models: 130
+  5 models: 60
+  10 models: 120
 tags:
 - unit
 - unit/机械修会
 - 机械修会
 version:
-  points: MFM 2026-09-14T05:51:23.572407+00:00
+  points: MFM 2026-10-03T19:00:56.192123+00:00
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-09-14'
+updated: '2026-10-03'
 ---
 
 ## 属性表
@@ -42,8 +42,8 @@ updated: '2026-09-14'
 - **麻痹电击**：在你的射击阶段中，当本单位射击完成后，你可以选择被本单位所命中过的一个敌方单位（不能是载具或巨兽），那个敌方单位直到对方下个回合结束时处于被麻痹状态，这种状态下的单位 M，加速和冲锋结果都-2
 
 ## 单位构成
-- **5个模型** — 65 分
-- **10个模型** — 130 分
+- **5个模型** — 60 分
+- **10个模型** — 120 分
 
 ## 关键词
 - **阵营关键词**：Adeptus Mechanicus

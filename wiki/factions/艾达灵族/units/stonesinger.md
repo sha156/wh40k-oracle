@@ -5,20 +5,20 @@ name_en: Stonesinger
 faction: 艾达灵族
 type: unit
 points:
-  1 model: 60
+  1 model: 55
 tags:
 - unit
 - unit/艾达灵族
 - 艾达灵族
 version:
-  points: MFM 2026-09-14T05:51:23.572407+00:00
+  points: MFM 2026-10-03T19:00:56.192123+00:00
   source: official-db
   rules: 11e-fp-2026-08-26
 sources:
 - book: 'Faction Pack: Aeldari'
   pages:
   - 14
-updated: '2026-09-14'
+updated: '2026-10-03'
 ---
 
 ## 属性表
@@ -45,7 +45,7 @@ updated: '2026-09-14'
 - **Battle Focus**
 
 ## 单位构成
-- **1个模型** — 60 分
+- **1个模型** — 55 分
 
 ## 关键词
 - **阵营关键词**：ASURYANI

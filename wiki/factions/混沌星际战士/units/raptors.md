@@ -5,18 +5,18 @@ name_en: Raptors
 faction: 混沌星际战士
 type: unit
 points:
-  5 models: 110
-  10 models: 210
+  5 models: 115
+  10 models: 225
 tags:
 - unit
 - unit/混沌星际战士
 - 混沌星际战士
 version:
-  points: MFM 2026-09-14T05:51:23.572407+00:00
+  points: MFM 2026-10-03T19:00:56.192123+00:00
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-09-14'
+updated: '2026-10-03'
 ---
 
 ## 属性表
@@ -50,8 +50,8 @@ updated: '2026-09-14'
 - **惊惧突袭**：在近战阶段开始时，拥有本技能的单位 接战范围内的每个敌方单位必须进行一次震慑测试
 
 ## 单位构成
-- **5个模型** — 110 分
-- **10个模型** — 210 分
+- **5个模型** — 115 分
+- **10个模型** — 225 分
 
 ## 关键词
 - **阵营关键词**：Heretic Astartes

@@ -5,19 +5,18 @@ name_en: Deathwatch Terminator Squad
 faction: 星际战士
 type: unit
 points:
-  5 models: 180
-  10 models: 330
-  per thunder hammer: 5
+  5 models: 190
+  10 models: 380
 tags:
 - unit
 - unit/星际战士
 - 星际战士
 version:
-  points: MFM 2026-09-14T05:51:23.572407+00:00
+  points: MFM 2026-10-03T19:00:56.192123+00:00
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-09-14'
+updated: '2026-10-03'
 ---
 
 ## 属性表
@@ -55,9 +54,8 @@ updated: '2026-09-14'
 - **【阵营技能】：破敌重誓，任务战术**
 
 ## 单位构成
-- **5个模型** — 180 分
-- **10个模型** — 330 分
-- **per thunder hammer** — 5 分
+- **5个模型** — 190 分
+- **10个模型** — 380 分
 
 ## 关键词
 - **阵营关键词**：Deathwatch，Adeptus Astartes

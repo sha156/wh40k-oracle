@@ -5,17 +5,17 @@ name_en: Knight Defender
 faction: 帝国骑士
 type: unit
 points:
-  1 model: 400
+  1 model: 385
 tags:
 - unit
 - unit/帝国骑士
 - 帝国骑士
 version:
-  points: MFM 2026-09-14T05:51:23.572407+00:00
+  points: MFM 2026-10-03T19:00:56.192123+00:00
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-09-14'
+updated: '2026-10-03'
 ---
 
 ## 属性表
@@ -48,7 +48,7 @@ updated: '2026-09-14'
 - **转换光束**：转换光束（武器技能）：具有本技能的武器在攻击位于18寸外的敌方单位时，成功的4+命中骰即视作暴击命中。
 
 ## 单位构成
-- **1个模型** — 400 分
+- **1个模型** — 385 分
 
 ## 关键词
 - **阵营关键词**：Imperial Knights

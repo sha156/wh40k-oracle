@@ -5,19 +5,19 @@ name_en: Storm Speeder Hailstrike
 faction: 星际战士
 type: unit
 points:
-  1 model: 105
+  1 model: 110
 tags:
 - unit
 - unit/星际战士
 - 星际战士
 version:
-  points: MFM 2026-09-14T05:51:23.572407+00:00
+  points: MFM 2026-10-03T19:00:56.192123+00:00
   source: official-db
 sources:
 - book: https://assets.warhammer-community.com/eng_wh40k_faction_pack_space_marines-kxoxqpsahz-u0lzirv0zl.pdf
   pages:
   - 61
-updated: '2026-09-14'
+updated: '2026-10-03'
 ---
 
 ## 属性表
@@ -42,7 +42,7 @@ updated: '2026-09-14'
 - **冰雹轰炸**：当本模型射击完成后，你可以选择被本模型命中过的一个敌方单位（不能是巨兽和载具单位），本阶段中，每当阿斯塔特修会友军单位射击攻击那个敌方单位 时，武器 AP 增强 1 点，多个本技能不能累计
 
 ## 单位构成
-- **1个模型** — 105 分
+- **1个模型** — 110 分
 
 ## 关键词
 - **阵营关键词**：Adeptus Astartes

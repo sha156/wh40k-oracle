@@ -13,13 +13,13 @@ tags:
 - unit/太空死灵
 - 太空死灵
 version:
-  points: MFM 2026-09-14T05:51:23.572407+00:00
+  points: MFM 2026-10-03T19:00:56.192123+00:00
   source: official-db
 sources:
 - book: https://assets.warhammer-community.com/eng_wh40k_faction_pack_necrons-eweoek106p-nqomxds3qr.pdf
   pages:
   - 29
-updated: '2026-09-14'
+updated: '2026-10-03'
 ---
 
 ## 属性表

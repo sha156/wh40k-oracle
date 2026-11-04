@@ -5,17 +5,17 @@ name_en: Death Company Captain
 faction: 星际战士
 type: unit
 points:
-  1 model: 70
+  1 model: 80
 tags:
 - unit
 - unit/星际战士
 - 星际战士
 version:
-  points: MFM 2026-09-14T05:51:23.572407+00:00
+  points: MFM 2026-10-03T19:00:56.192123+00:00
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-09-14'
+updated: '2026-10-03'
 ---
 
 ## 属性表
@@ -46,7 +46,7 @@ updated: '2026-09-14'
 - **绝望英雄**：本模型所领导的单位其中的模型获得斥 候 6 技能（除非本单位在游戏开始时乘坐运输工具）
 
 ## 单位构成
-- **1个模型** — 70 分
+- **1个模型** — 80 分
 
 ## 关键词
 - **阵营关键词**：Adeptus Astartes，Blood Angels

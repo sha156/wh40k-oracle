@@ -5,17 +5,17 @@ name_en: Cypher
 faction: 混沌星际战士
 type: unit
 points:
-  1 model: 90
+  1 model: 95
 tags:
 - unit
 - unit/混沌星际战士
 - 混沌星际战士
 version:
-  points: MFM 2026-09-14T05:51:23.572407+00:00
+  points: MFM 2026-10-03T19:00:56.192123+00:00
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-09-14'
+updated: '2026-10-03'
 ---
 
 ## 属性表
@@ -44,7 +44,7 @@ updated: '2026-09-14'
 - **枪斗术**：每回合一次，在对手的射击阶段中，一个敌方单 位对本模型 3 寸内一个友军阿斯塔特叛军单位进行射击， 这次射击完成后，本模型可以如同在自身的射击阶段一样 进行一轮射击，但只能选择上述敌方单位作为目标（要遵 循正常射击要求）
 
 ## 单位构成
-- **1个模型** — 90 分
+- **1个模型** — 95 分
 
 ## 关键词
 - **阵营关键词**：Heretic Astartes

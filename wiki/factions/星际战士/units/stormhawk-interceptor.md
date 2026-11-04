@@ -1,21 +1,19 @@
 ---
 id: '000000084'
-name_zh: 风暴隼拦截机
+name_zh: 风暴隼拦截机（即将传奇）
 name_en: Stormhawk Interceptor
 faction: 星际战士
 type: unit
-points:
-  1 model: 155
 tags:
 - unit
 - unit/星际战士
 - 星际战士
 version:
-  points: MFM 2026-09-14T05:51:23.572407+00:00
+  points: historical / unmatched
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-09-14'
+updated: '2026-10-03'
 ---
 
 ## 属性表
@@ -44,6 +42,7 @@ updated: '2026-09-14'
 - **拦截机**：每当本模型射击攻击飞行目标时，命中结果+1
 
 ## 单位构成
+历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - **1个模型** — 155 分
 
 ## 关键词

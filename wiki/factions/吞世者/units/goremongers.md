@@ -5,17 +5,17 @@ name_en: Goremongers
 faction: 吞世者
 type: unit
 points:
-  8 models: 75
+  8 models: 70
 tags:
 - unit
 - unit/吞世者
 - 吞世者
 version:
-  points: MFM 2026-09-14T05:51:23.572407+00:00
+  points: MFM 2026-10-03T19:00:56.192123+00:00
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-09-14'
+updated: '2026-10-03'
 ---
 
 ## 属性表
@@ -39,7 +39,7 @@ updated: '2026-09-14'
 - **健步如飞**：每个回合限一次，当一个敌方单位在该单位的8"内结束一次常规、突进或撤退移动时，如果该单位不位于敌方单位的交战范围内，那么该单位可以进行最多D6"的常规移动。
 
 ## 单位构成
-- **8个模型** — 75 分
+- **8个模型** — 70 分
 
 ## 关键词
 - **阵营关键词**：World Eaters

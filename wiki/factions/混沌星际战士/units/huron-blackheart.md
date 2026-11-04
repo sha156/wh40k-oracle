@@ -5,17 +5,17 @@ name_en: Huron Blackheart
 faction: 混沌星际战士
 type: unit
 points:
-  1 model: 130
+  1 model: 135
 tags:
 - unit
 - unit/混沌星际战士
 - 混沌星际战士
 version:
-  points: MFM 2026-09-14T05:51:23.572407+00:00
+  points: MFM 2026-10-03T19:00:56.192123+00:00
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-09-14'
+updated: '2026-10-03'
 ---
 
 ## 属性表
@@ -42,7 +42,7 @@ updated: '2026-09-14'
 - **魔猿狡智【灵能】**：每个战斗轮次限一次，当一个敌方单位在该模型所在单位 9" 范围内结束常规、突进或后撤移动时，若该模型所在单位不位于一个或更多敌方单位的交战范围内，其可以进行一次至多为 D3+3" 的常规移动。
 
 ## 单位构成
-- **1个模型** — 130 分
+- **1个模型** — 135 分
 
 ## 关键词
 - **阵营关键词**：Heretic Astartes

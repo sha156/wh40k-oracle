@@ -5,17 +5,17 @@ name_en: Helbrute
 faction: 混沌星际战士
 type: unit
 points:
-  1 model: 130
+  1 model: 125
 tags:
 - unit
 - unit/混沌星际战士
 - 混沌星际战士
 version:
-  points: MFM 2026-09-14T05:51:23.572407+00:00
+  points: MFM 2026-10-03T19:00:56.192123+00:00
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-09-14'
+updated: '2026-10-03'
 ---
 
 ## 属性表
@@ -50,7 +50,7 @@ updated: '2026-09-14'
 - **沉迷毁灭**：如果本模型在格斗武器以外还拥有两件 近战武器，则那两件武器 A+2
 
 ## 单位构成
-- **1个模型** — 130 分
+- **1个模型** — 125 分
 
 ## 关键词
 - **阵营关键词**：Heretic Astartes

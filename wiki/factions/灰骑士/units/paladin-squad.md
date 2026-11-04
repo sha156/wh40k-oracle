@@ -5,20 +5,20 @@ name_en: Paladin Squad
 faction: 灰骑士
 type: unit
 points:
-  4 models: 170
-  5 models: 215
-  8 models: 360
-  10 models: 460
+  4 models: 185
+  5 models: 230
+  8 models: 385
+  10 models: 490
 tags:
 - unit
 - unit/灰骑士
 - 灰骑士
 version:
-  points: MFM 2026-09-14T05:51:23.572407+00:00
+  points: MFM 2026-10-03T19:00:56.192123+00:00
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-09-14'
+updated: '2026-10-03'
 ---
 
 ## 属性表
@@ -49,10 +49,10 @@ updated: '2026-09-14'
 - **医疗装具**：在己方指挥阶段，如果持有者没有被摧毁，您可以将1个被摧毁的模型（除角色外）返还至持有者所在的单位。
 
 ## 单位构成
-- **4个模型** — 170 分
-- **5个模型** — 215 分
-- **8个模型** — 360 分
-- **10个模型** — 460 分
+- **4个模型** — 185 分
+- **5个模型** — 230 分
+- **8个模型** — 385 分
+- **10个模型** — 490 分
 
 ## 关键词
 - **阵营关键词**：Grey Knights

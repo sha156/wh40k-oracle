@@ -1,6 +1,5 @@
 ---
 id: '000000019'
-name_zh: 烧烤小子
 name_en: Burna Boyz
 faction: 兽人
 type: unit
@@ -13,7 +12,7 @@ version:
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-09-14'
+updated: '2026-10-03'
 ---
 
 ## 属性表
@@ -43,8 +42,6 @@ updated: '2026-09-14'
 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - **1 Spanner and 4 Burna [[factions/兽人/units/boyz.md|Boyz]]** — 60 分
 - **2 Spanners and 8 Burna Boyz** — 120 分
-- **5个模型** — 60 分
-- **10个模型** — 120 分
 
 ## 关键词
 - **阵营关键词**：Orks

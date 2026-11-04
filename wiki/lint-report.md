@@ -3,11 +3,11 @@
 | Severity | Count |
 |----------|-------|
 | warning | 1 |
-| info | 691 |
+| info | 711 |
 
-**Total issues:** 692  |  **Auto-fixed:** 0
+**Total issues:** 712  |  **Auto-fixed:** 0
 
-- ⚠️ **[alias-conflicts]** 名称/别名冲突 598 组（涉及 905 个实体），完整名单见 wiki/alias-conflicts.md
+- ⚠️ **[alias-conflicts]** 名称/别名冲突 597 组（涉及 903 个实体），完整名单见 wiki/alias-conflicts.md
 - ℹ️ **[missing-points]** `factions/兽人/units/attack-fighta.md` — 单位页缺少 points 字段
 - ℹ️ **[missing-points]** `factions/兽人/units/big-gunz.md` — 单位页缺少 points 字段
 - ℹ️ **[missing-points]** `factions/兽人/units/big-mek-on-warbike.md` — 单位页缺少 points 字段
@@ -347,9 +347,10 @@
 - ℹ️ **[missing-points]** `factions/星际战士/units/brother-corbulo.md` — 单位页缺少 points 字段
 - ℹ️ **[missing-points]** `factions/星际战士/units/caestus-assault-ram.md` — 单位页缺少 points 字段
 - ℹ️ **[missing-points]** `factions/星际战士/units/canis-wolfborn.md` — 单位页缺少 points 字段
-- ℹ️ **[missing-points]** `factions/星际战士/units/captain-on-bike.md` — 单位页缺少 points 字段
 - ℹ️ **[missing-points]** `factions/星际战士/units/captain-tycho.md` — 单位页缺少 points 字段
 - ℹ️ **[missing-points]** `factions/星际战士/units/carab-culln-the-risen.md` — 单位页缺少 points 字段
+- ℹ️ **[missing-points]** `factions/星际战士/units/centurion-assault-squad.md` — 单位页缺少 points 字段
+- ℹ️ **[missing-points]** `factions/星际战士/units/centurion-devastator-squad.md` — 单位页缺少 points 字段
 - ℹ️ **[missing-points]** `factions/星际战士/units/cerberus.md` — 单位页缺少 points 字段
 - ℹ️ **[missing-points]** `factions/星际战士/units/chaplain-cassius.md` — 单位页缺少 points 字段
 - ℹ️ **[missing-points]** `factions/星际战士/units/chaplain-kastiel.md` — 单位页缺少 points 字段
@@ -360,6 +361,7 @@
 - ℹ️ **[missing-points]** `factions/星际战士/units/crusader-squad-legendary.md` — 单位页缺少 points 字段
 - ℹ️ **[missing-points]** `factions/星际战士/units/cyberwolf.md` — 单位页缺少 points 字段
 - ℹ️ **[missing-points]** `factions/星际战士/units/death-company-dreadnought-with-magna-grapple.md` — 单位页缺少 points 字段
+- ℹ️ **[missing-points]** `factions/星际战士/units/death-company-marines-with-bolt-rifles.md` — 单位页缺少 points 字段
 - ℹ️ **[missing-points]** `factions/星际战士/units/death-company-marines-with-boltguns-and-jump-packs.md` — 单位页缺少 points 字段
 - ℹ️ **[missing-points]** `factions/星际战士/units/death-company-marines-with-boltguns.md` — 单位页缺少 points 字段
 - ℹ️ **[missing-points]** `factions/星际战士/units/deathstorm-drop-pod.md` — 单位页缺少 points 字段
@@ -367,7 +369,10 @@
 - ℹ️ **[missing-points]** `factions/星际战士/units/deathwing-strikemaster.md` — 单位页缺少 points 字段
 - ℹ️ **[missing-points]** `factions/星际战士/units/deimos-predator.md` — 单位页缺少 points 字段
 - ℹ️ **[missing-points]** `factions/星际战士/units/deredeo-dreadnought.md` — 单位页缺少 points 字段
+- ℹ️ **[missing-points]** `factions/星际战士/units/devastator-squad.md` — 单位页缺少 points 字段
 - ℹ️ **[missing-points]** `factions/星际战士/units/dreadnought-drop-pod.md` — 单位页缺少 points 字段
+- ℹ️ **[missing-points]** `factions/星际战士/units/dreadnought.md` — 单位页缺少 points 字段
+- ℹ️ **[missing-points]** `factions/星际战士/units/eradicator-squad.md` — 单位页缺少 points 字段
 - ℹ️ **[missing-points]** `factions/星际战士/units/example-wargear.md` — 单位页缺少 points 字段
 - ℹ️ **[missing-points]** `factions/星际战士/units/falchion.md` — 单位页缺少 points 字段
 - ℹ️ **[missing-points]** `factions/星际战士/units/fellblade.md` — 单位页缺少 points 字段
@@ -375,6 +380,7 @@
 - ℹ️ **[missing-points]** `factions/星际战士/units/fire-raptor-gunship.md` — 单位页缺少 points 字段
 - ℹ️ **[missing-points]** `factions/星际战士/units/furioso-dreadnought.md` — 单位页缺少 points 字段
 - ℹ️ **[missing-points]** `factions/星际战士/units/gabriel-seth.md` — 单位页缺少 points 字段
+- ℹ️ **[missing-points]** `factions/星际战士/units/hammerfall-bunker.md` — 单位页缺少 points 字段
 - ℹ️ **[missing-points]** `factions/星际战士/units/harald-deathwolf.md` — 单位页缺少 points 字段
 - ℹ️ **[missing-points]** `factions/星际战士/units/hounds-of-morkai.md` — 单位页缺少 points 字段
 - ℹ️ **[missing-points]** `factions/星际战士/units/hunter.md` — 单位页缺少 points 字段
@@ -399,14 +405,20 @@
 - ℹ️ **[missing-points]** `factions/星际战士/units/librarian-dreadnought.md` — 单位页缺少 points 字段
 - ℹ️ **[missing-points]** `factions/星际战士/units/librarian-on-bike.md` — 单位页缺少 points 字段
 - ℹ️ **[missing-points]** `factions/星际战士/units/librarian-with-jump-pack.md` — 单位页缺少 points 字段
+- ℹ️ **[missing-points]** `factions/星际战士/units/lieutenant-in-reiver-armour.md` — 单位页缺少 points 字段
 - ℹ️ **[missing-points]** `factions/星际战士/units/logan-grimnar-on-stormrider.md` — 单位页缺少 points 字段
 - ℹ️ **[missing-points]** `factions/星际战士/units/long-fangs.md` — 单位页缺少 points 字段
 - ℹ️ **[missing-points]** `factions/星际战士/units/lukas-the-trickster.md` — 单位页缺少 points 字段
+- ℹ️ **[missing-points]** `factions/星际战士/units/marneus-calgar-in-armour-of-antilochus.md` — 单位页缺少 points 字段
 - ℹ️ **[missing-points]** `factions/星际战士/units/mastodon.md` — 单位页缺少 points 字段
 - ℹ️ **[missing-points]** `factions/星际战士/units/mortis-dreadnought.md` — 单位页缺少 points 字段
+- ℹ️ **[missing-points]** `factions/星际战士/units/pedro-kantor.md` — 单位页缺少 points 字段
+- ℹ️ **[missing-points]** `factions/星际战士/units/predator-annihilator.md` — 单位页缺少 points 字段
+- ℹ️ **[missing-points]** `factions/星际战士/units/predator-destructor.md` — 单位页缺少 points 字段
 - ℹ️ **[missing-points]** `factions/星际战士/units/primaris-company-champion.md` — 单位页缺少 points 字段
 - ℹ️ **[missing-points]** `factions/星际战士/units/rapier-carrier.md` — 单位页缺少 points 字段
 - ℹ️ **[missing-points]** `factions/星际战士/units/ravenwing-talonmaster.md` — 单位页缺少 points 字段
+- ℹ️ **[missing-points]** `factions/星际战士/units/razorback.md` — 单位页缺少 points 字段
 - ℹ️ **[missing-points]** `factions/星际战士/units/relic-contemptor-dreadnought.md` — 单位页缺少 points 字段
 - ℹ️ **[missing-points]** `factions/星际战士/units/relic-razorback.md` — 单位页缺少 points 字段
 - ℹ️ **[missing-points]** `factions/星际战士/units/relic-terminator-squad.md` — 单位页缺少 points 字段
@@ -428,7 +440,12 @@
 - ℹ️ **[missing-points]** `factions/星际战士/units/stalker.md` — 单位页缺少 points 字段
 - ℹ️ **[missing-points]** `factions/星际战士/units/storm-eagle-gunship.md` — 单位页缺少 points 字段
 - ℹ️ **[missing-points]** `factions/星际战士/units/stormfang-gunship.md` — 单位页缺少 points 字段
+- ℹ️ **[missing-points]** `factions/星际战士/units/stormhawk-interceptor.md` — 单位页缺少 points 字段
+- ℹ️ **[missing-points]** `factions/星际战士/units/stormraven-gunship.md` — 单位页缺少 points 字段
+- ℹ️ **[missing-points]** `factions/星际战士/units/stormtalon-gunship.md` — 单位页缺少 points 字段
 - ℹ️ **[missing-points]** `factions/星际战士/units/stormwolf.md` — 单位页缺少 points 字段
+- ℹ️ **[missing-points]** `factions/星际战士/units/suppressor-squad.md` — 单位页缺少 points 字段
+- ℹ️ **[missing-points]** `factions/星际战士/units/tactical-squad.md` — 单位页缺少 points 字段
 - ℹ️ **[missing-points]** `factions/星际战士/units/tarantula-air-defence-battery.md` — 单位页缺少 points 字段
 - ℹ️ **[missing-points]** `factions/星际战士/units/tarantula-sentry-battery.md` — 单位页缺少 points 字段
 - ℹ️ **[missing-points]** `factions/星际战士/units/techmarine-on-bike.md` — 单位页缺少 points 字段
@@ -440,10 +457,13 @@
 - ℹ️ **[missing-points]** `factions/星际战士/units/typhon.md` — 单位页缺少 points 字段
 - ℹ️ **[missing-points]** `factions/星际战士/units/tyrannic-war-veterans.md` — 单位页缺少 points 字段
 - ℹ️ **[missing-points]** `factions/星际战士/units/ultramarines-honour-guard.md` — 单位页缺少 points 字段
+- ℹ️ **[missing-points]** `factions/星际战士/units/uriel-ventris.md` — 单位页缺少 points 字段
 - ℹ️ **[missing-points]** `factions/星际战士/units/vanguard-veteran-squad.md` — 单位页缺少 points 字段
 - ℹ️ **[missing-points]** `factions/星际战士/units/venerable-dreadnought-legendary.md` — 单位页缺少 points 字段
 - ℹ️ **[missing-points]** `factions/星际战士/units/vindicator-laser-destroyer.md` — 单位页缺少 points 字段
+- ℹ️ **[missing-points]** `factions/星际战士/units/vindicator.md` — 单位页缺少 points 字段
 - ℹ️ **[missing-points]** `factions/星际战士/units/whirlwind-scorpius.md` — 单位页缺少 points 字段
+- ℹ️ **[missing-points]** `factions/星际战士/units/whirlwind.md` — 单位页缺少 points 字段
 - ℹ️ **[missing-points]** `factions/星际战士/units/wolf-guard-battle-leader-in-terminator-armour.md` — 单位页缺少 points 字段
 - ℹ️ **[missing-points]** `factions/星际战士/units/wolf-guard-battle-leader-on-thunderwolf.md` — 单位页缺少 points 字段
 - ℹ️ **[missing-points]** `factions/星际战士/units/wolf-guard-pack-leader-in-terminator-armour.md` — 单位页缺少 points 字段

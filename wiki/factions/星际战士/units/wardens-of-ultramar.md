@@ -5,19 +5,19 @@ name_en: Wardens of Ultramar
 faction: 星际战士
 type: unit
 points:
-  6 models: 120
+  6 models: 115
 tags:
 - unit
 - unit/星际战士
 - 星际战士
 version:
-  points: MFM 2026-09-14T05:51:23.572407+00:00
+  points: MFM 2026-10-03T19:00:56.192123+00:00
   source: official-db
 sources:
 - book: 'Faction Pack: Space Marines'
   pages:
   - 1
-updated: '2026-09-14'
+updated: '2026-10-03'
 ---
 
 ## 属性表
@@ -50,7 +50,7 @@ updated: '2026-09-14'
 - **Support**
 
 ## 单位构成
-- **6个模型** — 120 分
+- **6个模型** — 115 分
 
 ## 关键词
 - **阵营关键词**：Ultramarines，Adeptus Astartes

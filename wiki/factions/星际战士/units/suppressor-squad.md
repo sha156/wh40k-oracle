@@ -1,21 +1,19 @@
 ---
 id: '000000068'
-name_zh: 压制者小队
+name_zh: 压制者小队（即将传奇）
 name_en: Suppressor Squad
 faction: 星际战士
 type: unit
-points:
-  3 models: 85
 tags:
 - unit
 - unit/星际战士
 - 星际战士
 version:
-  points: MFM 2026-09-14T05:51:23.572407+00:00
+  points: historical / unmatched
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-09-14'
+updated: '2026-10-03'
 ---
 
 ## 属性表
@@ -38,7 +36,8 @@ updated: '2026-09-14'
 - **Suppression Fire**：In your Shooting phase, after this unit has shot, select one enemy unit hit by one or more of those attacks made with an accelerator autocannon. Until the start of your next turn, while this unit is on the battlefield, that enemy unit is suppressed. While a unit is suppressed, each time a model in that unit makes an attack, subtract 1 from the Hit roll.
 
 ## 单位构成
-- **3个模型** — 85 分
+历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- **3个模型** — 75 分
 
 ## 关键词
 - **阵营关键词**：Adeptus Astartes

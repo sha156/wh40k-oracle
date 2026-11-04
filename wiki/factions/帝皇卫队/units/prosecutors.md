@@ -5,20 +5,20 @@ name_en: Prosecutors
 faction: 帝皇卫队
 type: unit
 points:
-  4 models: 45
-  5 models: 50
-  9 models: 75
-  10 models: 85
+  4 models: 50
+  5 models: 55
+  9 models: 80
+  10 models: 90
 tags:
 - unit
 - unit/帝皇卫队
 - 帝皇卫队
 version:
-  points: MFM 2026-09-14T05:51:23.572407+00:00
+  points: MFM 2026-10-03T19:00:56.192123+00:00
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-09-14'
+updated: '2026-10-03'
 ---
 
 ## 属性表
@@ -41,10 +41,10 @@ updated: '2026-09-14'
 - **深渊之女**：本模型在对抗【灵能】攻击和致命伤害时算作拥有【不觉疼痛 3+】
 
 ## 单位构成
-- **4个模型** — 45 分
-- **5个模型** — 50 分
-- **9个模型** — 75 分
-- **10个模型** — 85 分
+- **4个模型** — 50 分
+- **5个模型** — 55 分
+- **9个模型** — 80 分
+- **10个模型** — 90 分
 
 ## 关键词
 - **阵营关键词**：Adeptus Custodes

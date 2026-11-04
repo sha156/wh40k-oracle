@@ -50,16 +50,16 @@
 - [[factions/死亡守卫/units/typhon|Typhon]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - [[factions/死亡守卫/units/whirlwind-scorpius|Whirlwind Scorpius]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - [[factions/死亡守卫/units/xiphon-interceptor|Xiphon Interceptor]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
-- [[factions/死亡守卫/units/noxious-blightbringer|丧钟使者]]
 - [[factions/死亡守卫/units/defiler|亵渎者]]
 - [[factions/死亡守卫/units/tallyman|凋败记账官]]
-- [[factions/死亡守卫/units/blightlord-terminators|凋零霸主终结者]]
 - [[factions/死亡守卫/units/miasmic-malignifier|剧毒坩埚]]
+- [[factions/死亡守卫/units/noxious-blightbringer|剧毒疫病使者]]
 - [[factions/死亡守卫/units/helbrute|地狱兽]]
 - [[factions/死亡守卫/units/great-unclean-one|大不净者]]
 - [[factions/死亡守卫/units/icon-bearer|徽记手]]
 - [[factions/死亡守卫/units/malignant-plaguecaster|恶疾使者]]
 - [[factions/死亡守卫/units/myphitic-blight-hauler|恶臭疫病拖车]]
+- [[factions/死亡守卫/units/foul-blightspawn|恶臭病原体]]
 - [[factions/死亡守卫/units/plaguebearers|携疫者]]
 - [[factions/死亡守卫/units/daemon-prince-of-nurgle-with-wings|有翼纳垢恶魔王子]]
 - [[factions/死亡守卫/units/death-guard-chaos-lord|死亡守卫混沌领主]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
@@ -75,17 +75,17 @@
 - [[factions/死亡守卫/units/lord-of-contagion|疫病领主]]
 - [[factions/死亡守卫/units/biologus-putrifier|病毒精练者]]
 - [[factions/死亡守卫/units/lord-of-poxes|痘疹领主]]
+- [[factions/死亡守卫/units/plagueburst-crawler|瘟爆履带战车]]
 - [[factions/死亡守卫/units/plague-drones|瘟疫先蜂]]
 - [[factions/死亡守卫/units/plague-surgeon|瘟疫军医]]
 - [[factions/死亡守卫/units/plague-marines|瘟疫战士]]
-- [[factions/死亡守卫/units/foul-blightspawn|瘟疫散播者]]
 - [[factions/死亡守卫/units/foetid-bloat-drone|瘟疫机蜂]]
 - [[factions/死亡守卫/units/poxwalkers|瘟疫行尸]]
-- [[factions/死亡守卫/units/plagueburst-crawler|瘟疫轰炮车]]
 - [[factions/死亡守卫/units/chaos-predator-destructor|破坏者型猎食者坦克]]
 - [[factions/死亡守卫/units/beasts-of-nurgle|纳垢兽]]
 - [[factions/死亡守卫/units/daemon-prince-of-nurgle|纳垢恶魔王子]]
 - [[factions/死亡守卫/units/nurglings|纳垢灵]]
+- [[factions/死亡守卫/units/blightlord-terminators|腐毒领主终结者]]
 - [[factions/死亡守卫/units/mortarion|莫塔里安]]
 - [[factions/死亡守卫/units/foetid-bloat-drone-with-heavy-blight-launcher|装备重型瘟疫榴弹炮的瘟疫机蜂]]
 

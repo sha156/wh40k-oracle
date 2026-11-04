@@ -1,23 +1,19 @@
 ---
 id: '000001193'
-name_zh: 百夫长破坏小队
+name_zh: 百夫长破坏小队（即将传奇）
 name_en: Centurion Devastator Squad
 faction: 星际战士
 type: unit
-points:
-  3 models: 175
-  6 models: 365
-  per twin lascannon: 5
 tags:
 - unit
 - unit/星际战士
 - 星际战士
 version:
-  points: MFM 2026-09-14T05:51:23.572407+00:00
+  points: historical / unmatched
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-09-14'
+updated: '2026-10-03'
 ---
 
 ## 属性表
@@ -43,9 +39,9 @@ updated: '2026-09-14'
 - **Decimator Protocols**：Each time a model in this unit makes a ranged attack, re-roll a Hit roll of 1. If the target of that attack is an enemy unit within range of an objective marker, you can re-roll the Hit roll instead.
 
 ## 单位构成
+历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - **3个模型** — 175 分
-- **6个模型** — 365 分
-- **per twin lascannon** — 5 分
+- **6个模型** — 350 分
 
 ## 关键词
 - **阵营关键词**：Adeptus Astartes

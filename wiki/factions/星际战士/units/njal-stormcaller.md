@@ -5,17 +5,17 @@ name_en: Njal Stormcaller
 faction: 星际战士
 type: unit
 points:
-  1 model: 75
+  1 model: 100
 tags:
 - unit
 - unit/星际战士
 - 星际战士
 version:
-  points: MFM 2026-09-14T05:51:23.572407+00:00
+  points: MFM 2026-10-03T19:00:56.192123+00:00
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-09-14'
+updated: '2026-10-03'
 ---
 
 ## 属性表
@@ -44,7 +44,7 @@ updated: '2026-09-14'
 - **风暴之怒【灵能】**：在你的射击阶段，在本模型完成攻击后， 选择一个被本模型装备的活体闪电武器攻击命中一次或多次的 敌方单位（载具和巨兽单位除外），直到你的下个回合开始前，那个敌方单位中模型装备的射击武器攻击范围减少 6 寸（那些武器射程不会被削减至低于 12 寸）。
 
 ## 单位构成
-- **1个模型** — 75 分
+- **1个模型** — 100 分
 
 ## 关键词
 - **阵营关键词**：Adeptus Astartes，Space Wolves

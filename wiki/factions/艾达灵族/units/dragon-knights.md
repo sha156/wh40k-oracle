@@ -5,21 +5,21 @@ name_en: Dragon Knights
 faction: 艾达灵族
 type: unit
 points:
-  3 models: 90
+  3 models: 85
   6 models: 180
 tags:
 - unit
 - unit/艾达灵族
 - 艾达灵族
 version:
-  points: MFM 2026-09-14T05:51:23.572407+00:00
+  points: MFM 2026-10-03T19:00:56.192123+00:00
   source: official-db
   rules: 11e-fp-2026-08-26
 sources:
 - book: 'Faction Pack: Aeldari'
   pages:
   - 12
-updated: '2026-09-14'
+updated: '2026-10-03'
 ---
 
 ## 属性表
@@ -46,7 +46,7 @@ updated: '2026-09-14'
 - **矫龙（每场战斗，每个标识限一次）**：当一个敌方单位在该单位	8"	范围内结束一次移动时，如果该单位处于非交战状态，或如果那个敌方单位在结束那次移动时与该单位进入交战状态，您可以使用该技能。若您如此做，掷一枚	D6：▪	如结果为	3+，那个敌方单位受到	1	处致命伤。
 
 ## 单位构成
-- **3个模型** — 90 分
+- **3个模型** — 85 分
 - **6个模型** — 180 分
 
 ## 关键词

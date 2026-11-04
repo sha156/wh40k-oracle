@@ -5,20 +5,20 @@ name_en: Allarus Custodians
 faction: 帝皇卫队
 type: unit
 points:
-  2 models: 110
-  3 models: 165
-  5 models: 280
-  6 models: 340
+  2 models: 120
+  3 models: 180
+  5 models: 300
+  6 models: 360
 tags:
 - unit
 - unit/帝皇卫队
 - 帝皇卫队
 version:
-  points: MFM 2026-09-14T05:51:23.572407+00:00
+  points: MFM 2026-10-03T19:00:56.192123+00:00
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-09-14'
+updated: '2026-10-03'
 ---
 
 ## 属性表
@@ -50,10 +50,10 @@ updated: '2026-09-14'
 - **禁军鹰旗**：装备者所在单位中模型 OC 值+1
 
 ## 单位构成
-- **2个模型** — 110 分
-- **3个模型** — 165 分
-- **5个模型** — 280 分
-- **6个模型** — 340 分
+- **2个模型** — 120 分
+- **3个模型** — 180 分
+- **5个模型** — 300 分
+- **6个模型** — 360 分
 
 ## 关键词
 - **阵营关键词**：Adeptus Custodes

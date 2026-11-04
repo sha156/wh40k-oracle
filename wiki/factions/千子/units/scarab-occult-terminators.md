@@ -5,18 +5,18 @@ name_en: Scarab Occult Terminators
 faction: 千子
 type: unit
 points:
-  5 models: 180
-  10 models: 385
+  5 models: 200
+  10 models: 425
 tags:
 - unit
 - unit/千子
 - 千子
 version:
-  points: MFM 2026-09-14T05:51:23.572407+00:00
+  points: MFM 2026-10-03T19:00:56.192123+00:00
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-09-14'
+updated: '2026-10-03'
 ---
 
 ## 属性表
@@ -48,8 +48,8 @@ updated: '2026-09-14'
 - **聚合仪式 **：当此单位包含一个或更多灵能者模型时，以 此单位为目标的攻击致伤掷骰结果减少 1 点。
 
 ## 单位构成
-- **5个模型** — 180 分
-- **10个模型** — 385 分
+- **5个模型** — 200 分
+- **10个模型** — 425 分
 
 ## 关键词
 - **阵营关键词**：Thousand Sons

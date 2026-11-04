@@ -4,18 +4,16 @@ name_zh: 暴风渡鸦炮艇
 name_en: Stormraven Gunship
 faction: 星际战士
 type: unit
-points:
-  1 model: 280
 tags:
 - unit
 - unit/星际战士
 - 星际战士
 version:
-  points: MFM 2026-09-14T05:51:23.572407+00:00
+  points: historical / unmatched
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-09-14'
+updated: '2026-10-03'
 ---
 
 ## 属性表
@@ -46,6 +44,7 @@ updated: '2026-09-14'
 - **Armoured Resilience**：Each time an attack is allocated to this model, subtract 1 from the Damage characteristic of that attack.
 
 ## 单位构成
+历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - **1个模型** — 280 分
 
 ## 关键词

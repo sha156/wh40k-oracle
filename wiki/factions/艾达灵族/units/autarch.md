@@ -5,17 +5,17 @@ name_en: Autarch
 faction: 艾达灵族
 type: unit
 points:
-  1 model: 75
+  1 model: 70
 tags:
 - unit
 - unit/艾达灵族
 - 艾达灵族
 version:
-  points: MFM 2026-09-14T05:51:23.572407+00:00
+  points: MFM 2026-10-03T19:00:56.192123+00:00
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-09-14'
+updated: '2026-10-03'
 ---
 
 ## 属性表
@@ -49,7 +49,7 @@ updated: '2026-09-14'
 - **指挥之道**：每个大回合一次，当本模型所在的单位被选中成为战略技能的目标时，你的一个拥有此能力的模型可以使用此能力，上述战略技能的CP花费减1
 
 ## 单位构成
-- **1个模型** — 75 分
+- **1个模型** — 70 分
 
 ## 关键词
 - **阵营关键词**：Asuryani

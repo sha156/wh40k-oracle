@@ -5,19 +5,19 @@ name_en: Cybernetica Datasmith
 faction: 机械修会
 type: unit
 points:
-  1 model: 25
+  1 model: 20
 tags:
 - unit
 - unit/机械修会
 - 机械修会
 version:
-  points: MFM 2026-09-14T05:51:23.572407+00:00
+  points: MFM 2026-10-03T19:00:56.192123+00:00
   source: official-db
 sources:
 - book: https://assets.warhammer-community.com/eng_wh40k_faction_pack_adeptus_mechanicus-nnsofctxvp-ed7amkvryu.pdf
   pages:
   - 18
-updated: '2026-09-14'
+updated: '2026-10-03'
 ---
 
 ## 属性表
@@ -44,7 +44,7 @@ updated: '2026-09-14'
 - **数据中断**：如果该单位中没有卡斯特兰机器人模型：▫ 该单位失去载具。▫ 该单位拥有步兵。
 
 ## 单位构成
-- **1个模型** — 25 分
+- **1个模型** — 20 分
 
 ## 关键词
 - **阵营关键词**：Adeptus Mechanicus

@@ -5,18 +5,18 @@ name_en: Red Corsairs Raiders
 faction: 混沌星际战士
 type: unit
 points:
-  5 models: 110
-  10 models: 210
+  5 models: 120
+  10 models: 220
 tags:
 - unit
 - unit/混沌星际战士
 - 混沌星际战士
 version:
-  points: MFM 2026-09-14T05:51:23.572407+00:00
+  points: MFM 2026-10-03T19:00:56.192123+00:00
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-09-14'
+updated: '2026-10-03'
 ---
 
 ## 属性表
@@ -43,8 +43,8 @@ updated: '2026-09-14'
 - **战利品掠夺者**：该单位首次摧毁一个敌方单位后，在战斗结束前，当该单位不处于战斗震慑状态时，该单位中模型的目标控制属性增加1 点。
 
 ## 单位构成
-- **5个模型** — 110 分
-- **10个模型** — 210 分
+- **5个模型** — 120 分
+- **10个模型** — 220 分
 
 ## 关键词
 - **阵营关键词**：Heretic Astartes

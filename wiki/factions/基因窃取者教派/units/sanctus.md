@@ -5,17 +5,17 @@ name_en: Sanctus
 faction: 基因窃取者教派
 type: unit
 points:
-  1 model: 65
+  1 model: 60
 tags:
 - unit
 - unit/基因窃取者教派
 - 基因窃取者教派
 version:
-  points: MFM 2026-09-14T05:51:23.572407+00:00
+  points: MFM 2026-10-03T19:00:56.192123+00:00
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-09-14'
+updated: '2026-10-03'
 ---
 
 ## 属性表
@@ -43,7 +43,7 @@ updated: '2026-09-14'
 - **灵能觅踪**：在第一个战斗轮次开始时，你可以选择一个敌方单位作为该单位的猎物。每次该单位攻击猎物时，可以重投全部的命中骰与造伤骰。
 
 ## 单位构成
-- **1个模型** — 65 分
+- **1个模型** — 60 分
 
 ## 关键词
 - **阵营关键词**：Genestealer Cults

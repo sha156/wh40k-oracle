@@ -5,17 +5,17 @@ name_en: Sanguinary Priest
 faction: 星际战士
 type: unit
 points:
-  1 model: 75
+  1 model: 60
 tags:
 - unit
 - unit/星际战士
 - 星际战士
 version:
-  points: MFM 2026-09-14T05:51:23.572407+00:00
+  points: MFM 2026-10-03T19:00:56.192123+00:00
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-09-14'
+updated: '2026-10-03'
 ---
 
 ## 属性表
@@ -39,7 +39,7 @@ updated: '2026-09-14'
 - **鲜血圣杯**：当该模型领导单位时，那个单位中的所有 模型装备的近战武器 AP 增加 1。
 
 ## 单位构成
-- **1个模型** — 75 分
+- **1个模型** — 60 分
 
 ## 关键词
 - **阵营关键词**：Adeptus Astartes，Blood Angels

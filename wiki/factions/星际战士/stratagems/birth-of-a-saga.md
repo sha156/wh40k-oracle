@@ -24,7 +24,7 @@ Your Command phase.
 
 ## 使用对象
 
-One [[factions/星际战士/units/wolf-guard.md|Wolf Guard]] Headtaker or Wolf Guard Terminator Pack Leader model from your army.
+One [[factions/星际战士/units/wolf-guard.md|Wolf Guard]] Headtaker or [[factions/星际战士/units/wolf-guard.md|Wolf Guard]] Terminator Pack Leader model from your army.
 
 ## 效果
 

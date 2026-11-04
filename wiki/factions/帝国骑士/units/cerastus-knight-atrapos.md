@@ -5,17 +5,17 @@ name_en: Cerastus Knight Atrapos
 faction: 帝国骑士
 type: unit
 points:
-  1 model: 405
+  1 model: 420
 tags:
 - unit
 - unit/帝国骑士
 - 帝国骑士
 version:
-  points: MFM 2026-09-14T05:51:23.572407+00:00
+  points: MFM 2026-10-03T19:00:56.192123+00:00
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-09-14'
+updated: '2026-10-03'
 ---
 
 ## 属性表
@@ -47,7 +47,7 @@ updated: '2026-09-14'
 - **巨型灭绝协议**：每次本模型攻击巨兽或载具时，命中骰结果+1。如目标有巨型或高耸关键词，则造伤骰结果也+1。
 
 ## 单位构成
-- **1个模型** — 405 分
+- **1个模型** — 420 分
 
 ## 关键词
 - **阵营关键词**：Imperial Knights

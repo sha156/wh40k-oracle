@@ -5,17 +5,17 @@ name_en: Knight Valiant
 faction: 帝国骑士
 type: unit
 points:
-  1 model: 400
+  1 model: 390
 tags:
 - unit
 - unit/帝国骑士
 - 帝国骑士
 version:
-  points: MFM 2026-09-14T05:51:23.572407+00:00
+  points: MFM 2026-10-03T19:00:56.192123+00:00
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-09-14'
+updated: '2026-10-03'
 ---
 
 ## 属性表
@@ -47,7 +47,7 @@ updated: '2026-09-14'
 - **烈焰风暴**：在您的射击阶段，每当您使用本模型的雷霆线圈鱼叉武器选择攻击目标时，为那个敌方单位以及所有位于那个敌方单位 6 寸内的敌方单位骰一枚D6，若结果为 4+，在本模型完成攻击后，那些单位分别受到 D3 点致命伤。
 
 ## 单位构成
-- **1个模型** — 400 分
+- **1个模型** — 390 分
 
 ## 关键词
 - **阵营关键词**：Imperial Knights

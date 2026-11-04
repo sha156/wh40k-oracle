@@ -5,18 +5,18 @@ name_en: Talos
 faction: 黑暗灵族
 type: unit
 points:
-  1 model: 75
-  2 models: 150
+  1 model: 70
+  2 models: 140
 tags:
 - unit
 - unit/黑暗灵族
 - 黑暗灵族
 version:
-  points: MFM 2026-09-14T05:51:23.572407+00:00
+  points: MFM 2026-10-03T19:00:56.192123+00:00
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-09-14'
+updated: '2026-10-03'
 ---
 
 ## 属性表
@@ -50,8 +50,8 @@ updated: '2026-09-14'
 - **折磨机械**：每次该单位摧毁一个敌方单位时，您额外获得1枚苦痛标识
 
 ## 单位构成
-- **1个模型** — 75 分
-- **2个模型** — 150 分
+- **1个模型** — 70 分
+- **2个模型** — 140 分
 
 ## 关键词
 - **阵营关键词**：Drukhari

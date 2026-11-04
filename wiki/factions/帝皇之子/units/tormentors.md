@@ -5,18 +5,18 @@ name_en: Tormentors
 faction: 帝皇之子
 type: unit
 points:
-  5 models: 80
-  10 models: 160
+  5 models: 85
+  10 models: 170
 tags:
 - unit
 - unit/帝皇之子
 - 帝皇之子
 version:
-  points: MFM 2026-09-14T05:51:23.572407+00:00
+  points: MFM 2026-10-03T19:00:56.192123+00:00
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-09-14'
+updated: '2026-10-03'
 ---
 
 ## 属性表
@@ -48,8 +48,8 @@ updated: '2026-09-14'
 - **装备技能-纵欲圣印**：在你的射击阶段或任意近战阶段结束时，如果装备者所在的单位在本阶段中消灭了一个或多个敌方单位，则你为本单位进行一次领导力测试，如果测试成功，你获得一点 CP。
 
 ## 单位构成
-- **5个模型** — 80 分
-- **10个模型** — 160 分
+- **5个模型** — 85 分
+- **10个模型** — 170 分
 
 ## 关键词
 - **阵营关键词**：Emperor’s Children

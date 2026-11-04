@@ -11,13 +11,13 @@ tags:
 - unit/帝皇卫队
 - 帝皇卫队
 version:
-  points: MFM 2026-09-14T05:51:23.572407+00:00
+  points: MFM 2026-10-03T19:00:56.192123+00:00
   source: official-db
 sources:
 - book: https://assets.warhammer-community.com/eng_22-07_warhammer_40,000_faction_pack_adeptus_custodes-9ddgakd3ms-3azheaqd6y.pdf
   pages:
   - 35
-updated: '2026-09-14'
+updated: '2026-10-03'
 ---
 
 ## 属性表

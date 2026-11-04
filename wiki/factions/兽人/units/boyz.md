@@ -5,18 +5,18 @@ name_en: Boyz
 faction: 兽人
 type: unit
 points:
-  10 models: 90
-  20 models: 180
+  10 models: 85
+  20 models: 170
 tags:
 - unit
 - unit/兽人
 - 兽人
 version:
-  points: MFM 2026-09-14T05:51:23.572407+00:00
+  points: MFM 2026-10-03T19:00:56.192123+00:00
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-09-14'
+updated: '2026-10-03'
 ---
 
 ## 属性表
@@ -49,8 +49,8 @@ updated: '2026-09-14'
 - **永远有空打一架**：处于交战状态不会阻止该单位开始一次行动。
 
 ## 单位构成
-- **10个模型** — 90 分
-- **20个模型** — 180 分
+- **10个模型** — 85 分
+- **20个模型** — 170 分
 
 ## 关键词
 - **阵营关键词**：Orks

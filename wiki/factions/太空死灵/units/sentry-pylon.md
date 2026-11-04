@@ -18,7 +18,7 @@ sources:
 - book: 'Faction Pack: Necrons'
   pages:
   - 37
-updated: '2026-09-14'
+updated: '2026-10-03'
 ---
 
 ## 属性表

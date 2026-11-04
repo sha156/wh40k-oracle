@@ -5,19 +5,19 @@ name_en: Chaos Vindicator
 faction: 混沌星际战士
 type: unit
 points:
-  1 model: 185
+  1 model: 180
 tags:
 - unit
 - unit/混沌星际战士
 - 混沌星际战士
 version:
-  points: MFM 2026-09-14T05:51:23.572407+00:00
+  points: MFM 2026-10-03T19:00:56.192123+00:00
   source: official-db
 sources:
 - book: https://assets.warhammer-community.com/eng_wh40k_faction_pack_chaos_space_marines-vs0xkzuia9-omgej8huqu.pdf
   pages:
   - 37
-updated: '2026-09-14'
+updated: '2026-10-03'
 ---
 
 ## 属性表
@@ -44,7 +44,7 @@ updated: '2026-09-14'
 - **严重损伤**：本模型 W 值为 1-4 时，攻击命中结果-1
 
 ## 单位构成
-- **1个模型** — 185 分
+- **1个模型** — 180 分
 
 ## 关键词
 - **阵营关键词**：Heretic Astartes

@@ -5,17 +5,17 @@ name_en: Servitor Battleclade
 faction: 机械修会
 type: unit
 points:
-  9 models: 65
+  9 models: 75
 tags:
 - unit
 - unit/机械修会
 - 机械修会
 version:
-  points: MFM 2026-09-14T05:51:23.572407+00:00
+  points: MFM 2026-10-03T19:00:56.192123+00:00
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-09-14'
+updated: '2026-10-03'
 ---
 
 ## 属性表
@@ -48,7 +48,7 @@ updated: '2026-09-14'
 - **网络覆盖**：当该单位包含一个或更多技术祭司模型 时，该单位：■ 可以在进行过突进的回合中执行行动。■ 可以在开始行动的回合中进行射击。
 
 ## 单位构成
-- **9个模型** — 65 分
+- **9个模型** — 75 分
 
 ## 关键词
 - **阵营关键词**：Adeptus Mechanicus

@@ -5,17 +5,17 @@ name_en: Kravek Morne
 faction: 混沌星际战士
 type: unit
 points:
-  1 model: 120
+  1 model: 130
 tags:
 - unit
 - unit/混沌星际战士
 - 混沌星际战士
 version:
-  points: MFM 2026-09-14T05:51:23.572407+00:00
+  points: MFM 2026-10-03T19:00:56.192123+00:00
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-09-14'
+updated: '2026-10-03'
 ---
 
 ## 属性表
@@ -44,7 +44,7 @@ updated: '2026-09-14'
 - **废墟建筑师**：在战斗开始时，选择您对手军队中的一个单位作为该模型的憎恨之敌。每当该模型对其憎恨之敌进行攻击时，您可以重掷致伤掷骰。每当该模型的憎恨之敌被摧毁时，您可以从您对手的的军队中选择一个新的单位作为该模型的憎恨之敌。
 
 ## 单位构成
-- **1个模型** — 120 分
+- **1个模型** — 130 分
 
 ## 关键词
 - **阵营关键词**：Heretic Astartes

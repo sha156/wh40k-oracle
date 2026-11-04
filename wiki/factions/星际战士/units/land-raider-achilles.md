@@ -17,7 +17,7 @@ sources:
 - book: 'Faction Pack: Space Marines'
   pages:
   - 175
-updated: '2026-09-14'
+updated: '2026-10-03'
 ---
 
 ## 属性表

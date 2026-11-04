@@ -5,18 +5,18 @@ name_en: Deathwing Terminator Squad
 faction: 星际战士
 type: unit
 points:
-  5 models: 165
-  10 models: 330
+  5 models: 190
+  10 models: 380
 tags:
 - unit
 - unit/星际战士
 - 星际战士
 version:
-  points: MFM 2026-09-14T05:51:23.572407+00:00
+  points: MFM 2026-10-03T19:00:56.192123+00:00
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-09-14'
+updated: '2026-10-03'
 ---
 
 ## 属性表
@@ -52,8 +52,8 @@ updated: '2026-09-14'
 - **黑暗守望者**：一次性技能，任意阶段中，当一个致命伤害被分配给本单位一个阿斯塔特修会模型后，你可以使用本技能：本阶段中，本单位模型可以对抗致命伤害时拥有【不觉疼痛4+】技能，（黑暗守望者模型只是标记物，不参与游戏进程）
 
 ## 单位构成
-- **5个模型** — 165 分
-- **10个模型** — 330 分
+- **5个模型** — 190 分
+- **10个模型** — 380 分
 
 ## 关键词
 - **阵营关键词**：Dark Angels，Adeptus Astartes

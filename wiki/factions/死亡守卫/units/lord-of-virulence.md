@@ -5,17 +5,17 @@ name_en: Lord of Virulence
 faction: 死亡守卫
 type: unit
 points:
-  1 model: 100
+  1 model: 90
 tags:
 - unit
 - unit/死亡守卫
 - 死亡守卫
 version:
-  points: MFM 2026-09-14T05:51:23.572407+00:00
+  points: MFM 2026-10-03T19:00:56.192123+00:00
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-09-14'
+updated: '2026-10-03'
 ---
 
 ## 属性表
@@ -42,7 +42,7 @@ updated: '2026-09-14'
 - **腐败轰炸**：你的射击阶段开始时，选择该模型30寸内可见的一个敌方单位。本阶段内，友方死亡守卫模型远程攻击该单位时，可重掷结果为1的命中骰（若用爆炸武器射击，则可重掷所有命中骰）
 
 ## 单位构成
-- **1个模型** — 100 分
+- **1个模型** — 90 分
 
 ## 关键词
 - **阵营关键词**：Death Guard

@@ -5,19 +5,18 @@ name_en: Terminator Assault Squad
 faction: 星际战士
 type: unit
 points:
-  5 models: 155
-  10 models: 310
-  per thunder hammer: 5
+  5 models: 170
+  10 models: 340
 tags:
 - unit
 - unit/星际战士
 - 星际战士
 version:
-  points: MFM 2026-09-14T05:51:23.572407+00:00
+  points: MFM 2026-10-03T19:00:56.192123+00:00
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-09-14'
+updated: '2026-10-03'
 ---
 
 ## 属性表
@@ -40,9 +39,8 @@ updated: '2026-09-14'
 - **终结者突击**：近战阶段开始时，本单位接战范围内每个敌方单位必须进行一次震慑测试
 
 ## 单位构成
-- **5个模型** — 155 分
-- **10个模型** — 310 分
-- **per thunder hammer** — 5 分
+- **5个模型** — 170 分
+- **10个模型** — 340 分
 
 ## 关键词
 - **阵营关键词**：Adeptus Astartes

@@ -11,14 +11,14 @@ tags:
 - unit/艾达灵族
 - 艾达灵族
 version:
-  points: MFM 2026-09-14T05:51:23.572407+00:00
+  points: MFM 2026-10-03T19:00:56.192123+00:00
   source: official-db
   rules: 11e-fp-2026-08-26
 sources:
 - book: 'Faction Pack: Aeldari'
   pages:
   - 15
-updated: '2026-09-14'
+updated: '2026-10-03'
 ---
 
 ## 属性表

@@ -5,17 +5,17 @@ name_en: Commander Dante
 faction: 星际战士
 type: unit
 points:
-  1 model: 125
+  1 model: 140
 tags:
 - unit
 - unit/星际战士
 - 星际战士
 version:
-  points: MFM 2026-09-14T05:51:23.572407+00:00
+  points: MFM 2026-10-03T19:00:56.192123+00:00
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-09-14'
+updated: '2026-10-03'
 ---
 
 ## 属性表
@@ -42,7 +42,7 @@ updated: '2026-09-14'
 - **圣吉列斯[[factions/太空死灵/stratagems/masks-of-death.md|死亡面具]]**：近战阶段开始时，所有位于 本模型 6 英寸内的敌方单位必须进行震慑测试， 并且对方的测试骰结果-1
 
 ## 单位构成
-- **1个模型** — 125 分
+- **1个模型** — 140 分
 
 ## 关键词
 - **阵营关键词**：Blood Angels，Adeptus Astartes

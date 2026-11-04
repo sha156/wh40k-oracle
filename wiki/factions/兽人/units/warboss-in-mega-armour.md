@@ -5,17 +5,17 @@ name_en: Warboss In Mega Armour
 faction: 兽人
 type: unit
 points:
-  1 model: 125
+  1 model: 115
 tags:
 - unit
 - unit/兽人
 - 兽人
 version:
-  points: MFM 2026-09-14T05:51:23.572407+00:00
+  points: MFM 2026-10-03T19:00:56.192123+00:00
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-09-14'
+updated: '2026-10-03'
 ---
 
 ## 属性表
@@ -43,7 +43,7 @@ updated: '2026-09-14'
 - **令人畏惧的领袖（每支军队，每个战斗轮次限一次）**：在您的移动阶段中，在该单位开始或结束移动时，您可以选择一个位于该单位6”内的己方欧克蛮人单位。被选中的那个单位：• 不再处于战斗震慑状态。•在您的下一个回合开始前都处于激怒状态。
 
 ## 单位构成
-- **1个模型** — 125 分
+- **1个模型** — 115 分
 
 ## 关键词
 - **阵营关键词**：Orks

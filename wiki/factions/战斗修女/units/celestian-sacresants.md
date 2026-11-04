@@ -12,13 +12,13 @@ tags:
 - unit/战斗修女
 - 战斗修女
 version:
-  points: MFM 2026-09-14T05:51:23.572407+00:00
+  points: MFM 2026-10-03T19:00:56.192123+00:00
   source: official-db
 sources:
 - book: 'Faction Pack: Adepta Sororitas'
   pages:
   - 13
-updated: '2026-09-14'
+updated: '2026-10-03'
 ---
 
 ## 属性表

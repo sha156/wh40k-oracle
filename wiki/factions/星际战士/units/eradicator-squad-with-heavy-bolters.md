@@ -5,20 +5,21 @@ name_en: Eradicator Squad With Heavy Bolters
 faction: 星际战士
 type: unit
 points:
-  3 models: 80
+  3 models: 100
+  6 models: 215
 tags:
 - unit
 - unit/星际战士
 - 星际战士
 version:
-  points: MFM 2026-09-14T05:51:23.572407+00:00
+  points: MFM 2026-10-03T19:00:56.192123+00:00
   source: official-db
   rules: 11e-fp-2026-08-26
 sources:
 - book: 'Faction Pack: Space Marines'
   pages:
   - 30
-updated: '2026-09-14'
+updated: '2026-10-03'
 ---
 
 ## 属性表
@@ -43,7 +44,8 @@ updated: '2026-09-14'
 - **【阵营技能】：破敌重誓**
 
 ## 单位构成
-- **3个模型** — 80 分
+- **3个模型** — 100 分
+- **6个模型** — 215 分
 
 ## 关键词
 - **阵营关键词**：ADEPTUS ASTARTES

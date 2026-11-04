@@ -5,19 +5,19 @@ name_en: Wracks
 faction: 黑暗灵族
 type: unit
 points:
-  5 models: 60
-  8 models: 100
-  10 models: 120
+  5 models: 55
+  8 models: 90
+  10 models: 110
 tags:
 - unit
 - unit/黑暗灵族
 - 黑暗灵族
 version:
-  points: MFM 2026-09-14T05:51:23.572407+00:00
+  points: MFM 2026-10-03T19:00:56.192123+00:00
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-09-14'
+updated: '2026-10-03'
 ---
 
 ## 属性表
@@ -48,9 +48,9 @@ updated: '2026-09-14'
 - **折磨者之艺**：折磨者手艺：在您的射击阶段和近战阶段，在该单位完成射击或近战后，选择一个被其一次或更多攻击命中的敌方单位（载具除外）。该单位必须进行一次战斗震慑测试。
 
 ## 单位构成
-- **5个模型** — 60 分
-- **8个模型** — 100 分
-- **10个模型** — 120 分
+- **5个模型** — 55 分
+- **8个模型** — 90 分
+- **10个模型** — 110 分
 
 ## 关键词
 - **阵营关键词**：Drukhari

@@ -5,19 +5,19 @@ name_en: Celestian Insidiants
 faction: 战斗修女
 type: unit
 points:
-  10 models: 120
+  10 models: 115
 tags:
 - unit
 - unit/战斗修女
 - 战斗修女
 version:
-  points: MFM 2026-09-14T05:51:23.572407+00:00
+  points: MFM 2026-10-03T19:00:56.192123+00:00
   source: official-db
 sources:
 - book: 'Faction Pack: Adepta Sororitas'
   pages:
   - 1
-updated: '2026-09-14'
+updated: '2026-10-03'
 ---
 
 ## 属性表
@@ -50,7 +50,7 @@ updated: '2026-09-14'
 - **定罪演说**：每当持有者所属单位的猎物被摧毁时，您可以从对手军队中选择一个新的单位来作为猎物。
 
 ## 单位构成
-- **10个模型** — 120 分
+- **10个模型** — 115 分
 
 ## 关键词
 - **阵营关键词**：Adepta Sororitas
