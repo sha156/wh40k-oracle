@@ -267,15 +267,16 @@ def _make_db(tmp_path):
         "CREATE TABLE units(id TEXT,faction_id TEXT,name_en TEXT,name_zh TEXT,"
         "points_json TEXT,keywords_json TEXT,version TEXT)")
     conn.execute(
-        "INSERT INTO units VALUES('1','SM','Intercessor Squad',NULL,?,NULL,NULL)",
+        "INSERT INTO units VALUES('1','SM','Intercessor Squad',NULL,?,?,NULL)",
         (json.dumps({"points": 160, "items": [
             {"line": "1", "desc": "5 models", "cost": 80},
             {"line": "2", "desc": "10 models", "cost": 160},  # MFM 现为 150 → 应报差异
-        ]}),))
+        ]}), json.dumps({"faction_keywords": ["Adeptus Astartes"]})))
     conn.execute(
-        "INSERT INTO units VALUES('2','SM','Castigator',NULL,?,NULL,NULL)",
+        "INSERT INTO units VALUES('2','SM','Castigator',NULL,?,?,NULL)",
         (json.dumps({"points": 165, "items": [
-            {"line": "1", "desc": "1 model", "cost": 165}]}),))  # 与基准梯度一致
+            {"line": "1", "desc": "1 model", "cost": 165}]}),
+         json.dumps({"faction_keywords": ["Adeptus Astartes"]})))  # 与基准梯度一致
     conn.commit()
     conn.close()
     return db
@@ -341,13 +342,15 @@ class TestCheckPoints:
         db = _make_db(tmp_path)
         conn = sqlite3.connect(str(db))
         conn.execute(
-            "INSERT INTO units VALUES('10','SM','Impulsor',NULL,?,NULL,NULL)",
+            "INSERT INTO units VALUES('10','SM','Impulsor',NULL,?,?,NULL)",
             (json.dumps({"points": 90, "items": [
-                {"line": "1", "desc": "1 model", "cost": 90}]}),))  # 旧值（在前）
+                {"line": "1", "desc": "1 model", "cost": 90}]}),
+             json.dumps({"faction_keywords": ["Adeptus Astartes"]})))  # 旧值（在前）
         conn.execute(
-            "INSERT INTO units VALUES('11','SM','Impulsor',NULL,?,NULL,NULL)",
+            "INSERT INTO units VALUES('11','SM','Impulsor',NULL,?,?,NULL)",
             (json.dumps({"points": 80, "items": [
-                {"line": "1", "desc": "1 model", "cost": 80}]}),))  # 新值（在后）
+                {"line": "1", "desc": "1 model", "cost": 80}]}),
+             json.dumps({"faction_keywords": ["Adeptus Astartes"]})))  # 新值（在后）
         conn.commit(); conn.close()
         rep = check_points(db, {"space-marines": [
             ("IMPULSOR", "YOUR UNIT COSTS", "1 model", 80)]})
@@ -360,9 +363,10 @@ class TestCheckPoints:
         db = _make_db(tmp_path)
         conn = sqlite3.connect(str(db))
         conn.execute(
-            "INSERT INTO units VALUES('5','SM','Sternguard',NULL,?,NULL,NULL)",
+            "INSERT INTO units VALUES('5','SM','Sternguard',NULL,?,?,NULL)",
             (json.dumps({"points": 100, "items": [
-                {"line": "1", "desc": "5 models", "cost": 100}]}),))
+                {"line": "1", "desc": "5 models", "cost": 100}]}),
+             json.dumps({"faction_keywords": ["Adeptus Astartes"]})))
         conn.commit(); conn.close()
         rep = check_points(db, {
             "black-templars": [("STERNGUARD", "YOUR UNIT COSTS", "5 models", 85)],
@@ -370,6 +374,7 @@ class TestCheckPoints:
         })
         stern = [d for d in rep["diffs"] if d["unit"] == "Sternguard"]
         assert stern == []  # 通用页 100 与库一致，战团价不参与
+        assert rep["compared"] == rep["agree"] == 1
 
 
 class TestSubFactionSectionCoverage:
@@ -454,9 +459,10 @@ class TestSubFactionSectionCoverage:
         conn = sqlite3.connect(str(db))
         conn.execute(
             "INSERT INTO units VALUES('6','SM','Assault Intercessor Squad',"
-            "NULL,?,NULL,NULL)",
+            "NULL,?,?,NULL)",
             (json.dumps({"points": 75, "items": [
-                {"line": "1", "desc": "5 models", "cost": 75}]}),))
+                {"line": "1", "desc": "5 models", "cost": 75}]}),
+             json.dumps({"faction_keywords": ["Adeptus Astartes"]})))
         conn.commit(); conn.close()
         chapter = self._page([
             ("UNITS", [("DEATH COMPANY MARINES", "5 models", 100)]),

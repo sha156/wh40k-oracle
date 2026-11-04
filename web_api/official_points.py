@@ -166,6 +166,7 @@ def _canonical_identity_matches(db_path, unit_id, price):
     Source-slug chapter distinctions are never collapsed by equal prices.
     """
     from db_compile.mfm import MFM_SLUG_TO_FACTION
+    from db_compile.mfm_context import canonical_price_slug
 
     slug = price.get("faction_slug")
     if price.get("ambiguous") or slug not in MFM_SLUG_TO_FACTION:
@@ -175,12 +176,6 @@ def _canonical_identity_matches(db_path, unit_id, price):
     if (not row or row[0].casefold() != price["name_en"].casefold()
             or row[1] != MFM_SLUG_TO_FACTION[slug]):
         return False
-    if row[1] == "SM" and slug != "space-marines":
-        try:
-            keywords = json.loads(row[2] or "{}").get("faction_keywords", [])
-        except (ValueError, AttributeError, TypeError):
-            return False
-        if not isinstance(keywords, list) or slug.replace("-", " ") not in {
-                kw.casefold() for kw in keywords if isinstance(kw, str)}:
-            return False
+    if row[1] == "SM":
+        return canonical_price_slug(row[1], row[2]) == slug
     return True

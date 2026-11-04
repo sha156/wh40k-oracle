@@ -41,6 +41,8 @@ def price_db(tmp_path):
     with closing(sqlite3.connect(db)) as conn, conn:
         for uid, cost, current in (("100", 155, False), ("101", 999, True),
                                    ("102", 90, True), ("103", 120, True)):
+            conn.execute("UPDATE units SET keywords_json=? WHERE id=?", (
+                json.dumps({"faction_keywords": ["Adeptus Astartes"]}), uid))
             items = [{"desc": "5 models" if uid == "102" else "1 model", "cost": cost}]
             if uid == "102":
                 items.append({"desc": "10 models", "cost": 170})
