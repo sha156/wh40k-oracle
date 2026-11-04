@@ -27,6 +27,7 @@ UNITS = (
     ("200", "Generic Captain", "SM", ["ADEPTUS ASTARTES"]),
     ("201", "Twin Hero", "SM", ["ADEPTUS ASTARTES"]),
     ("202", "Twin Hero", "AC", ["ADEPTUS CUSTODES"]),
+    ("203", "Chapter Champion", "SM", ["ADEPTUS ASTARTES", "BLACK TEMPLARS"]),
 )
 
 
@@ -37,8 +38,9 @@ def _row(name, cost):
 
 def _snapshot():
     pages = {
-        "space-marines": [_row("Generic Captain", 80), _row("Twin Hero", 100)],
-        "black-templars": [_row("Generic Captain", 80)],
+        "space-marines": [_row("Generic Captain", 80), _row("Twin Hero", 100),
+                          _row("Chapter Champion", 70)],
+        "black-templars": [_row("Generic Captain", 80), _row("Chapter Champion", 70)],
         "adeptus-custodes": [_row("Twin Hero", 100)],
     }
     return {"fetched_at": CAPTURED, "pages": {
@@ -99,6 +101,16 @@ def test_same_name_in_two_canonical_factions_stays_ambiguous(db):
     assert out["found"] is False and out["reason"] == "ambiguous"
     assert sorted(c["faction_slug"] for c in out["candidates"]) == [
         "adeptus-custodes", "space-marines"]
+
+
+def test_chapter_keyword_unit_resolves_to_its_body(db):
+    # A BLACK TEMPLARS unit priced on both SM and BT pages: only the BT
+    # candidate passes canonical_price_slug, so the body path continues.
+    assert tools._source_price_result(
+        "Chapter Champion", db, EntityResolver(db_path=db)) is None
+    out = _datasheet(db, "Chapter Champion")
+    assert out["found"] is True and not out.get("points_only")
+    assert out["datasheet"]["unit_id"] == "203"
 
 
 def test_body_in_one_faction_priced_in_another_stays_ambiguous(db):

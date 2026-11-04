@@ -14,7 +14,7 @@ and will overwrite the database again.
 | R0 | Stop the drift, archive drifted state | — | — | default | S | done 2026-11-03 |
 | R1 | Restore the frozen data baseline | R0 | R2 | default | S | done 2026-11-03 |
 | R2 | Fix CI fixture + English-name lookup regression | R0 | R1 | strongest | M | done 2026-11-03 |
-| R3 | Merge native-regressions + context-points | R1, R2 | — | default | M | todo |
+| R3 | Merge native-regressions + context-points | R1, R2 | — | default | M | done 2026-11-03 |
 | R4 | Chinese-name recovery (Decision C) + ability-count expectation | R3 | — | default | M | todo |
 | R5 | Publish reviewed Chinese projection + regenerate wiki | R4 | — | default | M | todo |
 | R6 | Full verification, push, CI green | R5 | — | default | M | todo |
