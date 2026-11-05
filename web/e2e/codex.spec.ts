@@ -14,7 +14,7 @@ test("图鉴：选单位出兵牌，中英切换保留数值", async ({ page }) 
   await expect(search).toBeVisible();
   await search.fill("Broadside");
 
-  await page.getByRole("button", { name: /炮击战斗服小队|Broadside/ }).first().click();
+  await page.getByRole("button", { name: /舷炮战斗服|炮击战斗服|Broadside/ }).first().click();
 
   // 兵牌出来了：英文权威名（中文模式下作副标题）+ 武器表表头
   await expect(page.getByText("Broadside Battlesuits").first()).toBeVisible();

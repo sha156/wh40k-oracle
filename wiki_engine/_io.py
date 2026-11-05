@@ -1,6 +1,6 @@
 """wiki_engine/_io.py — 关键产物 I/O 小工具（wiki_engine 与 wiki_compile 两包共用）。
 
-- atomic_write_text：写同目录 .tmp 临时文件后 os.replace 原子落盘，
+- atomic_write_text：独占创建同目录唯一临时文件后 os.replace 原子落盘，
   避免写盘中途崩溃留下半截文件（pairing.json / terms.json / wiki 页面与索引）。
 - .gen_hashes.json：synthesize 生成内容的哈希登记表（relpath → sha256），
   用于检测 wiki 页面是否被人工编辑过，防止重跑时静默覆盖（见 synthesize.py）。
@@ -10,6 +10,8 @@ from __future__ import annotations
 import hashlib
 import json
 import os
+import stat
+import uuid
 from pathlib import Path
 from typing import Dict, Optional
 
@@ -36,11 +38,68 @@ def atomic_write_text(path: Path, text: str, encoding: str = "utf-8",
     """
     path = Path(path)
     path.parent.mkdir(parents=True, exist_ok=True)
-    tmp = path.with_name(path.name + ".tmp")
-    # 用 open 而非 Path.write_text：后者的 newline 参数 3.10 才有，本项目跑在 3.9
-    with open(str(tmp), "w", encoding=encoding, newline=newline) as fh:
-        fh.write(text)
-    os.replace(tmp, path)
+    # Do not open a predictable <target>.tmp: it may be an externally planted
+    # symlink. O_EXCL also rejects collisions/links at the unique candidate.
+    # 0666 lets the kernel apply the normal new-file umask without changing the
+    # process umask (mkstemp's 0600 would hide public wiki files from API users).
+    try:
+        previous = path.lstat()
+    except FileNotFoundError:
+        previous = None
+    mode = (stat.S_IMODE(previous.st_mode)
+            if previous is not None and stat.S_ISREG(previous.st_mode) else None)
+    for _ in range(100):
+        tmp = path.with_name(".{}-{}.tmp".format(path.name, uuid.uuid4().hex))
+        try:
+            fd = os.open(str(tmp), os.O_WRONLY | os.O_CREAT | os.O_EXCL
+                         | getattr(os, "O_BINARY", 0), 0o666)
+        except FileExistsError:
+            continue
+        break
+    else:
+        raise FileExistsError("Unable to create exclusive temporary file for {}".format(path))
+    try:
+        # fdopen supports newline on Python 3.9; transfer descriptor ownership
+        # only after it succeeds, and close the Windows handle before replace.
+        fh = os.fdopen(fd, "w", encoding=encoding, newline=newline)
+        fd = None
+        try:
+            fh.write(text)
+        except BaseException:
+            try:
+                fh.close()
+            except BaseException:
+                pass
+            raise
+        else:
+            fh.close()
+        if mode is not None:
+            os.chmod(tmp, mode)
+        os.replace(tmp, path)
+        tmp = None  # No path remains ours after a successful publication.
+    finally:
+        # BaseException includes cancellation. Best-effort cleanup must never
+        # mask the original write/replace exception or KeyboardInterrupt.
+        # Only the successfully created candidate is ours to clean up.
+        if fd is not None:
+            try:
+                os.close(fd)
+            except BaseException:
+                pass
+        if tmp is not None:
+            try:
+                tmp.unlink()
+            except PermissionError:
+                # Windows cannot unlink an owned read-only candidate if replace
+                # failed after copying a read-only target's permission bits.
+                if os.name == "nt":
+                    try:
+                        os.chmod(tmp, stat.S_IWRITE)
+                        tmp.unlink()
+                    except BaseException:
+                        pass
+            except BaseException:
+                pass
 
 
 def text_sha256(text: str) -> str:

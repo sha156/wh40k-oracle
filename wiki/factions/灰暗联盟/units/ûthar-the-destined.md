@@ -5,17 +5,17 @@ name_en: Ûthar the Destined
 faction: 灰暗联盟
 type: unit
 points:
-  1 model: 90
+  1 model: 100
 tags:
 - unit
 - unit/灰暗联盟
 - 灰暗联盟
 version:
-  points: MFM 2026-09-14T05:51:23.572407+00:00
+  points: MFM 2026-10-03T19:00:56.192123+00:00
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-09-14'
+updated: '2026-10-03'
 ---
 
 ## 属性表
@@ -42,7 +42,7 @@ updated: '2026-09-14'
 - **Rampart Crest**：While the bearer is leading a unit, models in that unit have a 5+ invulnerable save.
 
 ## 单位构成
-- **1个模型** — 90 分
+- **1个模型** — 100 分
 
 ## 关键词
 - **阵营关键词**：Leagues of Votann

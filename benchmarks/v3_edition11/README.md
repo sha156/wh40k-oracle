@@ -1,5 +1,145 @@
 # 11 版基线 v3（2026-07-11 起用）
 
+## October 1 separate source-cited v3.7 candidate
+
+[`qa_gold_v3.7_source_cited.json`](qa_gold_v3.7_source_cited.json) contains all
+115 original ordered questions, factions, scoring types and canonical targets.
+Exact byte SHA-256:
+`aeed2af4f6e225a5761f8e62f541cd3472f67ac43ebffe7865747a96b31126b0`.
+Root gold, frozen v3.6 and all historical results remain byte-identical.
+This is a candidate for root review; no fresh paid benchmark has been run.
+The profile and initial ceiling are committed at
+`c4e1e68cf9bf3407df105df6f3fa1334f970d029`; the claim-text integrity follow-up
+awaits its GNHF commit and root review.
+
+Source-backed clause changes are #34 T5 (M8 retained), #113 published 415,
+#118 CSM125/DG105 with TS110/WE120 retained, #14 separate Hazardous rolls
+instead of missed-hit self-damage, and #93 incoming-BS cover benefit instead
+of armour saves. #114/#115 retain exact identities and September 14 historical
+155/80, and require both dated values and their exact-heading absence across
+all 30 captured September 30 MFM pages. Absence does not establish deletion,
+Legends status or a replacement price. Every changed clause has explicit
+before/after text and locators referencing the profile's primary URL, byte
+hash, version, snapshot date and saved source path catalogue.
+
+#11–20 and #75–80 retain their historical mechanical expectations and add
+per-item dated/current-body limits. #14's correction does not require extra
+unasked hazard-roll detail for the original firing-modes question. #76 retains
+the original Dreadnought identity, rather than the Legends Magna-grapple variant.
+The v3.6 expectation date is a benchmark date, not newly verified primary-body
+coverage. #34/#113/#118 also qualify their directly verified amendment/points
+scope. There are 21 answer coverage contracts, including the overlapping #14.
+
+The original factual/mechanical judge runs first. A separate narrow coverage
+check examines answer statements, returns named strict booleans with literal
+answer evidence, and caps that original verdict. Missing or unverified coverage
+caps full acceptance at partial; affirmative unsupported-current/identity claims
+cap it at wrong. Wrong and partial factual answers never upgrade. Extra coverage
+metadata cannot itself pass, and an API/JSON/evidence error remains unverified.
+Detailed results retain `factual_verdict`, `factual_reason` and
+`source_coverage_check`; summaries report checked/status counts, the snapshot
+date and `full_current_body_verified: false`. Ordinary and layered generation
+both apply the ceiling; retrieval scoring is unchanged. Legacy profiles retain
+their five-field projection, original scoring and call count.
+
+The loader also binds all 21 contracts' requirement/prohibition text to the
+v3.7 candidate using canonical JSON and a fixed fingerprint. Keeping the claim
+names while replacing their meanings with auto-award instructions is rejected
+before limiting or model calls. JSON whitespace/key order and additive review
+annotations remain allowed. This guard preserves instructions; it does not
+prove the semantic judge's accuracy or certify new source facts.
+
+Offline validation passes **299 tests**, including all 197 retained gates and
+102 source-profile/coverage controls. The 42 new weakening controls failed
+against the committed predecessor and pass with the integrity guard; one new
+annotation/serialization control passes in both. A six-worker fake-client run executes all
+115 rows without exclusions; its synthetic judge output is not a benchmark
+score or proof of semantic judge accuracy. All 37 cited primary files and 73
+clause/card/absence probes pass against saved local bytes. No network, service,
+database update, manual commit or publication was performed.
+
+Root must review the exact candidate, integrate the independently reviewed
+official sources, and run a fresh 115-question benchmark with a judge distinct
+from production Flash, preserving historical results. After integration, the
+existing command is:
+
+```powershell
+& 'D:/Project/py/RAG/.venv/Scripts/python.exe' scripts/qa_bench.py --gold benchmarks/v3_edition11/qa_gold_v3.7_source_cited.json --path agent --workers 6 --out <new-result-path.json>
+```
+
+See [the acceptance and handoff report](../../docs/superpowers/reports/2026-10-01-versioned-benchmark-acceptance.md)
+for the exact validation limits and remaining review/CI/live gates.
+
+## Historical October 1 versioning preparation — prior partial acceptance
+
+`qa_gold_v3.6.json` freezes the exact original bytes of root `qa_gold.json`:
+SHA-256 `a402aed889eff64f3419d7a6768ff9b168a5912d0bc9c3e92cf225913a7fe3cc`.
+All 115 ordered rows, identities, questions, types and expectations are retained.
+The root file remains unchanged; historical results retain their original meaning.
+
+The Python loader now accepts `load_questions(limit=None, gold_path=None)`.
+An explicit absolute or caller-relative path is selected without fallback;
+omitting it resolves `QA_SOURCE` at call time. The complete document is validated
+before limiting, and default callers still receive exactly the original five
+fields. Empty/missing gold cannot silently enter intrinsic scoring; only the
+original explicit #63 null-gold identity contract is accepted.
+
+CLI selection now supports `--gold PATH`, with the same absolute/caller-relative
+resolution and no fallback. For example, from the repository root:
+
+```powershell
+& 'D:/Project/py/RAG/.venv/Scripts/python.exe' scripts/qa_bench.py --path agent --gold benchmarks/v3_edition11/qa_gold_v3.6.json --out <new-result-path.json>
+```
+
+This example is a real benchmark command for the host's later execution; the
+preparation tests use only temporary fixtures and stubbed clients/resources.
+Ordinary and layered summaries retain their existing keys and add `gold_source`:
+resolved absolute `path`, exact-byte `sha256`, `version`, `edition`, complete
+document `total`, and `source_limitations`. Both modes read/validate once before
+credentials/resources, and retain that snapshot even if the file changes later.
+The summary's gold total describes the selected full document; the existing
+result total describes executed rows after `--limit`.
+
+Declared `meta.source_limitations` must be a nonempty list of nonempty strings.
+For historical gold without that field, output explicitly says that numerical
+agreement alone does not certify current source coverage. Detailed results now
+retain `gold`, `gold_type` and `gold_metadata` (the original row's remaining
+fields, including canonical identity, note and any source/coverage metadata).
+These extra fields do not change judge input or scoring.
+
+The comparator validates both complete result documents before printing verdict
+transitions. Duplicate/non-integer IDs, missing question/faction/gold/type fields,
+invalid verdicts, conflicting identities/axes and inconsistent declared executed
+totals fail with exit 2. Only the original #63 identity may retain null gold.
+Historical ordinary results remain supported through their actual detailed
+question, faction, gold and type fields; missing hashes/source metadata are
+reported as unverified, never inferred from matching IDs. Layered results with
+expectation fields compare retrieval and generation separately; mixed verdict
+axes are rejected.
+
+```powershell
+& 'D:/Project/py/RAG/.venv/Scripts/python.exe' scripts/compare_bench_runs.py <base-result.json> <new-result.json>
+& 'D:/Project/py/RAG/.venv/Scripts/python.exe' scripts/compare_bench_runs.py --allow-different-gold <base-result.json> <new-result.json>
+```
+
+By default, changed ID sets, questions, factions, expectations, types, known
+canonical identities, row source notes or declared source versions/hashes/coverage
+refuse verdict comparison. The explicit override enumerates every such change
+and labels transitions as a cross-gold comparison without an application
+regression claim. Gold paths are displayed but differing locations alone do not
+change expectations. Matching reported hashes never override mismatched actual
+rows; recorded provenance is not independent verification of primary sources.
+Malformed input remains an error even with the override. Exit 0 means comparison
+completed, not that the answers passed.
+
+At the end of the earlier three-iteration run, v3.7 remained unfinished. Historical gold is not a claim of complete current
+source coverage. Iteration 3 passed 197 offline tests, including all earlier judge
+fixtures, 66 comparator cases and a real historical same-gold pair; all 58 tracked
+historical result documents pass strict input validation.
+See [the scoped acceptance report](../../docs/superpowers/reports/2026-10-01-versioned-benchmark-acceptance.md)
+for tests, immutable-byte evidence and remaining work. The older entries below
+record their original benchmark versions and runs.
+
 - **gold**：根目录 `qa_gold.json`（meta.version=v3, edition=11）。迁移审计见
   `docs/superpowers/specs/2026-07-11-qa-gold-v3-edition11-audit.md`：规则类 7 题 +
   #41 按 11 版更新，stat/weapon 78 题零漂移。

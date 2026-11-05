@@ -5,17 +5,17 @@ name_en: Solitaire
 faction: 艾达灵族
 type: unit
 points:
-  1 model: 115
+  1 model: 105
 tags:
 - unit
 - unit/艾达灵族
 - 艾达灵族
 version:
-  points: MFM 2026-09-14T05:51:23.572407+00:00
+  points: MFM 2026-10-03T19:00:56.192123+00:00
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-09-14'
+updated: '2026-10-03'
 ---
 
 ## 属性表
@@ -32,12 +32,13 @@ updated: '2026-09-14'
 | 独角武器 | 近战 | 9 | 2+ | 6 | -2 | 2 | [[core-rules/precision.md\|精准]] |
 
 ## 技能
-- **【阵营技能】：战斗专注**
-- **闪击**：每场战斗一次，在你的移动阶段，本模型被选中进行常规移动前，你可以使用此技能 ：直到本回合结束，本模型的移动属性（M值）+2D6 ，其装备的独角武器的A值属性+3
-- **移行虚影**：本模型可在进行过加速移动的回合中宣布冲 锋
+- **Blitz**：Once per battle, in your Movement phase, before this model makes a Normal move, it can use this ability. If it does, until the end of the turn, add 2D6" to this model’s Move characteristic and add 3 to the Attacks characteristic of this model’s Solitaire weapons.
+- **Blur of Movement**：This model is eligible to declare a charge in a turn in which it Advanced.
+- **PATH OF DAMNATION**：This model cannot be your <span class="kwb">WARLORD</span>.
+- **Flip Belt**：Each time the bearer’s unit makes a Normal, Advance, Fall Back or Charge move, ignore any vertical distance when determining the total distance the bearer can be moved during that move.
 
 ## 单位构成
-- **1个模型** — 115 分
+- **1个模型** — 105 分
 
 ## 关键词
 - **阵营关键词**：Harlequins

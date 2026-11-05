@@ -5,13 +5,13 @@ name_en: Astraeus
 faction: 星际战士
 type: unit
 points:
-  1 model: 525
+  1 model: 550
 tags:
 - unit
 - unit/星际战士
 - 星际战士
 version:
-  points: MFM 2026-09-14T05:51:23.572407+00:00
+  points: MFM 2026-10-03T19:00:56.192123+00:00
   source: official-db
 sources:
 - book: 'Faction Pack: Space Marines'
@@ -20,7 +20,7 @@ sources:
 - book: 'Faction Pack: Space Marines'
   pages:
   - 57
-updated: '2026-09-14'
+updated: '2026-10-03'
 ---
 
 ## 属性表
@@ -50,11 +50,11 @@ updated: '2026-09-14'
 
 ## 技能
 - **【阵营技能】：破敌重誓**
-- **压制火力**：你的射击阶段，本模型射击后，选择一个被本模型并联巨型高速炮命中过的敌方单位。直到你的[[factions/兽人/stratagems/on-to-da-next.md|下一个]]回合开始前，只要本单位还继续留在场上，那个敌方单位就处于被压制状态。被压制单位中的模型攻击时命中骰结果-1。
+- **压制火力**：你的射击阶段，本模型射击后，选择一个被本模型并联巨型高速炮命中过的敌方单位。直到你的下一个回合开始前，只要本单位还继续留在场上，那个敌方单位就处于被压制状态。被压制单位中的模型攻击时命中骰结果-1。
 - **严重损伤**：当本模型剩余1-8W时，本模型的OC值-4，每次攻击时命中骰结果-1。
 
 ## 单位构成
-- **1个模型** — 525 分
+- **1个模型** — 550 分
 
 ## 关键词
 - **阵营关键词**：Adeptus Astartes

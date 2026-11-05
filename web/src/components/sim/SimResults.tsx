@@ -166,10 +166,10 @@ function Honesty({ resp }: { resp: SimResponse }) {
           {rep.biasNotes.join("；")}
         </p>
       ) : null}
-      {/* 网页版为单向解算：/simulate 不接收守方装配，无守方幸存反打（reverse 恒空时披露） */}
+      {/* 以本次报告为准；反打由页面开关与守方装配决定。 */}
       {!rep.reverse ? (
         <p className="my-1 text-[12.5px] text-[#8fa19b]">
-          单向模拟（攻方 → 守方）：<span className="text-[#6f827c]">守方幸存反打未接入本页</span>
+          本次为单向模拟（攻方 → 守方）：<span className="text-[#6f827c]">本次结果未计入守方幸存反打</span>
         </p>
       ) : null}
       {resp.defenderToggles.length > 0 ? (
@@ -180,8 +180,8 @@ function Honesty({ resp }: { resp: SimResponse }) {
       ) : null}
       {detachments.length > 0 ? (
         <p className="my-1 text-[12.5px] text-[#6f827c]">
-          守方阵营（{resp.factionOptions?.factionName}）的分队规则一律未建模：
-          {detachments.join("、")}
+          守方阵营（{resp.factionOptions?.factionName}）的分队列表：
+          {detachments.join("、")}。本次计入范围见已计入、未建模条目及来源限定；可选规则须按所选选项和适用条件启用。
         </p>
       ) : null}
       {resp.warning ? (

@@ -5,17 +5,17 @@ name_en: Daemon Prince of Slaanesh
 faction: 帝皇之子
 type: unit
 points:
-  1 model: 170
+  1 model: 165
 tags:
 - unit
 - unit/帝皇之子
 - 帝皇之子
 version:
-  points: MFM 2026-09-14T05:51:23.572407+00:00
+  points: MFM 2026-10-03T19:00:56.192123+00:00
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-09-14'
+updated: '2026-10-03'
 ---
 
 ## 属性表
@@ -44,7 +44,7 @@ updated: '2026-09-14'
 - **狂喜之死**：如果本模型被一下近战攻击消灭，如果它本阶段中未进行过近战攻击，投一枚 D6，若结果为 2+，暂不移除该模型，该模型在敌方单位完成攻击结算后立刻进行一轮近战，然后移出桌面。
 
 ## 单位构成
-- **1个模型** — 170 分
+- **1个模型** — 165 分
 
 ## 关键词
 - **阵营关键词**：Emperor’s Children

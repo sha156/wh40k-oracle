@@ -5,17 +5,17 @@ name_en: Sorcerer
 faction: 混沌星际战士
 type: unit
 points:
-  1 model: 60
+  1 model: 65
 tags:
 - unit
 - unit/混沌星际战士
 - 混沌星际战士
 version:
-  points: MFM 2026-09-14T05:51:23.572407+00:00
+  points: MFM 2026-10-03T19:00:56.192123+00:00
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-09-14'
+updated: '2026-10-03'
 ---
 
 ## 属性表
@@ -41,7 +41,7 @@ updated: '2026-09-14'
 - **混沌赠礼【灵能】**：每当本模型被选择进行射击或近战 时，结算完攻击之后，选择本轮攻击中被本模型【灵能】 技能命中过的一个敌方单位，那个单位必须进行一次 LD 测试，如果失败就遭受 D3 点致命伤害
 
 ## 单位构成
-- **1个模型** — 60 分
+- **1个模型** — 65 分
 
 ## 关键词
 - **阵营关键词**：Heretic Astartes

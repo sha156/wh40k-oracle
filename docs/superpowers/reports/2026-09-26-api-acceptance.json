@@ -1,0 +1,655 @@
+{
+  "date": "2026-09-26",
+  "results": [
+    {
+      "label": "valid roster",
+      "path": "/roster/validate",
+      "status": 200,
+      "response": {
+        "totalPoints": 150,
+        "limit": 2000,
+        "legal": true,
+        "issues": []
+      }
+    },
+    {
+      "assertion": "baseline legal roster 150",
+      "passed": true
+    },
+    {
+      "label": "1e999 validate",
+      "path": "/roster/validate",
+      "status": 200,
+      "response": {
+        "totalPoints": 150,
+        "limit": 2000,
+        "legal": true,
+        "issues": []
+      }
+    },
+    {
+      "label": "1e999 critique",
+      "path": "/roster/critique",
+      "status": 200,
+      "response": {
+        "totalPoints": 150,
+        "assessments": [
+          {
+            "canonicalId": "000000060",
+            "nameEn": "Apothecary Biologis",
+            "points": 70,
+            "assessed": false,
+            "phase": null,
+            "scores": [],
+            "note": "需装配（多武器选项池，未指定 loadout → 不评估，不瞎估）"
+          },
+          {
+            "canonicalId": "000001157",
+            "nameEn": "Intercessor Squad",
+            "points": 80,
+            "assessed": false,
+            "phase": null,
+            "scores": [],
+            "note": "loadout 含非法项或超出上限，已整体丢弃（不猜半份装配）→ 未评估，请修正装配后重试"
+          }
+        ],
+        "summary": [
+          "2/2 单位未评估（需先装配武器）"
+        ],
+        "notModeled": [
+          "合成目标为标准防御档假人，不含阵营规则/军队规则/分队加成",
+          "单位技能/光环/CP 战略未计入（沿用模拟器建模边界）",
+          "每单位按其 loadout 独立评估，未计协同（如指挥官挂载增益）"
+        ]
+      }
+    },
+    {
+      "assertion": "1e999 discarded equipment disclosed",
+      "passed": true
+    },
+    {
+      "label": "-1e999 validate",
+      "path": "/roster/validate",
+      "status": 200,
+      "response": {
+        "totalPoints": 150,
+        "limit": 2000,
+        "legal": true,
+        "issues": []
+      }
+    },
+    {
+      "label": "-1e999 critique",
+      "path": "/roster/critique",
+      "status": 200,
+      "response": {
+        "totalPoints": 150,
+        "assessments": [
+          {
+            "canonicalId": "000000060",
+            "nameEn": "Apothecary Biologis",
+            "points": 70,
+            "assessed": false,
+            "phase": null,
+            "scores": [],
+            "note": "需装配（多武器选项池，未指定 loadout → 不评估，不瞎估）"
+          },
+          {
+            "canonicalId": "000001157",
+            "nameEn": "Intercessor Squad",
+            "points": 80,
+            "assessed": false,
+            "phase": null,
+            "scores": [],
+            "note": "loadout 含非法项或超出上限，已整体丢弃（不猜半份装配）→ 未评估，请修正装配后重试"
+          }
+        ],
+        "summary": [
+          "2/2 单位未评估（需先装配武器）"
+        ],
+        "notModeled": [
+          "合成目标为标准防御档假人，不含阵营规则/军队规则/分队加成",
+          "单位技能/光环/CP 战略未计入（沿用模拟器建模边界）",
+          "每单位按其 loadout 独立评估，未计协同（如指挥官挂载增益）"
+        ]
+      }
+    },
+    {
+      "assertion": "-1e999 discarded equipment disclosed",
+      "passed": true
+    },
+    {
+      "label": "unknown faction",
+      "path": "/roster/validate",
+      "status": 200,
+      "response": {
+        "totalPoints": 150,
+        "limit": 2000,
+        "legal": false,
+        "issues": [
+          {
+            "code": "unknown_faction",
+            "severity": "error",
+            "message": "阵营「not-a-faction」不在阵营目录中，请重新选择阵营",
+            "anchor": "",
+            "surfacedOnly": false
+          }
+        ]
+      }
+    },
+    {
+      "assertion": "unknown faction rejected",
+      "passed": true
+    },
+    {
+      "label": "wrong detachment",
+      "path": "/roster/validate",
+      "status": 200,
+      "response": {
+        "totalPoints": 150,
+        "limit": 2000,
+        "legal": false,
+        "issues": [
+          {
+            "code": "detachment_wrong_faction",
+            "severity": "error",
+            "message": "分队「000000964」属于 ORK，不属于所选阵营 SM",
+            "anchor": "",
+            "surfacedOnly": false
+          }
+        ]
+      }
+    },
+    {
+      "assertion": "wrong faction detachment rejected",
+      "passed": true
+    },
+    {
+      "label": "unknown detachment",
+      "path": "/roster/validate",
+      "status": 200,
+      "response": {
+        "totalPoints": 150,
+        "limit": 2000,
+        "legal": true,
+        "issues": [
+          {
+            "code": "detachment_unverified",
+            "severity": "warn",
+            "message": "分队「missing-detachment」的阵营归属资料缺失，分队兼容性未校验",
+            "anchor": "",
+            "surfacedOnly": true
+          }
+        ]
+      }
+    },
+    {
+      "assertion": "unknown detachment disclosed",
+      "passed": true
+    },
+    {
+      "label": "cross faction unit",
+      "path": "/roster/validate",
+      "status": 200,
+      "response": {
+        "totalPoints": 240,
+        "limit": 2000,
+        "legal": true,
+        "issues": [
+          {
+            "code": "faction_compatibility_unverified",
+            "severity": "warn",
+            "message": "以下单位未归在所选阵营目录中：Boyz（Orks）。跨阵营/盟军的加入条件尚未校验，不能据此判定整张军表合法；请核对相应军队与盟军规则。",
+            "anchor": "",
+            "surfacedOnly": true
+          }
+        ]
+      }
+    },
+    {
+      "assertion": "cross faction requires review",
+      "passed": true
+    },
+    {
+      "label": "retired enhancements 000000980",
+      "path": "/roster/enhancements?detachment=000000980",
+      "status": 200,
+      "response": {
+        "enhancements": [
+          {
+            "id": "000009729003",
+            "name": "Insectile Murmuration",
+            "cost": 15
+          },
+          {
+            "id": "000009729005",
+            "name": "Plagueveil",
+            "cost": 15
+          }
+        ]
+      }
+    },
+    {
+      "assertion": "removed IDs absent 000000980",
+      "passed": true
+    },
+    {
+      "label": "retired enhancements 000000982",
+      "path": "/roster/enhancements?detachment=000000982",
+      "status": 200,
+      "response": {
+        "enhancements": [
+          {
+            "id": "000009737003",
+            "name": "Ocular Adaptation",
+            "cost": 20
+          },
+          {
+            "id": "000009737005",
+            "name": "Elevated Might",
+            "cost": 30
+          }
+        ]
+      }
+    },
+    {
+      "assertion": "removed IDs absent 000000982",
+      "passed": true
+    },
+    {
+      "label": "retired enhancements 000000989",
+      "path": "/roster/enhancements?detachment=000000989",
+      "status": 200,
+      "response": {
+        "enhancements": [
+          {
+            "id": "fp11e-chaosknights-iconoclast-e2",
+            "name": "Iconoclast Idol (Aura)",
+            "cost": 20
+          },
+          {
+            "id": "fp11e-chaosknights-iconoclast-e1",
+            "name": "Cruel Lashmaster (Aura)",
+            "cost": 25
+          }
+        ]
+      }
+    },
+    {
+      "assertion": "removed IDs absent 000000989",
+      "passed": true
+    },
+    {
+      "label": "retired enhancements 000000990",
+      "path": "/roster/enhancements?detachment=000000990",
+      "status": 200,
+      "response": {
+        "enhancements": [
+          {
+            "id": "000009769004",
+            "name": "Spirit Stone of Raelyth",
+            "cost": 20
+          },
+          {
+            "id": "000009769002",
+            "name": "Guiding Presence",
+            "cost": 25
+          }
+        ]
+      }
+    },
+    {
+      "assertion": "removed IDs absent 000000990",
+      "passed": true
+    },
+    {
+      "label": "retired enhancements 000000996",
+      "path": "/roster/enhancements?detachment=000000996",
+      "status": 200,
+      "response": {
+        "enhancements": [
+          {
+            "id": "000009801002",
+            "name": "Bombast-class Vox-array",
+            "cost": 15
+          },
+          {
+            "id": "000009801003",
+            "name": "Priority-drop Beacon",
+            "cost": 25
+          }
+        ]
+      }
+    },
+    {
+      "assertion": "removed IDs absent 000000996",
+      "passed": true
+    },
+    {
+      "label": "retired enhancements 000001005",
+      "path": "/roster/enhancements?detachment=000001005",
+      "status": 200,
+      "response": {
+        "enhancements": [
+          {
+            "id": "000009839003",
+            "name": "Admired Leader",
+            "cost": 20
+          },
+          {
+            "id": "000009839002",
+            "name": "Student of Kauyon",
+            "cost": 20
+          }
+        ]
+      }
+    },
+    {
+      "assertion": "removed IDs absent 000001005",
+      "passed": true
+    },
+    {
+      "label": "retired enhancements 000001006",
+      "path": "/roster/enhancements?detachment=000001006",
+      "status": 200,
+      "response": {
+        "enhancements": [
+          {
+            "id": "000009843005",
+            "name": "Benediction of Fury",
+            "cost": 15
+          },
+          {
+            "id": "fp11e-bt-wrathful-e1",
+            "name": "Adaptable Executioner",
+            "cost": 20
+          }
+        ]
+      }
+    },
+    {
+      "assertion": "removed IDs absent 000001006",
+      "passed": true
+    },
+    {
+      "label": "retired enhancements 000001007",
+      "path": "/roster/enhancements?detachment=000001007",
+      "status": 200,
+      "response": {
+        "enhancements": [
+          {
+            "id": "000009847005",
+            "name": "Gateways to Glory",
+            "cost": 10
+          },
+          {
+            "id": "000009847002",
+            "name": "Archslaughterer",
+            "cost": 30
+          }
+        ]
+      }
+    },
+    {
+      "assertion": "removed IDs absent 000001007",
+      "passed": true
+    },
+    {
+      "label": "retired enhancements 000001008",
+      "path": "/roster/enhancements?detachment=000001008",
+      "status": 200,
+      "response": {
+        "enhancements": [
+          {
+            "id": "fp11e-sw-fenris-e1",
+            "name": "A Giant Amongst Giants",
+            "cost": 15
+          },
+          {
+            "id": "fp11e-sw-fenris-e2",
+            "name": "Preyslayer",
+            "cost": 15
+          }
+        ]
+      }
+    },
+    {
+      "assertion": "removed IDs absent 000001008",
+      "passed": true
+    },
+    {
+      "label": "retired enhancements 000001028",
+      "path": "/roster/enhancements?detachment=000001028",
+      "status": 200,
+      "response": {
+        "enhancements": [
+          {
+            "id": "000009983002",
+            "name": "Supernova Launcher",
+            "cost": 15
+          },
+          {
+            "id": "000009983003",
+            "name": "Thermoneutronic Projector",
+            "cost": 15
+          },
+          {
+            "id": "000009983004",
+            "name": "Plasma Accelerator Rifle",
+            "cost": 20
+          }
+        ]
+      }
+    },
+    {
+      "assertion": "removed IDs absent 000001028",
+      "passed": true
+    },
+    {
+      "label": "retired enhancements 000001058",
+      "path": "/roster/enhancements?detachment=000001058",
+      "status": 200,
+      "response": {
+        "enhancements": [
+          {
+            "id": "000010151002",
+            "name": "Touched by the Warp",
+            "cost": 10
+          },
+          {
+            "id": "fp11e-csm-cabal-e1",
+            "name": "Conduit of Chaos",
+            "cost": 20
+          }
+        ]
+      }
+    },
+    {
+      "assertion": "removed IDs absent 000001058",
+      "passed": true
+    },
+    {
+      "assertion": "all 27 retired enhancements excluded",
+      "passed": true
+    },
+    {
+      "label": "equipment Ferrumite cannon",
+      "path": "/roster/validate",
+      "status": 200,
+      "response": {
+        "totalPoints": 170,
+        "limit": 2000,
+        "legal": false,
+        "issues": [
+          {
+            "code": "warlord_count",
+            "severity": "error",
+            "message": "须恰好 1 个 WARLORD，当前 0 个",
+            "anchor": "11版 军表构筑·Warlord",
+            "surfacedOnly": false
+          }
+        ]
+      }
+    },
+    {
+      "assertion": "equipment price Ferrumite cannon",
+      "passed": true
+    },
+    {
+      "label": "equipment Belleros energy cannon",
+      "path": "/roster/validate",
+      "status": 200,
+      "response": {
+        "totalPoints": 160,
+        "limit": 2000,
+        "legal": false,
+        "issues": [
+          {
+            "code": "warlord_count",
+            "severity": "error",
+            "message": "须恰好 1 个 WARLORD，当前 0 个",
+            "anchor": "11版 军表构筑·Warlord",
+            "surfacedOnly": false
+          }
+        ]
+      }
+    },
+    {
+      "assertion": "equipment price Belleros energy cannon",
+      "passed": true
+    },
+    {
+      "label": "equipment Misspelled cannon",
+      "path": "/roster/validate",
+      "status": 200,
+      "response": {
+        "totalPoints": 0,
+        "limit": 2000,
+        "legal": false,
+        "issues": [
+          {
+            "code": "unit_unpriced",
+            "severity": "warn",
+            "message": "Skorpius Disintegrator（1 模型）无法完整定价：请核对现行档位、重复单位数量与需付费的武器装配；未计入总分",
+            "anchor": "",
+            "surfacedOnly": true
+          },
+          {
+            "code": "warlord_count",
+            "severity": "error",
+            "message": "须恰好 1 个 WARLORD，当前 0 个",
+            "anchor": "11版 军表构筑·Warlord",
+            "surfacedOnly": false
+          }
+        ]
+      }
+    },
+    {
+      "assertion": "equipment price Misspelled cannon",
+      "passed": true
+    },
+    {
+      "label": "simulator 000000017",
+      "path": "/simulate",
+      "status": 200,
+      "response": {
+        "ok": false,
+        "reason": "loadout_required",
+        "note": "武器表是选项池（含互斥选项），P4 不猜默认装配；请据 weapon_pool 指定 loadout=[(武器名,数量),...]（已按射击阶段过滤，另有 2 把近战武器）",
+        "warning": null,
+        "attacker": "Gretchin",
+        "defender": "Intercessor Squad",
+        "phase": null,
+        "report": null,
+        "defenderToggles": [],
+        "factionOptions": null,
+        "weaponPool": [
+          "Grot blasta",
+          "Slugga"
+        ],
+        "modelTiers": [
+          {
+            "models": 10,
+            "cost": 45
+          },
+          {
+            "models": 20,
+            "cost": 80
+          }
+        ],
+        "dslAvailable": [],
+        "errors": []
+      }
+    },
+    {
+      "label": "simulator 000002799",
+      "path": "/simulate",
+      "status": 200,
+      "response": {
+        "ok": false,
+        "reason": "loadout_required",
+        "note": "武器表是选项池（含互斥选项），P4 不猜默认装配；请据 weapon_pool 指定 loadout=[(武器名,数量),...]（已按射击阶段过滤，另有 4 把近战武器）",
+        "warning": null,
+        "attacker": "Crusader Squad",
+        "defender": "Intercessor Squad",
+        "phase": null,
+        "report": null,
+        "defenderToggles": [],
+        "factionOptions": null,
+        "weaponPool": [
+          "Bolt pistol",
+          "Bolt rifle",
+          "Heavy bolt pistol",
+          "Neophyte firearm",
+          "Pyre pistol",
+          "Pyreblaster"
+        ],
+        "modelTiers": [
+          {
+            "models": 10,
+            "cost": 150
+          },
+          {
+            "models": 20,
+            "cost": 290
+          }
+        ],
+        "dslAvailable": [],
+        "errors": []
+      }
+    },
+    {
+      "label": "simulator 000000318",
+      "path": "/simulate",
+      "status": 200,
+      "response": {
+        "ok": false,
+        "reason": "loadout_required",
+        "note": "武器表是选项池（含互斥选项），P4 不猜默认装配；请据 weapon_pool 指定 loadout=[(武器名,数量),...]（已按射击阶段过滤，另有 4 把近战武器）",
+        "warning": null,
+        "attacker": "Wolf Guard Terminators",
+        "defender": "Intercessor Squad",
+        "phase": null,
+        "report": null,
+        "defenderToggles": [],
+        "factionOptions": null,
+        "weaponPool": [
+          "Assault cannon",
+          "Storm bolter"
+        ],
+        "modelTiers": [
+          {
+            "models": 5,
+            "cost": 155
+          },
+          {
+            "models": 10,
+            "cost": 310
+          }
+        ],
+        "dslAvailable": [],
+        "errors": []
+      }
+    }
+  ]
+}

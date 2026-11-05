@@ -5,17 +5,17 @@ name_en: The Red Terror
 faction: 泰伦虫族
 type: unit
 points:
-  1 model: 130
+  1 model: 120
 tags:
 - unit
 - unit/泰伦虫族
 - 泰伦虫族
 version:
-  points: MFM 2026-09-14T05:51:23.572407+00:00
+  points: MFM 2026-10-03T19:00:56.192123+00:00
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-09-14'
+updated: '2026-10-03'
 ---
 
 ## 属性表
@@ -36,7 +36,7 @@ updated: '2026-09-14'
 - **蛇形恶魔**：该模型可以移动穿过地形模型，但不能在墙壁、地板等处结束移动。 该模型可以部署在废墟的任意楼层或在其上结束移动，但如果那层不是底层，则该模型的底座不能超出那层的地面。
 
 ## 单位构成
-- **1个模型** — 130 分
+- **1个模型** — 120 分
 
 ## 关键词
 - **阵营关键词**：Tyranids

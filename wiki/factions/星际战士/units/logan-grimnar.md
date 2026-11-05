@@ -5,17 +5,17 @@ name_en: Logan Grimnar
 faction: 星际战士
 type: unit
 points:
-  1 model: 100
+  1 model: 150
 tags:
 - unit
 - unit/星际战士
 - 星际战士
 version:
-  points: MFM 2026-09-14T05:51:23.572407+00:00
+  points: MFM 2026-10-03T19:00:56.192123+00:00
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-09-14'
+updated: '2026-10-03'
 ---
 
 ## 属性表
@@ -45,7 +45,7 @@ updated: '2026-09-14'
 - **乘坐载具**：本模型可以乘坐允许搭乘终结者模型的阿 斯塔特修会运输工具，当你这么做时，本模型占用 4 个步兵模型槽位。
 
 ## 单位构成
-- **1个模型** — 100 分
+- **1个模型** — 150 分
 
 ## 关键词
 - **阵营关键词**：Adeptus Astartes，Space Wolves

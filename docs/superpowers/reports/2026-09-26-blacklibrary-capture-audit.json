@@ -1,0 +1,26 @@
+{
+  "status": "partial",
+  "original_manifest_unchanged": true,
+  "raw_hashes_checked": 1180,
+  "output_hashes_checked": 7,
+  "hash_mismatches": 0,
+  "counts": {
+    "details": 1171,
+    "details_failed": 98,
+    "details_source_empty": 2,
+    "details_with_content": 1071,
+    "factions": 38,
+    "units": 1171
+  },
+  "request_statuses": {
+    "captured": 1168,
+    "source_empty": 8,
+    "failed": 98
+  },
+  "unresolved_detail_reasons": {
+    "unit lacks an English detail lookup name": 94,
+    "detail response identity differs from the listed unit": 4
+  },
+  "canonical_projection_performed": false,
+  "probes": "Ignored snapshot probes contain sanitized game-content payloads only, no headers."
+}

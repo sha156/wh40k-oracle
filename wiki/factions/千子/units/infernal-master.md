@@ -5,17 +5,17 @@ name_en: Infernal Master
 faction: 千子
 type: unit
 points:
-  1 model: 100
+  1 model: 105
 tags:
 - unit
 - unit/千子
 - 千子
 version:
-  points: MFM 2026-09-14T05:51:23.572407+00:00
+  points: MFM 2026-10-03T19:00:56.192123+00:00
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-09-14'
+updated: '2026-10-03'
 ---
 
 ## 属性表
@@ -44,7 +44,7 @@ updated: '2026-09-14'
 - **永恒一瞥（灵能）**：每回合一次，您可以将该模型的一枚命中掷骰、一枚致伤掷骰、一枚伤害掷骰或一枚豁免掷骰改为未修正的 6 。
 
 ## 单位构成
-- **1个模型** — 100 分
+- **1个模型** — 105 分
 
 ## 关键词
 - **阵营关键词**：Thousand Sons

@@ -5,18 +5,18 @@ name_en: Blood Claws
 faction: 星际战士
 type: unit
 points:
-  10 models: 135
-  20 models: 270
+  10 models: 150
+  20 models: 290
 tags:
 - unit
 - unit/星际战士
 - 星际战士
 version:
-  points: MFM 2026-09-14T05:51:23.572407+00:00
+  points: MFM 2026-10-03T19:00:56.192123+00:00
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-09-14'
+updated: '2026-10-03'
 ---
 
 ## 属性表
@@ -42,8 +42,8 @@ updated: '2026-09-14'
 - **狂暴冲锋**：本单位在进行加速的同回合中依然是【可冲 锋】单位
 
 ## 单位构成
-- **10个模型** — 135 分
-- **20个模型** — 270 分
+- **10个模型** — 150 分
+- **20个模型** — 290 分
 
 ## 关键词
 - **阵营关键词**：Space Wolves，Adeptus Astartes

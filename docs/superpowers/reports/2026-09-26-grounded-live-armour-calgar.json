@@ -1,0 +1,96 @@
+{
+  "question": "Marneus Calgar in Armour of Antilochus 当前多少分？",
+  "status": 200,
+  "elapsed_seconds": 3.438,
+  "answer": {
+    "summary": "检索 1 步 · 引用 2 条",
+    "trace": [
+      {
+        "fn": "calc_points",
+        "args": "(['Marneus Calgar in Armour of Antilochus'])",
+        "result": "已命中",
+        "status": "ok",
+        "note": null
+      }
+    ],
+    "traceWarn": null,
+    "verdict": {
+      "label": "155分",
+      "labelEn": "155 pts",
+      "lede": [
+        {
+          "t": "strong",
+          "s": "Marneus Calgar in Armour of Antilochus 当前 155 分"
+        },
+        {
+          "t": "text",
+          "s": "，是精确匹配的现行点数，不是历史点数。"
+        }
+      ]
+    },
+    "calc": [
+      {
+        "n": 1,
+        "text": [
+          {
+            "t": "text",
+            "s": "数据来自官方点数库（mfm.warhammer-community.com），取数时间 "
+          },
+          {
+            "t": "num",
+            "s": "2026"
+          },
+          {
+            "t": "num",
+            "s": "-09"
+          },
+          {
+            "t": "num",
+            "s": "-14"
+          },
+          {
+            "t": "text",
+            "s": " "
+          },
+          {
+            "t": "cite",
+            "n": 1
+          },
+          {
+            "t": "cite",
+            "n": 2
+          },
+          {
+            "t": "text",
+            "s": "。"
+          }
+        ]
+      }
+    ],
+    "entityCard": null,
+    "cites": [
+      {
+        "n": 1,
+        "book": "Munitorum Field Manual",
+        "page": null,
+        "section": "官方当前点数",
+        "term": null,
+        "wiki": "",
+        "url": "https://mfm.warhammer-community.com"
+      },
+      {
+        "n": 2,
+        "book": "Munitorum Field Manual (mfm.warhammer-community.com)",
+        "page": null,
+        "section": null,
+        "term": null,
+        "wiki": "",
+        "url": null
+      }
+    ],
+    "sensitivity": null,
+    "cta": null,
+    "followups": [],
+    "degraded": false
+  }
+}

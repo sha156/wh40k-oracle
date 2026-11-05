@@ -25,6 +25,7 @@ datasheet 与 data_refined 核心规则），judge 由「凭感觉 intrinsic」�
 from __future__ import annotations
 
 import argparse
+import hashlib
 import json
 import logging
 import os
@@ -40,6 +41,12 @@ _log = logging.getLogger(__name__)
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(REPO_ROOT))
+
+from scripts.benchmark_json import loads_benchmark_json
+from agent.public_errors import public_failure
+from scripts.qa_source_coverage import (
+    apply_source_coverage, check_source_coverage, coverage_ceiling, validate_source_contracts,
+)
 
 import warnings
 
@@ -168,14 +175,110 @@ def summarize_layered(results):
     }
 
 
-def load_questions(limit=None):
-    data = json.loads(QA_SOURCE.read_text(encoding="utf-8"))
+_GOLD_TYPES = {"stat", "weapon", "ability", "rule", "points"}
+_INTRINSIC_63 = {
+    "id": 63,
+    "faction": "帝国卫队",
+    "question": "坦克指挥官的坦克命令有什么效果？",
+    "gold_type": "ability",
+    "canonical_id": "000000680",
+}
+
+
+def _validate_gold_document(data):
+    """Reject malformed expectations before applying a question limit."""
+    if not isinstance(data, dict):
+        raise ValueError("gold root must be an object")
+    meta = data.get("meta")
+    if not isinstance(meta, dict):
+        raise ValueError("gold meta must be an object")
+    version = meta.get("version")
+    if not isinstance(version, str) or not re.fullmatch(r"v3(?:\.\d+)?", version):
+        raise ValueError("gold meta.version must be an edition-11 v3 version")
+    if type(meta.get("edition")) is not int or meta["edition"] != 11:
+        raise ValueError("gold meta.edition must be integer 11")
+    if "source_limitations" in meta:
+        limitations = meta["source_limitations"]
+        if (not isinstance(limitations, list) or not limitations
+                or any(not isinstance(note, str) or not note.strip() for note in limitations)):
+            raise ValueError("gold meta.source_limitations must be a nonempty list of nonempty text")
+    details = data.get("details")
+    if not isinstance(details, list) or not details:
+        raise ValueError("gold details must be a nonempty list")
+    total = meta.get("total")
+    if type(total) is not int or total <= 0 or total != len(details):
+        raise ValueError("gold meta.total must equal the full details count")
+    seen = set()
+    for index, item in enumerate(details):
+        label = f"gold details[{index}]"
+        if not isinstance(item, dict):
+            raise ValueError(f"{label} must be an object")
+        identity = item.get("id")
+        if type(identity) is not int or identity <= 0:
+            raise ValueError(f"{label}.id must be a positive non-boolean integer")
+        if identity in seen:
+            raise ValueError(f"{label}.id is duplicated: {identity}")
+        seen.add(identity)
+        canonical_id = item.get("canonical_id")
+        # Optional/null identities are historical data; non-null values must
+        # satisfy the same contract as emitted result metadata in the comparator.
+        if canonical_id is not None and (
+                not isinstance(canonical_id, str) or not canonical_id.strip()):
+            raise ValueError(f"{label}.canonical_id must be nonempty text when present")
+        for field in ("faction", "question"):
+            if not isinstance(item.get(field), str) or not item[field].strip():
+                raise ValueError(f"{label}.{field} must be nonempty text")
+        gold_type = item.get("gold_type")
+        if not isinstance(gold_type, str) or gold_type not in _GOLD_TYPES:
+            raise ValueError(f"{label}.gold_type must be one of {sorted(_GOLD_TYPES)}")
+        if "gold" not in item:
+            raise ValueError(f"{label}.gold is required")
+        gold = item["gold"]
+        if gold is None and all(item.get(k) == v for k, v in _INTRINSIC_63.items()):
+            continue
+        if not isinstance(gold, str) or not gold.strip():
+            raise ValueError(f"{label}.gold must be nonempty text; only original #63 may be null")
+    validate_source_contracts(data)
+
+
+def _read_gold_document(gold_path=None):
+    # Resolve QA_SOURCE at call time; explicit relative paths belong to the caller.
+    # Retain the bytes actually parsed for later exact-byte output provenance.
+    source = Path(QA_SOURCE if gold_path is None else gold_path).resolve()
+    raw = source.read_bytes()
+    data = loads_benchmark_json(raw)
+    _validate_gold_document(data)
+    return data, source, raw
+
+
+def _project_questions(data, limit=None):
     items = [
         {"id": d["id"], "faction": d["faction"], "question": d["question"],
-         "gold": d.get("gold"), "gold_type": d.get("gold_type")}
+         "gold": d["gold"], "gold_type": d["gold_type"],
+         **({"coverage_contract": d["coverage_contract"]} if "coverage_contract" in d else {})}
         for d in data["details"]
     ]
     return items[:limit] if limit else items
+
+
+def load_questions(limit=None, gold_path=None):
+    """Select and validate gold while preserving the default five-field contract."""
+    data, _, _ = _read_gold_document(gold_path)
+    return _project_questions(data, limit)
+
+
+def _gold_provenance(data, source, raw):
+    """Describe the same snapshot used for judging, without claiming fresh coverage."""
+    meta = data["meta"]
+    return {
+        "path": str(source), "sha256": hashlib.sha256(raw).hexdigest(),
+        "version": meta["version"], "edition": meta["edition"], "total": meta["total"],
+        "source_limitations": meta.get("source_limitations", [
+            "Selected gold does not declare source-coverage limitations; numerical agreement "
+            "alone does not certify current source coverage."
+        ]),
+        **({"sources": meta["sources"]} if "sources" in meta else {}),
+    }
 
 
 def make_client(provider):
@@ -259,6 +362,7 @@ def run_one_layered(ctx, item):
     client = make_client(provider)
     qid, question = item["id"], item["question"]
     t0 = time.time()
+    answer_failed = False
     try:
         answer, passages = retrieve_and_answer_classic(
             app, vs, bm25, reranker, model, client, question
@@ -268,10 +372,12 @@ def run_one_layered(ctx, item):
             model, client, question, passages, answer, gold=item.get("gold")
         )
     except Exception as e:
-        answer, passages = f"[harness 异常] {type(e).__name__}: {e}", []
-        rv, r_reason = "❌", f"harness 异常: {e}"
-        gv, g_reason = "❌", f"harness 异常: {e}"
-    return {
+        failure = public_failure(e).describe()
+        answer, passages = f"[harness 异常] {failure}", []
+        rv, r_reason = "❌", f"harness 异常: {failure}"
+        gv, g_reason = "❌", f"harness 异常: {failure}"
+        answer_failed = True
+    result = {
         "id": qid,
         "faction": item["faction"],
         "question": question,
@@ -284,6 +390,10 @@ def run_one_layered(ctx, item):
         "sources": _dedup_sources(passages),
         "answer": answer,
     }
+    apply_source_coverage(result, model, client, item, "generation_verdict", "generation_reason",
+                          answer_failed=answer_failed)
+    result["stage"] = classify_stage(rv, result["generation_verdict"])
+    return result
 
 
 def answer_agent(app, vs, bm25, reranker, tools, provider, model, client, question):
@@ -663,10 +773,11 @@ def run_one(ctx, item):
             verdict, reason = judge(model, client, question, answer)
             judge_method = "intrinsic"
     except Exception as e:
-        answer, sources = f"[harness 异常] {type(e).__name__}: {e}", []
-        verdict, reason = "❌", f"harness 异常: {e}"
+        failure = public_failure(e).describe()
+        answer, sources = f"[harness 异常] {failure}", []
+        verdict, reason = "❌", f"harness 异常: {failure}"
         judge_method = "error"
-    return {
+    result = {
         "id": qid,
         "faction": item["faction"],
         "question": question,
@@ -681,18 +792,28 @@ def run_one(ctx, item):
         "sources": sources,
         "answer": answer,
     }
+    return apply_source_coverage(result, model, client, item, "verdict", "judge_reason",
+                                 answer_failed=judge_method == "error")
 
 
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--path", choices=["classic", "agent"], default="classic")
     ap.add_argument("--out", required=True)
+    ap.add_argument("--gold", type=Path, default=None,
+                    help="Gold JSON path (absolute or caller-relative); defaults to QA_SOURCE")
     ap.add_argument("--limit", type=int, default=None)
     ap.add_argument("--workers", type=int, default=6)
     ap.add_argument("--provider", default="DeepSeek")
     ap.add_argument("--layered", action="store_true",
                     help="分层评测：检索层/生成层两列（仅经典链）")
     args = ap.parse_args()
+
+    # Validate all selected expectations before credentials/resources, then keep
+    # this snapshot for both judging and hashing even if the file later changes.
+    gold_data, gold_source, gold_raw = _read_gold_document(args.gold)
+    questions = _project_questions(gold_data, args.limit)
+    gold_by_id = {row["id"]: row for row in gold_data["details"]}
 
     if not os.environ.get("DEEPSEEK_API_KEY"):
         raise SystemExit("缺少 DEEPSEEK_API_KEY 环境变量")
@@ -701,7 +822,6 @@ def main():
         raise SystemExit("--layered 目前仅支持 --path classic（agent 路径检索散在工具调用里，待扩展）")
 
     _, model = _PROVIDERS[args.provider]
-    questions = load_questions(args.limit)
     mode = "layered" if args.layered else args.path
     print(f"[qa_bench] mode={mode} n={len(questions)} workers={args.workers} model={model}")
 
@@ -716,6 +836,15 @@ def main():
         futs = {ex.submit(worker, ctx, q): q for q in questions}
         for fut in as_completed(futs):
             r = fut.result()
+            expectation = gold_by_id[futs[fut]["id"]]
+            # Layered results also need their actual expectations for honest
+            # historical comparisons. Contracts enter only the separate ceiling;
+            # the original factual judge/mechanical extraction receives no metadata.
+            r.update({
+                "gold": expectation["gold"], "gold_type": expectation["gold_type"],
+                "gold_metadata": {key: value for key, value in expectation.items()
+                                  if key not in ("id", "faction", "question", "gold", "gold_type")},
+            })
             with lock:
                 results.append(r)
                 done += 1
@@ -744,6 +873,17 @@ def main():
             "accuracy": round(counts["correct"] / max(counts["total"], 1) * 100, 1),
             "degraded_count": degraded_n,
             "wall_time": f"{time.time() - t_start:.1f}s",
+        }
+    summary["gold_source"] = _gold_provenance(gold_data, gold_source, gold_raw)
+    checks = [r["source_coverage_check"] for r in results if "source_coverage_check" in r]
+    if checks:
+        summary["source_coverage"] = {
+            "schema": gold_data["meta"]["source_contract_schema"],
+            "as_of": gold_data["meta"]["as_of"], "checked": len(checks),
+            "statuses": {status: sum(c["status"] == status for c in checks)
+                         for status in ("qualified", "missing", "rejected", "unverified")},
+            "full_current_body_verified": False,
+            "semantics": "Acceptance is capped by dated/source coverage; factual wrong/partial answers never upgrade.",
         }
     out = {"summary": summary, "details": results}
     Path(args.out).write_text(json.dumps(out, ensure_ascii=False, indent=2), encoding="utf-8")

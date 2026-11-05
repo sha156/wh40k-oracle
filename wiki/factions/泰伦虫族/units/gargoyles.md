@@ -5,18 +5,18 @@ name_en: Gargoyles
 faction: 泰伦虫族
 type: unit
 points:
-  10 models: 80
-  20 models: 155
+  10 models: 75
+  20 models: 150
 tags:
 - unit
 - unit/泰伦虫族
 - 泰伦虫族
 version:
-  points: MFM 2026-09-14T05:51:23.572407+00:00
+  points: MFM 2026-10-03T19:00:56.192123+00:00
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-09-14'
+updated: '2026-10-03'
 ---
 
 ## 属性表
@@ -39,8 +39,8 @@ updated: '2026-09-14'
 - **有翼虫群**：在您的射击阶段中，在该单位完成射击后，如果该单位不位于敌方单位的交战范围内，则其可以进行一次最多 6"的常规移动。如果这样做,在该回合结束前，该单位不能进行冲锋。
 
 ## 单位构成
-- **10个模型** — 80 分
-- **20个模型** — 155 分
+- **10个模型** — 75 分
+- **20个模型** — 150 分
 
 ## 关键词
 - **阵营关键词**：Tyranids

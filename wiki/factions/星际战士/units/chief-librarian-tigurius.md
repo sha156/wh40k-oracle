@@ -5,17 +5,17 @@ name_en: Chief Librarian Tigurius
 faction: 星际战士
 type: unit
 points:
-  1 model: 85
+  1 model: 115
 tags:
 - unit
 - unit/星际战士
 - 星际战士
 version:
-  points: MFM 2026-09-14T05:51:23.572407+00:00
+  points: MFM 2026-10-03T19:00:56.192123+00:00
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-09-14'
+updated: '2026-10-03'
 ---
 
 ## 属性表
@@ -44,7 +44,7 @@ updated: '2026-09-14'
 - **预言大师【灵能】**：该单位拥有隐秘技能。▪ 以该单位为目标的近战攻击的命中掷骰结果减少 1 点。▪ （每个战斗轮次，每支军队限一次）当您以该单位为目标使用反攻/警戒射击/英勇介入计谋时，那次使用计谋的 CP 消耗减少 1点。
 
 ## 单位构成
-- **1个模型** — 85 分
+- **1个模型** — 115 分
 
 ## 关键词
 - **阵营关键词**：Adeptus Astartes，Ultramarines

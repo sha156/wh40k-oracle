@@ -1,0 +1,785 @@
+{
+  "scope": "Chinese display names only; current MFM membership is not body or tournament proof",
+  "source_sha256": {
+    "db_sources/blacklibrary/units.json": "a497c85edbc0f6ada3f7492e7a743e2948d42877f7d168d3ef96d925b132fc76",
+    "db_sources/blacklibrary/details.json": "665c54c74f13b9ba29b7eb7d93df98c0b5982a9d5afd9907fede439bcf0bedbc",
+    "db_sources/blacklibrary/weapon_names_history.json": "d62eb339627ad99a650c1f60052c64b652bdebbb36a90b72f08298a9503f1fb3"
+  },
+  "recovery": {
+    "canonical": {
+      "id": "000001542",
+      "faction_id": "ORK",
+      "name_en": "Rukkatrukk Squigbuggy",
+      "name_zh": null,
+      "points_json": "{\"points\": 85, \"items\": [{\"line\": \"1\", \"desc\": \"1 model\", \"cost\": 85}, {\"line\": null, \"desc\": \"2 models\", \"cost\": 160}], \"mfm\": {\"fetched_at\": \"2026-10-03T19:00:56.192123+00:00\", \"current\": true, \"source_url\": \"https://mfm.warhammer-community.com\", \"tiers\": [{\"tier\": \"YOUR UNIT COSTS\", \"models\": \"1 model\", \"cost\": 85}, {\"tier\": \"YOUR UNIT COSTS\", \"models\": \"2 models\", \"cost\": 160}]}}",
+      "keywords_json": "{\"keywords\": [\"Rukkatrukk Squigbuggy\", \"Speed Freeks\", \"Vehicle\"], \"faction_keywords\": [\"Orks\"]}",
+      "version": null
+    },
+    "record": {
+      "id": 464,
+      "faction_zh": "欧克蛮人",
+      "name_zh": "跳跳送餐车",
+      "name_en": "RUKKATRUKK SQUIGBUGGY",
+      "score": 85,
+      "detail": {
+        "属性": [
+          {
+            "unitName": "跳跳送餐车",
+            "m": "12",
+            "t": "7",
+            "sv": "4",
+            "w": "9",
+            "ld": "7",
+            "oc": "3",
+            "unitBase": "150x95mm"
+          },
+          {
+            "unitName": "",
+            "m": 0,
+            "t": 0,
+            "sv": 0,
+            "w": 0,
+            "ld": 0,
+            "oc": 0
+          }
+        ],
+        "简介": [
+          {
+            "type": "text",
+            "content": [
+              {
+                "text": "阵营关键词",
+                "style": ""
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "content": [
+              {
+                "text": "兽人",
+                "style": ""
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "content": [
+              {
+                "text": "关键词",
+                "style": ""
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "content": [
+              {
+                "text": "载具",
+                "style": "display:inline-flex;height:28px;align-items:center;padding:0 14px;border-radius:5px;background:#eeeeee;font-weight:500;font-size:14px;color:#222222;"
+              },
+              {
+                "text": "飚速怪咖",
+                "style": "display:inline-flex;height:28px;align-items:center;padding:0 14px;border-radius:5px;background:#eeeeee;font-weight:500;font-size:14px;color:#222222;"
+              },
+              {
+                "text": "跳跳送餐车",
+                "style": "display:inline-flex;height:28px;align-items:center;padding:0 14px;border-radius:5px;background:#eeeeee;font-weight:500;font-size:14px;color:#222222;"
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "content": [
+              {
+                "text": "单位构成",
+                "style": ""
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "content": [
+              {
+                "text": "一台跳跳送餐车，85分",
+                "style": ""
+              }
+            ]
+          }
+        ],
+        "skill": [
+          {
+            "text": "特殊保护",
+            "value": "6"
+          },
+          {
+            "text": "致命破灭",
+            "value": "1"
+          }
+        ],
+        "能力": [
+          {
+            "id": 1992,
+            "name": "【阵营技能】:WAAAGH!"
+          },
+          {
+            "id": 1993,
+            "name": "跳跳围攻",
+            "content": [
+              {
+                "type": "text",
+                "content": [
+                  {
+                    "text": "在你的射击阶段中，本模型射击完成后，选择一个被本模型本阶段使用跳跳发射器攻击命中过的一个敌方单位（不能是巨兽或载具）,然后投D6,4+则直到对手的下个回合结束时，那个敌方单位M,加速，冲锋投掷结果都-2（多个本技能不累计）",
+                    "style": ""
+                  }
+                ]
+              }
+            ],
+            "contentHtml": "<p>在你的射击阶段中，本模型射击完成后，选择一个被本模型本阶段使用跳跳发射器攻击命中过的一个敌方单位（不能是巨兽或载具）,然后投D6,4+则直到对手的下个回合结束时，那个敌方单位M,加速，冲锋投掷结果都-2（多个本技能不累计）</p>"
+          },
+          {
+            "id": 1994,
+            "name": "跳跳雷",
+            "content": [
+              {
+                "type": "text",
+                "content": [
+                  {
+                    "text": "一次性技能，在任意阶段开始时，选择本模型3寸内一个敌方单位并为其投D6,4+则那个单位遭受D6点致命伤害",
+                    "style": ""
+                  }
+                ]
+              }
+            ],
+            "contentHtml": "<p>一次性技能，在任意阶段开始时，选择本模型3寸内一个敌方单位并为其投D6,4+则那个单位遭受D6点致命伤害</p>"
+          }
+        ],
+        "射击武器": [
+          {
+            "name": "锯断霞弹枪",
+            "skill": [
+              "突击"
+            ],
+            "射程": "12",
+            "攻击次数": "2",
+            "命中": "5+",
+            "造伤": "4",
+            "破甲": "0",
+            "伤害": "1"
+          },
+          {
+            "name": "跳跳发射器",
+            "skill": [
+              "爆炸",
+              "无视掩体",
+              "曲射"
+            ],
+            "射程": "36",
+            "攻击次数": "D6+6",
+            "命中": "5+",
+            "造伤": "5",
+            "破甲": "-1",
+            "伤害": "2"
+          }
+        ],
+        "近战武器": [
+          {
+            "name": "锯片刀",
+            "skill": [],
+            "射程": "近战",
+            "攻击次数": "4",
+            "命中": "4+",
+            "造伤": "7",
+            "破甲": "-1",
+            "伤害": "2"
+          }
+        ],
+        "军表构成": [
+          {
+            "type": "text",
+            "content": [
+              {
+                "text": "单位装备",
+                "style": ""
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "content": [
+              {
+                "text": "锯断霰弹枪，跳跳发射器，锯片刀",
+                "style": ""
+              }
+            ]
+          }
+        ],
+        "简介Html": "<p>阵营关键词</p><p>兽人</p><p>关键词</p><p><span data-w-e-type=\"myTag\" data-w-e-text=\"载具\">载具</span> <span data-w-e-type=\"myTag\" data-w-e-text=\"飚速怪咖\">飚速怪咖</span> <span data-w-e-type=\"myTag\" data-w-e-text=\"跳跳送餐车\">跳跳送餐车</span></p><p>单位构成</p><p>一台跳跳送餐车，85分</p>",
+        "军表构成Html": "<p>单位装备</p><p>锯断霰弹枪，跳跳发射器，锯片刀</p>"
+      },
+      "provenance": {
+        "status": "retained_previous_cache",
+        "snapshot": "20260926-resume",
+        "reason": "absent_from_inventory",
+        "authority": "third_party_community_source",
+        "previous": null
+      }
+    },
+    "new_inventory": {
+      "armyId": null,
+      "basePrice": null,
+      "baseType": null,
+      "cateType": null,
+      "control": null,
+      "createTime": null,
+      "detailPic": "https://homechargesmall-dev.liaoqianapp.com/stationFile/20260904113303226468876949.jpg",
+      "detailPicFrom": "",
+      "detailPicType": 1,
+      "gameId": 2,
+      "gameName": "战锤40k",
+      "goodIcon": "https://homechargesmall-dev.liaoqianapp.com/stationFile/202609041125335638961709926.jpg",
+      "goodIds": "",
+      "goodStatus": null,
+      "goodTags": "",
+      "goodType": "",
+      "hasRule": 1,
+      "health": null,
+      "icon": "",
+      "id": 2984,
+      "infoType": 4,
+      "intro": "",
+      "introduction": "",
+      "keywords": "",
+      "ldNum": null,
+      "managerUserId": null,
+      "move": null,
+      "nickname": "",
+      "pinLog": "",
+      "platKeywords": "",
+      "powerDTOS": [],
+      "saleType": null,
+      "saveNum": null,
+      "status": null,
+      "subName": "",
+      "svNum": null,
+      "topImgVOS": [],
+      "topName": "欧克蛮人",
+      "unitDetail": "",
+      "unitEnglishName": "RUKKATRUKK SQUIGBUGGIES",
+      "unitName": "跳跳越野战车",
+      "unitScore": 125,
+      "userHead": "",
+      "userId": null,
+      "users": [],
+      "videoPath": "",
+      "weapons": ""
+    }
+  },
+  "fallback_unit": {
+    "id": "000002702",
+    "faction_id": "SM",
+    "name_en": "Captain on Bike",
+    "name_zh": "摩托连长",
+    "keywords_json": "{\"keywords\": [\"Ravenwing\", \"Captain\", \"Imperium\", \"Grenades\", \"Character\", \"Mounted\"], \"faction_keywords\": [\"Adeptus Astartes\"]}"
+  },
+  "fallback_units": [
+    {
+      "id": "000001542",
+      "faction_id": "ORK",
+      "name_en": "Rukkatrukk Squigbuggy",
+      "name_zh": null
+    }
+  ],
+  "fallback_weapons": [
+    {
+      "id": "000002702_w4",
+      "unit_id": "000002702",
+      "name_zh": null,
+      "name_en": "Hand flamer",
+      "range": "12",
+      "a": "D6",
+      "bs_ws": "N/A",
+      "s": "3",
+      "ap": "0",
+      "d": "1",
+      "keywords_json": "[\"ignores cover, pistol, torrent\"]",
+      "faction_id": "SM",
+      "unit_name_en": "Captain on Bike",
+      "unit_name_zh": "摩托连长"
+    },
+    {
+      "id": "000002702_w9",
+      "unit_id": "000002702",
+      "name_zh": null,
+      "name_en": "Twin boltgun",
+      "range": "24",
+      "a": "2",
+      "bs_ws": "2",
+      "s": "4",
+      "ap": "0",
+      "d": "1",
+      "keywords_json": "[\"twin-linked\"]",
+      "faction_id": "SM",
+      "unit_name_en": "Captain on Bike",
+      "unit_name_zh": "摩托连长"
+    }
+  ],
+  "source_evidence": {
+    "inventory": {
+      "armyId": null,
+      "basePrice": null,
+      "baseType": null,
+      "cateType": null,
+      "control": null,
+      "createTime": null,
+      "detailPic": "https://black-sources.czmakj.com/20261002163019336117122752.jpg",
+      "detailPicFrom": "",
+      "detailPicType": 1,
+      "gameId": 2,
+      "gameName": "战锤40k",
+      "goodIcon": "https://black-sources.czmakj.com/20261002163019336117122752.jpg",
+      "goodIds": "",
+      "goodStatus": null,
+      "goodTags": "",
+      "goodType": "",
+      "hasRule": 1,
+      "health": null,
+      "icon": "",
+      "id": 3030,
+      "infoType": 1,
+      "intro": "",
+      "introduction": "",
+      "keywords": "",
+      "ldNum": null,
+      "managerUserId": null,
+      "move": null,
+      "nickname": "",
+      "pinLog": "",
+      "platKeywords": "",
+      "powerDTOS": [],
+      "saleType": null,
+      "saveNum": null,
+      "status": null,
+      "subName": "",
+      "svNum": null,
+      "topImgVOS": [],
+      "topName": "星际战士",
+      "unitDetail": "",
+      "unitEnglishName": "CAPTAIN ON BIKE",
+      "unitName": "摩托连长",
+      "unitScore": 110,
+      "userHead": "",
+      "userId": null,
+      "users": [],
+      "videoPath": "",
+      "weapons": ""
+    },
+    "details_ids": [],
+    "history_weapon_ids": [],
+    "hand_flame_names": [
+      "喷火手枪",
+      "手持喷火器"
+    ],
+    "hand_flame_rows": [
+      {
+        "id": "000000083_w1",
+        "unit_id": "000000083",
+        "name_zh": "喷火手枪",
+        "name_en": "Hand flamer",
+        "range": "12",
+        "a": "D6",
+        "bs_ws": "N/A",
+        "s": "3",
+        "ap": "0",
+        "d": "1",
+        "keywords_json": "[\"ignores cover, pistol, torrent\"]",
+        "faction_id": "SM",
+        "unit_name_en": "Captain With Jump Pack"
+      },
+      {
+        "id": "000000112_w5",
+        "unit_id": "000000112",
+        "name_zh": "喷火手枪",
+        "name_en": "Hand flamer",
+        "range": "12",
+        "a": "D6",
+        "bs_ws": "N/A",
+        "s": "3",
+        "ap": "0",
+        "d": "1",
+        "keywords_json": "[\"ignores cover, pistol, torrent\"]",
+        "faction_id": "SM",
+        "unit_name_en": "Chaplain With Jump Pack"
+      },
+      {
+        "id": "000000147_w3",
+        "unit_id": "000000147",
+        "name_zh": "喷火手枪",
+        "name_en": "Hand flamer",
+        "range": "12",
+        "a": "D6",
+        "bs_ws": "N/A",
+        "s": "3",
+        "ap": "0",
+        "d": "1",
+        "keywords_json": "[\"ignores cover, pistol, torrent\"]",
+        "faction_id": "SM",
+        "unit_name_en": "Vanguard Veteran Squad With Jump Packs"
+      },
+      {
+        "id": "000000513_w2",
+        "unit_id": "000000513",
+        "name_zh": "喷火手枪",
+        "name_en": "Hand flamer",
+        "range": "12",
+        "a": "D6",
+        "bs_ws": "N/A",
+        "s": "3",
+        "ap": "0",
+        "d": "1",
+        "keywords_json": "[\"ignores cover, pistol, torrent\"]",
+        "faction_id": "GC",
+        "unit_name_en": "Hybrid Metamorphs"
+      },
+      {
+        "id": "000001157_w5",
+        "unit_id": "000001157",
+        "name_zh": "喷火手枪",
+        "name_en": "Hand flamer",
+        "range": "12",
+        "a": "D6",
+        "bs_ws": "N/A",
+        "s": "3",
+        "ap": "0",
+        "d": "1",
+        "keywords_json": "[\"ignores cover, pistol, torrent\"]",
+        "faction_id": "SM",
+        "unit_name_en": "Intercessor Squad"
+      },
+      {
+        "id": "000001606_w1",
+        "unit_id": "000001606",
+        "name_zh": "喷火手枪",
+        "name_en": "Hand flamer",
+        "range": "12",
+        "a": "D6",
+        "bs_ws": "N/A",
+        "s": "3",
+        "ap": "0",
+        "d": "1",
+        "keywords_json": "[\"ignores cover, pistol, torrent\"]",
+        "faction_id": "SM",
+        "unit_name_en": "Assault Intercessor Squad"
+      },
+      {
+        "id": "000001997_w1",
+        "unit_id": "000001997",
+        "name_zh": "手持喷火器",
+        "name_en": "Hand flamer",
+        "range": "12",
+        "a": "D6",
+        "bs_ws": "N/A",
+        "s": "3",
+        "ap": "0",
+        "d": "1",
+        "keywords_json": "[\"ignores cover, pistol, torrent\"]",
+        "faction_id": "SM",
+        "unit_name_en": "Death Company Marines"
+      },
+      {
+        "id": "000002285_w5",
+        "unit_id": "000002285",
+        "name_zh": "手持喷火器",
+        "name_en": "Hand flamer",
+        "range": "12",
+        "a": "D6",
+        "bs_ws": "N/A",
+        "s": "3",
+        "ap": "0",
+        "d": "1",
+        "keywords_json": "[\"ignores cover, pistol, torrent\"]",
+        "faction_id": "SM",
+        "unit_name_en": "Death Company Marines with Bolt Rifles"
+      },
+      {
+        "id": "000002737_w1",
+        "unit_id": "000002737",
+        "name_zh": "手持喷火器",
+        "name_en": "Hand flamer",
+        "range": "12",
+        "a": "D6",
+        "bs_ws": "N/A",
+        "s": "3",
+        "ap": "0",
+        "d": "1",
+        "keywords_json": "[\"ignores cover, pistol, torrent\"]",
+        "faction_id": "SM",
+        "unit_name_en": "Death Company Marines With Jump Packs"
+      },
+      {
+        "id": "000002776_w1",
+        "unit_id": "000002776",
+        "name_zh": "喷火手枪",
+        "name_en": "Hand flamer",
+        "range": "12",
+        "a": "D6",
+        "bs_ws": "N/A",
+        "s": "3",
+        "ap": "0",
+        "d": "1",
+        "keywords_json": "[\"IGNORES COVER, PISTOL, TORRENT\"]",
+        "faction_id": "SM",
+        "unit_name_en": "Assault Intercessors With Jump Packs"
+      },
+      {
+        "id": "000002780_w6",
+        "unit_id": "000002780",
+        "name_zh": "喷火手枪",
+        "name_en": "Hand flamer",
+        "range": "12",
+        "a": "D6",
+        "bs_ws": "N/A",
+        "s": "3",
+        "ap": "0",
+        "d": "1",
+        "keywords_json": "[\"ignores cover, pistol, torrent\"]",
+        "faction_id": "SM",
+        "unit_name_en": "Fortis Kill Team"
+      },
+      {
+        "id": "000003716_w2",
+        "unit_id": "000003716",
+        "name_zh": "喷火手枪",
+        "name_en": "Hand flamer",
+        "range": "12",
+        "a": "D6",
+        "bs_ws": "N/A",
+        "s": "3",
+        "ap": "0",
+        "d": "1",
+        "keywords_json": "[\"ignores cover, pistol, torrent\"]",
+        "faction_id": "GC",
+        "unit_name_en": "Acolyte Hybrids With Hand Flamers"
+      },
+      {
+        "id": "000003825_w3",
+        "unit_id": "000003825",
+        "name_zh": "喷火手枪",
+        "name_en": "Hand flamer",
+        "range": "12",
+        "a": "D6",
+        "bs_ws": "N/A",
+        "s": "3",
+        "ap": "0",
+        "d": "1",
+        "keywords_json": "[\"ignores cover, pistol, torrent\"]",
+        "faction_id": "AoI",
+        "unit_name_en": "Fortis Kill Team"
+      },
+      {
+        "id": "000003833_w1",
+        "unit_id": "000003833",
+        "name_zh": "喷火手枪",
+        "name_en": "Hand flamer",
+        "range": "12",
+        "a": "D6",
+        "bs_ws": "N/A",
+        "s": "3",
+        "ap": "0",
+        "d": "1",
+        "keywords_json": "[\"ignores cover, pistol, torrent\"]",
+        "faction_id": "SM",
+        "unit_name_en": "Death Company Captain with Jump Pack"
+      },
+      {
+        "id": "000003836_w3",
+        "unit_id": "000003836",
+        "name_zh": "手持喷火器",
+        "name_en": "Hand flamer",
+        "range": "12",
+        "a": "D6",
+        "bs_ws": "N/A",
+        "s": "3",
+        "ap": "0",
+        "d": "1",
+        "keywords_json": "[\"ignores cover, pistol, torrent\"]",
+        "faction_id": "SM",
+        "unit_name_en": "Death Company Marines with Boltguns"
+      },
+      {
+        "id": "000003874_w2",
+        "unit_id": "000003874",
+        "name_zh": "喷火手枪",
+        "name_en": "Hand flamer",
+        "range": "12",
+        "a": "D6",
+        "bs_ws": "N/A",
+        "s": "3",
+        "ap": "0",
+        "d": "1",
+        "keywords_json": "[\"ignores cover, pistol, torrent\"]",
+        "faction_id": "SM",
+        "unit_name_en": "Talonstrike Kill Team"
+      },
+      {
+        "id": "000003893_w5",
+        "unit_id": "000003893",
+        "name_zh": "喷火手枪",
+        "name_en": "Hand flamer",
+        "range": "12",
+        "a": "D6",
+        "bs_ws": "N/A",
+        "s": "3",
+        "ap": "0",
+        "d": "1",
+        "keywords_json": "[\"ignores cover, pistol, torrent\"]",
+        "faction_id": "AM",
+        "unit_name_en": "Krieg Combat Engineers"
+      },
+      {
+        "id": "000003977_w1",
+        "unit_id": "000003977",
+        "name_zh": "喷火手枪",
+        "name_en": "Hand flamer",
+        "range": "12",
+        "a": "D6",
+        "bs_ws": "N/A",
+        "s": "3",
+        "ap": "0",
+        "d": "1",
+        "keywords_json": "[\"ignores cover, pistol, torrent\"]",
+        "faction_id": "GC",
+        "unit_name_en": "Krieg Combat Engineers"
+      },
+      {
+        "id": "000004191_w3",
+        "unit_id": "000004191",
+        "name_zh": "喷火手枪",
+        "name_en": "Hand flamer",
+        "range": "12",
+        "a": "D6",
+        "bs_ws": "N/A",
+        "s": "3",
+        "ap": "0",
+        "d": "1",
+        "keywords_json": "[\"ignores cover, pistol, torrent\"]",
+        "faction_id": "CSM",
+        "unit_name_en": "Red Corsairs Raiders"
+      }
+    ],
+    "literal_twin_boltgun_details_ids": [],
+    "listing_policy_sha256": "37b52cf122278a243951e9229f2a16365ff2e0e450a5b611dddf571f1dc2e864"
+  },
+  "name_recovery_decision": "Decision C unanswered (2026-11-03): the narrow empty-cell restore guard is not merged. These accepted source identities are retained as pending evidence; units.name_zh stays at 'before'. Approving C applies the saved guard patch and flips these to 'after'.",
+  "pending_name_recoveries": [
+    {
+      "canonical_id": "000000019",
+      "faction_id": "ORK",
+      "canonical_name_en": "Burna Boyz",
+      "before": null,
+      "after": "烧烤小子",
+      "source_id": "405",
+      "source_name_en": "BURNA BOYZ",
+      "source_faction_zh": "欧克蛮人",
+      "source_record_sha256": "e8b2e84ea0d1ba54c65f140e45bf439e1763ae1228b40f37cdbe6acdfd0e1849",
+      "current": false
+    },
+    {
+      "canonical_id": "000000044",
+      "faction_id": "ORK",
+      "canonical_name_en": "Lootas",
+      "before": null,
+      "after": "拾荒小子",
+      "source_id": "420",
+      "source_name_en": "LOOTAS",
+      "source_faction_zh": "欧克蛮人",
+      "source_record_sha256": "b118b75893f0cac9271e9d10309db50c24c57b5b3e8a2717df82ee3b53d0e8e6",
+      "current": false
+    },
+    {
+      "canonical_id": "000001538",
+      "faction_id": "ORK",
+      "canonical_name_en": "Kustom Boosta-blasta",
+      "before": null,
+      "after": "魔改爆裂车",
+      "source_id": "462",
+      "source_name_en": "KUSTOM BOOSTA-BLASTA",
+      "source_faction_zh": "欧克蛮人",
+      "source_record_sha256": "b501bb2fe0510076ff7ff34038d3d6b2dc1dc83f7e3b589b0d44492a204a9bf4",
+      "current": false
+    },
+    {
+      "canonical_id": "000001539",
+      "faction_id": "ORK",
+      "canonical_name_en": "Shokkjump Dragsta",
+      "before": null,
+      "after": "折跃飚速车",
+      "source_id": "465",
+      "source_name_en": "SHOKKJUMP DRAGSTA",
+      "source_faction_zh": "欧克蛮人",
+      "source_record_sha256": "b19706651794255b0efe67e1c793a3ee048640c171fcddeb35b89c01177a2752",
+      "current": false
+    },
+    {
+      "canonical_id": "000001540",
+      "faction_id": "ORK",
+      "canonical_name_en": "Boomdakka Snazzwagon",
+      "before": null,
+      "after": "爆裂靓车",
+      "source_id": "461",
+      "source_name_en": "Boomdakka Snazzwagon",
+      "source_faction_zh": "欧克蛮人",
+      "source_record_sha256": "40bc95e975f8649e3cb62db8624bfe514cddec7e36cdde364a1d7e3c5df52d44",
+      "current": false
+    },
+    {
+      "canonical_id": "000001541",
+      "faction_id": "ORK",
+      "canonical_name_en": "Megatrakk Scrapjet",
+      "before": null,
+      "after": "超霸拖垃圾",
+      "source_id": "463",
+      "source_name_en": "MEGATRAKK SCRAPJET",
+      "source_faction_zh": "欧克蛮人",
+      "source_record_sha256": "f5cfe759cb0339359c996198481810dda6b1a9d14f0d4869cf82120ad7875352",
+      "current": false
+    },
+    {
+      "canonical_id": "000001542",
+      "faction_id": "ORK",
+      "canonical_name_en": "Rukkatrukk Squigbuggy",
+      "before": null,
+      "after": "跳跳送餐车",
+      "source_id": "464",
+      "source_name_en": "RUKKATRUKK SQUIGBUGGY",
+      "source_faction_zh": "欧克蛮人",
+      "source_record_sha256": "54dbea7478a2f0c350f8344a2affaa2bb73ab801a0492b8a2ad105f4f2b4a6fa",
+      "current": true
+    },
+    {
+      "canonical_id": "000000103",
+      "faction_id": "SM",
+      "canonical_name_en": "Eradicator Squad",
+      "before": null,
+      "after": "根除者小队",
+      "source_id": "68",
+      "source_name_en": "ERADICATOR SQUAD",
+      "source_faction_zh": "星际战士",
+      "source_record_sha256": "5b52c0b01814992174b4a0446305b789e66619d1a20aba0678028e5b24a7bde8",
+      "current": false
+    },
+    {
+      "canonical_id": "000002285",
+      "faction_id": "SM",
+      "canonical_name_en": "Death Company Marines with Bolt Rifles",
+      "before": null,
+      "after": "装备爆弹步枪的死亡连小队",
+      "source_id": "480",
+      "source_name_en": "Death Company Marines With Bolt Rifles",
+      "source_faction_zh": "圣血天使",
+      "source_record_sha256": "f8e0c1dd55de03b0dce69b3ce9a3068ee934f1337a1faeb724a21397f0810508",
+      "current": false
+    }
+  ]
+}

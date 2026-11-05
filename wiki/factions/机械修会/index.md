@@ -20,6 +20,7 @@
 
 - [[factions/机械修会/units/secutarii-hoplites|Secutarii Hoplites]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - [[factions/机械修会/units/secutarii-peltasts|Secutarii Peltasts]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/机械修会/units/servitors|Servitors]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - [[factions/机械修会/units/terrax-pattern-termite|Terrax-pattern Termite]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - [[factions/机械修会/units/x-101|X-101]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - [[factions/机械修会/units/kastelan-robots|卡斯特兰机器人]]
@@ -29,7 +30,6 @@
 - [[factions/机械修会/units/serberys-raiders|塞波利斯掠夺者]]
 - [[factions/机械修会/units/serberys-sulphurhounds|塞波利斯硫磺猎手]]
 - [[factions/机械修会/units/skorpius-disintegrator|天蝎座粉碎者坦克]]
-- [[factions/机械修会/units/servitors|奴工【传奇】]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - [[factions/机械修会/units/servitor-battleclade|奴工战斗支队]]
 - [[factions/机械修会/units/archaeopter-stratoraptor|始祖鸟层云猛禽]]
 - [[factions/机械修会/units/archaeopter-fusilave|始祖鸟燧火轰炸机]]

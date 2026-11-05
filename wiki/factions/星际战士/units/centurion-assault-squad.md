@@ -1,22 +1,19 @@
 ---
 id: '000002703'
-name_zh: 百夫长突击小队
+name_zh: 百夫长突击小队（即将传奇）
 name_en: Centurion Assault Squad
 faction: 星际战士
 type: unit
-points:
-  3 models: 150
-  6 models: 300
 tags:
 - unit
 - unit/星际战士
 - 星际战士
 version:
-  points: MFM 2026-09-14T05:51:23.572407+00:00
+  points: historical / unmatched
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-09-14'
+updated: '2026-10-03'
 ---
 
 ## 属性表
@@ -42,6 +39,7 @@ updated: '2026-09-14'
 - **百夫长榴弹发射器【武器技能】**：装备者获得手雷关键词
 
 ## 单位构成
+历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - **3个模型** — 150 分
 - **6个模型** — 300 分
 

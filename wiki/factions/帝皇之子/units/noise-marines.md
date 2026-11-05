@@ -5,17 +5,17 @@ name_en: Noise Marines
 faction: 帝皇之子
 type: unit
 points:
-  6 models: 145
+  6 models: 160
 tags:
 - unit
 - unit/帝皇之子
 - 帝皇之子
 version:
-  points: MFM 2026-09-14T05:51:23.572407+00:00
+  points: MFM 2026-10-03T19:00:56.192123+00:00
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-09-14'
+updated: '2026-10-03'
 ---
 
 ## 属性表
@@ -41,7 +41,7 @@ updated: '2026-09-14'
 - **Terrifying Crescendo**：In your Shooting phase, after this unit has shot, select one enemy unit hit by one or more of those attacks. Until the start of your next Shooting phase, each time a Battle-shock or Leadership test is taken for that enemy unit, subtract 1 from that test.
 
 ## 单位构成
-- **6个模型** — 145 分
+- **6个模型** — 160 分
 
 ## 关键词
 - **阵营关键词**：Emperor’s Children

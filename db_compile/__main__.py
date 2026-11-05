@@ -157,8 +157,13 @@ def main() -> None:
             # 防呆：build 清库会覆盖官方分/别名/中文层，自动用本地缓存补回，避免留下降级库。
             print("\n重建完成，自动补回官方分数/别名/中文层（本地缓存，离线）…")
             from db_compile.update import UpdateConfig, restore_authority_layers
-            restore_authority_layers(UpdateConfig(
+            restoration = restore_authority_layers(UpdateConfig(
                 db=Path(args.db), csv_dir=Path(args.csv_dir), terms=Path(args.terms)))
+            if not restoration.ok:
+                failures = ", ".join(stage.name for stage in restoration.stages if not stage.ok)
+                print(f"Required restoration failed: {restoration.aborted_at or failures}. "
+                      "Build is unsuccessful; the target may contain earlier committed stages.")
+                raise SystemExit(1)
     elif args.cmd == "migrate":
         import sqlite3
 

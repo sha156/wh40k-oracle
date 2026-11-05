@@ -1,22 +1,19 @@
 ---
 id: '000002202'
-name_zh: 破坏者小队
+name_zh: 破坏者小队（即将传奇）
 name_en: Devastator Squad
 faction: 星际战士
 type: unit
-points:
-  5 models: 120
-  10 models: 200
 tags:
 - unit
 - unit/星际战士
 - 星际战士
 version:
-  points: MFM 2026-09-14T05:51:23.572407+00:00
+  points: historical / unmatched
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-09-14'
+updated: '2026-10-03'
 ---
 
 ## 属性表
@@ -58,6 +55,7 @@ updated: '2026-09-14'
 - **弹药天使**：一次性技能，在为本单位一个模型投掷一颗命中结果后，你可以选择将其改为未修正的 6。（弹药天使的模型是标记物，并不是你军队的一部分，使用后将其移除）
 
 ## 单位构成
+历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - **5个模型** — 120 分
 - **10个模型** — 200 分
 

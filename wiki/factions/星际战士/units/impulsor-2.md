@@ -11,7 +11,7 @@ tags:
 - unit/星际战士
 - 星际战士
 version:
-  points: MFM 2026-09-14T05:51:23.572407+00:00
+  points: MFM 2026-10-03T19:00:56.192123+00:00
   source: official-db
 sources:
 - book: https://assets.warhammer-community.com/eng_wh40k_faction_pack_space_marines-kxoxqpsahz-u0lzirv0zl.pdf
@@ -20,7 +20,7 @@ sources:
 - book: https://assets.warhammer-community.com/eng_22-07_warhammer_40,000_faction_pack_black_templars-inz7wljsdy-badlygdtjm.pdf
   pages:
   - 5
-updated: '2026-09-14'
+updated: '2026-10-03'
 ---
 
 ## 属性表
@@ -46,8 +46,9 @@ updated: '2026-09-14'
 | 装甲车体    | 近战 | 3 | 4+ | 6 | 0 | 1 | — |
 
 ## 技能
-- **【阵营技能】：破敌重誓**
-- **快速脱离**：本模型即使本回合进行过加速，其乘客依然可以脱离，这样脱离的单位算作进行过标准移动，但本回合不能发动冲锋
+- **Assault Vehicle**：Units can disembark from this <span class="kwb">TRANSPORT</span> after it has Advanced. Units that do so count as having made a Normal move, and cannot declare a charge that turn.
+- **Orbital Comms Array (Aura)**：While a friendly <span class="kwb">ADEPTUS</span> <span class="kwb">ASTARTES</span> unit is within 6" of the bearer, each time you target that unit with a Stratagem, roll one D6: on a 5+, you gain 1CP.
+- **Shield Dome**：The bearer has a 5+ invulnerable save.
 
 ## 单位构成
 - **1个模型** — 70 分

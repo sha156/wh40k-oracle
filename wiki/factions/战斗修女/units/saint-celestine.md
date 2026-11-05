@@ -5,19 +5,19 @@ name_en: Saint Celestine
 faction: 战斗修女
 type: unit
 points:
-  3 models: 150
+  3 models: 135
 tags:
 - unit
 - unit/战斗修女
 - 战斗修女
 version:
-  points: MFM 2026-09-14T05:51:23.572407+00:00
+  points: MFM 2026-10-03T19:00:56.192123+00:00
   source: official-db
 sources:
 - book: https://assets.warhammer-community.com/eng_wh40k_faction_pack_adepta_sororitas-zs0bbbnpdp-ey2x8mavkr.pdf
   pages:
   - 14
-updated: '2026-09-14'
+updated: '2026-10-03'
 ---
 
 ## 属性表
@@ -47,7 +47,7 @@ updated: '2026-09-14'
 - **Miraculous Intervention**：The first time this unit’s Celestine model is destroyed, roll one D6 at the end of the phase. On a 2+, set that Celestine model back up on the battlefield, as close as possible to where it was destroyed and not within Engagement Range of any enemy units, with its full wounds remaining.
 
 ## 单位构成
-- **3个模型** — 150 分
+- **3个模型** — 135 分
 
 ## 关键词
 - **阵营关键词**：Adepta Sororitas

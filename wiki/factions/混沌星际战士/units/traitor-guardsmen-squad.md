@@ -5,17 +5,17 @@ name_en: Traitor Guardsmen Squad
 faction: 混沌星际战士
 type: unit
 points:
-  10 models: 70
+  10 models: 65
 tags:
 - unit
 - unit/混沌星际战士
 - 混沌星际战士
 version:
-  points: MFM 2026-09-14T05:51:23.572407+00:00
+  points: MFM 2026-10-03T19:00:56.192123+00:00
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-09-14'
+updated: '2026-10-03'
 ---
 
 ## 属性表
@@ -49,7 +49,7 @@ updated: '2026-09-14'
 - **堕落守军**：在该单位处于一个目标的范围内时，该单位拥有针对远程攻击的 +1 SV。
 
 ## 单位构成
-- **10个模型** — 70 分
+- **10个模型** — 65 分
 
 ## 关键词
 - **阵营关键词**：Heretic Astartes

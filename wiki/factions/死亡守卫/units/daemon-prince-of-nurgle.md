@@ -5,17 +5,17 @@ name_en: Daemon Prince of Nurgle
 faction: 死亡守卫
 type: unit
 points:
-  1 model: 195
+  1 model: 185
 tags:
 - unit
 - unit/死亡守卫
 - 死亡守卫
 version:
-  points: MFM 2026-09-14T05:51:23.572407+00:00
+  points: MFM 2026-10-03T19:00:56.192123+00:00
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-09-14'
+updated: '2026-10-03'
 ---
 
 ## 属性表
@@ -43,7 +43,7 @@ updated: '2026-09-14'
 - **Miasma of Pestilence (Aura)**：While a friendly Death Guard unit is within 6" of this model, each time a ranged attack targets that unit, models in that unit have the Benefit of Cover against that attack.
 
 ## 单位构成
-- **1个模型** — 195 分
+- **1个模型** — 185 分
 
 ## 关键词
 - **阵营关键词**：Death Guard

@@ -1,6 +1,6 @@
 ---
 id: '000001367'
-name_zh: 瘟疫散播者
+name_zh: 恶臭病原体
 name_en: Foul Blightspawn
 faction: 死亡守卫
 type: unit
@@ -11,11 +11,11 @@ tags:
 - unit/死亡守卫
 - 死亡守卫
 version:
-  points: MFM 2026-09-14T05:51:23.572407+00:00
+  points: MFM 2026-10-03T19:00:56.192123+00:00
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-09-14'
+updated: '2026-10-03'
 ---
 
 ## 属性表
@@ -34,8 +34,9 @@ updated: '2026-09-14'
 | 格斗武器 | 近战 | 4 | 3+ | 4 | 0 | 1 | — |
 
 ## 技能
-- **Blinding Spray**：In the Fight phase, you can select one model from your army with this ability to use this ability. If you do, until the end of the phase, that model’s unit has the Fights First ability. Each model can only be selected for this ability once per battle.
-- **Putrefying Stink**：Enemy models cannot start or end an Advance move within 9" of this model.
+- **【阵营技能】：纳垢赐福【光环】**
+- **致盲毒雾**：在近战阶段，你可以选择你军队中的一个具有此能力的模型使用此能力。在该回合结束前，其领导的单位获得先攻每场战斗每个具有此能力的模型限使用一次本能力
+- **腐臭恶气**：敌方单位无法在该模型的 9 寸内开 始或结束加速移动
 
 ## 单位构成
 - **1个模型** — 60 分

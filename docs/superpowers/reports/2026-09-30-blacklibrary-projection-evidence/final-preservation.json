@@ -1,0 +1,82 @@
+{
+  "source_caches_unchanged": {
+    "db_sources/blacklibrary/details.json": true,
+    "db_sources/blacklibrary/units.json": true,
+    "db_sources/blacklibrary/aliases_history.json": true,
+    "db_sources/blacklibrary/weapon_names_history.json": true
+  },
+  "tables_unchanged": {
+    "abilities": {
+      "rows": 4041,
+      "identical": true
+    },
+    "aliases": {
+      "rows": 1685,
+      "identical": true
+    },
+    "datasheets": {
+      "rows": 1721,
+      "identical": true
+    },
+    "detachment_names_zh": {
+      "rows": 123,
+      "identical": true
+    },
+    "detachments": {
+      "rows": 349,
+      "identical": true
+    },
+    "enhancements": {
+      "rows": 1066,
+      "identical": true
+    },
+    "factions": {
+      "rows": 26,
+      "identical": true
+    },
+    "models": {
+      "rows": 1826,
+      "identical": true
+    },
+    "official_mfm_detachments": {
+      "rows": 348,
+      "identical": true
+    },
+    "official_mfm_points": {
+      "rows": 3893,
+      "identical": true
+    },
+    "official_rule_revisions": {
+      "rows": 18,
+      "identical": true
+    },
+    "official_unit_sources": {
+      "rows": 272,
+      "identical": true
+    },
+    "source_archived_units": {
+      "rows": 2,
+      "identical": true
+    },
+    "stratagems": {
+      "rows": 1684,
+      "identical": true
+    },
+    "units": {
+      "rows": 1721,
+      "identical": true
+    },
+    "weapons": {
+      "rows": 9337,
+      "identical": true
+    },
+    "zh_keyword_glossary": {
+      "rows": 87,
+      "identical": true
+    }
+  },
+  "non_blacklibrary_docs_vectors_preserved": 4777,
+  "index_before": 5910,
+  "index_after": 5905,
+  "current_db_sha256": "af4c651da438d1d0c48c22462f1bfde0c236a2e859b81ccc7b2b61c1bdc73069"
+}

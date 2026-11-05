@@ -5,21 +5,21 @@ name_en: Brotherhood Terminator Squad
 faction: 灰骑士
 type: unit
 points:
-  4 models: 140
-  5 models: 175
-  8 models: 300
-  10 models: 360
+  4 models: 150
+  5 models: 185
+  8 models: 315
+  10 models: 380
   per psycannon: 5
 tags:
 - unit
 - unit/灰骑士
 - 灰骑士
 version:
-  points: MFM 2026-09-14T05:51:23.572407+00:00
+  points: MFM 2026-10-03T19:00:56.192123+00:00
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-09-14'
+updated: '2026-10-03'
 ---
 
 ## 属性表
@@ -50,10 +50,10 @@ updated: '2026-09-14'
 - **医疗装具**：在⼰⽅指挥阶段，如果持有者没有被摧毁，您可以将 1 个被摧毁的模型（除⻆⾊外）返还⾄持有者所在的单位。
 
 ## 单位构成
-- **4个模型** — 140 分
-- **5个模型** — 175 分
-- **8个模型** — 300 分
-- **10个模型** — 360 分
+- **4个模型** — 150 分
+- **5个模型** — 185 分
+- **8个模型** — 315 分
+- **10个模型** — 380 分
 - **per psycannon** — 5 分
 
 ## 关键词

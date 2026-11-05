@@ -4,18 +4,16 @@ name_zh: 坎托战团长
 name_en: Pedro Kantor
 faction: 星际战士
 type: unit
-points:
-  1 model: 80
 tags:
 - unit
 - unit/星际战士
 - 星际战士
 version:
-  points: MFM 2026-09-14T05:51:23.572407+00:00
+  points: historical / unmatched
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-09-14'
+updated: '2026-10-03'
 ---
 
 ## 属性表
@@ -43,7 +41,8 @@ updated: '2026-09-14'
 - **激励人心**：如果军队中包含本模型，则你的[[factions/星际战士/units/sternguard-veteran-squad-2.md|肃卫老兵小队]] 中的非人物模型 OC 值在非震慑状态下变为 2
 
 ## 单位构成
-- **1个模型** — 80 分
+历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- **1个模型** — 90 分
 
 ## 关键词
 - **阵营关键词**：Adeptus Astartes，Imperial Fists

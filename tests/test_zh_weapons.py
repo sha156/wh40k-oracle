@@ -5,7 +5,10 @@
 """
 from __future__ import annotations
 
+from contextlib import closing
+import hashlib
 import json
+import shutil
 import sqlite3
 from pathlib import Path
 
@@ -17,6 +20,62 @@ from db_compile.zh_weapons import (build_keyword_glossary, build_zh_weapon_names
 
 DB = Path("db/wh40k.sqlite")
 needs_db = pytest.mark.skipif(not DB.exists(), reason="需要 db/wh40k.sqlite")
+LANGUAGE_ACCEPTANCE = json.loads(
+    (Path(__file__).parent / "fixtures/chinese_name_recovery.json").read_text("utf-8"))
+
+
+@pytest.fixture(scope="module")
+def normal_language_db(tmp_path_factory):
+    """Normal offline projection on a private copy, with frozen source evidence."""
+    from db_compile.update import UpdateConfig, stage_zh_details, stage_zh_weapons
+
+    sources = {Path(rel): digest for rel, digest in LANGUAGE_ACCEPTANCE["source_sha256"].items()}
+    assert all(path.exists() for path in sources), "Required localization source evidence missing"
+    assert {str(p).replace("\\", "/"): hashlib.sha256(p.read_bytes()).hexdigest()
+            for p in sources} == LANGUAGE_ACCEPTANCE["source_sha256"], "Source drift requires review"
+    original_db_hash = hashlib.sha256(DB.read_bytes()).hexdigest()
+    trial = tmp_path_factory.mktemp("normal-language")
+    db = trial / "copy.sqlite"
+    shutil.copy2(DB, db)
+    for path in sources:
+        shutil.copy2(path, trial / path.name)
+    cfg = UpdateConfig(db=db, offline=True, blacklibrary_cache=trial / "units.json",
+                       blacklibrary_details=trial / "details.json")
+    assert stage_zh_details(cfg).ok
+    assert stage_zh_weapons(cfg).ok
+    yield db
+    assert hashlib.sha256(DB.read_bytes()).hexdigest() == original_db_hash
+    assert all(hashlib.sha256(p.read_bytes()).hexdigest() == digest for p, digest in sources.items())
+
+
+def _assert_current_name_coverage(conn):
+    """Every current name gap must equal an exact reviewed weapon identity/profile."""
+    from db_compile.active_units import active_unit_ids
+
+    current = active_unit_ids(conn)
+    assert current, "No current membership to reconcile"
+    missing_units = [dict(zip(("id", "faction_id", "name_en", "name_zh"), r)) for r in conn.execute(
+        "SELECT id,faction_id,name_en,name_zh FROM units ORDER BY id")
+                     if r[0] in current and not (r[3] or "").strip()]
+    assert missing_units == LANGUAGE_ACCEPTANCE["fallback_units"], (
+        f"Unregistered missing unit names: {missing_units}")
+    columns = [r[1] for r in conn.execute("PRAGMA table_info(weapons)")]
+    missing_weapons = []
+    for row in conn.execute("SELECT * FROM weapons ORDER BY id"):
+        weapon = dict(zip(columns, row))
+        if weapon["unit_id"] not in current or (weapon["name_zh"] or "").strip():
+            continue
+        faction, en, zh = conn.execute(
+            "SELECT faction_id,name_en,name_zh FROM units WHERE id=?", (weapon["unit_id"],)).fetchone()
+        weapon.update(faction_id=faction, unit_name_en=en, unit_name_zh=zh)
+        missing_weapons.append(weapon)
+    assert missing_weapons == LANGUAGE_ACCEPTANCE["fallback_weapons"], (
+        f"Unregistered or drifted English fallback slots: {missing_weapons}")
+    guard = LANGUAGE_ACCEPTANCE["fallback_unit"]
+    assert conn.execute("SELECT id,faction_id,name_en,name_zh,keywords_json FROM units WHERE id=?",
+                        (guard["id"],)).fetchone() == tuple(guard.values()), "Fallback unit identity drift"
+    assert not conn.execute("SELECT 1 FROM unit_zh_detail WHERE canonical_id=?",
+                            (guard["id"],)).fetchone(), "Accepted source body changed; reopen fallback review"
 
 
 # ── 纯函数 ────────────────────────────────────────────────────────
@@ -228,29 +287,155 @@ def test_unit_overrides_file_is_wellformed():
 
 
 @needs_db
-def test_current_units_fully_localized():
-    """现役单位（图鉴默认列的那批）的单位名与武器名都该有中文——这是本轮补译的验收线。"""
-    import json as _json
+def test_current_units_fully_localized(normal_language_db):
+    """All current names reconcile; exactly proven absent Chinese slots stay English."""
+    with closing(sqlite3.connect(normal_language_db)) as conn:
+        _assert_current_name_coverage(conn)
 
-    conn = sqlite3.connect(str(DB))
-    from db_compile.active_units import active_unit_ids
-    cur = active_unit_ids(conn)
-    miss_units = [n for uid, n, zh in conn.execute("SELECT id, name_en, name_zh FROM units")
-                  if uid in cur and not (zh or "").strip()]
-    miss_weapons = [(uid, n) for uid, n, zh in conn.execute(
-        "SELECT unit_id, name_en, name_zh FROM weapons") if uid in cur and not (zh or "").strip()]
-    conn.close()
-    # September MFM newly matches Warbuggies. No official/community Chinese
-    # name exists in the local authority caches; preserve English, never invent.
-    assert set(miss_units) <= {"Warbuggies", "Dragon Knights", "Leystalker", "Stonesinger", "Clanblade", "Eradicator Squad With Heavy Bolters", "Nazdreg"}, f"新增未登记中文名缺口：{miss_units[:5]}"
-    # New official English datasheets have no matched translation in the source caches.
-    # Keep the gap explicit, while still rejecting any regression in older units.
-    from collections import Counter
-    assert Counter(uid for uid, _ in miss_weapons) == {
-        "fp11e-ae-dragon-knights": 4, "fp11e-ae-leystalker": 3,
-        "fp11e-ae-stonesinger": 5, "fp11e-ae-clanblade": 3,
-        "official-preview-ork-nazdreg": 5,
-    }, miss_weapons
+
+@needs_db
+def test_active_db_current_names_reconcile():
+    """The published active DB itself (not a staged copy) meets the same coverage.
+
+    Guards against the active DB drifting from the reviewed projection, e.g. a
+    scheduled online `db_compile update` replacing the release baseline
+    (R5 receipt: db_sources/release-check-20260930/host/finish/R5/RECEIPT.json).
+    """
+    with closing(sqlite3.connect(f"file:{DB.resolve().as_posix()}?mode=ro", uri=True)) as conn:
+        _assert_current_name_coverage(conn)
+
+
+@needs_db
+@pytest.mark.parametrize("guard", LANGUAGE_ACCEPTANCE["pending_name_recoveries"],
+                         ids=lambda r: r["canonical_id"])
+def test_pending_name_recoveries_keep_accepted_sources_and_unchanged_names(normal_language_db, guard):
+    # Decision C (empty-cell name restore) is unanswered: the source identity
+    # stays accepted and evidenced, but units.name_zh must remain 'before'.
+    from db_compile.blacklibrary import _norm_en, load_details
+
+    records = [r for r in load_details(Path("db_sources/blacklibrary/details.json"))
+               if str(r.get("id")) == guard["source_id"]]
+    assert len(records) == 1
+    record = records[0]
+    assert hashlib.sha256(json.dumps(record, ensure_ascii=False, sort_keys=True,
+                                     separators=(",", ":")).encode("utf-8")).hexdigest() == (
+        guard["source_record_sha256"])
+    assert record["detail"]
+    assert _norm_en(record["name_en"]) == _norm_en(guard["canonical_name_en"])
+    assert record["name_zh"] == guard["after"]
+    with closing(sqlite3.connect(normal_language_db)) as conn:
+        assert conn.execute("SELECT faction_id,name_en,name_zh FROM units WHERE id=?",
+                            (guard["canonical_id"],)).fetchone() == (
+            guard["faction_id"], guard["canonical_name_en"], guard["before"])
+        assert conn.execute("SELECT * FROM blacklibrary_detail_identity WHERE canonical_id=?",
+                            (guard["canonical_id"],)).fetchone() == (
+            guard["canonical_id"], guard["source_id"], guard["source_name_en"],
+            guard["source_faction_zh"], guard["canonical_name_en"], guard["faction_id"])
+        assert conn.execute("SELECT name_zh FROM unit_zh_detail WHERE canonical_id=?",
+                            (guard["canonical_id"],)).fetchone() == (guard["after"],)
+
+
+@needs_db
+def test_fallback_source_absence_and_ambiguity_remain_exact(normal_language_db):
+    from db_compile.blacklibrary import _norm_en, load_details
+    from db_compile.blacklibrary_scope import POLICY, reviewed_empty_listing
+
+    evidence = LANGUAGE_ACCEPTANCE["source_evidence"]
+    assert hashlib.sha256(POLICY.read_bytes()).hexdigest() == evidence["listing_policy_sha256"]
+    details = load_details(Path("db_sources/blacklibrary/details.json"))
+    assert [r["id"] for r in details if _norm_en(r.get("name_en")) == "captainonbike"] == evidence["details_ids"]
+    assert [r["id"] for r in details if any(
+        w.get("name") == "双联爆弹枪" for kind in ("射击武器", "近战武器")
+        for w in ((r.get("detail") or {}).get(kind) or []))] == (
+        evidence["literal_twin_boltgun_details_ids"])
+    assert [r["id"] for r in details if "双联爆弹枪" in json.dumps(r, ensure_ascii=False)] == [1265]
+    inventory = json.loads(Path("db_sources/blacklibrary/units.json").read_text("utf-8"))
+    bike = [r for r in inventory if _norm_en(r.get("unitEnglishName")) == "captainonbike"]
+    assert bike == [evidence["inventory"]]
+    # The named inventory listing exists, but is not an accepted full detail or
+    # a reviewed empty-listing exclusion. A source gap is not proof of legality.
+    assert reviewed_empty_listing(bike[0]) is None
+    history = json.loads(Path("db_sources/blacklibrary/weapon_names_history.json").read_text("utf-8"))
+    assert [r["guard"][0] for r in history["records"] if r["guard"][1] == "000002702"] == (
+        evidence["history_weapon_ids"])
+    with closing(sqlite3.connect(normal_language_db)) as conn:
+        conn.row_factory = sqlite3.Row
+        rows = [dict(r) for r in conn.execute(
+            "SELECT w.*,u.faction_id,u.name_en AS unit_name_en FROM weapons w JOIN units u ON u.id=w.unit_id "
+            "WHERE w.name_en='Hand flamer' AND w.name_zh IS NOT NULL ORDER BY w.id")]
+        assert rows == evidence["hand_flame_rows"], "Changed source-backed ambiguity requires review"
+        assert sorted({r["name_zh"] for r in rows}) == evidence["hand_flame_names"]
+
+
+@needs_db
+def test_real_card_api_keeps_exact_english_fallback_and_official_profiles(normal_language_db, monkeypatch):
+    from fastapi.testclient import TestClient
+    from web_api import main
+
+    monkeypatch.setattr(main, "DB_PATH", normal_language_db)
+    # No lifespan startup/model warmup or external server is needed for this
+    # actual read-only route; close the client explicitly after paired requests.
+    client = TestClient(main.app)
+    try:
+        responses = {lang: client.get("/codex/units/000002702", params={"lang": lang})
+                     for lang in ("en", "zh")}
+        assert all(r.status_code == 200 for r in responses.values())
+        cards = {lang: response.json()["card"] for lang, response in responses.items()}
+        for guard in LANGUAGE_ACCEPTANCE["fallback_weapons"]:
+            en = next(w for w in cards["en"]["ranged"] if w["name"] == guard["name_en"])
+            zh = next(w for w in cards["zh"]["ranged"] if w["name"] == guard["name_en"])
+            assert {k: en[k] for k in ("range", "a", "skill", "s", "ap", "d")} == {
+                k: zh[k] for k in ("range", "a", "skill", "s", "ap", "d")}
+            assert [k["slug"] for k in en["kw"]] == [k["slug"] for k in zh["kw"]]
+        assert cards["zh"]["nameZh"] == LANGUAGE_ACCEPTANCE["fallback_unit"]["name_zh"]
+    finally:
+        client.close()
+
+
+@needs_db
+@pytest.mark.parametrize("table,field,value", [
+    ("units", "name_zh", None), ("units", "faction_id", "AoI"),
+    ("units", "name_en", "Another Captain"), ("units", "keywords_json", "{}"),
+    ("weapons", "id", "new-weapon-id"), ("weapons", "unit_id", "000001542"),
+    ("weapons", "name_en", "Another flamer"), ("weapons", "range", "18"),
+    ("weapons", "a", "D3"), ("weapons", "bs_ws", "2"), ("weapons", "s", "4"),
+    ("weapons", "ap", "-1"), ("weapons", "d", "2"), ("weapons", "keywords_json", "[]"),
+    ("weapons", "name_zh", "Guessed translation"),
+])
+def test_any_fallback_identity_or_profile_drift_reopens_review(
+        normal_language_db, tmp_path, table, field, value):
+    with closing(sqlite3.connect(normal_language_db)) as conn:
+        _assert_current_name_coverage(conn)
+    trial = tmp_path / "drift.sqlite"
+    shutil.copy2(normal_language_db, trial)
+    with closing(sqlite3.connect(trial)) as conn, conn:
+        conn.execute(f"UPDATE {table} SET {field}=? WHERE id=?",
+                     (value, "000002702" if table == "units" else "000002702_w4"))
+        with pytest.raises(AssertionError):
+            _assert_current_name_coverage(conn)
+
+
+@needs_db
+@pytest.mark.parametrize("table", ["units", "weapons"])
+def test_every_unregistered_current_name_gap_fails(normal_language_db, tmp_path, table):
+    with closing(sqlite3.connect(normal_language_db)) as conn:
+        _assert_current_name_coverage(conn)
+    trial = tmp_path / "new-gap.sqlite"
+    shutil.copy2(normal_language_db, trial)
+    with closing(sqlite3.connect(trial)) as conn, conn:
+        # Blank a current unit that has an accepted name after normal stages.
+        # 000001542 is a registered English fallback (Decision C unanswered),
+        # so pick the first other current named unit by id.
+        from db_compile.active_units import active_unit_ids
+        current = active_unit_ids(conn)
+        registered = {u["id"] for u in LANGUAGE_ACCEPTANCE["fallback_units"]}
+        unit_id = next(r[0] for r in conn.execute(
+            "SELECT id,name_zh FROM units WHERE trim(coalesce(name_zh,''))<>'' ORDER BY id")
+            if r[0] in current and r[0] not in registered)
+        conn.execute(f"UPDATE {table} SET name_zh=NULL WHERE id=?",
+                     (unit_id if table == "units" else "000002702_w1",))
+        with pytest.raises(AssertionError, match="Unregistered"):
+            _assert_current_name_coverage(conn)
 
 
 @needs_db

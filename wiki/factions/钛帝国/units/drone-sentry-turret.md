@@ -1,6 +1,5 @@
 ---
 id: '000000459'
-name_zh: 兵蜂哨戒炮
 name_en: Drone Sentry Turret
 faction: 钛帝国
 type: unit
@@ -18,7 +17,7 @@ sources:
 - book: 'Faction Pack: T''au Empire'
   pages:
   - 38
-updated: '2026-09-14'
+updated: '2026-10-03'
 ---
 
 ## 属性表

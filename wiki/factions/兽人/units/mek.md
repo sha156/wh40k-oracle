@@ -1,27 +1,27 @@
 ---
 id: '000000012'
-name_zh: 小技霸
+name_zh: 技术小子
 name_en: Mek
 faction: 兽人
 type: unit
 points:
-  1 model: 45
+  1 model: 55
 tags:
 - unit
 - unit/兽人
 - 兽人
 version:
-  points: MFM 2026-09-14T05:51:23.572407+00:00
+  points: MFM 2026-10-03T19:00:56.192123+00:00
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-09-14'
+updated: '2026-10-03'
 ---
 
 ## 属性表
 | 模型 | M | T | SV | W | LD | OC |
 |---|---|---|---|---|---|---|
-| 小技霸 | 6" | 5 | 5+ | 4 | 7+ | 1 |
+| 技术小子 | 6" | 5 | 5+ | 4 | 7+ | 1 |
 
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
@@ -35,13 +35,11 @@ updated: '2026-09-14'
 | 铁板子 | 近战 | 3 | 3+ | 4 | 0 | 1 | — |
 
 ## 技能
-- **【核心技能】:领袖**：本单位可以作为领袖加入以下单位：●小子●[[factions/兽人/units/lootas.md|拾荒小子]]●技师大炮●[[factions/兽人/units/nobz.md|老大队]]●坦爆小子
-- **【阵营技能】:WAAAGH!**
-- **技师小子**：如果本模型3寸内有至少一个友军兽人载具单位，则本模型获得【独行特工】技能
-- **让俺整整**：在你的移动阶段中，你可以选择本模型3寸内一个友军兽人载具模型，这个载具模型恢复D3点损失的W值，并且直到下个你的移动阶段开始时，这个载具模型攻击命中结果+1。每个模型在每回合中只能被此技能选择一次
+- **Mekboy**：While this model is within 3" of one or more friendly Orks Vehicle units, this model has the Lone Operative ability.
+- **Mekaniak**：At the end of your Movement phase, you can select one friendly Orks Vehicle model within 3" of this model. That <span class="kwb">VEHICLE</span> model regains up to D3 lost wounds, and, until the start of your next Movement phase, each time that <span class="kwb">VEHICLE</span> model makes an attack, add 1 to the Hit roll. Each model can only be selected for this ability once per turn.
 
 ## 单位构成
-- **1个模型** — 45 分
+- **1个模型** — 55 分
 
 ## 关键词
 - **阵营关键词**：Orks

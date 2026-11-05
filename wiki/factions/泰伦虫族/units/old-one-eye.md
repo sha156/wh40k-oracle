@@ -5,17 +5,17 @@ name_en: Old One Eye
 faction: 泰伦虫族
 type: unit
 points:
-  1 model: 140
+  1 model: 130
 tags:
 - unit
 - unit/泰伦虫族
 - 泰伦虫族
 version:
-  points: MFM 2026-09-14T05:51:23.572407+00:00
+  points: MFM 2026-10-03T19:00:56.192123+00:00
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-09-14'
+updated: '2026-10-03'
 ---
 
 ## 属性表
@@ -35,7 +35,7 @@ updated: '2026-09-14'
 - **无法阻挡的凶兽**：在每个玩家的指挥阶段开始时，该模型恢复 D3 点失去的耐伤。
 
 ## 单位构成
-- **1个模型** — 140 分
+- **1个模型** — 130 分
 
 ## 关键词
 - **阵营关键词**：Tyranids

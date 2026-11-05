@@ -1,6 +1,6 @@
 ---
 id: '000001478'
-name_zh: 强执战斗服指挥官
+name_zh: (XV85)强执战斗服指挥官
 name_en: Commander In Enforcer Battlesuit
 faction: 钛帝国
 type: unit
@@ -11,11 +11,11 @@ tags:
 - unit/钛帝国
 - 钛帝国
 version:
-  points: MFM 2026-09-14T05:51:23.572407+00:00
+  points: MFM 2026-10-03T19:00:56.192123+00:00
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-09-14'
+updated: '2026-10-03'
 ---
 
 ## 属性表

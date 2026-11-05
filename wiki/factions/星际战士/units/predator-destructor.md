@@ -1,23 +1,21 @@
 ---
 id: '000002715'
-name_zh: 破坏者型猎食者坦克
+name_zh: 破坏者型猎食者坦克（即将传奇）
 name_en: Predator Destructor
 faction: 星际战士
 type: unit
-points:
-  1 model: 140
 tags:
 - unit
 - unit/星际战士
 - 星际战士
 version:
-  points: MFM 2026-09-14T05:51:23.572407+00:00
+  points: historical / unmatched
   source: official-db
 sources:
 - book: https://assets.warhammer-community.com/eng_wh40k_faction_pack_space_marines-kxoxqpsahz-u0lzirv0zl.pdf
   pages:
   - 61
-updated: '2026-09-14'
+updated: '2026-10-03'
 ---
 
 ## 属性表
@@ -45,6 +43,7 @@ updated: '2026-09-14'
 - **【阵营技能】：破敌重誓**
 
 ## 单位构成
+历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - **1个模型** — 140 分
 
 ## 关键词

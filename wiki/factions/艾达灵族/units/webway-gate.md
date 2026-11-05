@@ -17,7 +17,7 @@ sources:
 - book: 'Faction Pack: Aeldari'
   pages:
   - 34
-updated: '2026-09-14'
+updated: '2026-10-03'
 ---
 
 ## 属性表

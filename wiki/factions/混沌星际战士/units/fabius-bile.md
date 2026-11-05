@@ -5,17 +5,17 @@ name_en: Fabius Bile
 faction: 混沌星际战士
 type: unit
 points:
-  2 models: 100
+  2 models: 110
 tags:
 - unit
 - unit/混沌星际战士
 - 混沌星际战士
 version:
-  points: MFM 2026-09-14T05:51:23.572407+00:00
+  points: MFM 2026-10-03T19:00:56.192123+00:00
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-09-14'
+updated: '2026-10-03'
 ---
 
 ## 属性表
@@ -43,7 +43,7 @@ updated: '2026-09-14'
 - **手术工具**：当该单位中的法比乌斯·拜尔模型首次被摧毁时,在阶段结束时，掷一枚 D6：若结果为 2+,则将它放回战场上尽量靠近它刚才被摧毁,且不位于敌方模型交战范围内的位置。该模型在返回战场时剩余全部耐伤。
 
 ## 单位构成
-- **2个模型** — 100 分
+- **2个模型** — 110 分
 
 ## 关键词
 - **阵营关键词**：Heretic Astartes

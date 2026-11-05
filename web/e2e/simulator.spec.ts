@@ -11,8 +11,8 @@ import { pickSimUnit, runSim } from "./helpers";
 
 const TAU = "TAU";
 const SM = "SM";
-const KROOT = "克鲁特猎犬队";      // 全池只有近战 Ripping fangs
-const BROADSIDE = "炮击战斗服小队"; // 射击 5 把 + 近战 1 把
+const KROOT = /克鲁特猎犬|Kroot Hounds/; // 全池只有近战 Ripping fangs；中文名随官方层变动（克鲁特猎犬队→克鲁特猎犬）
+const BROADSIDE = /舷炮战斗服|炮击战斗服|Broadside/; // 射击 5 把 + 近战 1 把
 const TARGET = "阿加通连长";
 
 test.beforeEach(async ({ page }) => {

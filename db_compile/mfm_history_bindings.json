@@ -1,0 +1,136 @@
+{
+  "snapshot": {
+    "fetched_at": "2026-09-14T05:51:23.572407+00:00",
+    "manifest_sha256": "29062f70c0b6848c0ea321b9be816df25cedec4242e81a4331ea09634c06939b",
+    "faction_slug": "space-marines",
+    "page": {
+      "url": "https://mfm.warhammer-community.com/en/space-marines",
+      "sha256": "99f45a5032c4862df89529f02a66122897429ccea7280b0fb318335cf23ad884",
+      "bytes": 408270
+    }
+  },
+  "records": [
+    {
+      "canonical": {
+        "id": "000002713",
+        "name_en": "Pedro Kantor",
+        "faction_id": "SM",
+        "keywords_json": "{\"keywords\": [\"Grenades\", \"Imperium\", \"Infantry\", \"Chapter Master\", \"Pedro Kantor\", \"Tacticus\", \"Character\", \"Epic Hero\"], \"faction_keywords\": [\"Adeptus Astartes\", \"Imperial Fists\"]}"
+      },
+      "datasheet": {
+        "name": "Pedro Kantor",
+        "faction_id": "SM",
+        "source_id": "000000139",
+        "link": "https://wahapedia.ru/wh40k10ed/factions/space-marines/Pedro-Kantor"
+      },
+      "csv_price": {
+        "points": 90,
+        "items": [
+          {
+            "line": "1",
+            "desc": "1 model",
+            "cost": 90
+          }
+        ]
+      },
+      "prior_official_price": {
+        "points": 80,
+        "items": [
+          {
+            "line": "1",
+            "desc": "1 model",
+            "cost": 80
+          }
+        ],
+        "mfm": {
+          "fetched_at": "2026-09-14T05:51:23.572407+00:00",
+          "current": true,
+          "source_url": "https://mfm.warhammer-community.com",
+          "tiers": [
+            {
+              "tier": "YOUR UNIT COSTS",
+              "models": "1 model",
+              "cost": 80
+            }
+          ]
+        }
+      },
+      "ledger_rows": [
+        {
+          "faction_slug": "space-marines",
+          "ordinal": 244,
+          "kind": "unit",
+          "section": "IMPERIAL FISTS",
+          "unit_name": "PEDRO KANTOR",
+          "tier": "YOUR UNIT COSTS",
+          "models": "1 model",
+          "cost": 80,
+          "source_url": "https://mfm.warhammer-community.com/en/space-marines",
+          "source_sha256": "99f45a5032c4862df89529f02a66122897429ccea7280b0fb318335cf23ad884",
+          "fetched_at": "2026-09-14T05:51:23.572407+00:00"
+        }
+      ]
+    },
+    {
+      "canonical": {
+        "id": "000004183",
+        "name_en": "Marneus Calgar in Armour of Antilochus",
+        "faction_id": "SM",
+        "keywords_json": "{\"keywords\": [\"Epic Hero\", \"Character\", \"Infantry\", \"Marneus Calgar\", \"Chapter Master\", \"Terminator\", \"Imperium\"], \"faction_keywords\": [\"Adeptus Astartes\", \"Ultramarines\"]}"
+      },
+      "datasheet": {
+        "name": "Marneus Calgar in Armour of Antilochus",
+        "faction_id": "SM",
+        "source_id": "000000139",
+        "link": "https://wahapedia.ru/wh40k10ed/factions/space-marines/Marneus-Calgar-in-Armour-of-Antilochus"
+      },
+      "csv_price": {
+        "points": 140,
+        "items": [
+          {
+            "line": "1",
+            "desc": "1 model",
+            "cost": 140
+          }
+        ]
+      },
+      "prior_official_price": {
+        "points": 155,
+        "items": [
+          {
+            "line": "1",
+            "desc": "1 model",
+            "cost": 155
+          }
+        ],
+        "mfm": {
+          "fetched_at": "2026-09-14T05:51:23.572407+00:00",
+          "current": true,
+          "source_url": "https://mfm.warhammer-community.com",
+          "tiers": [
+            {
+              "tier": "YOUR UNIT COSTS",
+              "models": "1 model",
+              "cost": 155
+            }
+          ]
+        }
+      },
+      "ledger_rows": [
+        {
+          "faction_slug": "space-marines",
+          "ordinal": 255,
+          "kind": "unit",
+          "section": "ULTRAMARINES",
+          "unit_name": "MARNEUS CALGAR IN ARMOUR OF ANTILOCHUS",
+          "tier": "YOUR UNIT COSTS",
+          "models": "1 model",
+          "cost": 155,
+          "source_url": "https://mfm.warhammer-community.com/en/space-marines",
+          "source_sha256": "99f45a5032c4862df89529f02a66122897429ccea7280b0fb318335cf23ad884",
+          "fetched_at": "2026-09-14T05:51:23.572407+00:00"
+        }
+      ]
+    }
+  ]
+}

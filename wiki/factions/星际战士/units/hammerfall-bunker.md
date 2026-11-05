@@ -1,23 +1,21 @@
 ---
 id: '000000097'
-name_zh: 落锤堡
+name_zh: 落锤堡（即将传奇）
 name_en: Hammerfall Bunker
 faction: 星际战士
 type: unit
-points:
-  1 model: 175
 tags:
 - unit
 - unit/星际战士
 - 星际战士
 version:
-  points: MFM 2026-09-14T05:51:23.572407+00:00
+  points: historical / unmatched
   source: official-db
 sources:
 - book: https://assets.warhammer-community.com/eng_wh40k_faction_pack_space_marines-kxoxqpsahz-u0lzirv0zl.pdf
   pages:
   - 61
-updated: '2026-09-14'
+updated: '2026-10-03'
 ---
 
 ## 属性表
@@ -41,6 +39,7 @@ updated: '2026-09-14'
 - **防御工事**：当一个敌方单位只处于你的工事单位接战范围 中时，那个敌方单位依然能被你选为射击目标，但是非手枪 类武器命中结果-1这种敌方单位即使处于【被震慑】状态下选择撤退与 本模型脱离接战范围也不会触发绝望逃脱规则（注意 如果穿越其他模型还是会）
 
 ## 单位构成
+历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - **1个模型** — 175 分
 
 ## 关键词

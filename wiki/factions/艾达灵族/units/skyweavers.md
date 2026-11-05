@@ -5,18 +5,18 @@ name_en: Skyweavers
 faction: 艾达灵族
 type: unit
 points:
-  2 models: 95
-  4 models: 190
+  2 models: 90
+  4 models: 180
 tags:
 - unit
 - unit/艾达灵族
 - 艾达灵族
 version:
-  points: MFM 2026-09-14T05:51:23.572407+00:00
+  points: MFM 2026-10-03T19:00:56.192123+00:00
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-09-14'
+updated: '2026-10-03'
 ---
 
 ## 属性表
@@ -42,11 +42,11 @@ updated: '2026-09-14'
 
 ## 技能
 - **【阵营技能】：战斗专注**
-- **灵巧身法**：当该单位受到攻击时，该攻击的命 中骰结果减1
+- **灵巧身法**：● 该单位拥有隐匿。● 对该单位进行的近战攻击拥有命中掷骰	-1。
 
 ## 单位构成
-- **2个模型** — 95 分
-- **4个模型** — 190 分
+- **2个模型** — 90 分
+- **4个模型** — 180 分
 
 ## 关键词
 - **阵营关键词**：Harlequins

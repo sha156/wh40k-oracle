@@ -26,3 +26,16 @@ test("empty answers cannot be saved and missing citations remain explicit", () =
   assert.throws(() => answerMarkdown("Empty", { ...answer, verdict: { ...answer.verdict, lede: [] } }));
   assert.match(answerMarkdown("No sources", { ...answer, cites: [] }), /未提供可追溯引用/);
 });
+
+test("copying a readable answer keeps prose, emphasis and sources without internal JSON", () => {
+  const readable = { ...answer,
+    calc: [{ n: 1, text: [{ t: "strong", s: "What changed" }, { t: "text", s: ": Two conditions." }] }],
+    sensitivity: { title: "◭ 敏感性 · Comparison scope", text: [{ t: "text", s: "July to August." }] },
+  };
+  const out = answerMarkdown("Changes", readable, new Date("2026-09-21T00:00:00Z"), { includeSnapshot: false });
+  assert.match(out, /\n\*\*What changed\*\*: Two conditions\.\n/);
+  assert.match(out, /## Comparison scope/);
+  assert.match(out, /L3 structured database · Commander/);
+  assert.doesNotMatch(out, /\n1\. |完整回答快照|"trace"|敏感性/);
+  assert.match(answerMarkdown("Changes", readable), /完整回答快照/);
+});

@@ -5,17 +5,17 @@ name_en: Grand Master
 faction: 灰骑士
 type: unit
 points:
-  1 model: 95
+  1 model: 100
 tags:
 - unit
 - unit/灰骑士
 - 灰骑士
 version:
-  points: MFM 2026-09-14T05:51:23.572407+00:00
+  points: MFM 2026-10-03T19:00:56.192123+00:00
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-09-14'
+updated: '2026-10-03'
 ---
 
 ## 属性表
@@ -45,7 +45,7 @@ updated: '2026-09-14'
 - **战略⼤师**：每个战斗轮次一次，您军队中一个拥有此技能的模型可以在其单位被一个计谋选为目标时使用此技能。若如此做，该次使用该计谋的 CP 消耗减少1CP。
 
 ## 单位构成
-- **1个模型** — 95 分
+- **1个模型** — 100 分
 
 ## 关键词
 - **阵营关键词**：Grey Knights

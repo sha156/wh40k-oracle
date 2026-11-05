@@ -11,11 +11,11 @@ tags:
 - unit/兽人
 - 兽人
 version:
-  points: MFM 2026-09-14T05:51:23.572407+00:00
+  points: MFM 2026-10-03T19:00:56.192123+00:00
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-09-14'
+updated: '2026-10-03'
 ---
 
 ## 属性表
@@ -34,9 +34,9 @@ updated: '2026-09-14'
 | 双手大砍刀 | 近战 | 5 | 3+ | 7 | -1 | 2 | [[core-rules/cleave.md\|劈砍1]] |
 
 ## 技能
-- **拳打脚踢**：该单位的近战武器拥有 [连击 1] 。
-- **证明实力**：该单位进行的冲锋掷骰结果 +1。
-- **【核心技能】:领袖**：本单位可以作为领袖加入以下单位：●蛮人小子●[[factions/兽人/units/breaka-boyz.md|破拆小子]]●[[factions/兽人/units/nobz.md|老大队]]
+- **【核心技能】:辅助**：本单位可以作为领袖加入以下单位：●蛮人小子●[[factions/兽人/units/breaka-boyz.md|破拆小子]]●[[factions/兽人/units/nobz.md|老大队]]
+- **力量证明**：该单位进行的近战攻击的命中掷骰＋1。
+- **阵营技能：Waaagh!**
 
 ## 单位构成
 - **1个模型** — 50 分

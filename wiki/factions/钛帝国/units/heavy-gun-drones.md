@@ -1,6 +1,5 @@
 ---
 id: '000000449'
-name_zh: 重型枪蜂小队
 name_en: Heavy Gun Drones
 faction: 钛帝国
 type: unit
@@ -13,7 +12,7 @@ version:
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-09-14'
+updated: '2026-10-03'
 ---
 
 ## 属性表

@@ -5,17 +5,17 @@ name_en: Canoptek Tomb Crawlers
 faction: 太空死灵
 type: unit
 points:
-  2 models: 50
+  2 models: 60
 tags:
 - unit
 - unit/太空死灵
 - 太空死灵
 version:
-  points: MFM 2026-09-14T05:51:23.572407+00:00
+  points: MFM 2026-10-03T19:00:56.192123+00:00
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-09-14'
+updated: '2026-10-03'
 ---
 
 ## 属性表
@@ -40,7 +40,7 @@ updated: '2026-09-14'
 - **冥工随从**：在宣布战斗阵型步骤中，该单位可以加入您军队中由技师领导的另一个单位（每个单位只能加入最多一个冥工墓穴爬行者单位，且冥工墓穴爬行者无法和[[factions/太空死灵/units/cryptothralls.md|古墓机奴]]加入同一个单位）。如果这样做，在战斗结束前，该单位中的每个模型都算作护卫单位的一员，并且该护卫单位的初始兵力也会相应增加。
 
 ## 单位构成
-- **2个模型** — 50 分
+- **2个模型** — 60 分
 
 ## 关键词
 - **阵营关键词**：Necrons

@@ -26,18 +26,22 @@ jobs:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
-          # 服务器跑 3.10.12，本地 .venv 是 3.9——按服务器版本验
-          python-version: "3.10"
+          # The reviewed dependency family requires CPython 3.11.
+          python-version: "3.11"
           cache: pip
-      - name: 装轻量依赖（同 requirements-server.txt + 测试用）
+          cache-dependency-path: |
+            requirements*.txt
+            constraints-python311.txt
+      - name: Install reviewed model-free CI dependencies
         # CI dependencies include model-free ingestion tests; no model downloads or API calls.
         run: |
-          python -m pip install --upgrade pip
-          pip install -r requirements-ci.txt
+          python -m pip install -r requirements-bootstrap.txt
+          python -m pip install --build-constraint requirements-bootstrap.txt -c constraints-python311.txt -r requirements-ci.txt
+          python -m pip check
       - name: pytest
         # Only app retrieval requires the full local application stack.
         run: |
-          pytest -q --ignore=tests/test_app_retrieval.py
+          python -m pytest -q --ignore=tests/test_app_retrieval.py
 
   frontend:
     name: tsc + eslint + next build

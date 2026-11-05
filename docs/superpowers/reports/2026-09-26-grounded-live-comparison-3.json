@@ -1,0 +1,233 @@
+{
+  "question": "请比较普通卡尔加和基里曼的点数。普通卡尔加指带两名维克特里克斯卫队的版本，不是安提洛库斯铠甲版本。请区分历史缓存点数和当前官方点数，并分别注明来源。",
+  "status": 200,
+  "elapsed_seconds": 6.313,
+  "answer": {
+    "summary": "检索 1 步 · 引用 4 条",
+    "trace": [
+      {
+        "fn": "calc_points",
+        "args": "(['卡尔加', '基里曼'])",
+        "result": "已命中",
+        "status": "ok",
+        "note": null
+      }
+    ],
+    "traceWarn": null,
+    "verdict": {
+      "label": "需注意",
+      "labelEn": "Caution",
+      "lede": [
+        {
+          "t": "text",
+          "s": "普通卡尔加（带两名维克特里克斯卫队的版本）目前查不到官方现行点数，只有一条第三方历史缓存记录为 "
+        },
+        {
+          "t": "strong",
+          "s": "200 分"
+        },
+        {
+          "t": "text",
+          "s": "；基里曼的当前官方点数是 "
+        },
+        {
+          "t": "strong",
+          "s": "355 分"
+        },
+        {
+          "t": "text",
+          "s": "。"
+        }
+      ]
+    },
+    "calc": [
+      {
+        "n": 1,
+        "text": [
+          {
+            "t": "strong",
+            "s": "马涅乌斯·卡尔加（普通版，含 2 名维克特里克斯卫队）"
+          },
+          {
+            "t": "text",
+            "s": "：当前官方点数本次未检索到，工具没有返回该版本的现行点数。历史缓存点数为 "
+          },
+          {
+            "t": "strong",
+            "s": "200 分"
+          },
+          {
+            "t": "text",
+            "s": "，来源是黑图书馆本地缓存的历史记录，原始名称明确标注「已删除」，属于第三方历史资料，"
+          },
+          {
+            "t": "strong",
+            "s": "不是官方现行兵牌"
+          },
+          {
+            "t": "text",
+            "s": "，不能作为当前点数或军表合法性依据，也不能与安提洛库斯铠甲版本混用 "
+          },
+          {
+            "t": "cite",
+            "n": 2
+          },
+          {
+            "t": "cite",
+            "n": 3
+          },
+          {
+            "t": "text",
+            "s": "。"
+          }
+        ]
+      },
+      {
+        "n": 2,
+        "text": [
+          {
+            "t": "strong",
+            "s": "罗伯特·基里曼（Roboute Guilliman）"
+          },
+          {
+            "t": "text",
+            "s": "：当前官方点数为 "
+          },
+          {
+            "t": "strong",
+            "s": "355 分"
+          },
+          {
+            "t": "text",
+            "s": " "
+          },
+          {
+            "t": "cite",
+            "n": 1
+          },
+          {
+            "t": "cite",
+            "n": 4
+          },
+          {
+            "t": "text",
+            "s": "。"
+          }
+        ]
+      },
+      {
+        "n": 3,
+        "text": [
+          {
+            "t": "strong",
+            "s": "对比"
+          },
+          {
+            "t": "text",
+            "s": "：若以历史缓存计，普通卡尔加（"
+          },
+          {
+            "t": "num",
+            "s": "200"
+          },
+          {
+            "t": "text",
+            "s": " 分）比基里曼（"
+          },
+          {
+            "t": "num",
+            "s": "355"
+          },
+          {
+            "t": "text",
+            "s": " 分）低 "
+          },
+          {
+            "t": "num",
+            "s": "155"
+          },
+          {
+            "t": "text",
+            "s": " 分；但卡尔加这一版本没有可用的现行官方点数，两者不能直接当作同一时点的现役点数来比较。"
+          }
+        ]
+      },
+      {
+        "n": 4,
+        "text": [
+          {
+            "t": "strong",
+            "s": "来源"
+          },
+          {
+            "t": "text",
+            "s": "：卡尔加历史缓存来自黑图书馆本地缓存历史记录（blacklibrary:"
+          },
+          {
+            "t": "num",
+            "s": "6"
+          },
+          {
+            "t": "text",
+            "s": "，标注「已删除」，第三方历史资料）；基里曼现行点数来自 Munitorum Field Manual 官方点数库（mfm.warhammer-community.com）。"
+          }
+        ]
+      }
+    ],
+    "entityCard": null,
+    "cites": [
+      {
+        "n": 1,
+        "book": "Munitorum Field Manual",
+        "page": null,
+        "section": "官方当前点数",
+        "term": null,
+        "wiki": "",
+        "url": "https://mfm.warhammer-community.com"
+      },
+      {
+        "n": 2,
+        "book": "黑图书馆 · 历史缓存（第三方，已删除）",
+        "page": null,
+        "section": "历史资料，非当前点数",
+        "term": "Marneus Calgar · 源记录 6",
+        "wiki": "",
+        "url": null
+      },
+      {
+        "n": 3,
+        "book": "黑图书馆本地缓存历史记录（blacklibrary:6，第三方历史资料，非官方现行兵牌）",
+        "page": null,
+        "section": null,
+        "term": null,
+        "wiki": "",
+        "url": null
+      },
+      {
+        "n": 4,
+        "book": "Munitorum Field Manual（mfm.warhammer-community.com）",
+        "page": null,
+        "section": null,
+        "term": null,
+        "wiki": "",
+        "url": null
+      }
+    ],
+    "sensitivity": {
+      "title": "◭ 敏感性 · 缓存时间不等于规则日期",
+      "text": [
+        {
+          "t": "text",
+          "s": "历史缓存的缓存时间仅指本地文件修改时间，不是规则发布日期，也不代表当前有效性验证，不能据此推断该点数在某个具体版本中有效。"
+        }
+      ]
+    },
+    "cta": null,
+    "followups": [
+      "安提洛库斯铠甲版本的卡尔加现行点数是多少？",
+      "基里曼的 355 分在官方点数库中属于哪个阵营分类？",
+      "带维克特里克斯卫队的卡尔加在现行规则中是否还有独立兵牌？"
+    ],
+    "degraded": false
+  }
+}

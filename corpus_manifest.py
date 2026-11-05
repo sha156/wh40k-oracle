@@ -16,10 +16,42 @@
 from __future__ import annotations
 
 import json
+from datetime import date
 from pathlib import Path
 from typing import Dict
 
 _BUILTIN_DEFAULTS = {"edition": "10", "layer": "codex-base"}
+SOURCE_METADATA_FIELDS = ("status", "scope", "effective_date")
+
+
+def _source_metadata(entry: dict) -> dict:
+    """Validate optional retrieval declarations without certifying rule bodies.
+
+    Missing fields retain legacy behavior. Scope is a reviewed, nonempty label;
+    it is not the structured per-unit source_coverage contract.
+    """
+    result = {key: entry[key] for key in SOURCE_METADATA_FIELDS if key in entry}
+    if "status" in result and result["status"] not in (
+        "current", "carry_forward", "historical",
+    ):
+        raise ValueError("Unknown corpus source status")
+    if "scope" in result and (
+        not isinstance(result["scope"], str) or not result["scope"].strip()
+        or len(result["scope"]) > 500
+    ):
+        raise ValueError("Corpus source scope must be a nonempty label (up to 500 characters)")
+    value = result.get("effective_date")
+    if value is not None:
+        if not isinstance(value, str):
+            raise ValueError("Corpus effective_date must be YYYY-MM-DD or null")
+        try:
+            if date.fromisoformat(value).isoformat() != value:
+                raise ValueError()
+        except ValueError:
+            raise ValueError("Corpus effective_date must be a valid YYYY-MM-DD date") from None
+    if result.get("status") == "historical" and not value:
+        raise ValueError("Historical corpus sources require an explicit effective_date")
+    return result
 
 
 def load_manifest(path: Path) -> dict:
@@ -79,8 +111,31 @@ def classify_book_with_origin(book_name: str, manifest: dict):
     if entry is None:
         origin = "defaults"
         entry = manifest["defaults"]
+    source = _source_metadata(entry)
+    if source.get("status") == "historical" and origin != "exact":
+        raise ValueError("Historical exclusions must be declared by exact book name")
     return ({"edition": str(entry.get("edition", _BUILTIN_DEFAULTS["edition"])),
-             "layer": str(entry.get("layer", _BUILTIN_DEFAULTS["layer"]))}, origin)
+             "layer": str(entry.get("layer", _BUILTIN_DEFAULTS["layer"])),
+             **source}, origin)
+
+
+def resolve_book_metadata(metadata: dict, manifest: dict) -> dict:
+    """Resolve stored tags with reviewed exact overrides, without mutating docs.
+
+    Exact declarations apply even when an old index already has edition/layer.
+    Prefix/default tags only fill missing fields; old codex age alone never
+    makes a source historical. Optional source fields remain absent by default.
+    """
+    declared, origin = classify_book_with_origin(metadata.get("book", ""), manifest)
+    stored = _source_metadata(metadata)
+    tags = {key: metadata.get(key) or declared[key] for key in ("edition", "layer")}
+    if origin == "exact":
+        tags.update(declared)
+        stored.update({key: declared[key] for key in SOURCE_METADATA_FIELDS if key in declared})
+    else:
+        stored = {**{key: declared[key] for key in SOURCE_METADATA_FIELDS if key in declared}, **stored}
+    tags.update(_source_metadata(stored))
+    return tags
 
 
 def classify_book(book_name: str, manifest: dict) -> Dict[str, str]:

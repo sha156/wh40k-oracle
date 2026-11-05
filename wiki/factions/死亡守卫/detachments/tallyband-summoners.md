@@ -17,7 +17,7 @@ updated: '2026-07-26'
 
 ## 分队规则
 
-### 瘟疫军团 Reverberant Rancidity
+### [[factions/混沌恶魔/detachments/plague-legion.md|瘟疫军团]] Reverberant Rancidity
 
 While a Plague Legions unit from your army is within 7" of one or more DEATH GUARD units from your army, that PLAGUE LEGIONS unit has the Nurgle’s Gift ability.
 

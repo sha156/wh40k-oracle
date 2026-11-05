@@ -5,17 +5,17 @@ name_en: Havocs
 faction: 混沌星际战士
 type: unit
 points:
-  5 models: 125
+  5 models: 135
 tags:
 - unit
 - unit/混沌星际战士
 - 混沌星际战士
 version:
-  points: MFM 2026-09-14T05:51:23.572407+00:00
+  points: MFM 2026-10-03T19:00:56.192123+00:00
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-09-14'
+updated: '2026-10-03'
 ---
 
 ## 属性表
@@ -53,7 +53,7 @@ updated: '2026-09-14'
 - **稳定脚爪**：本单位模型射击攻击时可以忽视任意或 全部对命中投掷结果和 BS 值的修正
 
 ## 单位构成
-- **5个模型** — 125 分
+- **5个模型** — 135 分
 
 ## 关键词
 - **阵营关键词**：Heretic Astartes

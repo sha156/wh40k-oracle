@@ -1,12 +1,12 @@
 """web_api/keywords.py — 武器词条（USR）索引只读查询层（图鉴 · 词条页）。
 
 数据**只**来自离线生成物 `wiki/indexes/keywords.json`（`wiki_engine.keyword_index` 产）。
-请求期不查 `db/wh40k.sqlite`、更不碰 `data/*.pdf`：词条的三档分类（通用 / 十版遗留 /
-单位特有）判据是 11 版通用技能速查表 PDF，而容器只挂 wiki/、db/、opt/、
+请求期不查 `db/wh40k.sqlite`、更不碰 `data/*.pdf`：词条的三档分类（通用 / 过渡期 /
+单位特有）判据是 GW 官方中英 11 版核心规则 PDF 第 24 章，而容器只挂 wiki/、db/、opt/、
 local_vector_store/——data/ 根本不在场，想现算也算不出来；就算算得出，也会和离线
 渲染的 wiki 词条页各说各话。
 
-载荷 364KB / 46 条，每个请求 json.loads 一遍纯属浪费，故模块级缓存。
+每个请求重新解析完整载荷纯属浪费，故模块级缓存。
 失效判据取 (mtime_ns, size) 而非"进程内只读一次"：离线重跑生成器后不必重启 API，
 下一个请求自动吃到新数据。
 """

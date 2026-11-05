@@ -9,6 +9,18 @@ from wiki_engine import from_db
 from wiki_engine.crosslinks import escape_table_pipes
 
 
+def test_partial_chinese_abilities_do_not_hide_official_rules(tmp_path):
+    db = _mkdb(tmp_path)
+    conn = sqlite3.connect(str(db))
+    conn.row_factory = sqlite3.Row
+    conn.execute("INSERT INTO abilities VALUES('a2','1','','',NULL,'Support','Official support rule.',NULL,NULL)")
+    conn.commit()
+    page, _ = from_db.render_unit(conn, "1", "兽人")
+    assert "Might is Right" in page.body and "Official support rule." in page.body
+    assert "近战武器A+4" not in page.body
+    conn.close()
+
+
 def _mkdb(tmp_path, *, with_zh=True, invuln="5", aircraft_m=False):
     db = tmp_path / "wh40k.sqlite"
     conn = sqlite3.connect(str(db))

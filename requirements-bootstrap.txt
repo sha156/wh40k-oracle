@@ -1,0 +1,6 @@
+# Shared installation tooling for the supported Python 3.11 release sets.
+# Verified patched installer releases; both require Python >=3.10.
+# pkg_resources was removed in 82; jieba 0.42.1's built-in fallback is verified.
+# This is installer/build tooling, not an application runtime API dependency.
+pip==26.2.1
+setuptools==83.0.0

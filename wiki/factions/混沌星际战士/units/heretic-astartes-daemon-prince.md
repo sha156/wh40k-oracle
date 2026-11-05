@@ -5,17 +5,17 @@ name_en: Heretic Astartes Daemon Prince
 faction: 混沌星际战士
 type: unit
 points:
-  1 model: 165
+  1 model: 155
 tags:
 - unit
 - unit/混沌星际战士
 - 混沌星际战士
 version:
-  points: MFM 2026-09-14T05:51:23.572407+00:00
+  points: MFM 2026-10-03T19:00:56.192123+00:00
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-09-14'
+updated: '2026-10-03'
 ---
 
 ## 属性表
@@ -38,13 +38,17 @@ updated: '2026-09-14'
 | 狱铸武器（横扫） | 近战 | 14 | 2+ | 6 | 0 | 1 | — |
 
 ## 技能
-- **【阵营技能】：黑暗契约**
-- **黑暗祝福【光环】**：本模型 6 寸内的友军阿斯塔特 叛军步兵单位中的模型被射击攻击时算作拥有掩体效果
-- **升魔冠军**：本模型在每轮射击或近战攻击中可以重 投一颗命中和一颗造伤结果
-- **混沌诸侯**：本模型位于至少一个友方阿斯塔特叛军步兵单位3寸内时，拥有【独行特工】技能
+- **Dark Blessing (Aura)**：While a friendly Heretic Astartes Infantry unit is within 6" of this model, each time a ranged attack is allocated to a model in that unit, that model has the Benefit of Cover against that attack.
+- **Ascended Daemon**：Each time this model shoot or fights, while resolving those attacks, you can re-roll one Hit roll and you can re-roll one Wound roll.
+- **Lord of Chaos**：While this model is within 3" of one or more friendly Heretic Astartes Infantry units, this model has the Lone Operative ability.
+- **Daemonic Allegiance**：When you select this model to include in your army, you must select one of the keywords below. Until the end of the battle, this model has that keyword and the characteristic modifier stated for that keyword below.
+- **Khorne**：Add 2 to the Strength characteristic of this model's hellforged weapons.
+- **Tzeentch**：Add 3 to the Attacks characteristic of its infernal cannon.
+- **Nurgle**：Add 1 to its Toughness characteristic.
+- **Slaanesh**：Add 2" to its Move characteristic.
 
 ## 单位构成
-- **1个模型** — 165 分
+- **1个模型** — 155 分
 
 ## 关键词
 - **阵营关键词**：Heretic Astartes

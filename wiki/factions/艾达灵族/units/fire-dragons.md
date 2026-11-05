@@ -5,18 +5,18 @@ name_en: Fire Dragons
 faction: 艾达灵族
 type: unit
 points:
-  5 models: 120
+  5 models: 110
   10 models: 240
 tags:
 - unit
 - unit/艾达灵族
 - 艾达灵族
 version:
-  points: MFM 2026-09-14T05:51:23.572407+00:00
+  points: MFM 2026-10-03T19:00:56.192123+00:00
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-09-14'
+updated: '2026-10-03'
 ---
 
 ## 属性表
@@ -48,7 +48,7 @@ updated: '2026-09-14'
 - **灰飞烟灭**：在你的射击阶段中，当本单位中的模型将一个巨兽或载具单位选为远程攻击的攻击目标时，你可以重投所有的命中骰结果、造伤骰结果和伤害骰结果
 
 ## 单位构成
-- **5个模型** — 120 分
+- **5个模型** — 110 分
 - **10个模型** — 240 分
 
 ## 关键词

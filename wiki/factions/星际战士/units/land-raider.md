@@ -1,23 +1,23 @@
 ---
 id: '000000065'
-name_zh: 兰德掠袭者坦克
+name_zh: 兰德掠袭者战车
 name_en: Land Raider
 faction: 星际战士
 type: unit
 points:
-  1 model: 220
+  1 model: 245
 tags:
 - unit
 - unit/星际战士
 - 星际战士
 version:
-  points: MFM 2026-09-14T05:51:23.572407+00:00
+  points: MFM 2026-10-03T19:00:56.192123+00:00
   source: official-db
 sources:
 - book: https://assets.warhammer-community.com/eng_wh40k_faction_pack_space_marines-kxoxqpsahz-u0lzirv0zl.pdf
   pages:
   - 61
-updated: '2026-09-14'
+updated: '2026-10-03'
 ---
 
 ## 属性表
@@ -45,7 +45,7 @@ updated: '2026-09-14'
 - **严重损伤**：本模型 W 值为 1-5 时，攻击命中结果-1
 
 ## 单位构成
-- **1个模型** — 220 分
+- **1个模型** — 245 分
 
 ## 关键词
 - **阵营关键词**：Adeptus Astartes

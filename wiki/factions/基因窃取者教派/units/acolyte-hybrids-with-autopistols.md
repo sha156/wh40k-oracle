@@ -5,18 +5,18 @@ name_en: Acolyte Hybrids With Autopistols
 faction: 基因窃取者教派
 type: unit
 points:
-  5 models: 70
-  10 models: 130
+  5 models: 65
+  10 models: 120
 tags:
 - unit
 - unit/基因窃取者教派
 - 基因窃取者教派
 version:
-  points: MFM 2026-09-14T05:51:23.572407+00:00
+  points: MFM 2026-10-03T19:00:56.192123+00:00
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-09-14'
+updated: '2026-10-03'
 ---
 
 ## 属性表
@@ -41,8 +41,8 @@ updated: '2026-09-14'
 - **归于教团**：在你的指挥阶段，你每有一个由一个或多个具有该技能的单位控制的任务目标点则骰一枚 D6，若其中的一个或多个结果为 4+，你获得 1 点 CP。
 
 ## 单位构成
-- **5个模型** — 70 分
-- **10个模型** — 130 分
+- **5个模型** — 65 分
+- **10个模型** — 120 分
 
 ## 关键词
 - **阵营关键词**：Genestealer Cults

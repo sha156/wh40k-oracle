@@ -1,0 +1,845 @@
+{
+  "records": [
+    {
+      "faction_zh": "太空野狼",
+      "full_detail_source_ids": [],
+      "id": "2876",
+      "inventory_sha256": "89a86c2fcec7158142c48057965726e402c1dbe74d1a39d449f2a9826f951776",
+      "name_zh": "乘坐风暴战车的洛根·格里姆纳尔【传奇】",
+      "reason": "empty_legends"
+    },
+    {
+      "faction_zh": "太空野狼",
+      "full_detail_source_ids": [],
+      "id": "2877",
+      "inventory_sha256": "0c28bf324f35246940aea2d9aadbed1b43d41f9acee7c19a419672f9f870bc1d",
+      "name_zh": "克罗姆·龙瞪【传奇】",
+      "reason": "empty_legends"
+    },
+    {
+      "faction_zh": "太空野狼",
+      "full_detail_source_ids": [],
+      "id": "2878",
+      "inventory_sha256": "b92ed30ef1cafd5cbfca3d053591163e573f2d993d9b663977c14f7b4ee8fa72",
+      "name_zh": "哈拉尔德·死亡之狼【传奇】",
+      "reason": "empty_legends"
+    },
+    {
+      "faction_zh": "太空野狼",
+      "full_detail_source_ids": [],
+      "id": "2879",
+      "inventory_sha256": "ae9c5574aa6c6fc06f5f291e2417a7442df01d6cd27586cb5d60ffcc56f947f7",
+      "name_zh": "卡尼斯·狼生【传奇】",
+      "reason": "empty_legends"
+    },
+    {
+      "faction_zh": "太空野狼",
+      "full_detail_source_ids": [],
+      "id": "2880",
+      "inventory_sha256": "85e27178e0b2810f985b8d6af452bf8575c0280d97bd1a9ca2ea07dbc13dd503",
+      "name_zh": "终结者护甲野狼守卫战斗领袖【传奇】",
+      "reason": "empty_legends"
+    },
+    {
+      "faction_zh": "太空野狼",
+      "full_detail_source_ids": [],
+      "id": "2881",
+      "inventory_sha256": "bc0d67b613a481557e34490ebc79c80d30a9a34a775d587b5718a92525bceeec",
+      "name_zh": "机械狼【传奇】",
+      "reason": "empty_legends"
+    },
+    {
+      "faction_zh": "太空野狼",
+      "full_detail_source_ids": [],
+      "id": "2887",
+      "inventory_sha256": "7c3de22257c1ee69fbc8efb27c6e59b984a4ee888fd87bff9b6bf0a29d3e11e6",
+      "name_zh": "骗子卢卡斯【传奇】",
+      "reason": "empty_legends"
+    },
+    {
+      "faction_zh": "太空野狼",
+      "full_detail_source_ids": [],
+      "id": "2890",
+      "inventory_sha256": "ae4a19620ae6b6f90bc7d86822ad71171dfb09f5f5f3f0a96ddff29f11c325e9",
+      "name_zh": "野狼守卫头狼【传奇】",
+      "reason": "empty_legends"
+    },
+    {
+      "faction_zh": "太空野狼",
+      "full_detail_source_ids": [],
+      "id": "2893",
+      "inventory_sha256": "f79121cd3a289777d74dd882a3f80342f7ad1d5b26fb252ed3f117b077b6b621",
+      "name_zh": "骑雷狼的野狼领主【传奇】",
+      "reason": "empty_legends"
+    },
+    {
+      "faction_zh": "太空野狼",
+      "full_detail_source_ids": [],
+      "id": "2894",
+      "inventory_sha256": "8b2261b72a929ea282a302c10d7bd703271c5a7821008d73ce8c3099264501c7",
+      "name_zh": "骑雷狼的野狼守卫战斗领袖【传奇】",
+      "reason": "empty_legends"
+    },
+    {
+      "faction_zh": "太空野狼",
+      "full_detail_source_ids": [],
+      "id": "2898",
+      "inventory_sha256": "c9b9b336b4d0509ed304f7c3607d634cb412a2653114766168f808821610ea50",
+      "name_zh": "跳跃背包野狼守卫头狼【传奇】",
+      "reason": "empty_legends"
+    },
+    {
+      "faction_zh": "太空野狼",
+      "full_detail_source_ids": [],
+      "id": "2899",
+      "inventory_sha256": "8d1f0047ca9fdcfe28639ebb7f56bc3411cc908205e397217f3124e9c9484a41",
+      "name_zh": "终结者护甲野狼守卫头狼【传奇】",
+      "reason": "empty_legends"
+    },
+    {
+      "faction_zh": "太空野狼",
+      "full_detail_source_ids": [],
+      "id": "2884",
+      "inventory_sha256": "cd4b8cbe58c7b17c0e0af3a089992a62fe5e1278064851d39ad18578e803be92",
+      "name_zh": "莫尔凯猎犬【传奇】",
+      "reason": "empty_legends"
+    },
+    {
+      "faction_zh": "太空野狼",
+      "full_detail_source_ids": [],
+      "id": "2885",
+      "inventory_sha256": "af6225bcfeae4f7a4d450ef0fea83267ed7ce7445bea0b36966fd6f72dd0313b",
+      "name_zh": "长牙【传奇】",
+      "reason": "empty_legends"
+    },
+    {
+      "faction_zh": "太空野狼",
+      "full_detail_source_ids": [],
+      "id": "2886",
+      "inventory_sha256": "6e09bcfbc5e61eadc7a4df2cb9024941cd6ad12a0460c894949e67f3c3175624",
+      "name_zh": "天爪【传奇】",
+      "reason": "empty_legends"
+    },
+    {
+      "faction_zh": "太空野狼",
+      "full_detail_source_ids": [],
+      "id": "2895",
+      "inventory_sha256": "dbcbd4c008d6fc2099c6578f5b1957a3521d44cad3f51fc6068adc803deaf001",
+      "name_zh": "风暴牙炮艇【传奇】",
+      "reason": "empty_legends"
+    },
+    {
+      "faction_zh": "太空野狼",
+      "full_detail_source_ids": [],
+      "id": "2897",
+      "inventory_sha256": "329cb91a296dbc1120fe976a624e7634b969065e8062d878cc5d69d5c0f3e021",
+      "name_zh": "狼卫【传奇】",
+      "reason": "empty_legends"
+    },
+    {
+      "faction_zh": "太空野狼",
+      "full_detail_source_ids": [],
+      "id": "2900",
+      "inventory_sha256": "0be56555df09dd3571be15edfe47778278916b7b4af4247f730503f053571b3a",
+      "name_zh": "风暴狼【传奇】",
+      "reason": "empty_legends"
+    },
+    {
+      "faction_zh": "星界军",
+      "full_detail_source_ids": [],
+      "id": "2834",
+      "inventory_sha256": "e69e5bd94fa5f2b73dff887adaf78c4bf90c176af2ccc13f38661af2dbaff061",
+      "name_zh": "哈米吉多顿：战营：星界军",
+      "reason": "empty_listing"
+    },
+    {
+      "faction_zh": "星界军",
+      "full_detail_source_ids": [],
+      "id": "2835",
+      "inventory_sha256": "c0797e7fef3a1d434e9ba327aca827f0f2afeed38f4dccc2d481b6de163ada1f",
+      "name_zh": "杀戮小队：德维兰上的惧物",
+      "reason": "empty_listing"
+    },
+    {
+      "faction_zh": "星界军",
+      "full_detail_source_ids": [
+        219
+      ],
+      "id": "2768",
+      "inventory_sha256": "221d2c71ab703c96be00135b0b25c956cc042b0fa81dccd41a7379dc879e50fe",
+      "name_zh": "女武神炮艇",
+      "reason": "duplicate_listing"
+    },
+    {
+      "faction_zh": "星界军",
+      "full_detail_source_ids": [],
+      "id": "2769",
+      "inventory_sha256": "b6c113a6e82403ac928d9922e4d7188f1a3fd0adad209870696126b070ee716e",
+      "name_zh": "飞龙自行火炮/九头蛇高射炮",
+      "reason": "empty_listing"
+    },
+    {
+      "faction_zh": "星界军",
+      "full_detail_source_ids": [
+        217
+      ],
+      "id": "2770",
+      "inventory_sha256": "5ae35b46d300edffd96278b4e0c026040b46379e4ceed53690e727c95fce80a7",
+      "name_zh": "克里德堡主",
+      "reason": "duplicate_listing"
+    },
+    {
+      "faction_zh": "星界军",
+      "full_detail_source_ids": [
+        216
+      ],
+      "id": "2771",
+      "inventory_sha256": "f242be9ecd90fbfd216cb9d9ef54062f1dd2b293f43bc2ef867fd890718d0c14",
+      "name_zh": "风暴忠嗣军小队",
+      "reason": "duplicate_listing"
+    },
+    {
+      "faction_zh": "星界军",
+      "full_detail_source_ids": [
+        215
+      ],
+      "id": "2772",
+      "inventory_sha256": "b43561bb35205f3dfeb6fbbb5b5ad402b904f54a79d2f657f6226c8792b9a1e0",
+      "name_zh": "风暴天鹰",
+      "reason": "duplicate_listing"
+    },
+    {
+      "faction_zh": "星界军",
+      "full_detail_source_ids": [
+        214
+      ],
+      "id": "2773",
+      "inventory_sha256": "5ace912fe2bca57ec164f680d6c7df7ae2d6d8d69917882ac732858e0e96f8b3",
+      "name_zh": "技术技师机械教士",
+      "reason": "duplicate_listing"
+    },
+    {
+      "faction_zh": "星界军",
+      "full_detail_source_ids": [
+        205
+      ],
+      "id": "2774",
+      "inventory_sha256": "2431c4eba66205ea4aaaf0aa1dac752de4dd2e5f737314a73e2b0107f887ba22",
+      "name_zh": "罗格多恩坦克",
+      "reason": "duplicate_listing"
+    },
+    {
+      "faction_zh": "星界军",
+      "full_detail_source_ids": [
+        204
+      ],
+      "id": "2775",
+      "inventory_sha256": "aa77d624f8d7d941741e19445d8a27d20a6a7df4c94699da194f8395d42e0f6a",
+      "name_zh": "莱特林",
+      "reason": "duplicate_listing"
+    },
+    {
+      "faction_zh": "星界军",
+      "full_detail_source_ids": [
+        187
+      ],
+      "id": "2776",
+      "inventory_sha256": "af20d55d26d78889aeabaacb75ac5ab2765b8ceb91764cfaf896f895089be4ee",
+      "name_zh": "太阳元帅雷昂图斯",
+      "reason": "duplicate_listing"
+    },
+    {
+      "faction_zh": "星界军",
+      "full_detail_source_ids": [
+        185
+      ],
+      "id": "2777",
+      "inventory_sha256": "0254d51d0c79e32c723dacd9d20668059d567db29ccffa040af6b1708d3a0b12",
+      "name_zh": "大元帅德雷尔",
+      "reason": "duplicate_listing"
+    },
+    {
+      "faction_zh": "星界军",
+      "full_detail_source_ids": [
+        174
+      ],
+      "id": "2778",
+      "inventory_sha256": "a29a261e1482d496cddce5945d1a93b72c6e72cf2d0e69d40e7f68b923458d08",
+      "name_zh": "克里格重型武器小队",
+      "reason": "duplicate_listing"
+    },
+    {
+      "faction_zh": "星界军",
+      "full_detail_source_ids": [
+        173
+      ],
+      "id": "2779",
+      "inventory_sha256": "329ab386b416207ab79c037f8d32495254984f724941ebea3c82241eeea5357f",
+      "name_zh": "克里格指挥组",
+      "reason": "duplicate_listing"
+    },
+    {
+      "faction_zh": "星界军",
+      "full_detail_source_ids": [
+        172
+      ],
+      "id": "2780",
+      "inventory_sha256": "fb20fcc26c8dd6b89a8a9136ce265367ad148933a3264491aa360a9752194198",
+      "name_zh": "克里格战斗工兵",
+      "reason": "duplicate_listing"
+    },
+    {
+      "faction_zh": "星界军",
+      "full_detail_source_ids": [
+        171
+      ],
+      "id": "2781",
+      "inventory_sha256": "0ce501af8079186c5ba5cc1386adfbb9a66ef60a0b73075cb4cffc3a8675cdbe",
+      "name_zh": "卡舍津突击队",
+      "reason": "duplicate_listing"
+    },
+    {
+      "faction_zh": "星界军",
+      "full_detail_source_ids": [
+        167
+      ],
+      "id": "2782",
+      "inventory_sha256": "46de550cb0c16282a64f1367fd97aefd61cda7402b42db57e587e4c997ea946a",
+      "name_zh": "刚特的幽灵",
+      "reason": "duplicate_listing"
+    },
+    {
+      "faction_zh": "星界军",
+      "full_detail_source_ids": [
+        166
+      ],
+      "id": "2783",
+      "inventory_sha256": "e1d04f43e352758f95beb7d440a71f4e6fc4129fbc937bd9314e8126d1148863",
+      "name_zh": "野战炮兵",
+      "reason": "duplicate_listing"
+    },
+    {
+      "faction_zh": "星界军",
+      "full_detail_source_ids": [],
+      "id": "2784",
+      "inventory_sha256": "e7e4e7a60bf8e1dd29abc61f26a992173871e2f3440bcb54e1125fd632d1c934",
+      "name_zh": "死亡骑兵",
+      "reason": "empty_listing"
+    },
+    {
+      "faction_zh": "星界军",
+      "full_detail_source_ids": [
+        162
+      ],
+      "id": "2785",
+      "inventory_sha256": "9f6fa9e91b492794f2d5e4d51d2baefbdc56d6d74c980f9e1f47edfcec738980",
+      "name_zh": "克里格死兵队",
+      "reason": "duplicate_listing"
+    },
+    {
+      "faction_zh": "星界军",
+      "full_detail_source_ids": [
+        139
+      ],
+      "id": "2786",
+      "inventory_sha256": "7e42a5f7906a5e8a09dd9905159cc69137567b2bcdb758e37356209b88b6c695",
+      "name_zh": "政委",
+      "reason": "duplicate_listing"
+    },
+    {
+      "faction_zh": "星界军",
+      "full_detail_source_ids": [
+        138
+      ],
+      "id": "2787",
+      "inventory_sha256": "07d0d6fd13e13edfb524445df19dbd1ef4781ecfc84c2097aeea9cd62bd0fe41",
+      "name_zh": "奇美拉装甲车",
+      "reason": "duplicate_listing"
+    },
+    {
+      "faction_zh": "星界军",
+      "full_detail_source_ids": [
+        134
+      ],
+      "id": "2788",
+      "inventory_sha256": "da2e1f8ee7f5dbc39f4a8cf9212d31dea7179f6deb8689290ef1b7aed997683c",
+      "name_zh": "卡迪安突击队",
+      "reason": "duplicate_listing"
+    },
+    {
+      "faction_zh": "星界军",
+      "full_detail_source_ids": [
+        130
+      ],
+      "id": "2789",
+      "inventory_sha256": "834ef32e7f6f43896cd66fda3205f449ce99ceec7260ebe4d8ccc4c7eccc341b",
+      "name_zh": "卡迪安指挥组",
+      "reason": "duplicate_listing"
+    },
+    {
+      "faction_zh": "星界军",
+      "full_detail_source_ids": [
+        129
+      ],
+      "id": "2790",
+      "inventory_sha256": "a394a18329a1d7fe87a0dd893da4ca15048535170d0ddf872bcb01aad112cbcc",
+      "name_zh": "卡迪安堡主",
+      "reason": "duplicate_listing"
+    },
+    {
+      "faction_zh": "星界军",
+      "full_detail_source_ids": [],
+      "id": "2791",
+      "inventory_sha256": "d195bf15cef16dc5e41a71cead23575b59895d5d19794e7521b629d1a1e0831c",
+      "name_zh": "牛格林/欧格林",
+      "reason": "empty_listing"
+    },
+    {
+      "faction_zh": "星界军",
+      "full_detail_source_ids": [],
+      "id": "2792",
+      "inventory_sha256": "28a171674a0e8db08b9138a37c1d65676aeda6cfa0d41d6f2ecd55fabaf1818d",
+      "name_zh": "毒刃坦克",
+      "reason": "empty_listing"
+    },
+    {
+      "faction_zh": "星界军",
+      "full_detail_source_ids": [
+        119
+      ],
+      "id": "2793",
+      "inventory_sha256": "5d767061d65bc2733204a69901035078767ccf78cb4f0b278bfe22e48c2f6e69",
+      "name_zh": "阿提拉蛮骑兵",
+      "reason": "duplicate_listing"
+    },
+    {
+      "faction_zh": "星界军",
+      "full_detail_source_ids": [
+        118
+      ],
+      "id": "2794",
+      "inventory_sha256": "8c0a70b48f09ee8dbe577e6efa5afd77f206fd718974cdcf31d3206b8aa01716",
+      "name_zh": "炮兵小组",
+      "reason": "duplicate_listing"
+    },
+    {
+      "faction_zh": "星界军",
+      "full_detail_source_ids": [],
+      "id": "2795",
+      "inventory_sha256": "0384c7fd096d67db50c7472ea7fd3ea509f13b85061ee388b2834771ab8fa704",
+      "name_zh": "哨兵",
+      "reason": "empty_listing"
+    },
+    {
+      "faction_zh": "星界军",
+      "full_detail_source_ids": [
+        175
+      ],
+      "id": "2798",
+      "inventory_sha256": "aad3c7250faedec85d3a0066982ddad01f105d0bd6cd94bfe48718358f7c085a",
+      "name_zh": "黎曼鲁斯战斗坦克",
+      "reason": "duplicate_listing"
+    },
+    {
+      "faction_zh": "星际战士",
+      "full_detail_source_ids": [],
+      "id": "2742",
+      "inventory_sha256": "5321aeee0dd6776d05379ec57ca3de19f2ca651a65d24f6d249a5c26f27d3f0f",
+      "name_zh": "战锤40k 星际战士 vsm 渗透者 入侵者",
+      "reason": "empty_listing"
+    },
+    {
+      "faction_zh": "星际战士",
+      "full_detail_source_ids": [
+        69
+      ],
+      "id": "2743",
+      "inventory_sha256": "4bd9d480c0d2e8dd6374c8c3558bfddc36c67db005d9bec632b75ae081667641",
+      "name_zh": "先驱者小队",
+      "reason": "duplicate_listing"
+    },
+    {
+      "faction_zh": "星际战士",
+      "full_detail_source_ids": [],
+      "id": "2744",
+      "inventory_sha256": "1381a205da5acd1d1793b660b1b13d289292a06409018b7b5e51510b5725bca6",
+      "name_zh": "根除者小队",
+      "reason": "empty_listing"
+    },
+    {
+      "faction_zh": "星际战士",
+      "full_detail_source_ids": [
+        67
+      ],
+      "id": "2745",
+      "inventory_sha256": "4d8bdb4c0302e7faa4f436d7c689343f6ec4f1a53c238049f3a378e231a40f8f",
+      "name_zh": "侵略者小队",
+      "reason": "duplicate_listing"
+    },
+    {
+      "faction_zh": "星际战士",
+      "full_detail_source_ids": [
+        66
+      ],
+      "id": "2746",
+      "inventory_sha256": "de80e527c94ae61e6bfc6a4d47b452879e85fb04583970451046a760a789786e",
+      "name_zh": "重装仲裁者小队",
+      "reason": "duplicate_listing"
+    },
+    {
+      "faction_zh": "星际战士",
+      "full_detail_source_ids": [
+        63
+      ],
+      "id": "2747",
+      "inventory_sha256": "9a0e8b517b685969f3621cbf7924f4b6c15a4830b501daf5ecc9685e037335a1",
+      "name_zh": "寂灭者小队",
+      "reason": "duplicate_listing"
+    },
+    {
+      "faction_zh": "星际战士",
+      "full_detail_source_ids": [
+        60
+      ],
+      "id": "2748",
+      "inventory_sha256": "bf9ef7636a80b34533682030c97d1faad59d52f9ad66bf0d9522b8df047b91a0",
+      "name_zh": "地狱轰击者小队",
+      "reason": "duplicate_listing"
+    },
+    {
+      "faction_zh": "星际战士",
+      "full_detail_source_ids": [
+        58
+      ],
+      "id": "2749",
+      "inventory_sha256": "09e997b01970bb97d5a635e149c696407d05e6bc3a903c18c75b1faa4351c01f",
+      "name_zh": "肃卫老兵小队",
+      "reason": "duplicate_listing"
+    },
+    {
+      "faction_zh": "星际战士",
+      "full_detail_source_ids": [
+        57
+      ],
+      "id": "2750",
+      "inventory_sha256": "d68b2da156a6c98ada7cfac113aecbdcba67a89fee841ea00f25ddb39b6ab05b",
+      "name_zh": "剑卫老兵小队",
+      "reason": "duplicate_listing"
+    },
+    {
+      "faction_zh": "星际战士",
+      "full_detail_source_ids": [
+        54
+      ],
+      "id": "2751",
+      "inventory_sha256": "65c2af42f35195531a1ac4530726dc937679294059c2e2840cdecb59efb1caf7",
+      "name_zh": "跳跃背包突击仲裁者小队",
+      "reason": "duplicate_listing"
+    },
+    {
+      "faction_zh": "星际战士",
+      "full_detail_source_ids": [
+        52
+      ],
+      "id": "2752",
+      "inventory_sha256": "42da882618cf68d96650ac6177535c11be2eb7187f62d9d5bce71d64626f0227",
+      "name_zh": "连队英雄",
+      "reason": "duplicate_listing"
+    },
+    {
+      "faction_zh": "星际战士",
+      "full_detail_source_ids": [],
+      "id": "2753",
+      "inventory_sha256": "d8956d3d12cab648300236971bd262dc26a3fc595980fe766f2093482f164b93",
+      "name_zh": "终结者旗手",
+      "reason": "empty_listing"
+    },
+    {
+      "faction_zh": "星际战士",
+      "full_detail_source_ids": [
+        46
+      ],
+      "id": "2754",
+      "inventory_sha256": "17da0fa0962335121364909f892ebee7898689847c1e5aee61a3cbb557d257a0",
+      "name_zh": "旗手",
+      "reason": "duplicate_listing"
+    },
+    {
+      "faction_zh": "星际战士",
+      "full_detail_source_ids": [
+        44
+      ],
+      "id": "2755",
+      "inventory_sha256": "c6bb2f390e36358ddff2c76bd02df34f7ec0e0b1a008640e34f8f42db5456f6e",
+      "name_zh": "药剂师",
+      "reason": "duplicate_listing"
+    },
+    {
+      "faction_zh": "星际战士",
+      "full_detail_source_ids": [
+        43
+      ],
+      "id": "2756",
+      "inventory_sha256": "bfe8694618f7946b0c2952fe454bf795f7b1f8df283fb3cf550a3018fcb843f8",
+      "name_zh": "技术军士",
+      "reason": "duplicate_listing"
+    },
+    {
+      "faction_zh": "星际战士",
+      "full_detail_source_ids": [
+        41
+      ],
+      "id": "2757",
+      "inventory_sha256": "a6fbca763889a0ef42130614fd3bbdcbb2601531feae588c83c71bd227683d2c",
+      "name_zh": "摩托牧师",
+      "reason": "duplicate_listing"
+    },
+    {
+      "faction_zh": "星际战士",
+      "full_detail_source_ids": [],
+      "id": "2758",
+      "inventory_sha256": "90021b2df201ecc003aa5e565c377a8d943e1cf3414c250953a4cad07a62da08",
+      "name_zh": "终结者牧师",
+      "reason": "empty_listing"
+    },
+    {
+      "faction_zh": "星际战士",
+      "full_detail_source_ids": [
+        39
+      ],
+      "id": "2759",
+      "inventory_sha256": "376a67be06b4fec46f9b59cf6bad60b0190ff8c47a7c6f268ecb5bc434019eaf",
+      "name_zh": "牧师",
+      "reason": "duplicate_listing"
+    },
+    {
+      "faction_zh": "星际战士",
+      "full_detail_source_ids": [],
+      "id": "2760",
+      "inventory_sha256": "16874e958230f27c07f367bc9ca0d51a2f8a329fc550e84bbb71ec8dbd0c34a8",
+      "name_zh": "智库",
+      "reason": "empty_listing"
+    },
+    {
+      "faction_zh": "星际战士",
+      "full_detail_source_ids": [
+        34
+      ],
+      "id": "2761",
+      "inventory_sha256": "4f16c14d498f762a45e73579af49f1501cb878521778a1b7d48b83e693c9860b",
+      "name_zh": "劫掠者副官",
+      "reason": "duplicate_listing"
+    },
+    {
+      "faction_zh": "星际战士",
+      "full_detail_source_ids": [
+        33
+      ],
+      "id": "2762",
+      "inventory_sha256": "961601930749c73c13b00990d7637d613e542d1c4559315c83a317a232ad59bb",
+      "name_zh": "副官",
+      "reason": "duplicate_listing"
+    },
+    {
+      "faction_zh": "星际战士",
+      "full_detail_source_ids": [
+        32
+      ],
+      "id": "2763",
+      "inventory_sha256": "8a0429381e924b488e0e345141f6cf5f650cd31c259df7c87a8ddbdf97b0844a",
+      "name_zh": "跳跃背包连长",
+      "reason": "duplicate_listing"
+    },
+    {
+      "faction_zh": "星际战士",
+      "full_detail_source_ids": [],
+      "id": "2764",
+      "inventory_sha256": "16a0d70a417f421312d2836debb66c6e0c36f4397cf1edfce2a473e150d60fef",
+      "name_zh": "先锋军连长",
+      "reason": "empty_listing"
+    },
+    {
+      "faction_zh": "星际战士",
+      "full_detail_source_ids": [
+        28
+      ],
+      "id": "2765",
+      "inventory_sha256": "faeea725565be0694487180cd0bb5d41a88244bbafaee44b164a607133b7d18f",
+      "name_zh": "连长",
+      "reason": "duplicate_listing"
+    },
+    {
+      "faction_zh": "星际战士",
+      "full_detail_source_ids": [],
+      "id": "2766",
+      "inventory_sha256": "45df7ec1ddbb3a82ab0349868660232cc2af36a33a3ab6009dd88d1c5dd6021a",
+      "name_zh": "重装连长",
+      "reason": "empty_listing"
+    },
+    {
+      "faction_zh": "星际战士",
+      "full_detail_source_ids": [
+        53
+      ],
+      "id": "2767",
+      "inventory_sha256": "f0f3a11a6ceae4fe4c139583e2285fe86d9f82631883e4b0fcdffa4ca1c9ab70",
+      "name_zh": "仲裁者小队",
+      "reason": "duplicate_listing"
+    },
+    {
+      "faction_zh": "星际战士",
+      "full_detail_source_ids": [],
+      "id": "2904",
+      "inventory_sha256": "de8e40233562698789cf21146b36d1e1fbb0284889f026b1ba5595327cb80ec3",
+      "name_zh": "帝国星际战士【传奇】",
+      "reason": "empty_legends"
+    },
+    {
+      "faction_zh": "星际战士",
+      "full_detail_source_ids": [],
+      "id": "2905",
+      "inventory_sha256": "1e31912084d718462eaa62832747df839dafa90a7ae9c2e3824b15368caf737e",
+      "name_zh": "跳跃背包智库【传奇】",
+      "reason": "empty_legends"
+    },
+    {
+      "faction_zh": "星际战士",
+      "full_detail_source_ids": [],
+      "id": "2906",
+      "inventory_sha256": "59fe4e68accd30f3aff2da3e58b274459ce9633492b5b56e5baf8966413ae8c9",
+      "name_zh": "阿斯塔特奴工【传奇】",
+      "reason": "empty_legends"
+    },
+    {
+      "faction_zh": "星际战士",
+      "full_detail_source_ids": [],
+      "id": "2907",
+      "inventory_sha256": "ff597d931bb84ddf84d63629730183c195bee7134387439e29f211860f8045f3",
+      "name_zh": "铁卫无畏机甲【传奇】",
+      "reason": "empty_legends"
+    },
+    {
+      "faction_zh": "星际战士",
+      "full_detail_source_ids": [],
+      "id": "2909",
+      "inventory_sha256": "4fc7584f7f6e0d7e35df8d21519836000a94b6913d9a9a4996df50f3fc05d3db",
+      "name_zh": "神圣牧师无畏机甲【传奇】",
+      "reason": "empty_legends"
+    },
+    {
+      "faction_zh": "星际战士",
+      "full_detail_source_ids": [],
+      "id": "2910",
+      "inventory_sha256": "deafec6f85f3f18df71fd91fa8f3a2824e41ca9664dae91e05e1e78236312fee",
+      "name_zh": "神圣无畏机甲【传奇】",
+      "reason": "empty_legends"
+    },
+    {
+      "faction_zh": "星际战士",
+      "full_detail_source_ids": [],
+      "id": "2911",
+      "inventory_sha256": "8bf40520bd358150e28ba7b23f56dccdb20bf3166d2f227e76c7d166c9241387",
+      "name_zh": "德雷都无畏机甲【传奇】",
+      "reason": "empty_legends"
+    },
+    {
+      "faction_zh": "星际战士",
+      "full_detail_source_ids": [],
+      "id": "2916",
+      "inventory_sha256": "701c32c0cd808c8f096b1982eb875c69d9b70918f45cf79de8303476e89bd3b5",
+      "name_zh": "圣物蔑视者无畏机甲【传奇】",
+      "reason": "empty_legends"
+    },
+    {
+      "faction_zh": "星际战士",
+      "full_detail_source_ids": [],
+      "id": "2917",
+      "inventory_sha256": "196b41a488f6b7496884cca1a17110ca53380a60f0713f877d53df6fde939d47",
+      "name_zh": "利维坦无畏机甲【传奇】",
+      "reason": "empty_legends"
+    },
+    {
+      "faction_zh": "星际战士",
+      "full_detail_source_ids": [],
+      "id": "2918",
+      "inventory_sha256": "b5249c3ab951a57f43e4be795babd2746d9cb286dcc105ef380f727d5361189e",
+      "name_zh": "奎托斯【传奇】",
+      "reason": "empty_legends"
+    },
+    {
+      "faction_zh": "星际战士",
+      "full_detail_source_ids": [],
+      "id": "2919",
+      "inventory_sha256": "de57ba7afb94ed75df1bdb8b66fbf25192c90b73d19e6d370f81c0af88acf415",
+      "name_zh": "迪莫斯型猎食者【传奇】",
+      "reason": "empty_legends"
+    },
+    {
+      "faction_zh": "星际战士",
+      "full_detail_source_ids": [],
+      "id": "2925",
+      "inventory_sha256": "83ce68846ab77e4af61c65dfdf8999a77469ee758b301a5cea19bbed43cde207",
+      "name_zh": "龙卷风型兰德速攻艇【传奇】",
+      "reason": "empty_legends"
+    },
+    {
+      "faction_zh": "星际战士",
+      "full_detail_source_ids": [],
+      "id": "2926",
+      "inventory_sha256": "13098e3e3c46db03a8a9cf1b8c9d0d0d2004eef101d614afd3c0fb29ee183c3d",
+      "name_zh": "风暴型兰德速攻艇【传奇】",
+      "reason": "empty_legends"
+    },
+    {
+      "faction_zh": "星际战士",
+      "full_detail_source_ids": [],
+      "id": "2927",
+      "inventory_sha256": "393492b7c3209926ef810302aede09a1b8f30d45c152acb40a9d93733ba68372",
+      "name_zh": "台风型兰德速攻艇【传奇】",
+      "reason": "empty_legends"
+    },
+    {
+      "faction_zh": "星际战士",
+      "full_detail_source_ids": [],
+      "id": "2990",
+      "inventory_sha256": "4c4245607ba4a60daa0198e77b432a5d08390f71cc8027e0b3bdaf7c328d1958",
+      "name_zh": "乳齿象【传奇】",
+      "reason": "empty_legends"
+    },
+    {
+      "faction_zh": "星际战士",
+      "full_detail_source_ids": [],
+      "id": "2991",
+      "inventory_sha256": "8d0aec41c3ecc045163ca40197bed1e3aa3ee627ed62a73a5c012d9633b93fa7",
+      "name_zh": "西卡然战斗坦克【传奇】",
+      "reason": "empty_legends"
+    },
+    {
+      "faction_zh": "浴血者",
+      "full_detail_source_ids": [],
+      "id": "1527",
+      "inventory_sha256": "28f5f800455ee206f70515b9964d7097d14a1e2144e72df60d48dbae2882e727",
+      "name_zh": "叛军首领",
+      "reason": "empty_listing"
+    },
+    {
+      "faction_zh": "黑暗天使",
+      "full_detail_source_ids": [],
+      "id": "2873",
+      "inventory_sha256": "df0a9370a8f99bf550b647c68b58642c7ad532af3e178cd9b2b2d5b24f4351bd",
+      "name_zh": "鸦翼锐爪副长【传奇】",
+      "reason": "empty_legends"
+    },
+    {
+      "faction_zh": "黑暗天使",
+      "full_detail_source_ids": [],
+      "id": "2874",
+      "inventory_sha256": "c2586c7bb1a0dc7f5d88536b2209f7e70c4a3276df1bd10ec31d645a23aefad1",
+      "name_zh": "死翼打击副长【传奇】",
+      "reason": "empty_legends"
+    }
+  ],
+  "reviewed_at": "2026-10-04",
+  "schema_version": 1,
+  "scope": "User-authorized exclusions of unchanged empty listings from the crawl backlog; never delete canonical units or full source cards. Any inventory change invalidates the exclusion."
+}

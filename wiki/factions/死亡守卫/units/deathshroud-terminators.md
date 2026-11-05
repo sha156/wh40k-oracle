@@ -5,18 +5,18 @@ name_en: Deathshroud Terminators
 faction: 死亡守卫
 type: unit
 points:
-  3 models: 160
+  3 models: 150
   6 models: 305
 tags:
 - unit
 - unit/死亡守卫
 - 死亡守卫
 version:
-  points: MFM 2026-09-14T05:51:23.572407+00:00
+  points: MFM 2026-10-03T19:00:56.192123+00:00
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-09-14'
+updated: '2026-10-03'
 ---
 
 ## 属性表
@@ -45,7 +45,7 @@ updated: '2026-09-14'
 - **绝望圣徽（光环，武器技能）**：该模型 6 寸内的敌方单位 领导力 LD-1
 
 ## 单位构成
-- **3个模型** — 160 分
+- **3个模型** — 150 分
 - **6个模型** — 305 分
 
 ## 关键词

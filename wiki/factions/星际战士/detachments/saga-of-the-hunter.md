@@ -24,7 +24,7 @@ Each time a model in a Space Wolves unit from your army makes a melee attack tha
 - Add 1 to the Hit roll.
 - If your Saga is completed (see below), add 1 to the Wound roll as well.
 
-Saga of the Hunter
+Saga of the [[factions/星际战士/units/hunter.md|Hunter]]
 At the start of the first battle round, your Quarry tally is 0. Each time an ADEPTUS ASTARTES unit from your army fights, after all of those attacks have been resolved, add 1 to your Quarry tally for each enemy unit destroyed by those attacks.
 
 Once your Quarry tally is equal to or greater than the number shown in the table below (depending on the battle size), your Saga is completed.

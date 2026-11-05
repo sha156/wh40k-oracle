@@ -122,11 +122,15 @@ def test_rule_link_points_at_a_real_section(client: TestClient) -> None:
 
 
 @needs_payload
-def test_rule_link_survives_missing_quickref_section(client: TestClient) -> None:
-    """速查表漏印节号的词条照样有落点——靠官方英文名配回，不是按顺序推出来的。
+def test_rule_link_survives_legacy_payload_omission(client: TestClient, tmp_path, monkeypatch) -> None:
+    """Old payloads still resolve null section via the actual official heading.
 
-    PISTOL 的 section 是 null（速查表没印），但核心规则 24.27 确实是它。
+    The replacement generator supplies 24.27; this separate fixture exercises
+    compatibility without asserting that newly generated payloads omit it.
     """
+    p = tmp_path / "legacy-keywords.json"
+    p.write_text(_payload("pistol"), encoding="utf-8")
+    monkeypatch.setattr(kw, "PAYLOAD_PATH", p)
     detail = client.get("/codex/keywords/pistol").json()
     assert detail["section"] is None
     assert detail["ruleSection"] == "24.27"

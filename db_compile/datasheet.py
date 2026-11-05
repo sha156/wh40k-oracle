@@ -56,6 +56,9 @@ class Datasheet:
     models: List[ModelProfile]
     weapons: List[Weapon]
     source_note: Optional[str] = None
+    # Non-current MFM tiers are evidence, never selectable current price options.
+    # Keep the original provenance dates; a capture is not an effective date.
+    historical_points: Optional[dict] = None
 
 
 def _parse_points(points_json: Optional[str]) -> tuple:
@@ -66,6 +69,8 @@ def _parse_points(points_json: Optional[str]) -> tuple:
     except (json.JSONDecodeError, TypeError):
         return None, []
     items = data.get("items") or []
+    if (data.get("mfm") or {}).get("current") is False:
+        return None, []
     if data.get("mfm"):
         from db_compile.calc_points import _min_points
         return _min_points(points_json), items
@@ -73,6 +78,33 @@ def _parse_points(points_json: Optional[str]) -> tuple:
     top = data.get("points")
     minimum = min(costs) if costs else (top if isinstance(top, int) else None)
     return minimum, items
+
+
+def _historical_points(points_json: Optional[str]) -> Optional[dict]:
+    """Retain unmatched price evidence without asserting retirement/body scope."""
+    try:
+        data = json.loads(points_json or "{}")
+    except (json.JSONDecodeError, TypeError):
+        return None
+    if not isinstance(data, dict):
+        return None
+    source = data.get("mfm")
+    if not isinstance(source, dict) or source.get("current") is not False:
+        return None
+    return {"status": "historical", "points_options": data.get("items") or [],
+            "source": source}
+
+
+def _historical_price_note(history: dict) -> str:
+    source = history["source"]
+    captured = source.get("fetched_at")
+    dates = "captured " + str(captured) if captured else "capture date unavailable"
+    if source.get("checked_at"):
+        dates += "; latest MFM checked " + str(source["checked_at"])
+    tiers = ["{} — {} pts".format(o.get("desc") or o.get("line") or "tier", o["cost"])
+             for o in history["points_options"] if o.get("cost") is not None]
+    evidence = ": " + " / ".join(tiers) if tiers else ": no stored price tiers"
+    return "Historical price tiers (" + dates + ")" + evidence + ". Not current prices."
 
 
 def _parse_keywords(keywords_json: Optional[str]) -> List[str]:
@@ -104,6 +136,10 @@ def lookup_datasheet(db_path, unit_id: str) -> Optional[Datasheet]:
     """按 canonical unit_id 组装完整属性块；查不到返回 None（诚实报缺，不编造）。"""
     conn = sqlite3.connect(str(db_path))
     try:
+        from db_compile.coverage_notes import coverage_note
+        # Validate an explicit declaration before parsing any legacy rows or
+        # returning an absent body. Neither path may hide a broken identity.
+        reviewed_note = coverage_note(conn, unit_id=unit_id)
         row = conn.execute(
             "SELECT u.name_en, u.name_zh, u.points_json, u.keywords_json, f.name "
             "FROM units u LEFT JOIN factions f ON f.id = u.faction_id "
@@ -113,6 +149,7 @@ def lookup_datasheet(db_path, unit_id: str) -> Optional[Datasheet]:
             return None
         name_en, name_zh, points_json, keywords_json, faction = row
         points_min, points_options = _parse_points(points_json)
+        historical_points = _historical_points(points_json)
 
         models = [
             ModelProfile(name=m[0], m=m[1], t=m[2], sv=m[3], invuln=m[4],
@@ -134,11 +171,18 @@ def lookup_datasheet(db_path, unit_id: str) -> Optional[Datasheet]:
         previews = [s for s in unit_sources(conn, unit_id) if s.get("kind") == "official-preview-image"]
         source_note = ("Official preview " + previews[0].get("published", "") +
                        ": current MFM points; released codex rules not verified.") if previews else None
+        if historical_points is not None:
+            source_note = _historical_price_note(historical_points)
+            if previews:
+                source_note += (" Official preview " + previews[0].get("published", "") +
+                                ": released codex rules not verified.")
+        if reviewed_note is not None:
+            source_note = ((source_note + " ") if source_note else "") + reviewed_note
         return Datasheet(
             unit_id=unit_id, name_en=name_en, name_zh=name_zh, faction=faction,
             points_min=points_min, points_options=points_options,
             keywords=_parse_keywords(keywords_json), models=models, weapons=weapons,
-            source_note=source_note)
+            source_note=source_note, historical_points=historical_points)
     finally:
         conn.close()
 

@@ -1,7 +1,8 @@
 """agent/loop.py — L5 Agent 循环（spec 第七节「Agent 循环」）。
 
 意图分类 → function-calling 循环（max_steps=6）→ 答案合成；
-工具异常或返回空结果时静默降级到 rag_search，走老链路兜底回答。
+工具异常或返回空结果时，仅在没有可用证据时降级到 rag_search；
+已有证据的失败路径保留已验证事实、引用与身份边界，明确标示未确认部分。
 
 LLMClient 是本模块与具体 LLM 供应商之间的边界：真实实现（deepseek/glm 兼容接口）
 留待接线到 app.py 之前的下一迭代；本迭代的测试与骨架验证一律用实现了该 Protocol
@@ -9,11 +10,15 @@ LLMClient 是本模块与具体 LLM 供应商之间的边界：真实实现（de
 """
 from __future__ import annotations
 
-from dataclasses import dataclass, field
+from collections.abc import Collection, Mapping
+from dataclasses import dataclass, field, replace
+from types import MappingProxyType
 from typing import Any, Callable, Dict, List, Optional, Protocol
 
 from agent.context import SessionContext
-from agent.tools import TOOL_SPECS, TOOLS
+from agent.public_errors import (PublicActionError, PublicToolContractError,
+                                 public_failure, public_tool_result)
+from agent.tools import PUBLIC_TOOL_ARGUMENTS, TOOL_SPECS, TOOLS
 
 MAX_STEPS = 6
 INTENTS = ("查", "判", "算", "谋", "闲聊")
@@ -48,6 +53,7 @@ _EMPTY_CHECKS: Dict[str, Callable[[Dict[str, Any]], bool]] = {
     # 注意这个键**只**出现在「一个候选都没解析到」的那条路径上：真拼错/简称仍照旧走
     # fuzzy/ambiguous，`_EMPTY_CHECKS` 对它们的判定逐字节不变。
     "get_entity": lambda r: (not r.get("found")
+                             and r.get("reason") != "price_selector"
                              and not r.get("suggestions")
                              and (r.get("resolved_via") or {}).get("confidence")
                              != "ambiguous"),
@@ -60,6 +66,7 @@ _EMPTY_CHECKS: Dict[str, Callable[[Dict[str, Any]], bool]] = {
     # 不降级并不等于够不到 PDF：rag_search 仍是模型手里的普通工具，
     # `_KEYWORD_NOT_FOUND_NOTE` 已明写「问规则含义就改用 rag_search」。
     "entity_resolver": lambda r: (not r.get("canonical_id")
+                                  and not r.get("historical_record")
                                   and not r.get("candidates")
                                   and not r.get("suggestions")),
     # 数值题优先走 get_datasheet；但俗名/集合名解析不到时必须立即降级 classic 兜底，
@@ -71,7 +78,7 @@ _EMPTY_CHECKS: Dict[str, Callable[[Dict[str, Any]], bool]] = {
     # 而 entity_resolver 是纯「名字 → id」映射工具，「这个名字解析不到 + 只有几个像的」
     # 本身就是它被问到的那个问题的实质答案，两者不可混为一谈。
     "get_datasheet": lambda r: (not r.get("found")
-                                and r.get("reason") != "ambiguous"),
+                                and r.get("reason") not in ("ambiguous", "price_selector")),
     # 一个名字都没解析到时降级兜底，别把「工具空手」留给模型自由发挥（基准 #109 硬错：
     # 四个中文名全查空后模型编出「泰坦军团不是 40K 阵营、无官方点数」的否定性断言）。
     # 只要有一个单位查到就不算空——「查到了但库里没点数」是诚实答案，不该被兜底吞掉。
@@ -81,7 +88,7 @@ _EMPTY_CHECKS: Dict[str, Callable[[Dict[str, Any]], bool]] = {
     "calc_points": lambda r: (not r.get("param_error")
                               and (not r.get("found")
                                    or bool(r.get("units"))
-                                   and all(u.get("unresolved") for u in r["units"]))),
+                                   and all(u.get("unresolved") for u in _evidence_unit_rows(r)))),
 }
 
 
@@ -112,11 +119,334 @@ class AgentResult:
     sources: List[Dict[str, Any]] = field(default_factory=list)
 
 
+def _validate_action(step: Any) -> None:
+    """Check parsed/injected actions before dispatch, without coercion or retries."""
+    if not isinstance(step, dict):
+        raise PublicActionError("next_step 未返回动作对象")
+    action_type = step.get("type")
+    if not isinstance(action_type, str) or action_type not in ("tool_call", "final"):
+        raise PublicActionError("动作 type 必须是 tool_call 或 final")
+    if action_type == "tool_call":
+        tool_name = step.get("tool")
+        if not isinstance(tool_name, str) or not tool_name.strip():
+            raise PublicActionError("tool_call 的 tool 必须是非空字符串")
+        # Omitted args retain the existing no-argument contract. Explicit falsey
+        # non-mappings (null, [], false, etc.) must never become executable {}.
+        args = step.get("args", {})
+        if not isinstance(args, Mapping) or any(not isinstance(key, str) for key in args):
+            raise PublicActionError("tool_call 的 args 必须是字符串键的参数映射")
+    else:
+        # Missing/empty text keeps the existing bounded empty-final nudge, but
+        # containers/numbers must not be laundered into a successful answer.
+        if not isinstance(step.get("content", ""), str):
+            raise PublicActionError("final 的 content 必须是字符串")
+        sources = step.get("sources", [])
+        if not isinstance(sources, list) or any(not isinstance(source, dict) for source in sources):
+            raise PublicActionError("final 的 sources 必须是引用对象列表")
+
+
 def _is_empty_result(tool_name: str, result: Any) -> bool:
     if not isinstance(result, dict):
         return False
     check = _EMPTY_CHECKS.get(tool_name)
     return bool(check and check(result))
+
+
+def _evidence_unit_rows(result: Dict[str, Any]) -> List[Dict[str, Any]]:
+    """Only the public units list is a collection of calculation subjects."""
+    units = result.get("units")
+    return [unit for unit in units if isinstance(unit, dict)] if isinstance(units, list) else []
+
+
+def _has_usable_evidence(tool_name: str, result: Any) -> bool:
+    """Whether a tool returned facts that can support at least part of an answer.
+
+    Identity mappings alone do not qualify: knowing an id does not establish rules or
+    points, so a later miss must still use the normal retrieval fallback. Historical
+    facts qualify only while retaining their explicit non-current scope.
+    """
+    if not isinstance(result, dict):
+        return False
+    if (tool_name in ("get_entity", "get_datasheet") and result.get("points_only")
+            and result.get("found") and not result.get("ambiguous")):
+        return bool(result.get("official_prices"))
+    if tool_name == "calc_points":
+        if not result.get("found"):
+            return False
+        return any(
+            isinstance(unit, dict)
+            and not unit.get("unresolved")
+            and (unit.get("points") is not None
+                 or unit.get("historical_points") is not None
+                 or bool(unit.get("official_prices")))
+            for unit in _evidence_unit_rows(result)
+        )
+    if tool_name == "get_datasheet":
+        return bool(result.get("found")
+                    and (result.get("datasheet") is not None
+                         or result.get("historical_record")))
+    if tool_name == "get_entity":
+        return bool(result.get("found")
+                    and (result.get("page") is not None
+                         or result.get("historical_record")))
+    if tool_name == "search_wiki":
+        if not result.get("found"):
+            return False
+        if result.get("page") is not None:
+            return True
+        return any(
+            bool((entry.get("summary") or entry.get("text") or entry.get("content"))
+                 if isinstance(entry, dict)
+                 else (getattr(entry, "summary", None)
+                       or getattr(entry, "text", None)
+                       or getattr(entry, "content", None)))
+            for entry in (result.get("results") or [])
+        )
+    if tool_name == "get_keyword_definition":
+        return bool(result.get("found"))
+    return False
+
+
+def _evidence_facts(tool_name: str, result: Any) -> List[str]:
+    """Bounded facts for the rare case where the final synthesis step also fails."""
+    if not isinstance(result, dict):
+        return []
+    facts: List[str] = []
+
+    def qualify(start: int, record: Any) -> None:
+        if not isinstance(record, dict):
+            return
+        # Never truncate scope notes: dropping the end can turn a preview or
+        # historical fact into an apparently current, verified rule.
+        notes = [str(record[key]) for key in (
+            "faction", "faction_zh", "source_note", "source_scope", "identity_scope", "note",
+        ) if record.get(key)]
+        if notes:
+            for i in range(start, len(facts)):
+                facts[i] += "（" + "；".join(notes) + "）"
+
+    def page_fact(page: Any, fallback: str) -> None:
+        if page is None:
+            return
+        fm = getattr(page, "fm", None)
+        if isinstance(page, dict):
+            fm = page.get("fm") or fm
+            body = page.get("body") or page.get("text") or page.get("content")
+        else:
+            body = getattr(page, "body", None)
+        if isinstance(fm, dict):
+            title = fm.get("name_zh") or fm.get("name_en") or fallback
+            faction = fm.get("faction")
+        else:
+            title = (getattr(fm, "name_zh", None) or getattr(fm, "name_en", None)
+                     or fallback)
+            faction = getattr(fm, "faction", None)
+        if faction:
+            title += f"（{faction}）"
+        excerpt = " ".join(str(body or "").split())[:500]
+        if excerpt:
+            facts.append(f"{title}：{excerpt}")
+
+    def cross_faction_facts(unit: Dict[str, Any]) -> bool:
+        siblings = unit.get("same_name_other_factions") or []
+        rendered = False
+        for sibling in siblings:
+            if not isinstance(sibling, dict) or sibling.get("points") is None:
+                continue
+            label = (sibling.get("candidate") or sibling.get("name_en")
+                     or sibling.get("faction") or "同名候选")
+            facts.append(f"{label}：点数 {sibling['points']}（同名跨阵营候选，必须消歧）")
+            rendered = True
+        return rendered
+
+    if tool_name == "calc_points":
+        for unit in _evidence_unit_rows(result):
+            if not isinstance(unit, dict) or unit.get("unresolved"):
+                continue
+            start = len(facts)
+            # A single unqualified price is actively misleading when the same
+            # English name has independent faction rows. Render every candidate.
+            ambiguous = cross_faction_facts(unit)
+            canonical = str(unit.get("name_en") or unit.get("unit_id") or "单位")
+            query = str(unit.get("query") or "")
+            confidence = ((unit.get("resolved_via") or {}).get("confidence")
+                          if isinstance(unit.get("resolved_via"), dict) else None)
+            label = canonical
+            if confidence == "fuzzy":
+                label += f"（由查询“{query}”模糊匹配，需核对身份）"
+            elif query and query != canonical:
+                label += f"（查询：{query}）"
+            if unit.get("points") is not None and not ambiguous:
+                facts.append(f"{label}：点数 {unit['points']}")
+            if unit.get("historical_points") is not None:
+                facts.append(f"{label}：历史缓存点数 {unit['historical_points']}（非现行）")
+            if unit.get("points") is None:
+                for price in unit.get("official_prices") or []:
+                    if not isinstance(price, dict) or price.get("cost") is None:
+                        continue
+                    price_label = " / ".join(str(value) for value in (
+                        price.get("faction_slug"), price.get("unit_name"), price.get("models"))
+                        if value)
+                    facts.append(f"{price_label or label}：官方点数 {price['cost']}（未消歧）")
+            if ambiguous and confidence == "fuzzy":
+                for i in range(start, len(facts)):
+                    facts[i] += f"（由查询“{query}”模糊匹配，需核对身份）"
+            qualify(start, unit)
+            qualify(start, unit.get("historical_record"))
+    elif tool_name in ("get_entity", "get_datasheet") and result.get("points_only"):
+        label = " / ".join(str(result[key]) for key in ("name_en", "faction_slug")
+                           if result.get(key))
+        for price in result.get("official_prices") or []:
+            if isinstance(price, dict) and price.get("cost") is not None:
+                tier = " / ".join(str(price[key]) for key in ("tier", "models")
+                                  if price.get(key))
+                facts.append(f"{label} / {tier}："
+                             f"官方点数 {price['cost']}（仅点数证据）")
+        historical = result.get("historical_record") or {}
+        if isinstance(historical, dict) and historical.get("historical_points") is not None:
+            start = len(facts)
+            facts.append(f"{historical.get('name_en') or label}：历史缓存点数 "
+                         f"{historical['historical_points']}（非现行）")
+            qualify(start, historical)
+    elif tool_name == "get_datasheet":
+        historical = result.get("historical_record") or {}
+        if isinstance(historical, dict) and historical.get("historical_points") is not None:
+            label = historical.get("name_zh") or historical.get("name_en") or "历史兵牌"
+            facts.append(f"{label}：历史缓存点数 {historical['historical_points']}（非现行）")
+        datasheet = result.get("datasheet") or {}
+        ambiguous = cross_faction_facts(result)
+        if isinstance(datasheet, dict):
+            label = datasheet.get("name_zh") or datasheet.get("name_en") or "兵牌"
+            if datasheet.get("faction"):
+                label += f"（{datasheet['faction']}）"
+            start = len(facts)
+            points = datasheet.get("points_min", datasheet.get("points"))
+            if points is not None and not ambiguous:
+                facts.append(f"{label}：点数 {points}")
+            for model in (datasheet.get("models") or [])[:6]:
+                if not isinstance(model, dict):
+                    continue
+                stats = " / ".join(f"{key.upper()} {model[key]}"
+                                   for key in ("m", "t", "sv", "w", "ld", "oc")
+                                   if model.get(key) is not None)
+                if stats:
+                    facts.append(f"{label} / {model.get('name') or '模型'}：{stats}")
+            qualify(start, datasheet)
+        qualify(0, historical)
+    elif tool_name in ("get_entity", "get_keyword_definition"):
+        page_fact(result.get("page"), "规则条目")
+        historical = result.get("historical_record") or {}
+        if isinstance(historical, dict) and historical.get("historical_points") is not None:
+            label = historical.get("name_en") or historical.get("name_zh") or "历史兵牌"
+            facts.append(f"{label}：历史缓存点数 {historical['historical_points']}（非现行）")
+            qualify(0, historical)
+    elif tool_name == "search_wiki":
+        page_fact(result.get("page"), "Wiki 条目")
+        for entry in result.get("results") or []:
+            if isinstance(entry, dict):
+                title = entry.get("title_zh") or entry.get("title_en") or entry.get("title")
+                summary = entry.get("summary") or entry.get("text") or entry.get("content")
+            else:
+                title = (getattr(entry, "title_zh", None)
+                         or getattr(entry, "title_en", None)
+                         or getattr(entry, "title", None))
+                summary = (getattr(entry, "summary", None)
+                           or getattr(entry, "text", None)
+                           or getattr(entry, "content", None))
+            excerpt = " ".join(str(summary or "").split())[:500]
+            if excerpt:
+                facts.append(f"{title or 'Wiki 检索结果'}：{excerpt}")
+    qualify(0, result)
+    resolved = result.get("resolved_via")
+    if isinstance(resolved, dict) and resolved.get("confidence") == "fuzzy":
+        facts = [fact + "（模糊匹配，需核对身份）" for fact in facts]
+    # Keep the emergency answer readable and bounded; normal successful synthesis
+    # still receives the complete structured tool results in messages.
+    return facts[:12]
+
+
+def _evidence_qualifiers(result: Any) -> List[str]:
+    """Whole, subject-associated qualifications on supported public evidence paths.
+
+    This deliberately does not recurse: debug, raw bodies, errors, traces and
+    arguments are not qualification containers. Identical text for two subjects
+    remains two qualifications, and archives retain their separate identity.
+    """
+    if not isinstance(result, dict) or result.get("found") is False:
+        return []
+
+    def subject(container: Dict[str, Any], fallback: str = "") -> str:
+        name = container.get("name_en") or container.get("name_zh") or container.get("unit_id")
+        faction = (container.get("faction_slug") or container.get("faction")
+                   or container.get("faction_zh"))
+        return " / ".join(str(value) for value in (name, faction) if value) or fallback
+
+    ds = result.get("datasheet")
+    # Preserve the established root/datasheet representation. Calculation rows
+    # need their own labels because one result contains multiple subjects.
+    containers = [("", result)]
+    if isinstance(ds, dict):
+        containers.append(("", ds))
+    for _label, container in list(containers):
+        historical = container.get("historical_record")
+        if isinstance(historical, dict):
+            containers.append(("", historical))
+    for index, unit in enumerate(_evidence_unit_rows(result), 1):
+        label = subject(unit, f"单位 {index}")
+        containers.append((label, unit))
+        historical = unit.get("historical_record")
+        if isinstance(historical, dict):
+            containers.append((label + "（历史记录）", historical))
+    notes = []
+    for label, container in containers:
+        for key in ("source_note", "source_scope", "note", "identity_scope"):
+            value = container.get(key)
+            if value:
+                note = (label + "：" if label else "") + str(value)
+                if note not in notes:
+                    notes.append(note)
+    return notes
+
+
+def _evidence_sources(result: Dict[str, Any]) -> List[Dict[str, Any]]:
+    """Retain provided references, without inventing per-field provenance."""
+    sources: List[Dict[str, Any]] = []
+
+    def add(items: Any) -> None:
+        if isinstance(items, list):
+            for item in items:
+                if isinstance(item, dict) and item and item not in sources:
+                    sources.append(dict(item))
+
+    add(result.get("official_sources"))
+    add(result.get("sources"))
+    page = result.get("page")
+    fm = page.get("fm") if isinstance(page, dict) else getattr(page, "fm", None)
+    add(fm.get("sources") if isinstance(fm, dict) else getattr(fm, "sources", None))
+    records = [result.get("historical_record")]
+    records.extend(unit.get("historical_record") for unit in _evidence_unit_rows(result))
+    for record in records:
+        if isinstance(record, dict) and record.get("source_url"):
+            source = {"url": record["source_url"]}
+            for key in ("source_id", "cached_at"):
+                if record.get(key) is not None:
+                    source[key] = record[key]
+            add([source])
+    return sources
+
+
+_PRESERVE_EVIDENCE_NUDGE = (
+    "这次补充查询没有命中，但前面的工具已经查到可用的规则或点数证据。"
+    "不得丢弃、否定或用兜底片段覆盖此前已查到的证据；请据其回答能够确定的部分，"
+    "并把本次未解析的名字单独标为未确认。若仍需补充原文，可主动调用 rag_search，"
+    "但不能把已查到的当前点数改写成“不可用”。"
+)
+
+_FINALIZE_EVIDENCE_NUDGE = (
+    "工具步数已经用尽。前面的工具结果含有可用证据；现在必须直接返回 final，"
+    "用这些证据回答能确定的部分，并把剩余缺口明确标为未确认。不要再调用工具，"
+    "不要声称已经查到的事实不可用。"
+)
 
 
 class AgentLoop:
@@ -127,10 +457,34 @@ class AgentLoop:
         llm: LLMClient,
         tools: Optional[Dict[str, Callable[..., Dict[str, Any]]]] = None,
         max_steps: int = MAX_STEPS,
+        *,
+        public_tool_arguments: Optional[Mapping[str, Collection[str]]] = None,
     ):
         self.llm = llm
         self.tools = tools if tools is not None else TOOLS
         self.max_steps = max_steps
+        contracts = dict(PUBLIC_TOOL_ARGUMENTS)
+        # Custom Python fixtures/extensions must explicitly declare their model
+        # interface. Registered contracts also govern replacement test callables;
+        # they cannot be expanded by an injected raw function or custom contract.
+        for name, arguments in (public_tool_arguments or {}).items():
+            if name in PUBLIC_TOOL_ARGUMENTS:
+                raise ValueError("Cannot override a registered public tool contract")
+            if (not isinstance(name, str) or not name.strip() or name not in self.tools
+                    or not isinstance(arguments, Collection) or isinstance(arguments, (str, bytes))
+                    or any(not isinstance(arg, str) or not arg.strip() for arg in arguments)):
+                raise ValueError("Custom tools require explicit public argument names")
+            contracts[name] = frozenset(arguments)
+        self._public_tool_arguments = MappingProxyType(contracts)
+
+    def _validate_tool_arguments(self, step: Dict[str, Any]) -> None:
+        if step["type"] != "tool_call" or step["tool"] not in self.tools:
+            return  # Unknown-tool recovery remains unchanged; nothing executes.
+        allowed = self._public_tool_arguments.get(step["tool"])
+        if allowed is None or any(arg not in allowed for arg in step.get("args", {})):
+            # No argument names/values or helper paths enter the public reason.
+            # Reject the entire action; never silently strip or coerce kwargs.
+            raise PublicToolContractError("工具调用不符合公开参数契约，未执行")
 
     def run(self, user_input: str, session: Optional[SessionContext] = None) -> AgentResult:
         session = session if session is not None else SessionContext()
@@ -139,10 +493,14 @@ class AgentLoop:
         try:
             result = self._run_tool_loop(user_input, intent, session.history)
         except Exception as exc:
-            result = self._fallback(user_input, intent, tool_calls=[], reason=f"异常: {exc}")
+            result = self._fallback(user_input, intent, tool_calls=[],
+                                    reason=f"处理异常: {public_failure(exc).describe()}")
 
         session.append_turn("user", user_input)
-        session.append_turn("assistant", result.answer)
+        # A character cut can remove the last subject's date/coverage warning.
+        # Keep complete answers while preserving the existing turn-count bound.
+        session.history.append({"role": "assistant", "content": result.answer})
+        del session.history[:-12]
         return result
 
     def _classify(self, user_input: str) -> str:
@@ -161,9 +519,43 @@ class AgentLoop:
         nudged_for_tools = False
         nudged_for_empty = False       # 空 final 只给一次重答机会（评审 M#5）
         last_exception_tool: Optional[str] = None  # 连续异常检测（评审 M#6）
+        has_usable_evidence = False
+        evidence_facts: List[str] = []
+        evidence_sources: List[Dict[str, Any]] = []
+        evidence_qualifiers: List[str] = []
+
+        def qualify_answer(answer: str) -> str:
+            missing = [note for note in evidence_qualifiers if note not in answer]
+            if missing:
+                answer += "\n\n" + "\n\n".join(missing)
+            return answer
+
+        def complete(answer: str, step: Dict[str, Any]) -> AgentResult:
+            answer = qualify_answer(answer)
+            sources = list(evidence_sources)
+            for source in step.get("sources", []):
+                if source not in sources:
+                    sources.append(source)
+            return AgentResult(answer=answer, intent=intent, tool_calls=tool_calls,
+                               degraded=False, sources=sources)
+
+        def recover(reason: str, calls: Optional[List[str]] = None) -> AgentResult:
+            trace = tool_calls if calls is None else calls
+            if has_usable_evidence:
+                result = self._emergency_answer(intent, trace, evidence_facts, evidence_sources, reason)
+                # Facts have a readability bound; mandatory qualifications do not.
+                return replace(result, answer=qualify_answer(result.answer))
+            return self._fallback(user_input, intent, trace, reason)
 
         for _ in range(self.max_steps):
-            step = self.llm.next_step(messages, TOOL_SPECS)
+            # Recovery must run where the successful trace and facts still exist.
+            # The outer safety net cannot recover a loop's local evidence.
+            try:
+                step = self.llm.next_step(messages, TOOL_SPECS)
+                _validate_action(step)
+                self._validate_tool_arguments(step)
+            except Exception as exc:
+                return recover(f"答案整理异常: {public_failure(exc).describe()}")
 
             if step.get("type") == "final":
                 # 零工具直答门控：查/判/算 类问题若一次工具都没调就想给最终答案，
@@ -179,7 +571,7 @@ class AgentLoop:
                     )
                 # 空内容 final 不算成功（评审 M#5）：先写回提示再给模型一次机会，
                 # 仍为空才降级——不把空字符串当作有效回答返回给用户。
-                answer = str(step.get("content") or "")
+                answer = step.get("content", "")
                 if not answer.strip():
                     if not nudged_for_empty:
                         nudged_for_empty = True
@@ -189,20 +581,11 @@ class AgentLoop:
                                        "（final 的 content 不能为空）。",
                         })
                         continue
-                    return self._fallback(
-                        user_input, intent, tool_calls,
-                        reason="final 步骤 content 连续为空",
-                    )
-                return AgentResult(
-                    answer=answer,
-                    intent=intent,
-                    tool_calls=tool_calls,
-                    degraded=False,
-                    sources=step.get("sources", []),
-                )
+                    return recover("final 步骤 content 连续为空")
+                return complete(answer, step)
 
             tool_name = step.get("tool")
-            args = step.get("args") or {}
+            args = step.get("args", {})
             tool_fn = self.tools.get(tool_name)
 
             if tool_fn is None:
@@ -213,20 +596,18 @@ class AgentLoop:
                 continue
 
             try:
-                result = tool_fn(**args)
+                result = public_tool_result(tool_name, tool_fn(**args))
             except Exception as exc:
                 # 与未知工具的恢复策略一致（评审 M#6）：错误写回 messages 让模型
                 # 修正参数重试或换工具；同一工具**连续第二次**异常才降级 classic
                 # （达到 max_steps 时由循环末尾的兜底降级）。
                 if last_exception_tool == tool_name:
-                    return self._fallback(
-                        user_input, intent, tool_calls + [tool_name],
-                        reason=f"{tool_name} 连续两次异常: {exc}",
-                    )
+                    return recover(f"{tool_name} 连续两次异常: {public_failure(exc).describe()}",
+                                   tool_calls + [tool_name])
                 last_exception_tool = tool_name
                 messages.append({
                     "role": "tool", "name": tool_name,
-                    "content": {"error": f"{tool_name} 执行异常: {exc}。"
+                    "content": {"error": f"{tool_name} 执行异常: {public_failure(exc).describe()}。"
                                          "请修正参数后重试，或改用其他工具。"},
                 })
                 continue
@@ -235,11 +616,55 @@ class AgentLoop:
             tool_calls.append(tool_name)
 
             if tool_name != "rag_search" and _is_empty_result(tool_name, result):
+                if has_usable_evidence:
+                    messages.append({"role": "tool", "name": tool_name, "content": result})
+                    messages.append({"role": "user", "content": _PRESERVE_EVIDENCE_NUDGE})
+                    continue
                 return self._fallback(user_input, intent, tool_calls, reason=f"{tool_name} 空结果")
 
+            if _has_usable_evidence(tool_name, result):
+                has_usable_evidence = True
+                for note in _evidence_qualifiers(result):
+                    if note not in evidence_qualifiers:
+                        evidence_qualifiers.append(note)
+                for fact in _evidence_facts(tool_name, result):
+                    if fact not in evidence_facts:
+                        evidence_facts.append(fact)
+                for source in _evidence_sources(result):
+                    if source not in evidence_sources:
+                        evidence_sources.append(source)
             messages.append({"role": "tool", "name": tool_name, "content": result})
 
+        if has_usable_evidence:
+            # A protected late miss can consume the last normal step. Give the
+            # model one synthesis-only turn rather than throwing all accumulated
+            # evidence away through the legacy RAG fallback.
+            messages.append({"role": "user", "content": _FINALIZE_EVIDENCE_NUDGE})
+            try:
+                step = self.llm.next_step(messages, TOOL_SPECS)
+                _validate_action(step)
+                self._validate_tool_arguments(step)
+            except Exception as exc:
+                return recover(f"工具步数用尽后答案整理异常: {public_failure(exc).describe()}")
+            answer = step.get("content", "")
+            if step.get("type") == "final" and answer.strip():
+                return complete(answer, step)
+            return recover("模型在工具步数用尽后仍未完成整理")
         return self._fallback(user_input, intent, tool_calls, reason="超过 max_steps 仍未得出结论")
+
+    @staticmethod
+    def _emergency_answer(
+        intent: str, tool_calls: List[str], facts: List[str], sources: List[Dict[str, Any]], reason: str,
+    ) -> AgentResult:
+        if facts:
+            detail = ("已经确定的证据如下；不能据此否定这些事实，"
+                      "其余内容暂列为未确认。\n"
+                      + "\n".join(f"- {fact}" for fact in facts))
+        else:
+            detail = ("工具曾返回可用证据，但安全降级路径无法展开其内容；"
+                      "其余内容暂列为未确认，请重试整理，当前不能据此下结论。")
+        return AgentResult(answer=f"⚠️ {reason}。" + detail, intent=intent,
+                           tool_calls=list(tool_calls), degraded=True, sources=list(sources))
 
     def _fallback(
         self, user_input: str, intent: str, tool_calls: List[str], reason: str,
@@ -251,7 +676,7 @@ class AgentLoop:
 
         if rag_fn is not None:
             try:
-                rag_result = rag_fn(user_input)
+                rag_result = public_tool_result("rag_search", rag_fn(user_input))
                 passages = rag_result.get("passages", [])
                 if not passages:
                     # 审查 H1：rag_search 的 error=True 表示**检索管线/环境不可用**，
@@ -265,7 +690,7 @@ class AgentLoop:
                         note = f"{reason}；rag_search 兜底也未检索到相关内容"
             except Exception as exc:
                 unavailable = True
-                note = f"{reason}；rag_search 兜底异常: {exc}"
+                note = f"{reason}；rag_search 兜底异常: {public_failure(exc).describe()}"
             tool_calls = tool_calls + ["rag_search"]
 
         return AgentResult(

@@ -1,0 +1,296 @@
+{
+  "question": "基里曼当前多少分？",
+  "elapsed_seconds": 4.906,
+  "answer": {
+    "summary": "检索 1 步 · 引用 3 条",
+    "trace": [
+      {
+        "fn": "get_datasheet",
+        "args": "('基里曼')",
+        "result": "已命中",
+        "status": "ok",
+        "note": null
+      }
+    ],
+    "traceWarn": null,
+    "verdict": {
+      "label": "355分",
+      "labelEn": "355 pts",
+      "lede": [
+        {
+          "t": "text",
+          "s": "基里曼（罗伯特·基里曼，Roboute Guilliman）当前 "
+        },
+        {
+          "t": "strong",
+          "s": "355 分"
+        },
+        {
+          "t": "text",
+          "s": "，"
+        },
+        {
+          "t": "num",
+          "s": "1"
+        },
+        {
+          "t": "text",
+          "s": " 个模型 "
+        },
+        {
+          "t": "cite",
+          "n": 2
+        },
+        {
+          "t": "text",
+          "s": "。"
+        }
+      ]
+    },
+    "calc": [],
+    "entityCard": {
+      "nameZh": "罗伯特.基里曼",
+      "nameEn": "Roboute Guilliman",
+      "pts": "355",
+      "role": "Characters",
+      "stats": [
+        {
+          "lab": "M",
+          "val": "8\""
+        },
+        {
+          "lab": "T",
+          "val": "9"
+        },
+        {
+          "lab": "SV",
+          "val": "2+"
+        },
+        {
+          "lab": "W",
+          "val": "10"
+        },
+        {
+          "lab": "LD",
+          "val": "5+"
+        },
+        {
+          "lab": "OC",
+          "val": "4"
+        }
+      ],
+      "invuln": "4+",
+      "ranged": [
+        {
+          "name": "统御之手",
+          "kw": [
+            {
+              "text": "速射2",
+              "slug": "rapid-fire",
+              "base": "RAPID FIRE",
+              "nameZh": "速射",
+              "brief": "速射武器能够进行精准的远程射击，也可以对附近的目标进行连射。\n这技能总是会以[速射 X]的形式出现。每当您为一件[速射]武器收集攻击骰时，在选择目标步骤中，如果目标单位位于武器攻击范围的一半以内，那么收集 X 数量的额外攻击骰。\n示例：如果使用一件 A 属性为 1 的[速射 1]武器对一个位于武器攻击范围一半以内的单位进行攻击，那么您将为那件武器收集额外一枚攻击骰（总共收集两枚)。",
+              "section": "24.30",
+              "ruleSlug": "24-core-abilities",
+              "group": "universal"
+            }
+          ],
+          "range": "30\"",
+          "a": "2",
+          "skill": "2+",
+          "s": "6",
+          "ap": "-2",
+          "d": "2",
+          "hot": false
+        }
+      ],
+      "melee": [
+        {
+          "name": "帝皇之剑",
+          "kw": [
+            {
+              "text": "毁灭伤害",
+              "slug": "devastating-wounds",
+              "base": "DEVASTATING WOUNDS",
+              "nameZh": "毁灭伤害",
+              "brief": "最为强大的武器能够轻松击穿装甲并击杀多个敌人。\n每次使用一件[毁灭伤害]武器进行攻击时，如果攻击造成了暴击致伤，那么那次攻击流程结束，目标单位受到相当于那件武器 D 属性数量的致命伤。这些伤害将在武器攻击造成的普通伤害之后进行结算。\n[毁灭伤害]武器每一次通过暴击致伤所造成的致命伤最多只能对一个模型造成伤害；那一次攻击造成的任何剩余的致命伤将被舍弃。\n示例：一次使用[毁灭伤害]武器进行的攻击造成了一次暴击致伤，武器的 D 属性为 3，因此对仲裁者小队造成 3 处致命伤。前 2 处致命伤足够将 1 个仲裁者模型摧毁，因此剩余的一点致命伤被舍弃。",
+              "section": "24.10",
+              "ruleSlug": "24-core-abilities",
+              "group": "universal"
+            }
+          ],
+          "range": "近战",
+          "a": "14",
+          "skill": "2+",
+          "s": "8",
+          "ap": "-3",
+          "d": "2",
+          "hot": false
+        },
+        {
+          "name": "统御之手",
+          "kw": [
+            {
+              "text": "致命一击",
+              "slug": "lethal-hits",
+              "base": "LETHAL HITS",
+              "nameZh": "致命一击",
+              "brief": "致命的武器能够对任何敌人造成严重的伤害，无论坚韧程度。\n每次使用[致命一击]武器进行攻击时，如果攻击造成暴击命中，那么您可以选择让那次攻击自动致伤目标。\n设计师注解：选择自动致伤目标意味着那次攻击不需要对目标进行致伤掷骰。您可能会选择不这么做，因为自动致伤意味着攻击无法造成暴击致伤，因此不会触发像[毁灭伤害]这样的技能。",
+              "section": "24.23",
+              "ruleSlug": "24-core-abilities",
+              "group": "universal"
+            }
+          ],
+          "range": "近战",
+          "a": "7",
+          "skill": "2+",
+          "s": "14",
+          "ap": "-4",
+          "d": "4",
+          "hot": false
+        }
+      ],
+      "abilities": [
+        {
+          "tag": null,
+          "name": "Author of the Codex",
+          "text": "At the Start of your Command phase, select two Author of the Codex abilities (see left). Until the start of your next Command phase, this model has those abilities.",
+          "rich": [
+            {
+              "t": "text",
+              "s": "At the Start of your Command phase, select two Author of the Codex abilities (see left). Until the start of your next Command phase, this model has those abilities."
+            }
+          ]
+        },
+        {
+          "tag": null,
+          "name": "Ultramarines Bodyguard",
+          "text": "While this model is within 3\" of one or more friendly Adeptus Astartes Infantry units, this model has the Lone Operative ability.",
+          "rich": [
+            {
+              "t": "text",
+              "s": "While this model is within 3\" of one or more friendly Adeptus Astartes Infantry units, this model has the Lone Operative ability."
+            }
+          ]
+        },
+        {
+          "tag": null,
+          "name": "Armour of Fate",
+          "text": "The first time this model is destroyed, roll one D6 at the end of the phase: on a 3+, set this model back up on the battlefield as close as possible to where it was destroyed and not within Engagement Range of any enemy models, with 6 wounds remaining.",
+          "rich": [
+            {
+              "t": "text",
+              "s": "The first time this model is destroyed, roll one D6 at the end of the phase: on a 3+, set this model back up on the battlefield as close as possible to where it was destroyed and not within Engagement Range of any enemy models, with 6 wounds remaining."
+            }
+          ]
+        },
+        {
+          "tag": null,
+          "name": "SUPREME COMMANDER",
+          "text": "If this model is in your army, it must be your Warlord.",
+          "rich": [
+            {
+              "t": "text",
+              "s": "If this model is in your army, it must be your Warlord."
+            }
+          ]
+        },
+        {
+          "tag": null,
+          "name": "Primarch of the XIII (Aura)",
+          "text": "While a friendly ADEPTUS ASTARTES unit is within 6\" of this model, add 1 to the Objective Control characteristic of models in that unit and you can re-roll Battle-shock and Leadership tests taken for that unit.",
+          "rich": [
+            {
+              "t": "text",
+              "s": "While a friendly ADEPTUS ASTARTES unit is within 6\" of this model, add 1 to the Objective Control characteristic of models in that unit and you can re-roll Battle-shock and Leadership tests taken for that unit."
+            }
+          ]
+        },
+        {
+          "tag": null,
+          "name": "Master of Battle",
+          "text": "At the start of your Command phase, after you have selected your Oath of Moment target, select a second enemy unit. Until the start of your next Command phase, if your Oath of Moment target is destroyed, that second enemy unit becomes your Oath of Moment target until you select a new one.",
+          "rich": [
+            {
+              "t": "text",
+              "s": "At the start of your Command phase, after you have selected your Oath of Moment target, select a second enemy unit. Until the start of your next Command phase, if your Oath of Moment target is destroyed, that second enemy unit becomes your Oath of Moment target until you select a new one."
+            }
+          ]
+        },
+        {
+          "tag": null,
+          "name": "Supreme Strategist",
+          "text": "Once per battle round, one unit from your army with this ability can use it when a friendly ADEPTUS ASTARTES unit within 12\" of that model is targeted with a Stratagem. If it does, reduce the CP cost of that usage of that Stratagem by 1CP.",
+          "rich": [
+            {
+              "t": "text",
+              "s": "Once per battle round, one unit from your army with this ability can use it when a friendly ADEPTUS ASTARTES unit within 12\" of that model is targeted with a Stratagem. If it does, reduce the CP cost of that usage of that Stratagem by 1CP."
+            }
+          ]
+        }
+      ],
+      "loadout": "本模型装备：统御之手；帝皇之剑。",
+      "damaged": null,
+      "leads": null,
+      "composition": [
+        [
+          {
+            "t": "text",
+            "s": "罗伯特.基里曼是全军唯一的独特模型，"
+          },
+          {
+            "t": "num",
+            "s": "340"
+          },
+          {
+            "t": "text",
+            "s": " 分，并且必须作为军队主将"
+          }
+        ]
+      ],
+      "keywords": "Character，Epic Hero，Imperium，Roboute Guilliman，Primarch，Monster",
+      "factionKeywords": "Adeptus Astartes，Ultramarines",
+      "legend": null,
+      "faction": "阵营: Space Marines",
+      "src": "L3 结构库 · Space Marines",
+      "wiki": "factions/space-marines/units/roboute-guilliman"
+    },
+    "cites": [
+      {
+        "n": 1,
+        "book": "L3 结构库 · Space Marines",
+        "page": null,
+        "section": "属性块",
+        "term": "Roboute Guilliman",
+        "wiki": "",
+        "url": null
+      },
+      {
+        "n": 2,
+        "book": "Munitorum Field Manual",
+        "page": null,
+        "section": "官方当前点数",
+        "term": null,
+        "wiki": "",
+        "url": "https://mfm.warhammer-community.com"
+      },
+      {
+        "n": 3,
+        "book": "Munitorum Field Manual (MFM)",
+        "page": null,
+        "section": null,
+        "term": null,
+        "wiki": "",
+        "url": null
+      }
+    ],
+    "sensitivity": null,
+    "cta": null,
+    "followups": [
+      "基里曼的兵牌属性和武器数据是什么？",
+      "基里曼在哪个分遣队里最好用？",
+      "基里曼和普通连长比贵在哪？"
+    ],
+    "degraded": false
+  }
+}

@@ -163,12 +163,19 @@ def test_preflight_reports_missing_assets(tmp_path):
     assert summary["ready"] is False
 
 
-def test_preflight_detects_present_assets(tmp_path):
+@pytest.fixture
+def complete_retrieval_assets(tmp_path, monkeypatch):
+    """Save a real, model-free FAISS store; never touch the production index."""
+    from langchain_core.embeddings import FakeEmbeddings
+    from langchain_community.vectorstores import FAISS
+
+    monkeypatch.setenv("WEB_API_RETRIEVAL", "on")
     snap = tmp_path / "opt" / "models--BAAI--bge-m3" / "snapshots" / "abc"
     snap.mkdir(parents=True)
     (snap / "modules.json").write_text("{}", encoding="utf-8")
-    (tmp_path / "local_vector_store").mkdir()
-    (tmp_path / "local_vector_store" / "index.faiss").write_bytes(b"")
+    embeddings = FakeEmbeddings(size=4)
+    vector_dir = tmp_path / "local_vector_store"
+    FAISS.from_texts(["Synthetic readiness fixture"], embeddings).save_local(str(vector_dir))
     (tmp_path / "db").mkdir()
     (tmp_path / "db" / "wh40k.sqlite").write_bytes(b"")
     (tmp_path / "wiki").mkdir()
@@ -176,9 +183,72 @@ def test_preflight_detects_present_assets(tmp_path):
     (tmp_path / "wiki" / "indexes").mkdir()
     (tmp_path / "wiki" / "indexes" / "keywords.json").write_text(
         '{"items": []}', encoding="utf-8")
+    return tmp_path, embeddings
+
+
+def test_preflight_detects_present_assets(complete_retrieval_assets):
+    from langchain_community.vectorstores import FAISS
+
+    tmp_path, embeddings = complete_retrieval_assets
+    # Both files must be genuine artifacts that FAISS.load_local can reopen.
+    store = FAISS.load_local(str(tmp_path / "local_vector_store"), embeddings,
+                             allow_dangerous_deserialization=True)
+    assert store.index.ntotal == 1
+    doc_id = store.index_to_docstore_id[0]
+    assert store.docstore.search(doc_id).page_content == "Synthetic readiness fixture"
     summary = preflight.summary(tmp_path)
     assert summary["ready"] is True
     assert all(a["ok"] for a in summary["assets"])
+
+
+@pytest.mark.parametrize("component", ["index.faiss", "index.pkl"])
+@pytest.mark.parametrize("damage", ["missing", "empty", "directory"])
+def test_preflight_rejects_incomplete_vector_store(
+        complete_retrieval_assets, component, damage):
+    tmp_path, _ = complete_retrieval_assets
+    path = tmp_path / "local_vector_store" / component
+    if damage == "empty":
+        path.write_bytes(b"")
+    else:
+        path.unlink()
+        if damage == "directory":
+            path.mkdir()
+
+    info = preflight.summary(tmp_path)
+    assert info["ready"] is False
+    assets = {a["name"]: a for a in info["assets"]}
+    vector = assets["vector_store"]
+    assert vector["ok"] is False
+    assert vector["required"] is True
+    assert component in vector["detail"]
+    assert all(a["ok"] for name, a in assets.items() if name != "vector_store")
+    report = preflight.format_report(preflight.check_assets(tmp_path))
+    assert component in report and "缺!" in report
+
+
+def test_preflight_incomplete_vector_store_refuses_strict_start(
+        complete_retrieval_assets, monkeypatch, capsys):
+    tmp_path, _ = complete_retrieval_assets
+    (tmp_path / "local_vector_store" / "index.pkl").unlink()
+    # Default startup remains available for diagnosis, with honest readiness/logs.
+    monkeypatch.delenv("WEB_API_PREFLIGHT_STRICT", raising=False)
+    assert preflight.run_preflight(tmp_path)["ready"] is False
+    assert "index.pkl" in capsys.readouterr().out
+    monkeypatch.setenv("WEB_API_PREFLIGHT_STRICT", "1")
+    with pytest.raises(RuntimeError, match="vector_store"):
+        preflight.run_preflight(tmp_path, echo=False)
+
+
+def test_preflight_partial_index_is_optional_with_retrieval_off(
+        complete_retrieval_assets, monkeypatch):
+    tmp_path, _ = complete_retrieval_assets
+    (tmp_path / "local_vector_store" / "index.pkl").unlink()
+    monkeypatch.setenv("WEB_API_RETRIEVAL", "off")
+    info = preflight.summary(tmp_path)
+    vector = next(a for a in info["assets"] if a["name"] == "vector_store")
+    assert info["ready"] is True
+    assert vector["ok"] is False and vector["required"] is False
+    assert "未启用" in vector["detail"]
 
 
 def test_preflight_rejects_half_downloaded_snapshot(tmp_path):

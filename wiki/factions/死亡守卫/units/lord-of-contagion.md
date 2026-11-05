@@ -5,17 +5,17 @@ name_en: Lord of Contagion
 faction: 死亡守卫
 type: unit
 points:
-  1 model: 120
+  1 model: 110
 tags:
 - unit
 - unit/死亡守卫
 - 死亡守卫
 version:
-  points: MFM 2026-09-14T05:51:23.572407+00:00
+  points: MFM 2026-10-03T19:00:56.192123+00:00
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-09-14'
+updated: '2026-10-03'
 ---
 
 ## 属性表
@@ -38,7 +38,7 @@ updated: '2026-09-14'
 - **邪秽韧体**：此模型首次被摧毁时，在该阶段结束时 掷 1D6，2+则将其重新部署至战场原位置附近 （不与敌方接战），并保留 3 点 W 值。每场战 斗限一次
 
 ## 单位构成
-- **1个模型** — 120 分
+- **1个模型** — 110 分
 
 ## 关键词
 - **阵营关键词**：Death Guard

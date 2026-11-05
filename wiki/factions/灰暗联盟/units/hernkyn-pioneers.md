@@ -5,18 +5,18 @@ name_en: Hernkyn Pioneers
 faction: 灰暗联盟
 type: unit
 points:
-  3 models: 80
-  6 models: 160
+  3 models: 85
+  6 models: 170
 tags:
 - unit
 - unit/灰暗联盟
 - 灰暗联盟
 version:
-  points: MFM 2026-09-14T05:51:23.572407+00:00
+  points: MFM 2026-10-03T19:00:56.192123+00:00
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-09-14'
+updated: '2026-10-03'
 ---
 
 ## 属性表
@@ -46,8 +46,8 @@ updated: '2026-09-14'
 - **【装备技能】防撞杠探照灯**：每当持有者所属单位中的模型进行远程攻击时，您可以忽略任意或所有对命中掷骰的修正。
 
 ## 单位构成
-- **3个模型** — 80 分
-- **6个模型** — 160 分
+- **3个模型** — 85 分
+- **6个模型** — 170 分
 
 ## 关键词
 - **阵营关键词**：Leagues of Votann

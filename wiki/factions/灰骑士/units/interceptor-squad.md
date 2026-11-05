@@ -5,18 +5,18 @@ name_en: Interceptor Squad
 faction: 灰骑士
 type: unit
 points:
-  5 models: 125
-  10 models: 250
+  5 models: 135
+  10 models: 270
 tags:
 - unit
 - unit/灰骑士
 - 灰骑士
 version:
-  points: MFM 2026-09-14T05:51:23.572407+00:00
+  points: MFM 2026-10-03T19:00:56.192123+00:00
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-09-14'
+updated: '2026-10-03'
 ---
 
 ## 属性表
@@ -43,8 +43,8 @@ updated: '2026-09-14'
 - **个⼈传送器**：在⼰⽅射击阶段，该单位在完成射击后若没有位于敌⽅单位的交战范围内，便可以进⾏⼀次⾄多为 6 英⼨的常规移动，如同是在⼰⽅移动阶段。若它如此做，则⽆法在本回合宣布冲锋。
 
 ## 单位构成
-- **5个模型** — 125 分
-- **10个模型** — 250 分
+- **5个模型** — 135 分
+- **10个模型** — 270 分
 
 ## 关键词
 - **阵营关键词**：Grey Knights

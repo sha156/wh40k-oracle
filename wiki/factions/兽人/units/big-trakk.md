@@ -12,7 +12,7 @@ version:
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-09-14'
+updated: '2026-10-03'
 ---
 
 ## 属性表
@@ -27,8 +27,8 @@ updated: '2026-09-14'
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
 | 大突突枪 | 36" | 3 | 5+ | 5 | 0 | 1 | [[core-rules/rapid-fire.md\|速射2]] |
-| 加农炮（破片弹-与穿甲弹二选一） | 36" | D6 | 5+ | 5 | 0 | 1 | [[core-rules/blast.md\|爆炸]] |
-| 加农炮（穿甲弹-与破片弹二选一） | 36" | 1 | 5+ | 9 | -2 | D6 | — |
+| 咯隆炮-破片弹 | 36" | D6 | 5+ | 5 | 0 | 1 | [[core-rules/blast.md\|爆炸]] |
+| 咯隆炮-穿甲弹 | 36" | 1 | 5+ | 9 | -2 | D6 | — |
 | Supa-kannon – frag | 36" | D6+3 | 5+ | 5 | 0 | 1 | [[core-rules/blast.md\|爆炸]] |
 | Supa-kannon – shell | 36" | 1 | 5+ | 9 | -2 | D3+3 | — |
 

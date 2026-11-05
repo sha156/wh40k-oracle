@@ -43,6 +43,33 @@ def _client(outputs, **kw):
     return OpenAICompatLLMClient(client=FakeOpenAIClient(outputs), **kw)
 
 
+def test_flash_uses_non_thinking_mode_for_small_classification_budget():
+    llm = _client(["查"])
+    assert llm.classify_intent("Points?") == "查"
+    call = llm.client.calls[0]
+    assert call["model"] == "deepseek-flash"
+    assert call["extra_body"] == {"thinking": {"type": "disabled"}}
+    assert call["max_tokens"] == 8
+
+
+def test_other_provider_does_not_receive_deepseek_thinking_parameter():
+    llm = _client(["查"], provider="ZhipuAI (GLM-4)")
+    llm.classify_intent("Points?")
+    assert "extra_body" not in llm.client.calls[0]
+
+
+def test_web_layout_also_uses_flash_without_thinking():
+    from web_api.structurer import OpenAIStructuringLLM
+    fake = FakeOpenAIClient(['{"verdict":{"lede":"Verified points"}}'])
+    layout = OpenAIStructuringLLM(client=fake)
+    assert layout.structure("Points?", "Verified points", "", [])["verdict"]["lede"]
+    assert fake.calls[0]["model"] == "deepseek-flash"
+    assert fake.calls[0]["extra_body"] == {"thinking": {"type": "disabled"}}
+    system = fake.calls[0]["messages"][0]["content"]
+    assert "缺少字段不是否定性证据" in system
+    assert "不得引入" in system
+
+
 # ── _extract_json_object 纯函数 ────────────────────────────────────
 
 class TestExtractJsonObject:
@@ -126,6 +153,10 @@ def test_next_step_system_prompt_bans_negative_assertions_on_lookup_miss():
     assert "绝不允许" in system
     # 一次问多个单位时要一次性全查、逐个作答（#109 的另一半：漏项）
     assert "unit_list" in system
+    assert "未返回 historical_points" in system
+    assert "未出现的" in system
+    assert "historical_record.identity_scope" in system
+    assert "不得反称缓存没有区分" in system
 
 
 # ── classify_intent ───────────────────────────────────────────────

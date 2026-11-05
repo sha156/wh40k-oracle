@@ -1,0 +1,588 @@
+{
+  "question": "分别查 Roboute Guilliman 和 Commander Shadowsun 的兵牌，列出各自的 M、T、W 和点数，并给每个单位单独标注来源。",
+  "elapsed_seconds": 7.219,
+  "answer": {
+    "summary": "检索 2 步 · 引用 5 条",
+    "trace": [
+      {
+        "fn": "get_datasheet",
+        "args": "('Roboute Guilliman')",
+        "result": "已命中",
+        "status": "ok",
+        "note": null
+      },
+      {
+        "fn": "get_datasheet",
+        "args": "('Commander Shadowsun')",
+        "result": "已命中",
+        "status": "ok",
+        "note": null
+      }
+    ],
+    "traceWarn": null,
+    "verdict": {
+      "label": "数据如下",
+      "labelEn": "Datasheet",
+      "lede": [
+        {
+          "t": "text",
+          "s": "两个单位的 M、T、W 和点数都查到了，属性来自结构库兵牌，点数与官方 MFM 同步。基里曼 "
+        },
+        {
+          "t": "strong",
+          "s": "355 分"
+        },
+        {
+          "t": "text",
+          "s": "，影阳 "
+        },
+        {
+          "t": "strong",
+          "s": "100 分"
+        },
+        {
+          "t": "text",
+          "s": "。"
+        }
+      ]
+    },
+    "calc": [
+      {
+        "n": 1,
+        "text": [
+          {
+            "t": "strong",
+            "s": "Roboute Guilliman（罗伯特·基里曼）— 极限战士 / 阿斯塔特修会"
+          }
+        ]
+      },
+      {
+        "n": 2,
+        "text": [
+          {
+            "t": "text",
+            "s": "M："
+          },
+          {
+            "t": "num",
+            "s": "8"
+          },
+          {
+            "t": "text",
+            "s": "\""
+          }
+        ]
+      },
+      {
+        "n": 3,
+        "text": [
+          {
+            "t": "text",
+            "s": "T："
+          },
+          {
+            "t": "num",
+            "s": "9"
+          }
+        ]
+      },
+      {
+        "n": 4,
+        "text": [
+          {
+            "t": "text",
+            "s": "W："
+          },
+          {
+            "t": "num",
+            "s": "10"
+          }
+        ]
+      },
+      {
+        "n": 5,
+        "text": [
+          {
+            "t": "text",
+            "s": "Sv："
+          },
+          {
+            "t": "num",
+            "s": "2+"
+          },
+          {
+            "t": "text",
+            "s": "（"
+          },
+          {
+            "t": "num",
+            "s": "4+"
+          },
+          {
+            "t": "text",
+            "s": " 特保）"
+          }
+        ]
+      },
+      {
+        "n": 6,
+        "text": [
+          {
+            "t": "text",
+            "s": "点数："
+          },
+          {
+            "t": "strong",
+            "s": "355 分"
+          },
+          {
+            "t": "text",
+            "s": "（"
+          },
+          {
+            "t": "num",
+            "s": "1"
+          },
+          {
+            "t": "text",
+            "s": " 模型）"
+          }
+        ]
+      },
+      {
+        "n": 7,
+        "text": [
+          {
+            "t": "text",
+            "s": "来源：兵牌属性与点数 "
+          },
+          {
+            "t": "cite",
+            "n": 4
+          },
+          {
+            "t": "text",
+            "s": "（结构库兵牌，点数同步自官方 MFM）；兵牌字段出处为 L"
+          },
+          {
+            "t": "num",
+            "s": "3"
+          },
+          {
+            "t": "text",
+            "s": " 结构库 · Space Marines · Roboute Guilliman "
+          },
+          {
+            "t": "cite",
+            "n": 1
+          },
+          {
+            "t": "text",
+            "s": "，点数同步自官方 MFM "
+          },
+          {
+            "t": "cite",
+            "n": 3
+          },
+          {
+            "t": "text",
+            "s": "。"
+          }
+        ]
+      },
+      {
+        "n": 8,
+        "text": [
+          {
+            "t": "strong",
+            "s": "Commander Shadowsun（影阳指挥官）— 钛帝国"
+          }
+        ]
+      },
+      {
+        "n": 9,
+        "text": [
+          {
+            "t": "text",
+            "s": "M："
+          },
+          {
+            "t": "num",
+            "s": "10"
+          },
+          {
+            "t": "text",
+            "s": "\""
+          }
+        ]
+      },
+      {
+        "n": 10,
+        "text": [
+          {
+            "t": "text",
+            "s": "T："
+          },
+          {
+            "t": "num",
+            "s": "4"
+          }
+        ]
+      },
+      {
+        "n": 11,
+        "text": [
+          {
+            "t": "text",
+            "s": "W："
+          },
+          {
+            "t": "num",
+            "s": "6"
+          }
+        ]
+      },
+      {
+        "n": 12,
+        "text": [
+          {
+            "t": "text",
+            "s": "Sv："
+          },
+          {
+            "t": "num",
+            "s": "3+"
+          },
+          {
+            "t": "text",
+            "s": "（"
+          },
+          {
+            "t": "num",
+            "s": "5+"
+          },
+          {
+            "t": "text",
+            "s": " 特保）"
+          }
+        ]
+      },
+      {
+        "n": 13,
+        "text": [
+          {
+            "t": "text",
+            "s": "点数："
+          },
+          {
+            "t": "strong",
+            "s": "100 分"
+          },
+          {
+            "t": "text",
+            "s": "（"
+          },
+          {
+            "t": "num",
+            "s": "1"
+          },
+          {
+            "t": "text",
+            "s": " 模型）"
+          }
+        ]
+      },
+      {
+        "n": 14,
+        "text": [
+          {
+            "t": "text",
+            "s": "来源：兵牌属性与点数 "
+          },
+          {
+            "t": "cite",
+            "n": 5
+          },
+          {
+            "t": "text",
+            "s": "（结构库兵牌，点数同步自官方 MFM）；兵牌字段出处为 L"
+          },
+          {
+            "t": "num",
+            "s": "3"
+          },
+          {
+            "t": "text",
+            "s": " 结构库 · T’au Empire · Commander Shadowsun "
+          },
+          {
+            "t": "cite",
+            "n": 2
+          },
+          {
+            "t": "text",
+            "s": "，点数同步自官方 MFM "
+          },
+          {
+            "t": "cite",
+            "n": 3
+          },
+          {
+            "t": "text",
+            "s": "。"
+          }
+        ]
+      }
+    ],
+    "entityCard": {
+      "nameZh": "影阳指挥官",
+      "nameEn": "Commander Shadowsun",
+      "pts": "100",
+      "role": "Characters",
+      "stats": [
+        {
+          "lab": "M",
+          "val": "10\""
+        },
+        {
+          "lab": "T",
+          "val": "4"
+        },
+        {
+          "lab": "SV",
+          "val": "3+"
+        },
+        {
+          "lab": "W",
+          "val": "6"
+        },
+        {
+          "lab": "LD",
+          "val": "6+"
+        },
+        {
+          "lab": "OC",
+          "val": "1"
+        }
+      ],
+      "invuln": "5+",
+      "ranged": [
+        {
+          "name": "箭弹发射器",
+          "kw": [],
+          "range": "18\"",
+          "a": "5",
+          "skill": "2+",
+          "s": "3",
+          "ap": "0",
+          "d": "1",
+          "hot": false
+        },
+        {
+          "name": "高能融合炮",
+          "kw": [
+            {
+              "text": "热熔2",
+              "slug": "melta",
+              "base": "MELTA",
+              "nameZh": "热熔",
+              "brief": "热熔武器的炽热射线在近距离会变得更加强烈。\n这个技能总是会以 [热熔 X]的形式出现。每当一个模型使用[热熔]武器进行攻击时，在选择目标步骤中，如果目标单位位于这件武器攻击范围的一半以内，那么直到攻击单位的攻击被结算完成前，那件武器的 D 属性增加 X 。\n示例：一个模型使用 [热熔 2] 武器对一个位于武器攻击范围一半以内的单位进行攻击，武器的 D 属性为D6。在结算这次攻击时，那件武器的 D 属性为 D6+2。",
+              "section": "24.25",
+              "ruleSlug": "24-core-abilities",
+              "group": "universal"
+            }
+          ],
+          "range": "18\"",
+          "a": "1",
+          "skill": "2+",
+          "s": "10",
+          "ap": "-4",
+          "d": "D6",
+          "hot": false
+        },
+        {
+          "name": "轻型导弹仓",
+          "kw": [],
+          "range": "24\"",
+          "a": "2",
+          "skill": "2+",
+          "s": "7",
+          "ap": "0",
+          "d": "2",
+          "hot": false
+        },
+        {
+          "name": "脉冲手枪",
+          "kw": [
+            {
+              "text": "手枪",
+              "slug": "pistol",
+              "base": "PISTOL",
+              "nameZh": "手枪",
+              "brief": "手枪可以被用于进行零距离射击。\n[手枪]和[近距离]在所有规则中都被视为同一个规则。具体请参见[近距离]。\n设计师注：[手枪]是一个预先存在的技能，它将随着这次《战锤 40000》版本的发展被 [近距离]技能替代。这两个技能的功能相同，但是后者更适合用于对这种类型的武器进行统称。",
+              "section": "24.27",
+              "ruleSlug": "24-core-abilities",
+              "group": "transitional"
+            }
+          ],
+          "range": "12\"",
+          "a": "1",
+          "skill": "3+",
+          "s": "5",
+          "ap": "0",
+          "d": "1",
+          "hot": false
+        }
+      ],
+      "melee": [
+        {
+          "name": "战斗服铁拳",
+          "kw": [],
+          "range": "近战",
+          "a": "3",
+          "skill": "4+",
+          "s": "5",
+          "ap": "0",
+          "d": "1",
+          "hot": false
+        }
+      ],
+      "abilities": [
+        {
+          "tag": null,
+          "name": "阵营：为了上上善道",
+          "text": null,
+          "rich": []
+        },
+        {
+          "tag": null,
+          "name": "灵巧战士",
+          "text": "该模型能在后撤的回合进行射击。",
+          "rich": [
+            {
+              "t": "text",
+              "s": "该模型能在后撤的回合进行射击。"
+            }
+          ]
+        },
+        {
+          "tag": null,
+          "name": "帝国英雄(光环)",
+          "text": "当己方钛帝国单位位于该模型6寸内时，那个单位中的模型进行远程攻击时，可以重掷结果为1的命中掷骰。",
+          "rich": [
+            {
+              "t": "text",
+              "s": "当己方钛帝国单位位于该模型6寸内时，那个单位中的模型进行远程攻击时，可以重掷结果为1的命中掷骰。"
+            }
+          ]
+        },
+        {
+          "tag": "装备技能",
+          "name": "高级护盾兵蜂",
+          "text": "当对持有者进行远程攻击时，造伤掷骰结果-1。",
+          "rich": [
+            {
+              "t": "text",
+              "s": "当对持有者进行远程攻击时，造伤掷骰结果-1。"
+            }
+          ]
+        },
+        {
+          "tag": "装备技能",
+          "name": "指挥兵蜂(光环)",
+          "text": "当己方钛帝国单位位于持有者6寸内时，当选择那个单位作为计谋的目标时，投掷1枚D6，如果掷骰结果为5+，你获得1CP。",
+          "rich": [
+            {
+              "t": "text",
+              "s": "当己方钛帝国单位位于持有者6寸内时，当选择那个单位作为计谋的目标时，投掷1枚D6，如果掷骰结果为5+，你获得1CP。"
+            }
+          ]
+        }
+      ],
+      "loadout": "本模型装备：箭弹发射器；2 高能融合炮s；轻型导弹仓；脉冲手枪；战斗服铁拳；advanced guardian drone；command-link drone。",
+      "damaged": null,
+      "leads": null,
+      "composition": [
+        [
+          {
+            "t": "num",
+            "s": "1"
+          },
+          {
+            "t": "text",
+            "s": "个影阳指挥官 — 史诗英雄"
+          }
+        ]
+      ],
+      "keywords": "Infantry，Fly，Epic Hero，Battlesuit，Commander Shadowsun，Character",
+      "factionKeywords": "T’au Empire",
+      "legend": null,
+      "faction": "阵营: T’au Empire",
+      "src": "L3 结构库 · T’au Empire",
+      "wiki": "factions/t-au-empire/units/commander-shadowsun"
+    },
+    "cites": [
+      {
+        "n": 1,
+        "book": "L3 结构库 · Space Marines",
+        "page": null,
+        "section": "属性块",
+        "term": "Roboute Guilliman",
+        "wiki": "",
+        "url": null
+      },
+      {
+        "n": 2,
+        "book": "L3 结构库 · T’au Empire",
+        "page": null,
+        "section": "属性块",
+        "term": "Commander Shadowsun",
+        "wiki": "",
+        "url": null
+      },
+      {
+        "n": 3,
+        "book": "Munitorum Field Manual",
+        "page": null,
+        "section": "官方当前点数",
+        "term": null,
+        "wiki": "",
+        "url": "https://mfm.warhammer-community.com"
+      },
+      {
+        "n": 4,
+        "book": "Roboute Guilliman 兵牌（结构库，点数同步自官方 MFM）",
+        "page": null,
+        "section": null,
+        "term": null,
+        "wiki": "",
+        "url": null
+      },
+      {
+        "n": 5,
+        "book": "Commander Shadowsun 兵牌（结构库，点数同步自官方 MFM）",
+        "page": null,
+        "section": null,
+        "term": null,
+        "wiki": "",
+        "url": null
+      }
+    ],
+    "sensitivity": {
+      "title": "◭ 敏感性 · 数据时效",
+      "text": [
+        {
+          "t": "text",
+          "s": "以上点数已与官方 MFM 同步；兵牌属性来自既有结构库，尚未逐字段复核全部最新补丁，如需当前规则效果请另查最新 Faction Pack。"
+        }
+      ]
+    },
+    "cta": null,
+    "followups": [
+      "基里曼和影阳的武器数据分别是什么？",
+      "这两个单位的最新 Faction Pack 规则效果有变化吗？",
+      "影阳的 5+ 特保和基里曼的 4+ 特保在什么情况下生效？"
+    ],
+    "degraded": false
+  }
+}

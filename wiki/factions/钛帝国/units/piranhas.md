@@ -1,6 +1,6 @@
 ---
 id: '000000423'
-name_zh: 水虎鱼
+name_zh: (TX4)水虎鱼
 name_en: Piranhas
 faction: 钛帝国
 type: unit
@@ -13,13 +13,13 @@ tags:
 - unit/钛帝国
 - 钛帝国
 version:
-  points: MFM 2026-09-14T05:51:23.572407+00:00
+  points: MFM 2026-10-03T19:00:56.192123+00:00
   source: official-db
 sources:
 - book: https://assets.warhammer-community.com/eng_wh40k_faction_pack_tau_empire-sxhzmfrlud-mpzjzuhupn.pdf
   pages:
   - 19
-updated: '2026-09-14'
+updated: '2026-10-03'
 ---
 
 ## 属性表

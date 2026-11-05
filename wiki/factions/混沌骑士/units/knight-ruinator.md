@@ -5,17 +5,17 @@ name_en: Knight Ruinator
 faction: 混沌骑士
 type: unit
 points:
-  1 model: 340
+  1 model: 325
 tags:
 - unit
 - unit/混沌骑士
 - 混沌骑士
 version:
-  points: MFM 2026-09-14T05:51:23.572407+00:00
+  points: MFM 2026-10-03T19:00:56.192123+00:00
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-09-14'
+updated: '2026-10-03'
 ---
 
 ## 属性表
@@ -46,7 +46,7 @@ updated: '2026-09-14'
 - **近距离杀手（光环）**：当一个友方战犬级模型位于此模型 9 寸内 时，该战犬级模型对最近的可选目标进行攻击时，该攻击的 AP 提 升 1 点。（例如-1 变成-2）
 
 ## 单位构成
-- **1个模型** — 340 分
+- **1个模型** — 325 分
 
 ## 关键词
 - **阵营关键词**：Chaos Knights

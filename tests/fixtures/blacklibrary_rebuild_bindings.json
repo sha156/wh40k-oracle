@@ -1,0 +1,1979 @@
+[
+  {
+    "record": {
+      "authority": "third_party_community_source",
+      "detail": {
+        "skill": [
+          {
+            "text": "不知疼痛",
+            "value": "6"
+          }
+        ],
+        "军表构成": [
+          {
+            "content": "单位构成",
+            "type": "h3"
+          },
+          {
+            "content": [
+              {
+                "style": "",
+                "text": "5-10名装备爆弹步枪的死亡连战士"
+              }
+            ],
+            "type": "text"
+          },
+          {
+            "content": "默认装备",
+            "type": "h3"
+          },
+          {
+            "content": [
+              {
+                "style": "display:inline-flex;height:28px;align-items:center;padding:0 14px;border-radius:5px;background:#eeeeee;font-weight:500;font-size:14px;color:#222222;",
+                "text": "爆弹枪"
+              },
+              {
+                "style": "display:inline-flex;height:28px;align-items:center;padding:0 14px;border-radius:5px;background:#eeeeee;font-weight:500;font-size:14px;color:#222222;",
+                "text": "格斗武器"
+              }
+            ],
+            "type": "text"
+          },
+          {
+            "content": "可选装备",
+            "type": "h3"
+          },
+          {
+            "content": [
+              {
+                "style": "",
+                "text": "任意数量的模型可以将"
+              },
+              {
+                "style": "display:inline-flex;height:28px;align-items:center;padding:0 14px;border-radius:5px;background:#eeeeee;font-weight:500;font-size:14px;color:#222222;",
+                "text": "爆弹枪和格斗武器"
+              },
+              {
+                "style": "",
+                "text": "替换为以下装备"
+              }
+            ],
+            "type": "text"
+          },
+          {
+            "content": [
+              {
+                "style": "",
+                "text": "阿斯塔特链锯剑和爆弹手枪"
+              }
+            ],
+            "type": "li"
+          },
+          {
+            "content": [
+              {
+                "style": "",
+                "text": "雷霆锤"
+              }
+            ],
+            "type": "li"
+          },
+          {
+            "content": [
+              {
+                "style": "",
+                "text": "任意数量的模型可以将"
+              },
+              {
+                "style": "display:inline-flex;height:28px;align-items:center;padding:0 14px;border-radius:5px;background:#eeeeee;font-weight:500;font-size:14px;color:#222222;",
+                "text": "爆弹手枪"
+              },
+              {
+                "style": "",
+                "text": "替换为以下装备"
+              }
+            ],
+            "type": "text"
+          },
+          {
+            "content": [
+              {
+                "style": "",
+                "text": "手持喷火器"
+              }
+            ],
+            "type": "li"
+          },
+          {
+            "content": [
+              {
+                "style": "",
+                "text": "狱火手枪"
+              }
+            ],
+            "type": "li"
+          },
+          {
+            "content": [
+              {
+                "style": "",
+                "text": "等离子手枪"
+              }
+            ],
+            "type": "li"
+          },
+          {
+            "content": [
+              {
+                "style": "",
+                "text": "任意数量的模型可以将"
+              },
+              {
+                "style": "display:inline-flex;height:28px;align-items:center;padding:0 14px;border-radius:5px;background:#eeeeee;font-weight:500;font-size:14px;color:#222222;",
+                "text": "阿斯塔特链锯剑"
+              },
+              {
+                "style": "",
+                "text": "换为以下装备"
+              }
+            ],
+            "type": "text"
+          },
+          {
+            "content": [
+              {
+                "style": "",
+                "text": "动力拳"
+              }
+            ],
+            "type": "li"
+          },
+          {
+            "content": [
+              {
+                "style": "",
+                "text": "动力武器"
+              }
+            ],
+            "type": "li"
+          }
+        ],
+        "军表构成Html": "<span\n        data-w-e-type=\"myH3\"\n        data-w-e-text=\"单位构成\"\n    >单位构成</span><p>5-10名装备爆弹步枪的死亡连战士</p><span\n        data-w-e-type=\"myH3\"\n        data-w-e-text=\"默认装备\"\n    >默认装备</span><p><span data-w-e-type=\"myTag\" data-w-e-text=\"爆弹枪\">爆弹枪</span> <span data-w-e-type=\"myTag\" data-w-e-text=\"格斗武器\">格斗武器</span></p><span\n        data-w-e-type=\"myH3\"\n        data-w-e-text=\"可选装备\"\n    >可选装备</span><p>任意数量的模型可以将<span data-w-e-type=\"myTag\" data-w-e-text=\"爆弹枪和格斗武器\">爆弹枪和格斗武器</span>替换为以下装备</p><ul><li>阿斯塔特链锯剑和爆弹手枪</li><li>雷霆锤</li></ul><p>任意数量的模型可以将<span data-w-e-type=\"myTag\" data-w-e-text=\"爆弹手枪\">爆弹手枪</span>替换为以下装备</p><ul><li>手持喷火器</li><li>狱火手枪</li><li>等离子手枪</li></ul><p>任意数量的模型可以将<span data-w-e-type=\"myTag\" data-w-e-text=\"阿斯塔特链锯剑\">阿斯塔特链锯剑</span>换为以下装备</p><ul><li>动力拳</li><li>动力武器</li></ul>",
+        "射击武器": [
+          {
+            "name": "爆弹手枪",
+            "skill": [
+              "手枪"
+            ],
+            "伤害": "1",
+            "命中": "3+",
+            "射程": "12",
+            "攻击次数": "1",
+            "破甲": "0",
+            "造伤": "4"
+          },
+          {
+            "name": "爆弹枪",
+            "skill": [],
+            "伤害": "1",
+            "命中": "3+",
+            "射程": "24",
+            "攻击次数": "2",
+            "破甲": "0",
+            "造伤": "4"
+          },
+          {
+            "name": "手持喷火器",
+            "skill": [
+              "手枪",
+              "无视掩体",
+              "洪流"
+            ],
+            "伤害": "1",
+            "命中": "N/A",
+            "射程": "12",
+            "攻击次数": "D6",
+            "破甲": "0",
+            "造伤": "3"
+          },
+          {
+            "name": "狱火手枪",
+            "skill": [
+              "手枪",
+              "热熔2"
+            ],
+            "伤害": "D3",
+            "命中": "3+",
+            "射程": "6",
+            "攻击次数": "1",
+            "破甲": "-4",
+            "造伤": "8"
+          },
+          {
+            "content": [],
+            "contentHtml": "",
+            "name": "等离子手枪-标准",
+            "skill": [
+              "手枪"
+            ],
+            "伤害": "1",
+            "命中": "3+",
+            "射程": "12",
+            "攻击次数": "1",
+            "破甲": "-2",
+            "造伤": "7"
+          },
+          {
+            "name": "等离子手枪-过载",
+            "skill": [
+              "手枪",
+              "危险"
+            ],
+            "伤害": "2",
+            "命中": "3+",
+            "射程": "12",
+            "攻击次数": "1",
+            "破甲": "-3",
+            "造伤": "8"
+          }
+        ],
+        "属性": [
+          {
+            "ld": "1",
+            "m": "6",
+            "oc": 0,
+            "sv": "3",
+            "t": "4",
+            "unitBase": "32mm",
+            "unitName": "",
+            "w": "2"
+          },
+          {
+            "ld": 0,
+            "m": 0,
+            "oc": 0,
+            "sv": 0,
+            "t": 0,
+            "unitBase": "",
+            "unitName": "",
+            "w": 0
+          }
+        ],
+        "简介": [
+          {
+            "content": "单位构成",
+            "type": "h3"
+          },
+          {
+            "content": [
+              {
+                "style": "",
+                "text": "5个装备爆弹枪的死亡连战士125分，可以额外花费125分将该单位扩编为10人队"
+              }
+            ],
+            "type": "text"
+          },
+          {
+            "content": [
+              {
+                "style": "",
+                "text": "（维护者提示：传奇单位不建议比赛使用）"
+              }
+            ],
+            "type": "text"
+          },
+          {
+            "content": [
+              {
+                "style": ""
+              }
+            ],
+            "type": "text"
+          },
+          {
+            "content": [
+              {
+                "style": "",
+                "text": "如果一个"
+              },
+              {
+                "style": "display:inline-flex;height:28px;align-items:center;padding:0 14px;border-radius:5px;background:#eeeeee;font-weight:500;font-size:14px;color:#222222;",
+                "text": "牧师"
+              },
+              {
+                "style": "",
+                "text": "模型的可以领导"
+              },
+              {
+                "style": "display:inline-flex;height:28px;align-items:center;padding:0 14px;border-radius:5px;background:#eeeeee;font-weight:500;font-size:14px;color:#222222;",
+                "text": "战术小队"
+              },
+              {
+                "style": "",
+                "text": "，那么该模型可以加入本单位"
+              }
+            ],
+            "type": "text"
+          },
+          {
+            "content": [
+              {
+                "style": "",
+                "text": "（维护者提示：该单位可以视作特殊的战术小队由牧师带队）"
+              }
+            ],
+            "type": "text"
+          },
+          {
+            "content": [
+              {
+                "style": ""
+              }
+            ],
+            "type": "text"
+          },
+          {
+            "content": [
+              {
+                "style": "",
+                "text": "如果一个"
+              },
+              {
+                "style": "display:inline-flex;height:28px;align-items:center;padding:0 14px;border-radius:5px;background:#eeeeee;font-weight:500;font-size:14px;color:#222222;",
+                "text": "角色"
+              },
+              {
+                "style": "",
+                "text": "单位可以领导"
+              },
+              {
+                "style": "display:inline-flex;height:28px;align-items:center;padding:0 14px;border-radius:5px;background:#eeeeee;font-weight:500;font-size:14px;color:#222222;",
+                "text": "死亡连战士"
+              },
+              {
+                "style": "",
+                "text": "，那么该模型可以加入本单位"
+              }
+            ],
+            "type": "text"
+          },
+          {
+            "content": "阵营关键词",
+            "type": "h3"
+          },
+          {
+            "content": [
+              {
+                "style": "display:inline-flex;height:28px;align-items:center;padding:0 14px;border-radius:5px;background:#eeeeee;font-weight:500;font-size:14px;color:#222222;",
+                "text": "阿斯塔特修会"
+              },
+              {
+                "style": "display:inline-flex;height:28px;align-items:center;padding:0 14px;border-radius:5px;background:#eeeeee;font-weight:500;font-size:14px;color:#222222;",
+                "text": "圣血天使"
+              }
+            ],
+            "type": "text"
+          },
+          {
+            "content": "关键词",
+            "type": "h3"
+          },
+          {
+            "content": [
+              {
+                "style": "display:inline-flex;height:28px;align-items:center;padding:0 14px;border-radius:5px;background:#eeeeee;font-weight:500;font-size:14px;color:#222222;",
+                "text": "步兵"
+              },
+              {
+                "style": "display:inline-flex;height:28px;align-items:center;padding:0 14px;border-radius:5px;background:#eeeeee;font-weight:500;font-size:14px;color:#222222;",
+                "text": "手雷"
+              },
+              {
+                "style": "display:inline-flex;height:28px;align-items:center;padding:0 14px;border-radius:5px;background:#eeeeee;font-weight:500;font-size:14px;color:#222222;",
+                "text": "帝国"
+              },
+              {
+                "style": "display:inline-flex;height:28px;align-items:center;padding:0 14px;border-radius:5px;background:#eeeeee;font-weight:500;font-size:14px;color:#222222;",
+                "text": "死亡连"
+              },
+              {
+                "style": "display:inline-flex;height:28px;align-items:center;padding:0 14px;border-radius:5px;background:#eeeeee;font-weight:500;font-size:14px;color:#222222;",
+                "text": "装备爆弹枪的死亡连战士"
+              }
+            ],
+            "type": "text"
+          }
+        ],
+        "简介Html": "<span\n        data-w-e-type=\"myH3\"\n        data-w-e-text=\"单位构成\"\n    >单位构成</span><p>5个装备爆弹枪的死亡连战士125分，可以额外花费125分将该单位扩编为10人队</p><p>（维护者提示：传奇单位不建议比赛使用）</p><p><br></p><p>如果一个<span data-w-e-type=\"myTag\" data-w-e-text=\"牧师\">牧师</span>模型的可以领导<span data-w-e-type=\"myTag\" data-w-e-text=\"战术小队\">战术小队</span> ，那么该模型可以加入本单位</p><p>（维护者提示：该单位可以视作特殊的战术小队由牧师带队）</p><p><br></p><p>如果一个<span data-w-e-type=\"myTag\" data-w-e-text=\"角色\">角色</span>单位可以领导<span data-w-e-type=\"myTag\" data-w-e-text=\"死亡连战士\">死亡连战士</span>，那么该模型可以加入本单位</p><span\n        data-w-e-type=\"myH3\"\n        data-w-e-text=\"阵营关键词\"\n    >阵营关键词</span><p><span data-w-e-type=\"myTag\" data-w-e-text=\"阿斯塔特修会\">阿斯塔特修会</span> <span data-w-e-type=\"myTag\" data-w-e-text=\"圣血天使\">圣血天使</span></p><span\n        data-w-e-type=\"myH3\"\n        data-w-e-text=\"关键词\"\n    >关键词</span><p><span data-w-e-type=\"myTag\" data-w-e-text=\"步兵\">步兵</span> <span data-w-e-type=\"myTag\" data-w-e-text=\"手雷\">手雷</span> <span data-w-e-type=\"myTag\" data-w-e-text=\"帝国\">帝国</span> <span data-w-e-type=\"myTag\" data-w-e-text=\"死亡连\">死亡连</span> <span data-w-e-type=\"myTag\" data-w-e-text=\"装备爆弹枪的死亡连战士\">装备爆弹枪的死亡连战士</span></p>",
+        "能力": [
+          {
+            "content": [
+              {
+                "content": [
+                  {
+                    "style": "",
+                    "text": "本单位内每一个模型进行攻击时，你均可重掷该次攻击的命中骰。若本单位不在任意友方牧师12 英寸范围内，则本单位无法执行后撤 ，且本单位全部模型的目标控制点 (OC)变为 0"
+                  }
+                ],
+                "type": "text"
+              }
+            ],
+            "contentHtml": "<p>本单位内每一个模型进行攻击时，你均可重掷该次攻击的命中骰。若本单位不在任意友方牧师12 英寸范围内，则本单位无法执行后撤 ，且本单位全部模型的目标控制点 (OC)变为 0</p>",
+            "id": 12367,
+            "name": "黑怒"
+          },
+          {
+            "content": [
+              {
+                "content": [
+                  {
+                    "style": "",
+                    "text": "本单位内模型进行攻击时："
+                  }
+                ],
+                "type": "text"
+              },
+              {
+                "content": [
+                  {
+                    "style": "",
+                    "text": "若本单位兵力低于起始兵力，该攻击获得【连击 1】"
+                  }
+                ],
+                "type": "li"
+              },
+              {
+                "content": [
+                  {
+                    "style": "",
+                    "text": "若本单位兵力低于半数兵力，该攻击获得【连击 2】"
+                  }
+                ],
+                "type": "li"
+              }
+            ],
+            "contentHtml": "<p>本单位内模型进行攻击时：</p><ul><li>若本单位兵力低于起始兵力，该攻击获得【连击 1】</li><li>若本单位兵力低于半数兵力，该攻击获得【连击 2】</li></ul>",
+            "id": 12368,
+            "name": "荣光战陨"
+          }
+        ],
+        "近战武器": [
+          {
+            "name": "阿斯塔特链锯剑",
+            "skill": [],
+            "伤害": "1",
+            "命中": "3+",
+            "射程": "近战",
+            "攻击次数": "4",
+            "破甲": "-1",
+            "造伤": "4"
+          },
+          {
+            "name": "格斗武器",
+            "skill": [],
+            "伤害": "1",
+            "命中": "3+",
+            "射程": "近战",
+            "攻击次数": "3",
+            "破甲": "0",
+            "造伤": "4"
+          },
+          {
+            "name": "动力拳",
+            "skill": [],
+            "伤害": "2",
+            "命中": "3+",
+            "射程": "近战",
+            "攻击次数": "3",
+            "破甲": "-2",
+            "造伤": "8"
+          },
+          {
+            "name": "动力武器",
+            "skill": [],
+            "伤害": "1",
+            "命中": "3+",
+            "射程": "近战",
+            "攻击次数": "4",
+            "破甲": "-2",
+            "造伤": "5"
+          },
+          {
+            "name": "雷霆锤",
+            "skill": [
+              "毁灭伤害"
+            ],
+            "伤害": "2",
+            "命中": "3+",
+            "射程": "近战",
+            "攻击次数": "3",
+            "破甲": "-2",
+            "造伤": "8"
+          }
+        ]
+      },
+      "detail_status": "captured",
+      "faction_zh": "圣血天使",
+      "id": 1085,
+      "name_en": "Death Company Marine With Boltguns",
+      "name_zh": "【传奇】装备爆弹枪的死亡连战士",
+      "score": 125,
+      "source_capture": "unit-details/0c0ad5934ba82dd2",
+      "provenance": {
+        "snapshot": "20260926-resume",
+        "manifest_sha256": "69bd7facd5740b3b111b7912223884f918dc48caf53e9f55856c811a99084ce8",
+        "capture": "unit-details/0c0ad5934ba82dd2",
+        "status": "verified_capture",
+        "fetched_at": "2026-09-22T09:33:17.965566+00:00",
+        "authority": "third_party_community_source"
+      }
+    },
+    "canonical": {
+      "id": "000003836",
+      "name_en": "Death Company Marines with Boltguns",
+      "faction_id": "SM",
+      "canonical_keywords": {
+        "keywords": [
+          "Imperium",
+          "Grenades",
+          "Infantry",
+          "Death Company Marines with Boltguns",
+          "Death Company"
+        ],
+        "faction_keywords": [
+          "Blood Angels",
+          "Adeptus Astartes"
+        ]
+      },
+      "canonical_models": [
+        {
+          "unit_id": "000003836",
+          "name": "Death Company Marines with Boltguns",
+          "m": "6\"",
+          "t": "4",
+          "sv": "3+",
+          "invuln": "-",
+          "w": "2",
+          "ld": "6+",
+          "oc": "1",
+          "base": "32mm",
+          "count_options_json": null
+        }
+      ]
+    }
+  },
+  {
+    "record": {
+      "authority": "third_party_community_source",
+      "detail": {
+        "skill": [
+          {
+            "text": "致命破灭",
+            "value": "D3"
+          }
+        ],
+        "军表构成": [
+          {
+            "content": "单位装备",
+            "type": "h3"
+          },
+          {
+            "content": [
+              {
+                "style": "display:inline-flex;height:28px;align-items:center;padding:0 14px;border-radius:5px;background:#eeeeee;font-weight:500;font-size:14px;color:#222222;",
+                "text": "高斯灭绝炮"
+              }
+            ],
+            "type": "text"
+          },
+          {
+            "content": "装备升级",
+            "type": "h3"
+          },
+          {
+            "content": [
+              {
+                "style": "font-weight:bold;",
+                "text": "该模型的高斯灭绝炮可以替换为以下一种选项："
+              }
+            ],
+            "type": "text"
+          },
+          {
+            "content": [
+              {
+                "style": "",
+                "text": "1 门聚焦死光。"
+              }
+            ],
+            "type": "li"
+          },
+          {
+            "content": [
+              {
+                "style": "",
+                "text": "1 门灼热光炮。"
+              }
+            ],
+            "type": "li"
+          }
+        ],
+        "军表构成Html": "<span\n        data-w-e-type=\"myH3\"\n        data-w-e-text=\"单位装备\"\n    >单位装备</span><p><span data-w-e-type=\"myTag\" data-w-e-text=\"高斯灭绝炮\">高斯灭绝炮</span></p><span\n        data-w-e-type=\"myH3\"\n        data-w-e-text=\"装备升级\"\n    >装备升级</span><p><strong>该模型的高斯灭绝炮可以替换为以下一种选项：</strong></p><ul><li>1 门聚焦死光。</li><li>1 门灼热光炮。</li></ul>",
+        "射击武器": [
+          {
+            "content": [],
+            "contentHtml": "",
+            "name": "聚焦死光",
+            "skill": [
+              "连击 2"
+            ],
+            "伤害": "2",
+            "命中": "4+",
+            "射程": "36",
+            "攻击次数": "6",
+            "破甲": "-2",
+            "造伤": "8 "
+          },
+          {
+            "name": "高斯灭绝炮   ",
+            "skill": [
+              " 致命一击"
+            ],
+            "伤害": "6",
+            "命中": "4+ ",
+            "射程": " 48",
+            "攻击次数": "1",
+            "破甲": "-3",
+            "造伤": "14"
+          },
+          {
+            "name": "灼热光炮    ",
+            "skill": [
+              "热熔 4"
+            ],
+            "伤害": "D6",
+            "命中": "4+",
+            "射程": " 36",
+            "攻击次数": "2",
+            "破甲": "-4",
+            "造伤": "9"
+          }
+        ],
+        "属性": [
+          {
+            "ld": "7",
+            "m": "-",
+            "oc": "0",
+            "sv": "3",
+            "t": "8",
+            "unitName": "",
+            "w": "10"
+          },
+          {
+            "ld": "",
+            "m": "",
+            "oc": "",
+            "sv": "",
+            "t": "",
+            "unitName": "",
+            "w": ""
+          }
+        ],
+        "简介": [
+          {
+            "content": "单位构成",
+            "type": "h3"
+          },
+          {
+            "content": [
+              {
+                "style": "",
+                "text": "1 座哨戒石碑塔，120分"
+              }
+            ],
+            "type": "text"
+          },
+          {
+            "content": "阵营关键词",
+            "type": "h3"
+          },
+          {
+            "content": [
+              {
+                "style": "display:inline-flex;height:28px;align-items:center;padding:0 14px;border-radius:5px;background:#eeeeee;font-weight:500;font-size:14px;color:#222222;",
+                "text": "太空死灵"
+              }
+            ],
+            "type": "text"
+          },
+          {
+            "content": "关键词",
+            "type": "h3"
+          },
+          {
+            "content": [
+              {
+                "style": "font-weight:bold;",
+                "text": "斯扎拉克"
+              }
+            ],
+            "type": "text"
+          },
+          {
+            "content": [
+              {
+                "style": "display:inline-flex;height:28px;align-items:center;padding:0 14px;border-radius:5px;background:#eeeeee;font-weight:500;font-size:14px;color:#222222;",
+                "text": "载具"
+              },
+              {
+                "style": "display:inline-flex;height:28px;align-items:center;padding:0 14px;border-radius:5px;background:#eeeeee;font-weight:500;font-size:14px;color:#222222;",
+                "text": "防御工事"
+              },
+              {
+                "style": "display:inline-flex;height:28px;align-items:center;padding:0 14px;border-radius:5px;background:#eeeeee;font-weight:500;font-size:14px;color:#222222;",
+                "text": "哨戒石碑塔"
+              }
+            ],
+            "type": "text"
+          },
+          {
+            "content": [
+              {
+                "style": ""
+              }
+            ],
+            "type": "text"
+          }
+        ],
+        "简介Html": "<span\n        data-w-e-type=\"myH3\"\n        data-w-e-text=\"单位构成\"\n    >单位构成</span><p>1 座哨戒石碑塔，120分</p><span\n        data-w-e-type=\"myH3\"\n        data-w-e-text=\"阵营关键词\"\n    >阵营关键词</span><p><span data-w-e-type=\"myTag\" data-w-e-text=\"太空死灵\">太空死灵</span></p><span\n        data-w-e-type=\"myH3\"\n        data-w-e-text=\"关键词\"\n    >关键词</span><p><strong>斯扎拉克</strong></p><p><span data-w-e-type=\"myTag\" data-w-e-text=\"载具\">载具</span> &nbsp;<span data-w-e-type=\"myTag\" data-w-e-text=\"防御工事\">防御工事</span> &nbsp; &nbsp;<span data-w-e-type=\"myTag\" data-w-e-text=\"哨戒石碑塔\">哨戒石碑塔</span></p><p><br></p>",
+        "能力": [
+          {
+            "content": [],
+            "contentHtml": "",
+            "id": 1523,
+            "name": "【阵营】重生协议",
+            "remark": ""
+          },
+          {
+            "content": [
+              {
+                "content": [
+                  {
+                    "style": "",
+                    "text": "每场战斗中，在您对手的回合结束时，如果该单位不在任何敌方单位的交战范围内， 你可以将该单位从战场上移除。然后，在您下一个移动阶段的增援步骤中，将该单位部署在 战场上位于所有敌方模型水平距离 9 英寸外的任意位置。如果战斗结束时这个单位不在战场 上，它就会被摧毁。"
+                  }
+                ],
+                "type": "text"
+              }
+            ],
+            "contentHtml": "<p>每场战斗中，在您对手的回合结束时，如果该单位不在任何敌方单位的交战范围内， 你可以将该单位从战场上移除。然后，在您下一个移动阶段的增援步骤中，将该单位部署在 战场上位于所有敌方模型水平距离 9 英寸外的任意位置。如果战斗结束时这个单位不在战场 上，它就会被摧毁。</p>",
+            "id": 1524,
+            "name": "传送矩阵"
+          },
+          {
+            "content": [
+              {
+                "content": [
+                  {
+                    "style": "",
+                    "text": "每次将远程攻击分配给一个模型时，如果该模型由于该防御工事而不对攻击单 位中所有模型完全可见，则该模型获得针对该攻击的掩体增益。"
+                  }
+                ],
+                "type": "text"
+              }
+            ],
+            "contentHtml": "<p>每次将远程攻击分配给一个模型时，如果该模型由于该防御工事而不对攻击单 位中所有模型完全可见，则该模型获得针对该攻击的掩体增益。</p>",
+            "id": 1525,
+            "name": "相位转移造物"
+          },
+          {
+            "content": [
+              {
+                "content": [
+                  {
+                    "style": "",
+                    "text": "当一个敌方单位仅位于己方防御工事的交战范围内时："
+                  }
+                ],
+                "type": "text"
+              },
+              {
+                "content": [
+                  {
+                    "style": "",
+                    "text": "该单位依旧可以被选择成为远程攻击的目标，但是每次进行攻击时，除非使用的武器是手 枪，否则命中掷骰的结果减少 1 点。"
+                  }
+                ],
+                "type": "li"
+              },
+              {
+                "content": [
+                  {
+                    "style": "",
+                    "text": "该单位中的模型不需要在处于战斗震慑状态的情况下撤退后进行溃逃测试，除非单位需要 在这么做时移动越过其他敌方模型。"
+                  }
+                ],
+                "type": "li"
+              }
+            ],
+            "contentHtml": "<p>当一个敌方单位仅位于己方防御工事的交战范围内时：</p><ul><li>该单位依旧可以被选择成为远程攻击的目标，但是每次进行攻击时，除非使用的武器是手 枪，否则命中掷骰的结果减少 1 点。</li><li>该单位中的模型不需要在处于战斗震慑状态的情况下撤退后进行溃逃测试，除非单位需要 在这么做时移动越过其他敌方模型。</li></ul>",
+            "id": 1527,
+            "name": "防御工事"
+          }
+        ],
+        "近战武器": []
+      },
+      "detail_status": "captured",
+      "faction_zh": "太空死灵",
+      "id": 363,
+      "name_en": "Sentry Pylons",
+      "name_zh": "哨戒石碑塔",
+      "score": 120,
+      "source_capture": "unit-details/a43231c2216f23db",
+      "provenance": {
+        "snapshot": "20260926-resume",
+        "manifest_sha256": "69bd7facd5740b3b111b7912223884f918dc48caf53e9f55856c811a99084ce8",
+        "capture": "unit-details/a43231c2216f23db",
+        "status": "verified_capture",
+        "fetched_at": "2026-09-22T09:33:55.477711+00:00",
+        "authority": "third_party_community_source"
+      }
+    },
+    "canonical": {
+      "id": "000000562",
+      "name_en": "Sentry Pylon",
+      "faction_id": "NEC",
+      "canonical_keywords": {
+        "keywords": [
+          "Vehicle",
+          "Fortification",
+          "Sentry Pylon",
+          "FRAME"
+        ],
+        "faction_keywords": [
+          "Necrons"
+        ]
+      },
+      "canonical_models": [
+        {
+          "unit_id": "000000562",
+          "name": "Sentry Pylon",
+          "m": "-",
+          "t": "8",
+          "sv": "3+",
+          "invuln": "-",
+          "w": "10",
+          "ld": "7+",
+          "oc": "0",
+          "base": "Use model",
+          "count_options_json": null
+        }
+      ]
+    }
+  },
+  {
+    "record": {
+      "authority": "third_party_community_source",
+      "detail": {
+        "skill": [
+          {
+            "text": "领袖"
+          },
+          {
+            "text": "特殊保护",
+            "value": "4"
+          }
+        ],
+        "军表构成": [
+          {
+            "content": "单位装备",
+            "type": "h3"
+          },
+          {
+            "content": [
+              {
+                "style": "display:inline-flex;height:28px;align-items:center;padding:0 14px;border-radius:5px;background:#eeeeee;font-weight:500;font-size:14px;color:#222222;",
+                "text": "爆弹手枪"
+              },
+              {
+                "style": "display:inline-flex;height:28px;align-items:center;padding:0 14px;border-radius:5px;background:#eeeeee;font-weight:500;font-size:14px;color:#222222;",
+                "text": "不败者"
+              },
+              {
+                "style": "display:inline-flex;height:28px;align-items:center;padding:0 14px;border-radius:5px;background:#eeeeee;font-weight:500;font-size:14px;color:#222222;",
+                "text": "伊代奥斯之剑"
+              }
+            ],
+            "type": "text"
+          }
+        ],
+        "军表构成Html": "<span\n        data-w-e-type=\"myH3\"\n        data-w-e-text=\"单位装备\"\n    >单位装备</span><p><span data-w-e-type=\"myTag\" data-w-e-text=\"爆弹手枪\">爆弹手枪</span> &nbsp;<span data-w-e-type=\"myTag\" data-w-e-text=\"不败者\">不败者</span> &nbsp;<span data-w-e-type=\"myTag\" data-w-e-text=\"伊代奥斯之剑\">伊代奥斯之剑</span></p>",
+        "射击武器": [
+          {
+            "name": "爆弹手枪",
+            "skill": [
+              "手枪"
+            ],
+            "伤害": "    1",
+            "命中": "2+",
+            "射程": "12 ",
+            "攻击次数": "1",
+            "破甲": "0",
+            "造伤": "4"
+          },
+          {
+            "content": [],
+            "contentHtml": "",
+            "name": "不败者",
+            "skill": [],
+            "伤害": "2",
+            "命中": " 2+ ",
+            "射程": "24  ",
+            "攻击次数": " 2",
+            "破甲": "-1",
+            "造伤": "4"
+          }
+        ],
+        "属性": [
+          {
+            "ld": 6,
+            "m": 6,
+            "oc": 1,
+            "sv": 3,
+            "t": 4,
+            "unitBase": "40mm",
+            "unitName": "",
+            "w": 5
+          },
+          {
+            "ld": 0,
+            "m": 0,
+            "oc": 0,
+            "sv": 0,
+            "t": 0,
+            "unitName": "",
+            "w": 0
+          }
+        ],
+        "简介": [
+          {
+            "content": "单位构成",
+            "type": "h3"
+          },
+          {
+            "content": [
+              {
+                "style": "",
+                "text": "文崔斯连长是全军唯一的独特模型，95 分"
+              }
+            ],
+            "type": "text"
+          },
+          {
+            "content": "阵营关键词",
+            "type": "h3"
+          },
+          {
+            "content": [
+              {
+                "style": "display:inline-flex;height:28px;align-items:center;padding:0 14px;border-radius:5px;background:#eeeeee;font-weight:500;font-size:14px;color:#222222;",
+                "text": "阿斯塔特修会"
+              },
+              {
+                "style": "display:inline-flex;height:28px;align-items:center;padding:0 14px;border-radius:5px;background:#eeeeee;font-weight:500;font-size:14px;color:#222222;",
+                "text": "极限战士"
+              }
+            ],
+            "type": "text"
+          },
+          {
+            "content": "关键词",
+            "type": "h3"
+          },
+          {
+            "content": [
+              {
+                "style": "display:inline-flex;height:28px;align-items:center;padding:0 14px;border-radius:5px;background:#eeeeee;font-weight:500;font-size:14px;color:#222222;",
+                "text": "步兵"
+              },
+              {
+                "style": "display:inline-flex;height:28px;align-items:center;padding:0 14px;border-radius:5px;background:#eeeeee;font-weight:500;font-size:14px;color:#222222;",
+                "text": "人物"
+              },
+              {
+                "style": "display:inline-flex;height:28px;align-items:center;padding:0 14px;border-radius:5px;background:#eeeeee;font-weight:500;font-size:14px;color:#222222;",
+                "text": "传奇英雄"
+              },
+              {
+                "style": "display:inline-flex;height:28px;align-items:center;padding:0 14px;border-radius:5px;background:#eeeeee;font-weight:500;font-size:14px;color:#222222;",
+                "text": "帝国"
+              },
+              {
+                "style": "display:inline-flex;height:28px;align-items:center;padding:0 14px;border-radius:5px;background:#eeeeee;font-weight:500;font-size:14px;color:#222222;",
+                "text": "连长"
+              },
+              {
+                "style": "display:inline-flex;height:28px;align-items:center;padding:0 14px;border-radius:5px;background:#eeeeee;font-weight:500;font-size:14px;color:#222222;",
+                "text": "文崔斯"
+              }
+            ],
+            "type": "text"
+          },
+          {
+            "content": "领袖",
+            "type": "h3"
+          },
+          {
+            "content": [
+              {
+                "style": "font-weight:bold;",
+                "text": "本单位可以作为领袖加入以下单位："
+              }
+            ],
+            "type": "text"
+          },
+          {
+            "content": [
+              {
+                "style": "",
+                "text": "突击仲裁者小队"
+              }
+            ],
+            "type": "li"
+          },
+          {
+            "content": [
+              {
+                "style": "",
+                "text": "剑卫老兵小队"
+              }
+            ],
+            "type": "li"
+          },
+          {
+            "content": [
+              {
+                "style": "",
+                "text": "连队英雄"
+              }
+            ],
+            "type": "li"
+          },
+          {
+            "content": [
+              {
+                "style": "",
+                "text": "仲裁者小队"
+              }
+            ],
+            "type": "li"
+          },
+          {
+            "content": [
+              {
+                "style": "",
+                "text": "肃卫老兵小队"
+              }
+            ],
+            "type": "li"
+          },
+          {
+            "content": [
+              {
+                "style": "",
+                "text": "战术小队"
+              }
+            ],
+            "type": "li"
+          }
+        ],
+        "简介Html": "<span\n        data-w-e-type=\"myH3\"\n        data-w-e-text=\"单位构成\"\n    >单位构成</span><p>文崔斯连长是全军唯一的独特模型，95 分</p><span\n        data-w-e-type=\"myH3\"\n        data-w-e-text=\"阵营关键词\"\n    >阵营关键词</span><p><span data-w-e-type=\"myTag\" data-w-e-text=\"阿斯塔特修会\">阿斯塔特修会</span> &nbsp;<span data-w-e-type=\"myTag\" data-w-e-text=\"极限战士\">极限战士</span></p><span\n        data-w-e-type=\"myH3\"\n        data-w-e-text=\"关键词\"\n    >关键词</span><p><span data-w-e-type=\"myTag\" data-w-e-text=\"步兵\">步兵</span> &nbsp;<span data-w-e-type=\"myTag\" data-w-e-text=\"人物 \">人物 </span> <span data-w-e-type=\"myTag\" data-w-e-text=\"传奇英雄 \">传奇英雄 </span> <span data-w-e-type=\"myTag\" data-w-e-text=\"帝国\">帝国</span> &nbsp;<span data-w-e-type=\"myTag\" data-w-e-text=\"连长\">连长</span> &nbsp;<span data-w-e-type=\"myTag\" data-w-e-text=\"文崔斯\">文崔斯</span></p><span\n        data-w-e-type=\"myH3\"\n        data-w-e-text=\"领袖\"\n    >领袖</span><p><strong>本单位可以作为领袖加入以下单位：</strong></p><ul><li>突击仲裁者小队</li><li>剑卫老兵小队</li><li>连队英雄</li><li>仲裁者小队</li><li>肃卫老兵小队</li><li>战术小队</li></ul>",
+        "能力": [
+          {
+            "content": [],
+            "contentHtml": "",
+            "id": 4837,
+            "name": "【阵营技能】：破敌重誓"
+          },
+          {
+            "content": [
+              {
+                "content": [
+                  {
+                    "style": "",
+                    "text": "每回合限一次，在对手针对一个自己军队中位于该模型 12\" 内的单位使用"
+                  },
+                  {
+                    "style": "font-weight:bold;",
+                    "text": "计谋"
+                  },
+                  {
+                    "style": "",
+                    "text": "时，您可以使用本技能。若使用，那次"
+                  },
+                  {
+                    "style": "font-weight:bold;",
+                    "text": "计谋"
+                  },
+                  {
+                    "style": "",
+                    "text": "的"
+                  },
+                  {
+                    "style": "font-weight:bold;",
+                    "text": "CP"
+                  },
+                  {
+                    "style": "",
+                    "text": "消耗提升 1CP。"
+                  }
+                ],
+                "type": "text"
+              }
+            ],
+            "contentHtml": "<p>每回合限一次，在对手针对一个自己军队中位于该模型 12\" 内的单位使用<strong>计谋</strong>时，您可以使用本技能。若使用，那次<strong>计谋</strong>的 <strong>CP </strong>消耗提升 1CP。</p>",
+            "id": 4838,
+            "name": "奇门战略"
+          },
+          {
+            "content": [
+              {
+                "content": [
+                  {
+                    "style": "",
+                    "text": "在宣布战斗阵容时，如果军队中包含本模型，则 选择友军中一个拥有福波斯护甲，战术护甲，重装护甲关键 词之一的阿斯塔特修会步兵单位，该单位获得【深入打击】 技能"
+                  }
+                ],
+                "type": "text"
+              }
+            ],
+            "contentHtml": "<p>在宣布战斗阵容时，如果军队中包含本模型，则 选择友军中一个拥有福波斯护甲，战术护甲，重装护甲关键 词之一的阿斯塔特修会步兵单位，该单位获得【深入打击】 技能</p>",
+            "id": 4839,
+            "name": "舰队之主"
+          }
+        ],
+        "近战武器": [
+          {
+            "name": "伊代奥斯之剑",
+            "skill": [
+              "  连击 1"
+            ],
+            "伤害": "  2 ",
+            "命中": "2+",
+            "射程": "近战",
+            "攻击次数": "6",
+            "破甲": "-2",
+            "造伤": " 6"
+          }
+        ]
+      },
+      "detail_status": "captured",
+      "faction_zh": "极限战士",
+      "id": 9,
+      "name_en": "Captain Uriel Ventris",
+      "name_zh": "文崔斯连长",
+      "score": 95,
+      "source_capture": "unit-details/19581e27de7ced00",
+      "provenance": {
+        "snapshot": "20260926-resume",
+        "manifest_sha256": "69bd7facd5740b3b111b7912223884f918dc48caf53e9f55856c811a99084ce8",
+        "capture": "unit-details/19581e27de7ced00",
+        "status": "verified_capture",
+        "fetched_at": "2026-09-22T09:36:25.386216+00:00",
+        "authority": "third_party_community_source"
+      }
+    },
+    "canonical": {
+      "id": "000000121",
+      "name_en": "Uriel Ventris",
+      "faction_id": "SM",
+      "canonical_keywords": {
+        "keywords": [
+          "Uriel Ventris",
+          "Character",
+          "Epic Hero",
+          "Imperium",
+          "Tacticus",
+          "Infantry",
+          "Captain"
+        ],
+        "faction_keywords": [
+          "Adeptus Astartes",
+          "Ultramarines"
+        ]
+      },
+      "canonical_models": [
+        {
+          "unit_id": "000000121",
+          "name": "Uriel Ventris",
+          "m": "6\"",
+          "t": "4",
+          "sv": "3+",
+          "invuln": "4",
+          "w": "5",
+          "ld": "6+",
+          "oc": "1",
+          "base": "40mm",
+          "count_options_json": null
+        }
+      ]
+    }
+  },
+  {
+    "record": {
+      "authority": "third_party_community_source",
+      "detail": {
+        "skill": [
+          {
+            "text": "特殊保护",
+            "value": "6"
+          }
+        ],
+        "军表构成": [
+          {
+            "content": "武器装备选项",
+            "type": "h3"
+          },
+          {
+            "content": [
+              {
+                "style": "font-weight:bold;",
+                "text": "4 个奴工：每个模型均装备有：奴工伺服臂"
+              }
+            ],
+            "type": "text"
+          },
+          {
+            "content": [
+              {
+                "style": "font-weight:bold;",
+                "text": "至多 2 个奴工可以将其装备的奴工伺服臂替换成下列武器之一："
+              }
+            ],
+            "type": "text"
+          },
+          {
+            "content": [
+              {
+                "style": "",
+                "text": "◦ 1 把重型爆矢枪和 1 个奴工工具"
+              },
+              {
+                "style": ""
+              },
+              {
+                "style": "",
+                "text": "◦ 1 把多管热熔和 1 个奴工工具"
+              },
+              {
+                "style": ""
+              },
+              {
+                "style": "",
+                "text": "◦ 1 把等离子炮和 1 个奴工工具"
+              }
+            ],
+            "type": "text"
+          },
+          {
+            "content": "奴工随从",
+            "type": "h3"
+          },
+          {
+            "content": [
+              {
+                "style": "",
+                "text": "在宣布战斗编队步骤开始时，该单位可以加入另一个"
+              },
+              {
+                "style": ""
+              },
+              {
+                "style": "",
+                "text": "由兄弟会科技战士领导的己方单位（一个单位中至多"
+              },
+              {
+                "style": ""
+              },
+              {
+                "style": "",
+                "text": "只能加入一个奴工单位）。若它如此做，那么在战斗结束前，该单位中的所有模型均视为上述护卫单位的一部分，该护卫单位的起始兵力也将相应增加。"
+              }
+            ],
+            "type": "text"
+          },
+          {
+            "content": [
+              {
+                "style": ""
+              }
+            ],
+            "type": "text"
+          }
+        ],
+        "军表构成Html": "<span\n        data-w-e-type=\"myH3\"\n        data-w-e-text=\"武器装备选项\"\n    >武器装备选项</span><p><strong>4 个奴工：每个模型均装备有：奴工伺服臂</strong></p><p><strong>至多 2 个奴工可以将其装备的奴工伺服臂替换成下列武器之一：</strong></p><p>◦ 1 把重型爆矢枪和 1 个奴工工具<br>◦ 1 把多管热熔和 1 个奴工工具<br>◦ 1 把等离子炮和 1 个奴工工具</p><span\n        data-w-e-type=\"myH3\"\n        data-w-e-text=\"奴工随从\"\n    >奴工随从</span><p>在宣布战斗编队步骤开始时，该单位可以加入另一个<br>由兄弟会科技战士领导的己方单位（一个单位中至多<br>只能加入一个奴工单位）。若它如此做，那么在战斗结束前，该单位中的所有模型均视为上述护卫单位的一部分，该护卫单位的起始兵力也将相应增加。</p><p><br></p>",
+        "射击武器": [
+          {
+            "name": "重型爆矢枪",
+            "skill": [
+              "重型",
+              "连击 1"
+            ],
+            "伤害": "2",
+            "命中": "4+",
+            "射程": "36",
+            "攻击次数": "3",
+            "破甲": "-1",
+            "造伤": "5"
+          },
+          {
+            "name": "多管热熔",
+            "skill": [
+              "重型",
+              "热熔 2"
+            ],
+            "伤害": "D6",
+            "命中": "4+",
+            "射程": "18",
+            "攻击次数": "2",
+            "破甲": "-4",
+            "造伤": "9"
+          },
+          {
+            "content": [
+              {
+                "content": [
+                  {
+                    "style": "",
+                    "text": "为本武器选择攻击目标之前，选择以下属性之一"
+                  }
+                ],
+                "type": "text"
+              }
+            ],
+            "contentHtml": "<p>为本武器选择攻击目标之前，选择以下属性之一</p>",
+            "name": "等离子炮 - 标准",
+            "skill": [
+              "爆炸",
+              "重型"
+            ],
+            "伤害": "1",
+            "命中": "4+",
+            "射程": "36",
+            "攻击次数": "D3",
+            "破甲": "-2",
+            "造伤": "7"
+          },
+          {
+            "name": "等离子炮 - 超载",
+            "skill": [
+              "爆炸",
+              "重型",
+              "危险"
+            ],
+            "伤害": "2",
+            "命中": "4+",
+            "射程": "36",
+            "攻击次数": "D3",
+            "破甲": "-3",
+            "造伤": "8"
+          }
+        ],
+        "属性": [
+          {
+            "ld": "8",
+            "m": "6",
+            "oc": 0,
+            "sv": "4",
+            "t": "4",
+            "unitBase": "32mm",
+            "unitName": "奴工",
+            "w": "1"
+          },
+          {
+            "ld": 0,
+            "m": 0,
+            "oc": 0,
+            "sv": 0,
+            "t": 0,
+            "unitBase": "",
+            "unitName": "",
+            "w": 0
+          }
+        ],
+        "简介": [
+          {
+            "content": "阵营关键词：",
+            "type": "h3"
+          },
+          {
+            "content": [
+              {
+                "style": "",
+                "text": "灰骑士"
+              }
+            ],
+            "type": "text"
+          },
+          {
+            "content": "关键词",
+            "type": "h3"
+          },
+          {
+            "content": [
+              {
+                "style": "",
+                "text": "步兵，帝国，奴工"
+              }
+            ],
+            "type": "text"
+          },
+          {
+            "content": "单位构成",
+            "type": "h3"
+          },
+          {
+            "content": [
+              {
+                "style": "",
+                "text": "4 个奴工"
+              }
+            ],
+            "type": "text"
+          }
+        ],
+        "简介Html": "<span\n        data-w-e-type=\"myH3\"\n        data-w-e-text=\"阵营关键词：\"\n    >阵营关键词：</span><p>灰骑士</p><span\n        data-w-e-type=\"myH3\"\n        data-w-e-text=\"关键词\"\n    >关键词</span><p>步兵，帝国，奴工</p><span\n        data-w-e-type=\"myH3\"\n        data-w-e-text=\"单位构成\"\n    >单位构成</span><p>4 个奴工</p>",
+        "能力": [
+          {
+            "content": [
+              {
+                "content": [
+                  {
+                    "style": "",
+                    "text": "如果该单位正由一个兄弟会科技战士模型领导，则该单位中的奴工模型所装备的远程武器和近战武器在射击技巧属性和械斗技巧属性上各增加 1 点。"
+                  }
+                ],
+                "type": "text"
+              }
+            ],
+            "contentHtml": "<p>如果该单位正由一个兄弟会科技战士模型领导，则该单位中的奴工模型所装备的远程武器和近战武器在射击技巧属性和械斗技巧属性上各增加 1 点。</p>",
+            "id": 11593,
+            "name": "心智闭锁"
+          },
+          {
+            "content": [
+              {
+                "content": [
+                  {
+                    "style": "",
+                    "text": "如果该单位正由一个兄弟会科技战士模型领导，则该单位中的模型拥有“深入打击”和“传送突袭”技能。"
+                  }
+                ],
+                "type": "text"
+              }
+            ],
+            "contentHtml": "<p>如果该单位正由一个兄弟会科技战士模型领导，则该单位中的模型拥有“深入打击”和“传送突袭”技能。</p>",
+            "id": 11594,
+            "name": "随从"
+          }
+        ],
+        "近战武器": [
+          {
+            "name": "奴工伺服臂",
+            "skill": [],
+            "伤害": "3",
+            "命中": "5+",
+            "射程": "近战",
+            "攻击次数": "1",
+            "破甲": "-2",
+            "造伤": "6"
+          },
+          {
+            "name": "奴工工具",
+            "skill": [],
+            "伤害": "1",
+            "命中": "5+",
+            "射程": "近战",
+            "攻击次数": "1",
+            "破甲": "0",
+            "造伤": "3"
+          }
+        ]
+      },
+      "detail_status": "captured",
+      "faction_zh": "灰骑士",
+      "id": 2863,
+      "name_en": "Servitor",
+      "name_zh": "奴工【传奇】",
+      "score": 60,
+      "source_capture": "unit-details/1d10cfa4a998611c",
+      "provenance": {
+        "snapshot": "20260926-resume",
+        "manifest_sha256": "69bd7facd5740b3b111b7912223884f918dc48caf53e9f55856c811a99084ce8",
+        "capture": "unit-details/1d10cfa4a998611c",
+        "status": "verified_capture",
+        "fetched_at": "2026-09-22T09:39:04.928955+00:00",
+        "authority": "third_party_community_source"
+      }
+    },
+    "canonical": {
+      "id": "000000397",
+      "name_en": "Servitors",
+      "faction_id": "GK",
+      "canonical_keywords": {
+        "keywords": [
+          "Servitors",
+          "Imperium",
+          "Infantry"
+        ],
+        "faction_keywords": [
+          "Grey Knights"
+        ]
+      },
+      "canonical_models": [
+        {
+          "unit_id": "000000397",
+          "name": "Servitors",
+          "m": "6\"",
+          "t": "4",
+          "sv": "4+",
+          "invuln": "6",
+          "w": "1",
+          "ld": "8+",
+          "oc": "0",
+          "base": "25mm",
+          "count_options_json": null
+        }
+      ]
+    }
+  },
+  {
+    "record": {
+      "authority": "third_party_community_source",
+      "detail": {
+        "skill": [
+          {
+            "text": "特殊保护",
+            "value": "6"
+          }
+        ],
+        "军表构成": [
+          {
+            "content": "单位装备",
+            "type": "h3"
+          },
+          {
+            "content": [
+              {
+                "style": ""
+              }
+            ],
+            "type": "text"
+          },
+          {
+            "content": [
+              {
+                "style": "display:inline-flex;height:28px;align-items:center;padding:0 14px;border-radius:5px;background:#eeeeee;font-weight:500;font-size:14px;color:#222222;",
+                "text": "毒晶步枪"
+              },
+              {
+                "style": "display:inline-flex;height:28px;align-items:center;padding:0 14px;border-radius:5px;background:#eeeeee;font-weight:500;font-size:14px;color:#222222;",
+                "text": "格斗武器"
+              }
+            ],
+            "type": "text"
+          },
+          {
+            "content": "装备升级",
+            "type": "h3"
+          },
+          {
+            "content": [
+              {
+                "style": ""
+              }
+            ],
+            "type": "text"
+          },
+          {
+            "content": [
+              {
+                "style": "",
+                "text": "⚫ 享乐者可以将其装备的格斗武器替换成一把享乐者武器"
+              }
+            ],
+            "type": "text"
+          },
+          {
+            "content": [
+              {
+                "style": "",
+                "text": "⚫ 享乐者可以装备一把幻象榴弹发射器"
+              }
+            ],
+            "type": "text"
+          },
+          {
+            "content": [
+              {
+                "style": "",
+                "text": "⚫ 享乐者可以将其装备的毒晶步枪替换成以下一种选项："
+              }
+            ],
+            "type": "text"
+          },
+          {
+            "content": [
+              {
+                "style": "",
+                "text": "1把爆能手枪"
+              }
+            ],
+            "type": "li"
+          },
+          {
+            "content": [
+              {
+                "style": "",
+                "text": "1把毒晶手枪"
+              }
+            ],
+            "type": "li"
+          },
+          {
+            "content": [
+              {
+                "style": "",
+                "text": "⚫ 1名阴谋团武士可以将其装备的毒晶步枪替换成1把爆能枪"
+              }
+            ],
+            "type": "text"
+          },
+          {
+            "content": [
+              {
+                "style": "",
+                "text": "⚫ 1名阴谋团武士可以将其装备的毒晶步枪替换成1把黑暗光矛"
+              }
+            ],
+            "type": "text"
+          },
+          {
+            "content": [
+              {
+                "style": "",
+                "text": "⚫ 1名阴谋团武士可以将其装备的毒晶步枪替换成1把撕裂枪"
+              }
+            ],
+            "type": "text"
+          },
+          {
+            "content": [
+              {
+                "style": "",
+                "text": "⚫ 1名阴谋团武士可以将其装备的毒晶步枪替换成1把毒晶炮"
+              }
+            ],
+            "type": "text"
+          },
+          {
+            "content": "装备技能",
+            "type": "h3"
+          },
+          {
+            "content": [],
+            "type": "text"
+          },
+          {
+            "content": [
+              {
+                "style": "",
+                "text": "⚫ 幻象榴弹发射器：装备者所在单位获得手雷关键词"
+              }
+            ],
+            "type": "text"
+          }
+        ],
+        "军表构成Html": "<span\n        data-w-e-type=\"myH3\"\n        data-w-e-text=\"单位装备 \"\n    >单位装备 </span><p><br></p><p><span data-w-e-type=\"myTag\" data-w-e-text=\"毒晶步枪\">毒晶步枪</span> &nbsp; &nbsp;<span data-w-e-type=\"myTag\" data-w-e-text=\"格斗武器\">格斗武器</span></p><span\n        data-w-e-type=\"myH3\"\n        data-w-e-text=\"装备升级 \"\n    >装备升级 </span><p><br></p><p>⚫ 享乐者可以将其装备的格斗武器替换成一把享乐者武器</p><p>⚫ 享乐者可以装备一把幻象榴弹发射器</p><p>⚫ 享乐者可以将其装备的毒晶步枪替换成以下一种选项：</p><ul><li>1把爆能手枪</li><li>1把毒晶手枪</li></ul><p>⚫ 1名阴谋团武士可以将其装备的毒晶步枪替换成1把爆能枪</p><p>⚫ 1名阴谋团武士可以将其装备的毒晶步枪替换成1把黑暗光矛</p><p>⚫ 1名阴谋团武士可以将其装备的毒晶步枪替换成1把撕裂枪</p><p>⚫ 1名阴谋团武士可以将其装备的毒晶步枪替换成1把毒晶炮</p><span\n        data-w-e-type=\"myH3\"\n        data-w-e-text=\"装备技能\"\n    >装备技能</span><p> </p><p>⚫ 幻象榴弹发射器：装备者所在单位获得手雷关键词</p>",
+        "射击武器": [
+          {
+            "content": [],
+            "contentHtml": "",
+            "name": "爆能手枪",
+            "skill": [
+              "手枪"
+            ],
+            "伤害": "D3",
+            "命中": "3+",
+            "射程": "6",
+            "攻击次数": "1",
+            "破甲": "-3",
+            "造伤": "8"
+          },
+          {
+            "content": [],
+            "contentHtml": "",
+            "name": "爆能枪",
+            "skill": [
+              "突击"
+            ],
+            "伤害": "D6+1",
+            "命中": "3+",
+            "射程": "18",
+            "攻击次数": "1",
+            "破甲": "-4",
+            "造伤": "8"
+          },
+          {
+            "content": [],
+            "contentHtml": "",
+            "name": "黑暗光矛",
+            "skill": [
+              "重型"
+            ],
+            "伤害": "D6+2",
+            "命中": "4+",
+            "射程": "36",
+            "攻击次数": "1",
+            "破甲": "-3",
+            "造伤": "12"
+          },
+          {
+            "content": [],
+            "contentHtml": "",
+            "name": "撕裂枪",
+            "skill": [
+              "突击",
+              "喷射"
+            ],
+            "伤害": "1",
+            "命中": "-",
+            "射程": "18",
+            "攻击次数": "D6",
+            "破甲": "0",
+            "造伤": "6"
+          },
+          {
+            "content": [],
+            "contentHtml": "",
+            "name": "毒晶炮",
+            "skill": [
+              "反步兵3+",
+              "重型",
+              "连击1"
+            ],
+            "伤害": "2",
+            "命中": "4+",
+            "射程": "36",
+            "攻击次数": "3",
+            "破甲": "-1",
+            "造伤": "3"
+          },
+          {
+            "content": [],
+            "contentHtml": "",
+            "name": "毒晶手枪",
+            "skill": [
+              "反步兵3+",
+              "突击",
+              "手枪"
+            ],
+            "伤害": "1",
+            "命中": "3+",
+            "射程": "12",
+            "攻击次数": "1",
+            "破甲": "0",
+            "造伤": "2"
+          },
+          {
+            "content": [],
+            "contentHtml": "",
+            "name": "毒晶步枪",
+            "skill": [
+              "反步兵3+",
+              "突击"
+            ],
+            "伤害": "1",
+            "命中": "3+",
+            "射程": "24",
+            "攻击次数": "2",
+            "破甲": "0",
+            "造伤": "2"
+          }
+        ],
+        "属性": [
+          {
+            "ld": "6",
+            "m": "8",
+            "oc": "2",
+            "sv": "4",
+            "t": "3",
+            "unitBase": "25mm",
+            "unitName": "死神军阴谋团武士",
+            "w": "1"
+          },
+          {
+            "ld": "7",
+            "m": "7",
+            "oc": 0,
+            "sv": "4",
+            "t": "3",
+            "unitName": "",
+            "w": 0
+          }
+        ],
+        "简介": [
+          {
+            "content": "单位构成",
+            "type": "h3"
+          },
+          {
+            "content": [
+              {
+                "style": "",
+                "text": "1名享乐者，9名阴谋团武士，10个模型，110分， 25mm圆底盘"
+              }
+            ],
+            "type": "text"
+          },
+          {
+            "content": "阵营关键词",
+            "type": "h3"
+          },
+          {
+            "content": [
+              {
+                "style": "display:inline-flex;height:28px;align-items:center;padding:0 14px;border-radius:5px;background:#eeeeee;font-weight:500;font-size:14px;color:#222222;",
+                "text": "死神军"
+              }
+            ],
+            "type": "text"
+          },
+          {
+            "content": "关键词",
+            "type": "h3"
+          },
+          {
+            "content": [
+              {
+                "style": "display:inline-flex;height:28px;align-items:center;padding:0 14px;border-radius:5px;background:#eeeeee;font-weight:500;font-size:14px;color:#222222;",
+                "text": "步兵"
+              },
+              {
+                "style": "display:inline-flex;height:28px;align-items:center;padding:0 14px;border-radius:5px;background:#eeeeee;font-weight:500;font-size:14px;color:#222222;",
+                "text": "战线"
+              },
+              {
+                "style": "display:inline-flex;height:28px;align-items:center;padding:0 14px;border-radius:5px;background:#eeeeee;font-weight:500;font-size:14px;color:#222222;",
+                "text": "艾达灵族"
+              },
+              {
+                "style": "display:inline-flex;height:28px;align-items:center;padding:0 14px;border-radius:5px;background:#eeeeee;font-weight:500;font-size:14px;color:#222222;",
+                "text": "死神军阴谋团武士"
+              }
+            ],
+            "type": "text"
+          }
+        ],
+        "简介Html": "<span\n        data-w-e-type=\"myH3\"\n        data-w-e-text=\"单位构成 \"\n    >单位构成 </span><p>1名享乐者，9名阴谋团武士，10个模型，110分， 25mm圆底盘</p><span\n        data-w-e-type=\"myH3\"\n        data-w-e-text=\"阵营关键词 \"\n    >阵营关键词 </span><p><span data-w-e-type=\"myTag\" data-w-e-text=\"死神军\">死神军</span> </p><span\n        data-w-e-type=\"myH3\"\n        data-w-e-text=\"关键词 \"\n    >关键词 </span><p><span data-w-e-type=\"myTag\" data-w-e-text=\"步兵\">步兵</span> <span data-w-e-type=\"myTag\" data-w-e-text=\"战线\">战线</span> &nbsp; &nbsp;<span data-w-e-type=\"myTag\" data-w-e-text=\"艾达灵族\">艾达灵族</span> &nbsp; <span data-w-e-type=\"myTag\" data-w-e-text=\"死神军阴谋团武士\">死神军阴谋团武士</span> &nbsp; &nbsp; &nbsp;</p>",
+        "能力": [
+          {
+            "content": [],
+            "contentHtml": "",
+            "id": 3025,
+            "name": "【阵营技能】：战斗专注"
+          },
+          {
+            "content": [
+              {
+                "content": [
+                  {
+                    "style": "",
+                    "text": "在你的指挥阶段结束时，若你控制一个目标点，且该单位（或其搭乘的运输载具）位于该目标点范围内，则该目标点将一直由你控制，直到对手在任意阶段结束时控制该目标点"
+                  }
+                ],
+                "type": "text"
+              }
+            ],
+            "contentHtml": "<p>在你的指挥阶段结束时，若你控制一个目标点，且该单位（或其搭乘的运输载具）位于该目标点范围内，则该目标点将一直由你控制，直到对手在任意阶段结束时控制该目标点</p>",
+            "id": 3026,
+            "name": "残虐掠夺者"
+          }
+        ],
+        "近战武器": [
+          {
+            "content": [],
+            "contentHtml": "",
+            "name": "享乐者武器",
+            "skill": [
+              "反步兵3+"
+            ],
+            "伤害": "1",
+            "命中": "3+",
+            "射程": "近战",
+            "攻击次数": "3",
+            "破甲": "-1",
+            "造伤": "3"
+          },
+          {
+            "name": "格斗武器",
+            "skill": [],
+            "伤害": "1",
+            "命中": "3+",
+            "射程": "近战",
+            "攻击次数": "2",
+            "破甲": "0",
+            "造伤": "3"
+          }
+        ]
+      },
+      "detail_status": "captured",
+      "faction_zh": "艾达灵族",
+      "id": 678,
+      "name_en": "YNNARI KABALITE WARRIOR",
+      "name_zh": "死神军阴谋团武士",
+      "score": 110,
+      "source_capture": "unit-details/cebe3d9d614ba5c1",
+      "provenance": {
+        "snapshot": "20260926-resume",
+        "manifest_sha256": "69bd7facd5740b3b111b7912223884f918dc48caf53e9f55856c811a99084ce8",
+        "capture": "unit-details/cebe3d9d614ba5c1",
+        "status": "verified_capture",
+        "fetched_at": "2026-09-22T09:39:20.750242+00:00",
+        "authority": "third_party_community_source"
+      }
+    },
+    "canonical": {
+      "id": "000003916",
+      "name_en": "Ynnari Kabalite Warriors",
+      "faction_id": "AE",
+      "canonical_keywords": {
+        "keywords": [
+          "Infantry",
+          "Battleline",
+          "Kabalite Warriors",
+          "Aeldari"
+        ],
+        "faction_keywords": [
+          "Ynnari"
+        ]
+      },
+      "canonical_models": [
+        {
+          "unit_id": "000003916",
+          "name": "Ynnari Kabalite Warriors",
+          "m": "8\"",
+          "t": "3",
+          "sv": "4+",
+          "invuln": "6",
+          "w": "1",
+          "ld": "6+",
+          "oc": "2",
+          "base": "25mm",
+          "count_options_json": null
+        }
+      ]
+    }
+  }
+]

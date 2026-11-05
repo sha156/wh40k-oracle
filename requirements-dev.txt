@@ -1,0 +1,3 @@
+# Test tools are separate from the application runtime and auditor environment.
+-c constraints-python311.txt
+pytest==9.1.1

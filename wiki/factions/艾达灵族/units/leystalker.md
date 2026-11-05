@@ -1,40 +1,41 @@
 ---
 id: fp11e-ae-leystalker
+name_zh: 地脉潜行者
 name_en: Leystalker
 faction: 艾达灵族
 type: unit
 points:
-  1 model: 80
+  1 model: 75
 tags:
 - unit
 - unit/艾达灵族
 - 艾达灵族
 version:
-  points: MFM 2026-09-14T05:51:23.572407+00:00
+  points: MFM 2026-10-03T19:00:56.192123+00:00
   source: official-db
   rules: 11e-fp-2026-08-26
 sources:
 - book: 'Faction Pack: Aeldari'
   pages:
   - 13
-updated: '2026-09-14'
+updated: '2026-10-03'
 ---
 
 ## 属性表
 | 模型 | M | T | SV | W | LD | OC |
 |---|---|---|---|---|---|---|
-| Leystalker | 10 | 5 | 4 | 4 | 7 | 2 |
+| 地脉潜行者 | 10 | 5 | 4 | 4 | 7 | 2 |
 
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Long Rifle | 36"" | 2 | 2+ | 6 | -2 | 3 | 毁灭伤害：非怪兽且非载具，[[core-rules/precision.md\|精准]] |
+| 长步枪 | 36"" | 2 | 2+ | 6 | -2 | 3 | 毁灭伤害：非怪兽且非载具，[[core-rules/precision.md\|精准]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Drakesteed Fangs and Talons | 近战 | 3 | 3+ | 5 | -1 | 1 | [[core-rules/extra-attacks.md\|额外攻击]] |
-| Hunting Blades | 近战 | 2 | 3+ | 3 | -1 | 1 | — |
+| 龙骥的獠牙与利爪 | 近战 | 3 | 3+ | 5 | -1 | 1 | [[core-rules/extra-attacks.md\|额外攻击]] |
+| 猎刀 | 近战 | 2 | 3+ | 3 | -1 | 1 | — |
 
 ## 技能
 - **Panicked Quarry**：In your Shooting phase, when this unit has shot, select one enemy unit (excluding MONSTER/VEHICLE units) hit by those attacks. That enemy unit makes a battle-shock roll, with -1 to that battle-shock roll.
@@ -45,7 +46,7 @@ updated: '2026-09-14'
 - **Battle Focus**
 
 ## 单位构成
-- **1个模型** — 80 分
+- **1个模型** — 75 分
 
 ## 关键词
 - **阵营关键词**：ASURYANI

@@ -12,7 +12,7 @@ version:
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-09-14'
+updated: '2026-10-03'
 ---
 
 ## 属性表
@@ -23,7 +23,7 @@ updated: '2026-09-14'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 魔改突突枪 | 18" | 4 | 5+ | 4 | 0 | 1 | [[core-rules/rapid-fire.md\|速射2]] |
+| 魔改突突枪-瞄准 | 18" | 4 | 5+ | 4 | 0 | 1 | [[core-rules/rapid-fire.md\|速射2]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |

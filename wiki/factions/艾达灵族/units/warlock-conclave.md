@@ -6,19 +6,19 @@ faction: 艾达灵族
 type: unit
 points:
   2 models: 55
-  4 models: 120
+  4 models: 110
 tags:
 - unit
 - unit/艾达灵族
 - 艾达灵族
 version:
-  points: MFM 2026-09-14T05:51:23.572407+00:00
+  points: MFM 2026-10-03T19:00:56.192123+00:00
   source: official-db
 sources:
 - book: https://assets.warhammer-community.com/eng_wh40k_faction_pack_aeldari-r7ubocxyoz-nhd972kesl.pdf
   pages:
   - 31
-updated: '2026-09-14'
+updated: '2026-10-03'
 ---
 
 ## 属性表
@@ -49,7 +49,7 @@ updated: '2026-09-14'
 
 ## 单位构成
 - **2个模型** — 55 分
-- **4个模型** — 120 分
+- **4个模型** — 110 分
 
 ## 关键词
 - **阵营关键词**：Asuryani

@@ -5,18 +5,18 @@ name_en: Vertus Praetors
 faction: 帝皇卫队
 type: unit
 points:
-  2 models: 145
-  3 models: 215
+  2 models: 155
+  3 models: 230
 tags:
 - unit
 - unit/帝皇卫队
 - 帝皇卫队
 version:
-  points: MFM 2026-09-14T05:51:23.572407+00:00
+  points: MFM 2026-10-03T19:00:56.192123+00:00
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-09-14'
+updated: '2026-10-03'
 ---
 
 ## 属性表
@@ -44,8 +44,8 @@ updated: '2026-09-14'
 - **炫光击杀**：每场战斗一次，在该单位完成常规或突进移动后，您可以选择一个在本次移动中被该单位越过的敌方单位（除凶兽和载具外），然后该单位每有一个模型就投一颗D6：每掷出一个为 2+ 的结果，那个敌方单位便受到 2 处致命伤。
 
 ## 单位构成
-- **2个模型** — 145 分
-- **3个模型** — 215 分
+- **2个模型** — 155 分
+- **3个模型** — 230 分
 
 ## 关键词
 - **阵营关键词**：Adeptus Custodes

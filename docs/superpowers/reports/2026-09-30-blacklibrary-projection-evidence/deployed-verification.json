@@ -1,0 +1,76 @@
+{
+  "health": {
+    "ok": true,
+    "llm_configured": true,
+    "retrieval": true,
+    "ready": true,
+    "assets": [
+      {
+        "name": "embed_model",
+        "path": "/app/opt/models--BAAI--bge-m3/snapshots/5617a9f61b028005a4858fdac845db406aefb181",
+        "ok": true,
+        "required": true,
+        "detail": "",
+        "hint": "\u6302\u8f7d\u5bbf\u4e3b\u673a ./opt \u5230 /app/opt\uff08compose \u5377 opt:ro\uff09"
+      },
+      {
+        "name": "vector_store",
+        "path": "/app/local_vector_store/index.faiss",
+        "ok": true,
+        "required": true,
+        "detail": "",
+        "hint": "\u5bbf\u4e3b\u673a\u8dd1 .\\.venv\\Scripts\\python.exe ingest.py \u540e\u6302\u8f7d ./local_vector_store"
+      },
+      {
+        "name": "structured_db",
+        "path": "/app/db/wh40k.sqlite",
+        "ok": true,
+        "required": true,
+        "detail": "",
+        "hint": "\u5bbf\u4e3b\u673a\u8dd1 python -m db_compile build \u540e\u6302\u8f7d ./db"
+      },
+      {
+        "name": "wiki",
+        "path": "/app/wiki/index.md",
+        "ok": true,
+        "required": false,
+        "detail": "",
+        "hint": "\u6302\u8f7d ./wiki\uff08\u4ed3\u5e93\u5185\u5df2\u8ddf\u8e2a\uff0c\u672a\u6302\u8f7d\u65f6\u7528\u955c\u50cf\u5185\u81ea\u5e26\u526f\u672c\uff09"
+      },
+      {
+        "name": "keyword_index",
+        "path": "/app/wiki/indexes/keywords.json",
+        "ok": true,
+        "required": false,
+        "detail": "",
+        "hint": "\u5bbf\u4e3b\u673a\u8dd1 python -m wiki_engine.keyword_index \u540e\u968f ./wiki \u4e00\u5e76\u6302\u8f7d"
+      }
+    ],
+    "warmup": {
+      "requested": true,
+      "done": true,
+      "error": null
+    }
+  },
+  "image": "sha256:f1224f123ec38f06e17f52f735978032fe95658cfb4b3c9e0f2dd73544d34ddb",
+  "source_hashes": {
+    "db_compile/blacklibrary.py": "787d416f2d87887bae4189a3bfe6071aac11f69da5158d1052b29a1398453ee4",
+    "db_compile/ability_localization.py": "95b09beb3bc99629211b42d56d02b7c227483a73f68ba56f165792723f1ec3e6",
+    "db_compile/ability_localization.json": "b528490894bfc5f786c08c739004b3a7579245119d86ceaa31e886aedeec6d77",
+    "db_compile/blacklibrary_identity.py": "b11950012e713806e8310c5dea7cec8a4401f22e43f4b802a073ac4a8acf52a7",
+    "web_api/codex.py": "8e406b97c8265d9e81f9e5ca1ebcd9c4653017158546f7137b8b73e934a467fa",
+    "web_api/entity_card.py": "c6f5e25d70a3fbd13fb67e899a315201d52e90b9dde838aa6478aa725825cb75",
+    "wiki_engine/from_db.py": "a255350594b93b605f4c5fb263b7148c2abc88f8194d83c1c7c7acc0d895ae99",
+    "scripts/fetch_blacklibrary_details.py": "f6199c886aade108daf42ed2147f53ea5c303d5dda6a745fb214927243df2720"
+  },
+  "matches": {
+    "db_compile/blacklibrary.py": true,
+    "db_compile/ability_localization.py": true,
+    "db_compile/ability_localization.json": true,
+    "db_compile/blacklibrary_identity.py": true,
+    "web_api/codex.py": true,
+    "web_api/entity_card.py": true,
+    "wiki_engine/from_db.py": true,
+    "scripts/fetch_blacklibrary_details.py": true
+  }
+}

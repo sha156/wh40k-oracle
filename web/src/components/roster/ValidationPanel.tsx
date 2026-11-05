@@ -1,4 +1,4 @@
-import type { ValidationIssue, ValidationReport } from "@/lib/roster";
+import { rosterValidationStatus, type ValidationIssue, type ValidationReport } from "@/lib/roster";
 
 const SEV_STYLE: Record<string, { box: string; tag: string; label: string }> = {
   error: { box: "border-redfont/40 bg-[#1a0d0d]", tag: "text-redfont", label: "违规" },
@@ -23,15 +23,16 @@ function IssueRow({ issue }: { issue: ValidationIssue }) {
   );
 }
 
-export function ValidationPanel({ report }: { report: ValidationReport | null }) {
+export function ValidationPanel({ report, pending = false, failed = false }: { report: ValidationReport | null; pending?: boolean; failed?: boolean }) {
   if (!report) {
     return (
       <div className="border border-dashed border-panel-line bg-[#0d1517] px-4 py-6 text-center font-cond text-[12.5px] tracking-[1px] text-[#5c6f6a] uppercase">
-        加入单位后自动校验点数与编制
+        {failed ? "当前军表尚未完成校验，请检查错误后重试。" : pending ? "正在校验当前军表…" : "加入单位后自动校验点数与编制"}
       </div>
     );
   }
   const over = report.totalPoints > report.limit;
+  const status = rosterValidationStatus(report);
   const pct = Math.min(100, (report.totalPoints / report.limit) * 100);
   return (
     <div className="clip-plate-10 border border-panel-line bg-panel">
@@ -41,12 +42,12 @@ export function ValidationPanel({ report }: { report: ValidationReport | null })
         </span>
         <span
           className={`clip-slant-8 px-2.5 py-0.5 font-cond text-[12px] font-bold tracking-[1px] uppercase ${
-            report.legal
+            status === "valid"
               ? "bg-[#0e3b2a] text-[#7fe0b0]"
-              : "bg-[#3b0e0e] text-[#ffb0b0]"
+              : status === "incomplete" ? "bg-[#30250d] text-[#dfc477]" : "bg-[#3b0e0e] text-[#ffb0b0]"
           }`}
         >
-          {report.legal ? "合法" : "不合法"}
+          {status === "valid" ? "合法" : status === "incomplete" ? "未完全校验" : "不合法"}
         </span>
       </div>
       <div className="px-4 py-3">

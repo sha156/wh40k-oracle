@@ -1,6 +1,7 @@
 "use client";
 
-import { useCallback, useEffect, useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import { latestRequest } from "@/lib/latest-request";
 
 import { Datasheet } from "@/components/chat/Datasheet";
 import { SiteHeader } from "@/components/chat/SiteHeader";
@@ -76,6 +77,11 @@ export default function CodexPage() {
   const [loadingCard, setLoadingCard] = useState(false);
   // 传承条目（Legends/福基世界/退环境）默认归档不列——比赛摆不上桌，占满图鉴只是噪声
   const [showLegacy, setShowLegacy] = useState(false);
+  const cardRequests = useRef(latestRequest());
+  useEffect(() => {
+    const requests = cardRequests.current;
+    return () => requests.cancel();
+  }, []);
 
   useEffect(() => {
     const ctrl = new AbortController();
@@ -109,6 +115,8 @@ export default function CodexPage() {
   // 切换阵营：在事件里重置从属状态 + 开 loading（不在 effect 同步 setState，避免额外渲染）
   const selectFaction = (id: string) => {
     if (id === factionId) return;
+    cardRequests.current.cancel();
+    setLoadingCard(false);
     setUnits([]);
     setCard(null);
     setSelectedUnit(null);
@@ -118,14 +126,15 @@ export default function CodexPage() {
   };
 
   const loadCard = (uid: string, l: CodexLang) => {
+    const request = cardRequests.current.start();
     setCard(null);
     setLoadingCard(true);
-    fetchUnitCard(uid, l)
-      .then(setCard)
+    fetchUnitCard(uid, l, request.signal)
+      .then((next) => { if (request.isCurrent()) { setCard(next); setError(null); } })
       .catch((e) => {
-        if ((e as Error).name !== "AbortError") setError(apiError(e));
+        if (request.isCurrent()) setError(apiError(e));
       })
-      .finally(() => setLoadingCard(false));
+      .finally(() => { if (request.isCurrent()) setLoadingCard(false); });
   };
 
   const pickUnit = (uid: string) => {
@@ -179,7 +188,7 @@ export default function CodexPage() {
       <SiteHeader context={context} active="图鉴" />
       <main className="mx-auto max-w-[1100px] px-5 pt-[22px] pb-20 max-tablet:px-2.5 max-tablet:pt-4">
         {error ? (
-          <p className="mb-4 border border-redfont/40 bg-[#1a0d0d] px-4 py-3 font-mono text-[12.5px] break-all text-[#d99]">
+          <p role="alert" className="mb-4 border border-redfont/40 bg-[#1a0d0d] px-4 py-3 font-mono text-[12.5px] break-all text-[#d99]">
             {error}
           </p>
         ) : null}

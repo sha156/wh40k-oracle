@@ -8,20 +8,19 @@
 
 三个数据源，各司其职：
   · `db/wh40k.sqlite` weapons.keywords_json —— 词条在武器上的真实分布（唯一的量化来源）
-  · `data/11版40K通用技能速查表.pdf` —— 11 版官方节号 + 中文名（判定「通用 USR」的真源）
+  · 官方中英 Core Rules PDF 第 24 章 —— 现行技能名称、官方节号与过渡说明
   · `engines/simulator/{parse,keywords}.py` —— 引擎建模状态（诚实披露，不吹）
 
 **词条分三档**，混在一起列会骗读者：
-  通用     —— 11 版通用技能表在册（针对/爆炸/速射…），任何单位都可能带
+  通用     —— 官方核心规则在册（针对/爆炸/速射…），任何单位都可能带
   过渡期   —— 官方仍在册、但正被另一词条取代：[手枪]24.27 ↔ [近距离]24.07
               （官方原文「在所有规则中都被视为同一个规则」+ 设计师注「将随本版演进被替代」）
-  单位特有 —— 通用技能表查无此条，是某个单位数据卡上的专属词条（泡泡炮、星神之力…）
+  单位特有 —— 官方核心技能章查无此条（泡泡炮、星神之力…）
 
-⚠️ 中文名的权威是 **GW 官方简体中文**（data/官方中文/，宪法 §6），不是汉化组速查表——
-两者实测有分歧（官方 24.06 是「劈砍」、速查表写「横扫」）。速查表在此只用于
-「这条是不是通用词条」的分档判断，译名一律走 zh_keyword_glossary。
+中文显示名继续来自 zh_keyword_glossary；编号配对从官方 PDF 标题确定，不从 LLM 缓存推断。
+旧 parse_quickref / QuickRefEntry / quickref_entries 名称保留兼容，已不读取民间速查表。
 
-CLI：python -m wiki_engine.keyword_index [--db …] [--wiki wiki] [--pdf …]
+CLI：python -m wiki_engine.keyword_index [--db …] [--wiki wiki] [--pdf …] [--zh-pdf …]
 """
 from __future__ import annotations
 
@@ -36,8 +35,15 @@ from typing import Dict, List, Optional, Set, Tuple
 
 from wiki_engine._io import atomic_write_text
 from wiki_engine.models import slugify
+from wiki_engine.core_rules_zh import EN_PDF, ZH_PDF
+from wiki_engine.pdf_sections import PdfSection
+from corpus_policy import require_active_source
 
-DEFAULT_PDF = Path("data/11版40K通用技能速查表.pdf")
+# Defaults belong to this checkout, regardless of the caller's working directory.
+# Explicit paths (including relative custom pairs) retain normal caller semantics.
+_REPO_ROOT = Path(__file__).resolve().parents[1]
+DEFAULT_PDF = _REPO_ROOT / EN_PDF
+DEFAULT_ZH_PDF = _REPO_ROOT / ZH_PDF
 INDEX_REL = "indexes/keywords.md"
 PAYLOAD_REL = "indexes/keywords.json"   # 机器可读镜像，web 层读它（容器不挂 data/）
 
@@ -49,22 +55,21 @@ PAYLOAD_REL = "indexes/keywords.json"   # 机器可读镜像，web 层读它（�
 # 只是多了两行——没有任何报错。骰子式参数与数字式一样是档位，不是词条名的一部分。
 _PARAM_SUFFIX = re.compile(r"\s+(\d+\+?|D\d*(?:\+\d+)?\+?)$", re.IGNORECASE)
 
-# 速查表标题行：中文名 + 英文名 + 可选官方节号。正文行都超过 42 字，用长度先粗筛。
-_QUICKREF_HEAD = re.compile(
-    r"^[ \t]*([一-鿿][一-鿿\d]{0,9})\s*"
-    r"([A-Za-z][A-Za-z0-9\-'’]*(?:[ \-][A-Za-z0-9\-'’]+)*)"
-    r"(?:\s+(\d{2}\.\d{2}))?[ \t]*$")
-_QUICKREF_MIN_ENTRIES = 30      # 实测 33 条；掉到 30 以下说明 PDF 换版或提取坏了，必须吼
+# Frozen retained 11e chapter: .01/.02 explain abilities generally; .32 is the
+# Scouts movement procedure, not a separate datasheet ability. These structural
+# sections are omitted, while every other identity comes from the PDF heading.
+_CHAPTER_SECTIONS = frozenset("24.{:02d}".format(n) for n in range(1, 39))
+_STRUCTURAL_SECTIONS = frozenset({"24.01", "24.02", "24.32"})
+_HYPHENS = str.maketrans({c: "-" for c in "‐‑‒–−"})
 
 
 @dataclass(frozen=True)
 class QuickRefEntry:
-    """11 版通用技能速查表的一条。section 可能为空——PDF 里确有条目漏印节号
-    （实测「连击 SUSTAINED HITS」那行没有编号）。**不按顺序推断补全**：
-    推出来的号码看着像真的，实际是我们编的。"""
+    """Official numbered ability; historical class name retained for callers."""
     name_en: str
     name_zh: str
     section: Optional[str]
+    transitional: bool = False
 
 
 @dataclass
@@ -87,41 +92,70 @@ class KeywordStat:
         return sorted(self.current_weapons)
 
 
-# ── 速查表（11 版官方节号与中文名的真源）──────────────────────────
+# ── Official Core Rules headings ──────────────────────────────────
 
-def parse_quickref(pdf_path: Path) -> Dict[str, QuickRefEntry]:
-    """5 页速查表 → {英文名大写: QuickRefEntry}。PDF 缺失/条目过少时抛错，不静默返回空。
+def _heading_name(title: str) -> str:
+    # The SUPPORT heading shares a line with a LEADER cross-reference. The
+    # Chinese parser also retains the preceding app footer. Discard the prefix
+    # only when a numbered cross-reference and slash actually occur in the title.
+    title = re.split(r"\d{2}\.\d{2}\s*/\s*", title)[-1].strip()
+    if title.startswith("[") and title.endswith("]"):
+        title = title[1:-1]
+    return " ".join(title.translate(_HYPHENS).split())
 
-    静默返回空的后果很具体：判定「通用 USR」的依据没了，49 个词条会**全部**被归进
-    「单位特有」——一个看起来正常、实际全错的索引页。
-    """
-    if not pdf_path.exists():
-        raise FileNotFoundError(
-            "速查表 PDF 不存在：{}（它是判定通用 USR 的真源，缺了不能生成索引）"
-            .format(pdf_path))
-    import fitz                                   # PyMuPDF，与 ingest.py 同源
-    doc = fitz.open(str(pdf_path))
-    try:
-        text = "\n".join(doc[i].get_text() for i in range(doc.page_count))
-    finally:
-        doc.close()
 
+def _entries_from_sections(en: Dict[str, PdfSection],
+                           zh: Dict[str, PdfSection]) -> Dict[str, QuickRefEntry]:
+    """Pair named abilities by exact official section number, never by order."""
+    en = {n: s for n, s in en.items() if n.startswith("24.")}
+    zh = {n: s for n, s in zh.items() if n.startswith("24.")}
+    if set(en) != set(zh):
+        raise ValueError("Official ability section numbers differ: English-only {}; Chinese-only {}"
+                         .format(sorted(set(en) - set(zh)), sorted(set(zh) - set(en))))
     out: Dict[str, QuickRefEntry] = {}
-    for line in text.splitlines():
-        if len(line.strip()) > 42:               # 正文行（会换行、很长）
+    for num, section in sorted(en.items()):
+        if num in _STRUCTURAL_SECTIONS:
             continue
-        m = _QUICKREF_HEAD.match(line)
-        if not m:
-            continue
-        zh, en, section = m.group(1), m.group(2).strip().upper(), m.group(3)
-        if len(en) < 3:
-            continue
-        out.setdefault(en, QuickRefEntry(name_en=en, name_zh=zh, section=section))
-    if len(out) < _QUICKREF_MIN_ENTRIES:
-        raise ValueError(
-            "速查表只解析出 {} 条（预期 ≥{}）——PDF 可能换版或文本层坏了，"
-            "先核对再生成索引".format(len(out), _QUICKREF_MIN_ENTRIES))
+        name = _heading_name(section.title).upper()
+        name_zh = _heading_name(zh[num].title)
+        if not name or not name_zh or not section.body.strip() or not zh[num].body.strip():
+            raise ValueError("Empty official ability heading/body: {}".format(num))
+        if name in out:
+            raise ValueError("Duplicate official ability: {}".format(name))
+        text = " ".join((section.body + " " + " ".join(section.asides))
+                        .translate(_HYPHENS).split())
+        transitional = (name == "PISTOL"
+                        and "[PISTOL] and [CLOSE-QUARTERS] are identical for all rules purposes." in text
+                        and "superseded by [CLOSE-QUARTERS]" in text)
+        out[name] = QuickRefEntry(name, name_zh, num, transitional)
     return out
+
+
+def parse_quickref(pdf_path: Path = DEFAULT_PDF,
+                   zh_pdf_path: Path = DEFAULT_ZH_PDF) -> Dict[str, QuickRefEntry]:
+    """Read retained official English/Chinese Core Rules using the shared parser.
+
+    The old function name is an API shim, not a quick-reference fallback.
+    Missing, retired, incomplete or mismatched inputs fail before generation.
+    Direct parsing avoids the path-only section cache when PDF bytes change.
+    Defaults are repository-relative; explicit paths are relative to the caller.
+    """
+    from wiki_engine.pdf_sections import SECTION_EN, SECTION_ZH, split_sections
+
+    for path in (pdf_path, zh_pdf_path):
+        require_active_source(path)
+    for path in (pdf_path, zh_pdf_path):
+        if not path.exists():
+            raise FileNotFoundError("Official Core Rules PDF missing: {}".format(path))
+    en = split_sections(pdf_path, SECTION_EN)
+    zh = split_sections(zh_pdf_path, SECTION_ZH)
+    for label, sections in (("English", en), ("Chinese", zh)):
+        found = {n for n in sections if n.startswith("24.")}
+        if found != _CHAPTER_SECTIONS:
+            raise ValueError("Official Core Rules chapter 24 incomplete/changed ({}): missing {}; extra {}"
+                             .format(label, sorted(_CHAPTER_SECTIONS - found),
+                                     sorted(found - _CHAPTER_SECTIONS)))
+    return _entries_from_sections(en, zh)
 
 
 # ── 词条归一化 ─────────────────────────────────────────────────────
@@ -150,10 +184,11 @@ def _engine_name(base: str) -> str:
 
 def keyword_family(base: str) -> str:
     """Keep conditional identities distinct, but link to their shared core rule."""
+    # Core Rules 24.01 permits keyword suffixes on ANY weapon ability, including
+    # SUSTAINED HITS 1: INFANTRY/BEASTS. Do not invent a list of allowed targets.
+    base = normalize_keyword(base.split(":", 1)[0].strip())[0]
     if base.startswith("ANTI-"):
         return "ANTI"
-    if base in {"LETHAL HITS: NON-MONSTER/VEHICLE", "DEVASTATING WOUNDS: NON-MONSTER/VEHICLE"}:
-        return base.split(":", 1)[0]
     return base
 
 
@@ -278,28 +313,21 @@ def _rule_page(base: str, wiki_root: Path, zh: str = "") -> Optional[str]:
 
 def classify(base: str, quickref: Dict[str, QuickRefEntry]) -> str:
     """通用 / 过渡期 / 单位特有。"""
-    if base == "PISTOL":
-        # ⚠️ 2026-07-26 依 **GW 官方中文核心规则**修正过一次分档。
-        # 此前只有汉化组速查表可依据（24.07「旧规则中的【手枪】技能等效替换为本技能」），
-        # 据此判成「十版遗留、已被取代」——**说过头了**。
-        # 官方 11 版核心规则里 24.07[近距离] 与 24.27[手枪] **并列在册**，原文：
-        #   「[手枪]和[近距离]在所有规则中都被视为同一个规则。」
-        #   设计师注：「[手枪]是一个预先存在的技能，它将随着这次版本的发展被[近距离]替代。」
-        # 即：**规则上完全等同，正在被逐步取代，但此刻仍是现行词条**。
-        return "transitional"
     key = keyword_family(base)
+    if key in quickref and quickref[key].transitional:
+        return "transitional"
     return "universal" if key in quickref else "unit-specific"
 
 
 _GROUP_TITLES = [
-    ("universal", "通用武器词条", "11 版《通用技能速查表》在册，任何单位都可能带。"),
+    ("universal", "通用武器词条", "11 版 GW 官方核心规则第 24 章在册，任何单位都可能带。"),
     ("transitional", "过渡期词条",
      "官方 11 版核心规则里**仍然在册**，但正被另一个词条取代：**[手枪]（24.27）↔ "
      "[近距离]（24.07）**。官方原文「[手枪]和[近距离]在所有规则中都被视为同一个规则」，"
      "设计师注明「[手枪]是一个预先存在的技能，它将随着这次版本的发展被[近距离]替代」。"
      "所以读到 PISTOL 时按[近距离]理解即可，但它**不是**已经作废的十版残留。"),
     ("unit-specific", "单位特有词条",
-     "速查表查无此条，是某个单位数据卡上的专属词条，只在该单位身上出现。"),
+     "官方核心技能章查无此条；其专属规则须查对应数据卡。"),
 ]
 
 
@@ -348,23 +376,6 @@ def render_index(stats: Dict[str, KeywordStat], quickref: Dict[str, QuickRefEntr
                 engine_status(st.base)))
         L.append("")
 
-    # ── 译名差异披露 ──
-    diffs = []
-    for st in stats.values():
-        qr = quickref.get(keyword_family(st.base))
-        zh = _zh_base(st.base, st.variants, gloss)
-        if qr and zh and qr.name_zh != zh and not st.base.startswith("ANTI-"):
-            diffs.append((st.base, zh, qr.name_zh))
-    if diffs:
-        L += ["## 译名差异（GW 官方中文 ↔ 汉化组速查表）", "",
-              "左列是 **GW 官方简体中文**（`data/官方中文/` 核心规则第 24 章），"
-              "全 wiki 统一用它——宪法 §6：GW 官方中文 > 汉化组译名 > 社区译名。"
-              "右列是汉化组速查表的写法，**同样收进检索别名，搜哪个都找得到**。", "",
-              "| 英文 | GW 官方 | 汉化组速查表 |", "|---|---|---|"]
-        for en, ours, theirs in sorted(diffs):
-            L.append("| {} | {} | {} |".format(en, ours, theirs))
-        L.append("")
-
     # ── 反查 ──
     L += ["## 反查：哪些武器带这个词条", "",
           "只列**现役**单位的武器，按「武器名 —— 携带单位」聚合去重；"
@@ -397,7 +408,7 @@ def build_payload(stats: Dict[str, KeywordStat], quickref: Dict[str, QuickRefEnt
     """机器可读载荷（indexes/keywords.json）——web 层的唯一数据源。
 
     为什么不让 API 直接跑 collect()+parse_quickref()：容器只挂了 `wiki/`、`db/`、`opt/`、
-    `local_vector_store/`，**没有挂 `data/`**（docker-compose.yml），线上根本读不到速查表 PDF。
+    `local_vector_store/`，**没有挂 `data/`**（docker-compose.yml），线上读不到官方 PDF。
     离线算好落进 wiki/ 是唯一能同时满足「分类依据来自真源」和「线上读得到」的做法。
     """
     items: List[Dict[str, object]] = []
@@ -411,7 +422,9 @@ def build_payload(stats: Dict[str, KeywordStat], quickref: Dict[str, QuickRefEnt
             "nameZh": zh,
             "group": classify(base, quickref),
             "section": qr.section if qr else None,
-            "quickrefZh": qr.name_zh if qr else None,
+            # Reserved legacy contract field: do not publish retired secondary
+            # translations (the frontend labels this field as a quickref alias).
+            "quickrefZh": None,
             "params": sorted({v[len(base):].strip() for v in st.variants
                               if v != base and v.startswith(base)}),
             "engine": engine_status(base),
@@ -428,16 +441,19 @@ def build_payload(stats: Dict[str, KeywordStat], quickref: Dict[str, QuickRefEnt
 
 def generate(db_path: Path, wiki_root: Path,
              pdf_path: Path = DEFAULT_PDF,
-             out_root: Optional[Path] = None) -> Dict[str, object]:
+             out_root: Optional[Path] = None, *,
+             zh_pdf_path: Path = DEFAULT_ZH_PDF) -> Dict[str, object]:
     """生成武器词条索引。
 
     `wiki_root` 只用于**读**（`_rule_page` 判页是否真实存在），`out_root` 决定**写**去哪。
     默认两者相同＝正常生成。测试要跑真库真页的端到端，但不能顺手改仓库产物
     （产物一脏，下一轮 gnhf 就以 "Working tree is not clean" 秒退），所以给它一个
     只改写出目标、不改读取真源的出口。
+    Custom bilingual inputs can supply `zh_pdf_path` without changing the existing
+    positional `out_root` contract. Both sources are validated before any writes.
     """
     out_root = wiki_root if out_root is None else out_root
-    quickref = parse_quickref(pdf_path)
+    quickref = parse_quickref(pdf_path, zh_pdf_path)
     stats, tally = collect(db_path)
     gloss = load_glossary(db_path)
     text = render_index(stats, quickref, gloss, wiki_root)
@@ -460,6 +476,7 @@ def generate(db_path: Path, wiki_root: Path,
     return {
         "path": str(target), "payload": str(out_root / PAYLOAD_REL),
         "keywords": len(stats), "quickref_entries": len(quickref),
+        "core_rules_entries": len(quickref),
         "groups": dict(groups), "pairs": tally["pairs"],
         "weapon_rows": tally["weapon_rows"], "orphan_rows": tally["orphan_rows"],
         "distinct_weapon_names": sum(len(s.weapons) for s in stats.values()),
@@ -472,11 +489,14 @@ def main() -> None:
     ap = argparse.ArgumentParser(prog="wiki_engine.keyword_index")
     ap.add_argument("--db", default="db/wh40k.sqlite")
     ap.add_argument("--wiki", default="wiki")
-    ap.add_argument("--pdf", default=str(DEFAULT_PDF))
+    ap.add_argument("--pdf", default=str(DEFAULT_PDF), help="Official English Core Rules PDF")
+    ap.add_argument("--zh-pdf", default=str(DEFAULT_ZH_PDF),
+                    help="Official Chinese Core Rules companion PDF")
     args = ap.parse_args()
-    rep = generate(Path(args.db), Path(args.wiki), Path(args.pdf))
-    print("速查表条目 {}；基础词条 {}（通用 {} / 过渡期 {} / 单位特有 {}）".format(
-        rep["quickref_entries"], rep["keywords"],
+    rep = generate(Path(args.db), Path(args.wiki), Path(args.pdf),
+                   zh_pdf_path=Path(args.zh_pdf))
+    print("官方核心技能条目 {}；基础词条 {}（通用 {} / 过渡期 {} / 单位特有 {}）".format(
+        rep["core_rules_entries"], rep["keywords"],
         rep["groups"].get("universal", 0), rep["groups"].get("transitional", 0),
         rep["groups"].get("unit-specific", 0)))
     print("(武器行, 词条) 对 {}；去重 (词条, 武器名) 对 {}（现役 {}）".format(

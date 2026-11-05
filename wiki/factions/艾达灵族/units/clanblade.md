@@ -1,5 +1,6 @@
 ---
 id: fp11e-ae-clanblade
+name_zh: 氏族之刃
 name_en: Clanblade
 faction: 艾达灵族
 type: unit
@@ -10,31 +11,31 @@ tags:
 - unit/艾达灵族
 - 艾达灵族
 version:
-  points: MFM 2026-09-14T05:51:23.572407+00:00
+  points: MFM 2026-10-03T19:00:56.192123+00:00
   source: official-db
   rules: 11e-fp-2026-08-26
 sources:
 - book: 'Faction Pack: Aeldari'
   pages:
   - 15
-updated: '2026-09-14'
+updated: '2026-10-03'
 ---
 
 ## 属性表
 | 模型 | M | T | SV | W | LD | OC |
 |---|---|---|---|---|---|---|
-| Clanblade | 10 | 5 | 4 | 4 | 6 | 2 |
+| 氏族之刃 | 10 | 5 | 4 | 4 | 6 | 2 |
 
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Solar Carbine | 18"" | 2 | 3+ | 4 | 0 | 1 | [[core-rules/rapid-fire.md\|速射2]] |
+| 曜光卡宾枪 | 18"" | 2 | 3+ | 4 | 0 | 1 | [[core-rules/rapid-fire.md\|速射2]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Drakesteed Fangs and Talons | 近战 | 3 | 3+ | 5 | -1 | 1 | [[core-rules/extra-attacks.md\|额外攻击]] |
-| Moonblades | 近战 | 5 | 2+ | 4 | -2 | 2 | [[core-rules/lethal-hits.md\|致命一击]]，[[core-rules/twin-linked.md\|双联]] |
+| 龙骥的獠牙与利爪 | 近战 | 3 | 3+ | 5 | -1 | 1 | [[core-rules/extra-attacks.md\|额外攻击]] |
+| 月刃 | 近战 | 5 | 2+ | 4 | -2 | 2 | [[core-rules/lethal-hits.md\|致命一击]]，[[core-rules/twin-linked.md\|双联]] |
 
 ## 技能
 - **Blade of the Clans**：This unit’s melee attacks have [SUSTAINED HITS 1].

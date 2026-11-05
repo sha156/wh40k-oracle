@@ -1,6 +1,6 @@
 ---
 id: '000003701'
-name_zh: 危机星镰战斗服小队
+name_zh: (XV8)危机星镰战斗服
 name_en: Crisis Starscythe Battlesuits
 faction: 钛帝国
 type: unit
@@ -11,11 +11,11 @@ tags:
 - unit/钛帝国
 - 钛帝国
 version:
-  points: MFM 2026-09-14T05:51:23.572407+00:00
+  points: MFM 2026-10-03T19:00:56.192123+00:00
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-09-14'
+updated: '2026-10-03'
 ---
 
 ## 属性表
@@ -35,8 +35,9 @@ updated: '2026-09-14'
 | 战斗服铁拳 | 近战 | 3 | 5+ | 5 | 0 | 1 | — |
 
 ## 技能
-- **Starscythe**：Each time a model in this unit makes a ranged attack (excluding attacks that target <span class="kwb">MONSTERS</span> and <span class="kwb">VEHICLES</span>), improve the Armour Penetration characteristic of that attack by 1.
-- **Battlesuit Support System**：This unit is eligible to shoot in a turn in which it Fell Back.
+- **阵营：为了上上善道**
+- **星镰**：当该单位中的模型进行远程攻击时（以凶兽和载具为目标的攻击除外），攻击的AP增强1。
+- **战斗服支援系统**：该单位可以在进行后撤的回合进行射击。
 
 ## 单位构成
 - **3个模型** — 100 分

@@ -11,7 +11,7 @@ from pathlib import Path
 import pytest
 
 from web_api.simulate import (lookup_unit_name, run_simulation,
-                              sanitize_options)
+                              sanitize_options, sanitize_options_ex)
 
 DB_PATH = Path(__file__).resolve().parent.parent / "db" / "wh40k.sqlite"
 BROADSIDE = "000000433"   # Broadside Battlesuits：射击 5 把 → 未给 loadout 必 ambiguous
@@ -54,6 +54,22 @@ def test_sanitize_rejects_bad_values():
 def test_sanitize_empty():
     assert sanitize_options(None) == {}
     assert sanitize_options({}) == {}
+
+
+@pytest.mark.parametrize("value", [float("inf"), float("-inf"), float("nan")])
+def test_sanitize_nonfinite_numbers_discloses_every_dropped_option(value):
+    # Valid JSON 1e999 decodes to infinity: malformed numeric inputs must not
+    # crash the endpoint or silently pretend that the requested values worked.
+    raw = dict.fromkeys(
+        ("n", "seed", "attacker_models", "defender_models", "damage_reduction", "fnp"),
+        value,
+    )
+    raw.update(loadout=[["gun", value]], defender_loadout=[["gun", value]])
+    out, warnings = sanitize_options_ex(raw)
+    assert out == {}
+    assert len(warnings) == len(raw)
+    for key in raw:
+        assert any("{}=".format(key) in warning for warning in warnings)
 
 
 def test_sanitize_caps_dos_levers():

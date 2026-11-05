@@ -5,17 +5,17 @@ name_en: Bannernob
 faction: 兽人
 type: unit
 points:
-  1 model: 35
+  1 model: 30
 tags:
 - unit
 - unit/兽人
 - 兽人
 version:
-  points: MFM 2026-09-14T05:51:23.572407+00:00
+  points: MFM 2026-10-03T19:00:56.192123+00:00
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-09-14'
+updated: '2026-10-03'
 ---
 
 ## 属性表
@@ -37,11 +37,12 @@ updated: '2026-09-14'
 | 砍刀 | 近战 | 5 | 3+ | 4 | -1 | 1 | — |
 
 ## 技能
-- **Waaagh！战旗**：■ 该单位拥有 5+ 无敌豁免。■ Waaagh！对该单位生效时，该单位的 T 属性 +1。
-- **【核心技能】:辅助**：本单位可以作为领袖加入以下单位：●喷火小子●坦克破坏者,●强蛮人●怪枪小子●毁灭小子●蛮人小子●蛮人拾荒者
+- **Waaagh！战旗**：该单位的冲锋掷骰+1。
+- **【核心技能】:辅助**：本单位可以作为领袖加入以下单位：●小子●[[factions/兽人/units/nobz.md|老大队]]
+- **阵营技能：Waaagh!**
 
 ## 单位构成
-- **1个模型** — 35 分
+- **1个模型** — 30 分
 
 ## 关键词
 - **阵营关键词**：ORKS

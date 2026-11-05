@@ -11,13 +11,13 @@ tags:
 - unit/星界军
 - 星界军
 version:
-  points: MFM 2026-09-14T05:51:23.572407+00:00
+  points: MFM 2026-10-03T19:00:56.192123+00:00
   source: official-db
 sources:
 - book: https://assets.warhammer-community.com/eng_wh40k_faction_pack_astra_militarum-o51zhqvsvy-wdobxbf6t0.pdf
   pages:
   - 23
-updated: '2026-09-14'
+updated: '2026-10-03'
 ---
 
 ## 属性表
@@ -39,7 +39,7 @@ updated: '2026-09-14'
 | 装甲履带 | 近战 | 3 | 4+ | 6 | 0 | 1 | — |
 
 ## 技能
-- **怒火弹幕**：在你的射击阶段，当该模型射击时，选择一个被暴风鹰火箭命中过一次或多次的敌军单位（巨兽和载具除外），直到[[factions/兽人/stratagems/on-to-da-next.md|下一个]]你的射击阶段开始时，那个被命中的敌军单位内的模型OC-1（最低到1）
+- **怒火弹幕**：在你的射击阶段，当该模型射击时，选择一个被暴风鹰火箭命中过一次或多次的敌军单位（巨兽和载具除外），直到下一个你的射击阶段开始时，那个被命中的敌军单位内的模型OC-1（最低到1）
 - **受损**：当该模型剩余1-4点耐伤，该模型进行攻击时命中投掷结果-1。
 
 ## 单位构成

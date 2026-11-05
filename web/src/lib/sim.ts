@@ -138,6 +138,26 @@ export interface SimResponse {
   errors: string[];
 }
 
+export interface SavedSimulation {
+  inputKey: string;
+  assemblyKey: string;
+  response: SimResponse;
+}
+
+/** Blank keeps automatic sizing; invalid numbers must never silently change the army. */
+export function parseModelCount(input: string): number | undefined | null {
+  if (!input.trim()) return undefined;
+  const value = Number(input);
+  return Number.isInteger(value) && value >= 1 && value <= 100 ? value : null;
+}
+
+/** Damage belongs to the exact submitted setup; weapon prompts survive loadout edits. */
+export function visibleSimulation(saved: SavedSimulation | null, inputKey: string, assemblyKey: string): SimResponse | null {
+  if (!saved) return null;
+  const assembling = !saved.response.ok && ["loadout_required", "defender_loadout_required"].includes(saved.response.reason ?? "");
+  return (assembling ? saved.assemblyKey === assemblyKey : saved.inputKey === inputKey) ? saved.response : null;
+}
+
 /** 发起一次模拟。未知单位 id 后端 404 → 抛错；其余失败以 ok=false 结构化返回。 */
 export async function postSimulate(
   attackerId: string,

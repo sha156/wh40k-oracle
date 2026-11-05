@@ -5,19 +5,19 @@ name_en: Masters of the Maelstrom
 faction: 混沌星际战士
 type: unit
 points:
-  5 models: 145
+  5 models: 150
 tags:
 - unit
 - unit/混沌星际战士
 - 混沌星际战士
 version:
-  points: MFM 2026-09-14T05:51:23.572407+00:00
+  points: MFM 2026-10-03T19:00:56.192123+00:00
   source: official-db
 sources:
 - book: 'Faction Pack: Chaos Space Marines'
   pages:
   - 1
-updated: '2026-09-14'
+updated: '2026-10-03'
 ---
 
 ## 属性表
@@ -51,7 +51,7 @@ updated: '2026-09-14'
 - **Support**
 
 ## 单位构成
-- **5个模型** — 145 分
+- **5个模型** — 150 分
 
 ## 关键词
 - **阵营关键词**：Heretic Astartes

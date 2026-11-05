@@ -5,17 +5,17 @@ name_en: Paragon Warsuits
 faction: 战斗修女
 type: unit
 points:
-  3 models: 180
+  3 models: 165
 tags:
 - unit
 - unit/战斗修女
 - 战斗修女
 version:
-  points: MFM 2026-09-14T05:51:23.572407+00:00
+  points: MFM 2026-10-03T19:00:56.192123+00:00
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-09-14'
+updated: '2026-10-03'
 ---
 
 ## 属性表
@@ -47,7 +47,7 @@ updated: '2026-09-14'
 - **【阵营技能】：信仰之举**
 
 ## 单位构成
-- **3个模型** — 180 分
+- **3个模型** — 165 分
 
 ## 关键词
 - **阵营关键词**：Adepta Sororitas

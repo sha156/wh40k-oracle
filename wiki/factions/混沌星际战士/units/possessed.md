@@ -5,18 +5,18 @@ name_en: Possessed
 faction: 混沌星际战士
 type: unit
 points:
-  5 models: 120
-  10 models: 250
+  5 models: 130
+  10 models: 260
 tags:
 - unit
 - unit/混沌星际战士
 - 混沌星际战士
 version:
-  points: MFM 2026-09-14T05:51:23.572407+00:00
+  points: MFM 2026-10-03T19:00:56.192123+00:00
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-09-14'
+updated: '2026-10-03'
 ---
 
 ## 属性表
@@ -38,8 +38,8 @@ updated: '2026-09-14'
 - **混沌圣旗**：装备者所在单位可以重投为黑暗契约技 能所进行的 LD 测试
 
 ## 单位构成
-- **5个模型** — 120 分
-- **10个模型** — 250 分
+- **5个模型** — 130 分
+- **10个模型** — 260 分
 
 ## 关键词
 - **阵营关键词**：Heretic Astartes

@@ -1,6 +1,6 @@
 ---
 id: '000000413'
-name_zh: 克鲁特食肉者小队
+name_zh: 克鲁特食肉者
 name_en: Kroot Carnivores
 faction: 钛帝国
 type: unit
@@ -12,11 +12,11 @@ tags:
 - unit/钛帝国
 - 钛帝国
 version:
-  points: MFM 2026-09-14T05:51:23.572407+00:00
+  points: MFM 2026-10-03T19:00:56.192123+00:00
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-09-14'
+updated: '2026-10-03'
 ---
 
 ## 属性表
@@ -38,7 +38,8 @@ updated: '2026-09-14'
 | 格斗武器 | 近战 | 2 | 3+ | 4 | 0 | 1 | — |
 
 ## 技能
-- **战地技巧**：在你的指挥阶段结束时，如果该单位位于你控制的目标标记范围内，在你的对手于任意回合开始或结束时控制该目标标记前，该目标标记被你控制，即使你没有任何模型位于该目标标记范围内。
+- **Fieldcraft**：At the end of your Command phase, if this unit is within range of an objective marker you control, that objective marker remains under your control, even if you have no models within range of it, until your opponent controls it at the start or end of any turn.
+- **BODYGUARD**：If this unit has a Starting Strength of 20, you can attach up to two Leader units to it instead of one, provided those Leaders are not duplicates (e.g. you cannot attach two WAR SHAPERS to this unit). If you do, and this unit is destroyed, the Leader units attached to it become separate units with  their original Starting Strengths.
 
 ## 单位构成
 - **10个模型** — 65 分

@@ -11,11 +11,11 @@ tags:
 - unit/机械修会
 - 机械修会
 version:
-  points: MFM 2026-09-14T05:51:23.572407+00:00
+  points: MFM 2026-10-03T19:00:56.192123+00:00
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-09-14'
+updated: '2026-10-03'
 ---
 
 ## 属性表
@@ -43,8 +43,9 @@ updated: '2026-09-14'
 | 格斗武器 | 近战 | 1 | 4+ | 3 | 0 | 1 | — |
 
 ## 技能
-- **【阵营技能】：机神律令**
-- **辐射污染**：本单位 3 寸内的敌方非载具单位 OC 值-1
+- **Enhanced data-tether**：Each time you select the bearer’s unit as the target of a Stratagem, roll one D6: on a 5+, you gain 1CP.
+- **Omnispex**：Ranged weapons equipped by models in the bearer’s unit have the [IGNORES COVER] ability.
+- **Rad-saturation (Aura)**：While an enemy unit (excluding <span class="kwb">VEHICLE</span> units) is within 3" of this unit, subtract 1 from the Objective Control characteristic of models in that unit.
 
 ## 单位构成
 - **10个模型** — 85 分

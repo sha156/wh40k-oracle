@@ -11,13 +11,13 @@ tags:
 - unit/混沌恶魔
 - 混沌恶魔
 version:
-  points: MFM 2026-09-14T05:51:23.572407+00:00
+  points: MFM 2026-10-03T19:00:56.192123+00:00
   source: official-db
 sources:
 - book: 'Faction Pack: Chaos Daemons'
   pages:
   - 26
-updated: '2026-09-14'
+updated: '2026-10-03'
 ---
 
 ## 属性表

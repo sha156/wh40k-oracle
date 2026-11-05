@@ -338,10 +338,9 @@ class TestCrossFactionSameNameCollision:
 
 
 class TestEntityResolverRealData:
-    """用真实 wiki/terms.json + app.py 验证：中文单位名能解析到 canonical id
-    （gnhf 停止条件③的直接验证）。"""
+    """Real cached terms respect retirement while official canonical pairs survive."""
 
-    def test_resolves_real_tau_unit_from_wiki_terms(self):
+    def test_retired_pilot_cannot_supply_real_tau_chinese_name(self):
         repo_root = Path(__file__).parent.parent
         resolver = EntityResolver(
             terms_path=repo_root / "wiki" / "terms.json",
@@ -350,21 +349,23 @@ class TestEntityResolverRealData:
 
         result = resolver.resolve("影阳指挥官")
 
-        assert result.canonical_id == "000000407"
-        assert result.name_en == "Commander Shadowsun"
-        assert result.confidence == "exact"
+        # The pilot's Chinese pair is retired; independent DB aliases are
+        # verified separately in test_source_retirement_preparation.py.
+        assert result.canonical_id is None
+        assert result.confidence == "none"
 
-    def test_resolves_second_real_tau_unit_from_wiki_terms(self):
+    def test_retained_official_tau_pair_still_resolves_from_wiki_terms(self):
         repo_root = Path(__file__).parent.parent
         resolver = EntityResolver(
             terms_path=repo_root / "wiki" / "terms.json",
             app_path=repo_root / "app.py",
         )
 
-        result = resolver.resolve("远见指挥官")
+        result = resolver.resolve("Tiger Shark")
 
-        assert result.canonical_id == "000000406"
-        assert result.name_en == "Commander Farsight"
+        assert result.canonical_id == "000000454"
+        assert result.name_en == "Tiger Shark"
+        assert result.confidence == "exact"
 
     def test_current_unit_aliases_do_not_yet_overlap_pilot_terms(self):
         """诚实回归护栏：app.py 的 UNIT_ALIASES 是 P0 之前为其他阵营写的社区俗名，

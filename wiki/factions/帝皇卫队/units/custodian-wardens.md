@@ -5,18 +5,18 @@ name_en: Custodian Wardens
 faction: 帝皇卫队
 type: unit
 points:
-  4 models: 200
-  5 models: 250
+  4 models: 210
+  5 models: 260
 tags:
 - unit
 - unit/帝皇卫队
 - 帝皇卫队
 version:
-  points: MFM 2026-09-14T05:51:23.572407+00:00
+  points: MFM 2026-10-03T19:00:56.192123+00:00
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-09-14'
+updated: '2026-10-03'
 ---
 
 ## 属性表
@@ -46,8 +46,8 @@ updated: '2026-09-14'
 - **禁军鹰旗**：装备者所在单位中模型 OC 值+1
 
 ## 单位构成
-- **4个模型** — 200 分
-- **5个模型** — 250 分
+- **4个模型** — 210 分
+- **5个模型** — 260 分
 
 ## 关键词
 - **阵营关键词**：Adeptus Custodes

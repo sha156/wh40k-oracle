@@ -1,6 +1,6 @@
 ---
 id: '000002532'
-name_zh: 虚空裂痕海盗
+name_zh: 虚空创痕海盗
 name_en: Corsair Voidscarred
 faction: 艾达灵族
 type: unit
@@ -12,17 +12,17 @@ tags:
 - unit/艾达灵族
 - 艾达灵族
 version:
-  points: MFM 2026-09-14T05:51:23.572407+00:00
+  points: MFM 2026-10-03T19:00:56.192123+00:00
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-09-14'
+updated: '2026-10-03'
 ---
 
 ## 属性表
 | 模型 | M | T | SV | W | LD | OC |
 |---|---|---|---|---|---|---|
-| [[factions/艾达灵族/units/corsair-voidreavers.md\|虚空劫掠者海盗]] | 7" | 3 | 4+ | 1 | 7+ | 1 |
+| 虚空创痕海盗 | 7" | 3 | 4+ | 1 | 7+ | 1 |
 
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
@@ -47,7 +47,10 @@ updated: '2026-09-14'
 | 巫术之杖 | 近战 | 2 | 2+ | 3 | 0 | D3 | [[core-rules/anti.md\|针对步兵2+]]，[[core-rules/psychic-attacks.md\|灵能]] |
 
 ## 技能
-- **劫掠海盗**：在战斗开始时，选择一个敌方单位，本单位中的模型装备的武器攻击对该敌方单位时拥有【致命一击】和 【精准】技能
+- **Piratical Raiders**：At the start of the battle, select one unit from your opponent’s army. Weapons equipped by models in this unit have the [LETHAL HITS] and [PRECISION] abilities while targeting that unit.
+- **Channeller Stones**：Once per turn, the first time a saving throw is failed for the bearer’s unit, change the Damage characteristic of that attack to 0.
+- **Faolchú**：Ranged weapons equipped by models in the bearer’s unit have the [IGNORES COVER] ability.
+- **Mistshield**：The bearer has a 4+ invulnerable save.
 
 ## 单位构成
 - **5个模型** — 70 分

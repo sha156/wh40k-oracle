@@ -1,6 +1,5 @@
 ---
 id: '000001391'
-name_zh: 卡纳罗克骑兵队
 name_en: Knarloc Riders
 faction: 钛帝国
 type: unit
@@ -13,7 +12,7 @@ version:
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-09-14'
+updated: '2026-10-03'
 ---
 
 ## 属性表

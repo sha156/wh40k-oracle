@@ -17,7 +17,7 @@ sources:
 - book: 'Faction Pack: Astra Militarum'
   pages:
   - 57
-updated: '2026-09-14'
+updated: '2026-10-03'
 ---
 
 ## 属性表

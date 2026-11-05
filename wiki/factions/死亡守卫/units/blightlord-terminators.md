@@ -1,23 +1,23 @@
 ---
 id: '000001372'
-name_zh: 凋零霸主终结者
+name_zh: 腐毒领主终结者
 name_en: Blightlord Terminators
 faction: 死亡守卫
 type: unit
 points:
   3 models: 115
-  5 models: 180
-  10 models: 360
+  5 models: 185
+  10 models: 370
 tags:
 - unit
 - unit/死亡守卫
 - 死亡守卫
 version:
-  points: MFM 2026-09-14T05:51:23.572407+00:00
+  points: MFM 2026-10-03T19:00:56.192123+00:00
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-09-14'
+updated: '2026-10-03'
 ---
 
 ## 属性表
@@ -46,12 +46,11 @@ updated: '2026-09-14'
 
 ## 技能
 - **【阵营技能】：纳垢赐福【光环】**
-- **炽烈连射**：若此单位的初始模型数量不低于 5， 或有角色领导此单位。则每当此单位中的模型 对受感染单位进行远程攻击时，该攻击的力量 S 与穿甲值 AP 各+1
 
 ## 单位构成
 - **3个模型** — 115 分
-- **5个模型** — 180 分
-- **10个模型** — 360 分
+- **5个模型** — 185 分
+- **10个模型** — 370 分
 
 ## 关键词
 - **阵营关键词**：Death Guard

@@ -5,18 +5,18 @@ name_en: Nemesis Claw
 faction: 混沌星际战士
 type: unit
 points:
-  5 models: 100
-  10 models: 180
+  5 models: 105
+  10 models: 190
 tags:
 - unit
 - unit/混沌星际战士
 - 混沌星际战士
 version:
-  points: MFM 2026-09-14T05:51:23.572407+00:00
+  points: MFM 2026-10-03T19:00:56.192123+00:00
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-09-14'
+updated: '2026-10-03'
 ---
 
 ## 属性表
@@ -56,8 +56,8 @@ updated: '2026-09-14'
 - **噬声器**：处于装备者接战范围内的敌方单位（巨兽和载具除外）无法被选作战略技能的目标
 
 ## 单位构成
-- **5个模型** — 100 分
-- **10个模型** — 180 分
+- **5个模型** — 105 分
+- **10个模型** — 190 分
 
 ## 关键词
 - **阵营关键词**：Heretic Astartes

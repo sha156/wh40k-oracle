@@ -5,17 +5,17 @@ name_en: Farseer
 faction: 艾达灵族
 type: unit
 points:
-  1 model: 65
+  1 model: 60
 tags:
 - unit
 - unit/艾达灵族
 - 艾达灵族
 version:
-  points: MFM 2026-09-14T05:51:23.572407+00:00
+  points: MFM 2026-10-03T19:00:56.192123+00:00
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-09-14'
+updated: '2026-10-03'
 ---
 
 ## 属性表
@@ -45,7 +45,7 @@ updated: '2026-09-14'
 - **指引（灵能）**：在你的移动阶段结束时，选择一个位于该模型18寸内且可见的敌方单位，直到你的下个指挥阶段开始，当一个友方艾达灵族单位攻击该敌方单位时，该攻击的命中骰结果加1；每个单位每回合只能被此能力选中一次
 
 ## 单位构成
-- **1个模型** — 65 分
+- **1个模型** — 60 分
 
 ## 关键词
 - **阵营关键词**：Asuryani

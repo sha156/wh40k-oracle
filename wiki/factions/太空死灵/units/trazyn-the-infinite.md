@@ -5,17 +5,17 @@ name_en: Trazyn The Infinite
 faction: 太空死灵
 type: unit
 points:
-  1 model: 65
+  1 model: 60
 tags:
 - unit
 - unit/太空死灵
 - 太空死灵
 version:
-  points: MFM 2026-09-14T05:51:23.572407+00:00
+  points: MFM 2026-10-03T19:00:56.192123+00:00
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-09-14'
+updated: '2026-10-03'
 ---
 
 ## 属性表
@@ -37,7 +37,7 @@ updated: '2026-09-14'
 - **替身宿主**：在您的指挥阶段开始时，如果该模型位于战场上，您可以选择另一个位于战场上的太空死灵步兵角色模型（[[factions/太空死灵/units/skorpekh-lord.md|荒蝎领主]]和史诗英雄除外）。被选中的模型被摧毁（无视任何在该 模型被摧毁时生效的规则），将该模型放置在被摧毁模型的位置，并且拥有全部剩余耐伤（如 果被选中的模型领导一个联合单位，该模型将作为那个单位的领袖)。
 
 ## 单位构成
-- **1个模型** — 65 分
+- **1个模型** — 60 分
 
 ## 关键词
 - **阵营关键词**：Necrons

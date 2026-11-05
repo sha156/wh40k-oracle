@@ -4,18 +4,16 @@ name_zh: 文崔斯连长
 name_en: Uriel Ventris
 faction: 星际战士
 type: unit
-points:
-  1 model: 105
 tags:
 - unit
 - unit/星际战士
 - 星际战士
 version:
-  points: MFM 2026-09-14T05:51:23.572407+00:00
+  points: historical / unmatched
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-09-14'
+updated: '2026-10-03'
 ---
 
 ## 属性表
@@ -43,7 +41,8 @@ updated: '2026-09-14'
 - **舰队之主**：在宣布战斗阵容时，如果军队中包含本模型，则 选择友军中一个拥有福波斯护甲，战术护甲，重装护甲关键 词之一的阿斯塔特修会步兵单位，该单位获得【深入打击】 技能
 
 ## 单位构成
-- **1个模型** — 105 分
+历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- **1个模型** — 95 分
 
 ## 关键词
 - **阵营关键词**：Adeptus Astartes，Ultramarines

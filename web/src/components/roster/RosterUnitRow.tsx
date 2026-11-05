@@ -72,6 +72,7 @@ export function RosterUnitRow({
         </label>
 
         <select
+          aria-label={`${unit.nameZh ?? unit.nameEn}的强化`}
           value={unit.enhancement ?? ""}
           onChange={(e) => onEnhancement(unit.uid, e.target.value || null)}
           className="max-w-[190px] border border-[#2b423d] bg-dark px-1.5 py-0.5 text-[12px] text-bone outline-none"
@@ -101,6 +102,7 @@ export function RosterUnitRow({
         <button
           type="button"
           onClick={() => onRemove(unit.uid)}
+          aria-label={`移除${unit.nameZh ?? unit.nameEn}`}
           className="px-1.5 font-mono text-[15px] text-[#7d5a5a] hover:text-redfont"
           title="移除"
         >

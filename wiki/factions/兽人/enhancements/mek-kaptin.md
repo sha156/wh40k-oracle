@@ -25,4 +25,4 @@ During the Declare Battle Formations step, the bearer can be attached to a [[fac
 
 ## 携带限制
 
-[[factions/兽人/units/big-mek.md|Big Mek]], Big [[factions/兽人/units/mek.md|Mek]] in Mega Armour or Big Mek with Shokk Attack Gun model only.
+[[factions/兽人/units/big-mek.md|Big Mek]], Big [[factions/兽人/units/mek.md|Mek]] in Mega Armour or [[factions/兽人/units/big-mek.md|Big Mek]] with Shokk Attack Gun model only.

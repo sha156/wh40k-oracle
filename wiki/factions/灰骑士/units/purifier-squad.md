@@ -5,18 +5,18 @@ name_en: Purifier Squad
 faction: 灰骑士
 type: unit
 points:
-  5 models: 130
-  10 models: 260
+  5 models: 145
+  10 models: 290
 tags:
 - unit
 - unit/灰骑士
 - 灰骑士
 version:
-  points: MFM 2026-09-14T05:51:23.572407+00:00
+  points: MFM 2026-10-03T19:00:56.192123+00:00
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-09-14'
+updated: '2026-10-03'
 ---
 
 ## 属性表
@@ -44,8 +44,8 @@ updated: '2026-09-14'
 - **神圣决⼼**：每次此单位中的一个模型进行攻击时，可以重掷结果为 1 的致伤掷骰。如果目标在一个目标标记范围内，您可以改为重掷致伤掷骰。
 
 ## 单位构成
-- **5个模型** — 130 分
-- **10个模型** — 260 分
+- **5个模型** — 145 分
+- **10个模型** — 290 分
 
 ## 关键词
 - **阵营关键词**：Grey Knights

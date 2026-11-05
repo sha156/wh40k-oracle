@@ -12,11 +12,11 @@ tags:
 - unit/艾达灵族
 - 艾达灵族
 version:
-  points: MFM 2026-09-14T05:51:23.572407+00:00
+  points: MFM 2026-10-03T19:00:56.192123+00:00
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-09-14'
+updated: '2026-10-03'
 ---
 
 ## 属性表
@@ -42,8 +42,9 @@ updated: '2026-09-14'
 | 格斗武器 | 近战 | 3 | 3+ | 4 | 0 | 1 | — |
 
 ## 技能
-- **【阵营技能】：战斗专注**
-- **破腹飞行**：该单位结束常规移动后，你可以选择一个该单位在本次常规移动期间越过的敌方单位（巨兽和载具单位除外），为该敌方单位中的每个模型投1D6：每有1个4+的结果，该敌方单位受到1点致命伤
+- **Eviscerating Fly-by**：Each time this unit ends a Normal move, you can select one enemy unit (excluding <span class="kwb">MONSTERS</span> and <span class="kwb">VEHICLES</span>) that it moved over during that move. If you do, roll one D6 for each model in this unit: for each 4+, that enemy unit suffers 1 mortal wound.
+- **Cluster Caltrops**：Each time you roll a D6 for the bearer while resolving this unit’s Eviscerating Fly-by ability, you can re-roll the result.
+- **Grav-talon**：The bearer’s melee weapons have the [LANCE] ability.
 
 ## 单位构成
 - **3个模型** — 65 分

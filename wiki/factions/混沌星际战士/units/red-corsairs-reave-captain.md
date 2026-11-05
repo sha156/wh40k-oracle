@@ -5,17 +5,17 @@ name_en: Red Corsairs Reave-Captain
 faction: 混沌星际战士
 type: unit
 points:
-  1 model: 60
+  1 model: 65
 tags:
 - unit
 - unit/混沌星际战士
 - 混沌星际战士
 version:
-  points: MFM 2026-09-14T05:51:23.572407+00:00
+  points: MFM 2026-10-03T19:00:56.192123+00:00
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-09-14'
+updated: '2026-10-03'
 ---
 
 ## 属性表
@@ -45,7 +45,7 @@ updated: '2026-09-14'
 - **劫掠者的报偿**：每当该单位以位于一个或更多目标 标记范围内的单位为目标宣布冲锋时，您可以重掷 该冲锋掷骰。
 
 ## 单位构成
-- **1个模型** — 60 分
+- **1个模型** — 65 分
 
 ## 关键词
 - **阵营关键词**：Heretic Astartes

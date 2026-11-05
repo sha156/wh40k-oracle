@@ -1,0 +1,48 @@
+{
+  "populate": {
+    "records": 1085,
+    "matched": 950,
+    "matched_by_zh": 7,
+    "unmatched": 133,
+    "no_detail": 2,
+    "identity_rejected": 4
+  },
+  "weapons": {
+    "weapons_total": 9337,
+    "paired_direct": 5300,
+    "paired_glossary": 2526,
+    "dropped_by_dedupe": 2,
+    "overrides_applied": 2156,
+    "retained_history": 70,
+    "glossary_terms": 4193,
+    "filled_now": 8356
+  },
+  "coverage": {
+    "all": [
+      8356,
+      9337
+    ],
+    "current": [
+      4971,
+      4971
+    ]
+  },
+  "changes": {
+    "unit_zh_detail": {
+      "before": 1150,
+      "after": 1145,
+      "removed": [
+        "000001394",
+        "000003812",
+        "000003814",
+        "000003815",
+        "000004124"
+      ],
+      "added": [],
+      "changed": [
+        "000001120",
+        "000001553"
+      ]
+    }
+  }
+}

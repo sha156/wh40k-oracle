@@ -1,21 +1,21 @@
 ---
 id: '000000079'
-name_zh: 终结者智库
+name_zh: 终结者装甲智库员
 name_en: Librarian In Terminator Armour
 faction: 星际战士
 type: unit
 points:
-  1 model: 85
+  1 model: 80
 tags:
 - unit
 - unit/星际战士
 - 星际战士
 version:
-  points: MFM 2026-09-14T05:51:23.572407+00:00
+  points: MFM 2026-10-03T19:00:56.192123+00:00
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-09-14'
+updated: '2026-10-03'
 ---
 
 ## 属性表
@@ -45,7 +45,7 @@ updated: '2026-09-14'
 - **时间帷幕【灵能】**：本模型所领导的单位，其中的模型所装备的武器拥有【连击 1】技能
 
 ## 单位构成
-- **1个模型** — 85 分
+- **1个模型** — 80 分
 
 ## 关键词
 - **阵营关键词**：Adeptus Astartes

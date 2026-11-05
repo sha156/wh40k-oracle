@@ -1,0 +1,8 @@
+{
+  "base_raw_abilities": 5,
+  "candidate_raw_abilities": 7,
+  "base_card_first_name": "Author of the Codex",
+  "candidate_card_first_name": "圣典权威",
+  "base_chunk_has_rejected_frequency": true,
+  "candidate_chunk_has_rejected_frequency": false
+}

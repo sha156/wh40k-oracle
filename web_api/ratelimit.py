@@ -140,7 +140,9 @@ def install(app, config: Optional[RateLimitConfig] = None,
 
     @app.middleware("http")
     async def _rate_limit(request, call_next):  # type: ignore[no-untyped-def]
-        path = request.url.path
+        # A raw Host header can alter URL parsing in older Starlette releases.
+        # Route classification must use the server's ASGI path instead.
+        path = request.scope["path"]
         if path in EXEMPT_PATHS:
             return await call_next(request)
         key = client_key(

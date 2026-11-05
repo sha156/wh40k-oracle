@@ -13,7 +13,7 @@
 FROM python:3.11-slim-bookworm
 
 # 构建期代理：pip 需要出网；宿主机 Clash 用 host.docker.internal 访问。
-# 只在构建期生效，不写进运行期环境（运行期不该出网到代理）。
+# These args apply only during builds. Compose can separately configure the API runtime proxy.
 ARG HTTP_PROXY=""
 ARG HTTPS_PROXY=""
 ARG NO_PROXY="localhost,127.0.0.1"
@@ -29,11 +29,14 @@ ENV PYTHONUNBUFFERED=1 \
 WORKDIR /app
 
 # ── 依赖层（与源码分层，改代码不重装依赖）────────────────────────
-COPY requirements-docker.txt ./
-RUN python -m pip install --no-cache-dir --upgrade pip \
+COPY requirements-bootstrap.txt requirements-torch-cpu.txt requirements-docker.txt \
+     requirements-runtime.txt requirements-framework.txt requirements-server.txt \
+     constraints-python311.txt ./
+RUN python -m pip install --no-cache-dir -r requirements-bootstrap.txt \
  && python -m pip install --no-cache-dir \
-      torch==2.8.0 --index-url https://download.pytorch.org/whl/cpu \
- && python -m pip install --no-cache-dir -r requirements-docker.txt
+      --build-constraint requirements-bootstrap.txt -r requirements-torch-cpu.txt \
+ && python -m pip install --no-cache-dir \
+      --build-constraint requirements-bootstrap.txt -r requirements-docker.txt
 
 # ── 源码层（大件资产由 .dockerignore 挡在外面）──────────────────
 COPY . .

@@ -5,18 +5,18 @@ name_en: Immortals
 faction: 太空死灵
 type: unit
 points:
-  5 models: 70
-  10 models: 140
+  5 models: 65
+  10 models: 130
 tags:
 - unit
 - unit/太空死灵
 - 太空死灵
 version:
-  points: MFM 2026-09-14T05:51:23.572407+00:00
+  points: MFM 2026-10-03T19:00:56.192123+00:00
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-09-14'
+updated: '2026-10-03'
 ---
 
 ## 属性表
@@ -40,8 +40,8 @@ updated: '2026-09-14'
 - **无情根除**：当该单位中的模型进行攻击时，重掷结果为 1 的致伤掷骰。如果攻击目标是位于目 标标记范围内的敌方单位，您可以重掷致伤掷骰。
 
 ## 单位构成
-- **5个模型** — 70 分
-- **10个模型** — 140 分
+- **5个模型** — 65 分
+- **10个模型** — 130 分
 
 ## 关键词
 - **阵营关键词**：Necrons

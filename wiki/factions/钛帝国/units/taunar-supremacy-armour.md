@@ -1,6 +1,6 @@
 ---
 id: '000000446'
-name_zh: 塔'钨钠至高装甲
+name_zh: (KX139)塔'钨钠至高装甲
 name_en: Ta’unar Supremacy Armour
 faction: 钛帝国
 type: unit
@@ -11,7 +11,7 @@ tags:
 - unit/钛帝国
 - 钛帝国
 version:
-  points: MFM 2026-09-14T05:51:23.572407+00:00
+  points: MFM 2026-10-03T19:00:56.192123+00:00
   source: official-db
 sources:
 - book: 'Faction Pack: T''au Empire'
@@ -20,7 +20,7 @@ sources:
 - book: 'Faction Pack: T''au Empire'
   pages:
   - 12
-updated: '2026-09-14'
+updated: '2026-10-03'
 ---
 
 ## 属性表

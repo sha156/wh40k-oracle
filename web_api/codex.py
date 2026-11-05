@@ -238,8 +238,18 @@ def _localize_loadout(loadout: str, name_map: Dict[str, str]) -> str:
     return out
 
 
-def _load_zh_composition(conn: sqlite3.Connection, unit_id: str) -> List[str]:
-    """intro_json 的「单位构成」区块 → 原生中文构成行（如 '1 艘毁灭炮艇，95分'）。"""
+def _load_zh_composition(conn: sqlite3.Connection, unit_id: str,
+                         points_options: List[Dict[str, Any]]) -> List[str]:
+    """Keep a single plain community model-count tier when count and price agree.
+
+    These paragraphs contain frozen community prices. The card's header alone
+    cannot guard them: a stale paragraph would contradict the authoritative tier
+    shown above it. Multiple tiers or conditional contexts cannot be safely
+    paired from this prose, so they use the canonical composition.
+    """
+    from db_compile.source_reconcile import requires_current_english
+    if requires_current_english(conn, unit_id):
+        return []
     try:
         r = conn.execute(
             "SELECT intro_json FROM unit_zh_detail WHERE canonical_id = ?", (unit_id,),
@@ -265,6 +275,23 @@ def _load_zh_composition(conn: sqlite3.Connection, unit_id: str) -> List[str]:
             ).strip()
             if txt:
                 lines.append(txt)
+    if len(lines) != 1 or len(points_options) != 1:
+        return []
+    option = points_options[0]
+    cost = option.get("cost")
+    if not isinstance(cost, int) or isinstance(cost, bool):
+        return []
+    official_count = re.fullmatch(r"\s*(\d+)\s*(?:models?|个模型)\s*",
+                                  str(option.get("desc") or ""), flags=re.IGNORECASE)
+    quantity_pattern = r"(\d+)\s*(?:个模型|models?\b|[个名艘台具座只辆架尊头])"
+    source_count = re.match(r"^\s*" + quantity_pattern, lines[0], flags=re.IGNORECASE)
+    source_quantities = re.findall(quantity_pattern, lines[0], flags=re.IGNORECASE)
+    source_costs = [int(match.replace(",", "")) for match in re.findall(
+        r"(\d[\d,]*)\s*(?:分|pts?\b|points?\b)", lines[0], flags=re.IGNORECASE)]
+    if (not official_count or not source_count or len(source_quantities) != 1
+            or int(official_count[1]) != int(source_count[1])
+            or source_costs != [cost]):
+        return []
     return lines
 
 
@@ -303,7 +330,7 @@ def unit_card(
             # 背景文案无中文源：zh 模式不硬塞英文抒情段（切 EN 一键可看），诚实不机翻
             meta["legend"] = None
             # 原生中文构成（intro_json，含正确量词「1 艘毁灭炮艇，95分」）优先
-            zh_composition = _load_zh_composition(conn, unit_id)
+            zh_composition = _load_zh_composition(conn, unit_id, ds_dict.get("points_options") or [])
         res = {
             "found": True,
             "datasheet": ds_dict,

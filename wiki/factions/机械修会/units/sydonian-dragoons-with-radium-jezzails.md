@@ -6,18 +6,18 @@ faction: 机械修会
 type: unit
 points:
   1 model: 55
-  2 models: 100
-  3 models: 150
+  2 models: 95
+  3 models: 140
 tags:
 - unit
 - unit/机械修会
 - 机械修会
 version:
-  points: MFM 2026-09-14T05:51:23.572407+00:00
+  points: MFM 2026-10-03T19:00:56.192123+00:00
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-09-14'
+updated: '2026-10-03'
 ---
 
 ## 属性表
@@ -46,8 +46,8 @@ updated: '2026-09-14'
 
 ## 单位构成
 - **1个模型** — 55 分
-- **2个模型** — 100 分
-- **3个模型** — 150 分
+- **2个模型** — 95 分
+- **3个模型** — 140 分
 
 ## 关键词
 - **阵营关键词**：Adeptus Mechanicus

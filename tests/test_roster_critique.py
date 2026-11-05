@@ -81,13 +81,15 @@ def test_critique_surfaces_unloadout_unit():
 @needs_db
 def test_critique_weapon_role_distinction():
     """铁轨炮（反装甲）对 VEH 性价比应高于步枪；步枪对 GEQ 应高于铁轨炮。"""
-    r = Roster("T'au", None, "strike_force", (
-        RosterUnit(INTERCESSOR, "Intercessor Squad", 5, loadout=(("Bolt rifle", 5),)),
-        RosterUnit(BROADSIDE, "Broadside Battlesuits", 1, loadout=(("Heavy rail rifle", 1),)),
-    ))
-    rep = critique(DB, r, n=1500, seed=11)
-    bolt = rep.assessments[0]
-    rail = rep.assessments[1]
+    # 每个单位放进自己阵营的军表：SM 单位在非 SM 军表里按章节定价规则不计价
+    # （fail-closed，见 2026-10-05 chapter-price-context 报告）。
+    sm = Roster("SM", None, "strike_force", (
+        RosterUnit(INTERCESSOR, "Intercessor Squad", 5, loadout=(("Bolt rifle", 5),)),))
+    tau = Roster("T'au", None, "strike_force", (
+        RosterUnit(BROADSIDE, "Broadside Battlesuits", 1, loadout=(("Heavy rail rifle", 1),)),))
+    bolt = critique(DB, sm, n=1500, seed=11).assessments[0]
+    rail = critique(DB, tau, n=1500, seed=11).assessments[0]
+    assert bolt.points and rail.points
 
     def score(a, key):
         return next(s.damage_per_100 for s in a.scores if s.key == key)
