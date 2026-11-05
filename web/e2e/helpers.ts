@@ -6,7 +6,7 @@ export async function pickSimUnit(
   side: "攻方" | "守方",
   factionId: string,
   query: string,
-  unitLabel: string,
+  unitLabel: string | RegExp,
 ) {
   // 面板首行的 span 文案恰为「攻方」/「守方」（exact 避免误中「攻方模型数」）
   const panel = page

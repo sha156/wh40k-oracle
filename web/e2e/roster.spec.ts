@@ -16,7 +16,7 @@ test("军表：加单位实时出点数与合法性，装配面板可填件数",
   const search = page.getByPlaceholder("搜索单位加入军表…");
   await expect(search).toBeVisible();
   await search.fill("Broadside");
-  await page.getByRole("button", { name: /炮击战斗服小队|Broadside/ }).first().click();
+  await page.getByRole("button", { name: /舷炮战斗服|炮击战斗服|Broadside/ }).first().click();
 
   // 实时校验面板：总点数与合法性判定都该出来（零 LLM）
   await expect(page.getByText("总点数")).toBeVisible();
@@ -39,7 +39,7 @@ test("军表：装配后能跑强度点评", async ({ page }) => {
   await expect(faction.locator("option").first()).toBeAttached({ timeout: 30_000 });
   await faction.selectOption("TAU");
   await page.getByPlaceholder("搜索单位加入军表…").fill("Broadside");
-  await page.getByRole("button", { name: /炮击战斗服小队|Broadside/ }).first().click();
+  await page.getByRole("button", { name: /舷炮战斗服|炮击战斗服|Broadside/ }).first().click();
   await page.getByRole("button", { name: /^装配/ }).first().click();
   await page.getByLabel("Heavy rail rifle 全员装配").click();
 

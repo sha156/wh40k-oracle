@@ -17,7 +17,7 @@ import { pickSimUnit, runSim } from "./helpers";
 const TAU = "TAU";
 const SM = "SM";
 // 克鲁特猎犬队：近战池只有 Ripping fangs 一把 → 自动装配，不必先过装配面板
-const KROOT = "克鲁特猎犬队";
+const KROOT = /克鲁特猎犬|Kroot Hounds/; // 中文名随官方层变动（克鲁特猎犬队→克鲁特猎犬），按前缀/英文名匹配
 const TARGET = "阿加通连长";
 
 test.beforeEach(async ({ page }) => {
